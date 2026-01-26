@@ -21,11 +21,11 @@
 		}
 
 		&.disabled {
-			color: var(--gray-40);
+			color: var(--gray-50);
 			pointer-events: none;
 
 			&::before {
-				background-color: var(--gray-40);
+				background-color: var(--gray-50);
 			}
 		}
 	}

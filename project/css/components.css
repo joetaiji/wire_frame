@@ -1436,11 +1436,11 @@ form
   background: var(--secondary-5);
 }
 .pagination .page-navi.disabled {
-  color: var(--gray-40);
+  color: var(--gray-50);
   pointer-events: none;
 }
 .pagination .page-navi.disabled::before {
-  background-color: var(--gray-40);
+  background-color: var(--gray-50);
 }
 .pagination .page-link {
   width: 4rem;

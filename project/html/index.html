@@ -17,12 +17,8 @@
 
 	<title>프로젝트 명</title>
 
-	<!-- 폰트 Preload -->
-	<link rel="preload" href="../fonts/PretendardGOV/PretendardGOV-Regular.subset.woff2" as="font" type="font/woff2"
-		crossorigin>
-
 	<!-- 폰트 CSS -->
-	<link rel="stylesheet" href="../fonts/PretendardGOV.css">
+	<link rel="preload" href="../fonts/PretendardGOV.css" as="style">
 	<link rel="stylesheet" href="../fonts/remixicon.css">
 
 	<!-- 공통 CSS -->
@@ -35,8 +31,8 @@
 	<!-- 공통 JS -->
 	<script src="../js/jquery.min.js" defer></script>
 	<script src="../js/swiper-bundle.min.js" defer></script>
+	<script src="../js/func.min.js" defer></script>
 	<script src="../js/common.js" defer></script>
-	<script src="../js/func.js" defer></script>
 
 	<!-- 메인 JS -->
 	<script src="../js/main.js" defer></script>
@@ -346,11 +342,11 @@
 			<div id="contents">
 				<!-- visual banner -->
 				<div class="main-vban-wrap">
-					<img loading="lazy" src="../img/main/main_visual1.webp" alt="" class="main-visual">
+					<img fetchpriority=high src="../img/main/main_visual1.webp" alt="" class="main-visual">
 					<div class="inner">
 						<div class="visual-txt">
 							<strong class="title">
-								<img loading="lazy" src="../img/main/slogan.svg" alt="살던 곳에서 건강한 삶"></strong>
+								<img fetchpriority=high src="../img/main/slogan.svg" alt="살던 곳에서 건강한 삶"></strong>
 							<p class="desc">의료·요양·돌봄을 지역에서 통합·연계하여,<br>
 								누구나 익숙한 일상 속에서 건강한 삶을 이어가도록 지원합니다.</p>
 						</div>

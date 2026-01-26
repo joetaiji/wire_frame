@@ -1,5 +1,11 @@
 {
   "liveSassCompile.settings.includeItems": [
     "/project/css/scss/**/*.scss"
-  ]
+  ],
+  "css.hover.references": false,
+  "less.hover.references": false,
+  "scss.hover.references": false,
+  "html.hover.references": false,
+  "cursor.cmdk.useThemedDiffBackground2": false,
+  "cursor.composer.shouldAutoSaveNonAgent": false
 }
