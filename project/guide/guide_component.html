@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+	<meta name="title" content="">
+	<meta name="description" content="">
+	<meta name="keyword" content="">
+	<meta name="copyright" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="http://localhost/?">
+	<meta property="og:description" content="">
+	<meta name="theme-color" content="#003675">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/layout/favicon_180px.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../img/layout/favicon_192px.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/layout/favicon_32px.png">
+	<title>스타일가이드 V3</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/output.css">
+	<link rel="stylesheet" href="guide.css">
+
+	<!-- 공통 JS -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/swiper-bundle.min.js"></script>
+	
+</head>
+
+<body class="guide">
+	
+	<div id="wrap">
+		<header>
+            <h1><img src="logo.png" alt="web style guide"></h1> 
+            <p class="menu">
+                <a href="guide_rule.html">규칙가이드</a>
+                <a href="guide_common.html" class="active">기본스타일</a>
+                <a href="board_list.html">게시판</a>
+            </p>
+        </header>
+		
+		<main id="container">	
+
+			<div class="inner in-between">
+				<section id="snb" class="left-menu">
+					<div class="snb" data-active="1">
+						<nav class="list">
+							<ul id="left_menu_top" class="head_menu_depth">
+								<li class="is-depth3">
+									<a href="guide_common.html">Common</a>
+									<ul class="depth3">
+										<li><a href="guide_common.html#typography">typography</a></li>
+										<li><a href="guide_common.html#color">color</a></li>
+										<li><a href="guide_common.html#userDefine">user_define</a></li>
+									</ul>
+								</li>
+								<li class="is-depth3">
+									<a href="guide_component.html">Components</a>
+									<ul class="depth3">
+										<li><a href="guide_component.html#tab">tab</a></li>
+										<li><a href="guide_component.html#box">box</a></li>
+										<li><a href="guide_component.html#heading">heading</a></li>
+										<li><a href="guide_component.html#list">list</a></li>										
+										<li><a href="guide_component.html#image">image</a></li>
+										<li><a href="guide_component.html#table">table</a></li>	
+										<li><a href="guide_component.html#button">button</a></li>
+										<li><a href="guide_component.html#step">step</a></li>
+										<li><a href="guide_component.html#card">card</a></li>
+										<li><a href="guide_component.html#grid">grid</a></li>
+										<li><a href="guide_component.html#accordion">accordion</a></li>
+										<!-- <li><a href="#alert">alert</a></li>
+										<li><a href="#badge">badge</a></li> -->
+										<li><a href="guide_component.html#dialog">modal(dialog)</a></li>
+										<li><a href="guide_component.html#pagination">pagination</a></li>				
+										<li><a href="guide_component.html#slider">slider</a></li>											
+										<li><a href="guide_component.html#contInfo">콘텐츠정보</a></li>									
+									</ul>
+								</li>
+								<li class="is-depth3">
+									<a href="guide_form.html">Forms</a>
+									<ul class="depth3">
+										<li><a href="guide_form.html#formItem">form-item</a></li>
+										<li><a href="guide_form.html#formGroup">form-group</a></li>
+										<li><a href="guide_form.html#formInline">form-inline</a></li>
+										<li><a href="guide_form.html#formRow">form-row</a></li>
+									</ul>
+								</li>
+								
+							</ul>
+						</nav>
+					</div>
+				</section>
+				<!-- //snb -->		
+
+				<section id="contents" class="contents">					
+
+					<section id="ComponentSec">
+						<h1 class="h-tit">Components (구성요소 스타일)</h1>
+						<article class="guide-article" id="tab">
+							<h4 class="s-title-1">탭 (tabs)</h4>
+							<h5 class="s-title-2">4뎁스 탭 : .depth4</h5>
+							<div class="depth4 tabs">
+								<ul>
+									<li class="active"><a href="#">탭타이틀1</a></li>
+									<li><a href="#">탭타이틀2</a></li>
+									<li><a href="" target="_blank" class="new-link">새창링크</a></li>
+								</ul>
+							</div>
+							<h5 class="s-title-2">5뎁스 탭 : .depth5</h5>
+							<div class="depth5 tabs">
+								<ul>
+									<li><a href="#">탭타이틀1</a></li>
+									<li class="active"><a href="#">탭타이틀2</a></li>
+									<li><a href="" target="_blank">새창링크</a></li>
+								</ul>
+							</div>
+						</article>
+						<!-- //tab -->
+
+						<article class="guide-article" id="box">
+	
+							<h4 class="s-title-1">박스(box) : .box</h4>
+							<div class="box-wrap col3">
+								<div class="box border">
+									<strong class="s-title">테두리 : .border</strong>								
+									<p>국방과학연구소는 변화와 개혁, 연구활동을 통해 국가안보를 기술력으로 보장하는 세계수준의 첨단연구소 입니다.</p>
+								</div>
+								<div class="box bg">		
+									<strong class="s-title">배경색 : .bg</strong>						
+									<p>국방과학연구소는 변화와 개혁, 연구활동을 통해 국가안보를 기술력으로 보장하는 세계수준의 첨단연구소 입니다.</p>
+								</div>
+								<div class="box border round">
+									<strong class="s-title">모서리 둥글게 : .round</strong>
+									<p>국방과학연구소는 변화와 개혁, 연구활동을 통해 국가안보를 기술력으로 보장하는 세계수준의 첨단연구소 입니다.</p>
+								</div>	
+							</div>
+													
+							<h5 class="s-title-2">활용 : box + border + round + flex-box </h5>
+							<div class="box border round flex-box">
+								<span class="picto"><img src="../img/guide/sample_icon.png" alt=""></span>
+								<div class="cont">
+									<h4 class="title">타이틀 박스</h4>
+									<p class="desc">국방과학연구소는 변화와 개혁, 연구활동을 통해 국가안보를 기술력으로 보장하는 세계수준의 첨단연구소 입니다.</p>
+									<ul class="list-dot">
+										<li>입원과 퇴원 시 필요한 절차 및 구비해야 할 서류 등 병원 진료와 관련하여 궁금하신 사항을 문의해 주시면 성심 성의껏 답변하여 드리겠습니다.
+											<p class="note"><i class="ic-warning text-point"></i> 상업성 광고, 상대방 비방 등 게시판 목적에 부합하지 않는 글은 관리자에 의해 삭제될 수 있습니다.</p></li>
+									</ul>
+								</div>
+								<a href="../download/국립부곡병원임상시험관련서식자료.zip" class="btn xsm ico-down" download>다운로드</a>
+							</div>
+
+							<h5 class="s-title-2">테두리 패턴 : .pattern</h5>
+							<div class="box pattern flex-box">	
+								<span class="picto"><img src="../img/contents/picto_notice.png" alt=""></span>
+								<div class="cont">
+									<p>국방과학연구소는 변화와 개혁, 연구활동을 통해 국가안보를 기술력으로 보장하는 세계수준의 첨단연구소 입니다.</p>
+								</div>
+							</div>
+							<h5 class="s-title-2">상단 그라디언트 테두리  : .border-top</h5>
+							<div class="box border-top flex-box">
+								<img src="../img/contents/picto_desc.png" alt="">
+								<div class="cont">
+									<p>보건복지분야(보건복지부, 소속기관, 산하공공기관)에서 개발 제공하고 있는 모바일 앱을 모아서 제공합니다. 다운로드하여 활용하시기 바랍니다.</p>
+								</div>
+							</div>
+
+							<h5 class="s-title-2">헬퍼 박스 : .helper-box</h5>
+							<div class="helper-box">
+								<strong class="helper-tit"><i class="ic-warning"></i>유의사항</strong>
+								<div class="helper-desc-wrap">
+									<ul class="list-dot">
+										<li>강의는 1인당 1회로 제한되어 있기 때문에 변경 시 취소 후 재신청 부탁드립니다.</li>
+										<li>재신청 중 참가비의 변동이 있을 때는 행사담당자(정신건강사업과 마음건강팀 최영규 주무관 041-850-5916)에게 연락 부탁드립니다.</li>
+									</ul>
+								</div>
+							</div>
+							<h5 class="s-title-2">타이틀 박스 : .title-box</h5>
+							<div class="box bg flex-box title-box">
+								<div class="cont">
+									<h4 class="title">기획운영과</h4>
+									<p class="desc">기획운영과는 공공성을 유지하면서도 경쟁원리에 따라 운영되고 있는 책임운영기관인 국립부곡병원의 행정업무를 전담하는 지원부서로서 다음과 같이 구성되어 각 분야의 업무를 수행합니다.</p>
+								</div>
+								<span class="picto"><img src="../img/contents/picto_depart.png" alt=""></span>
+							</div>
+
+							<h5 class="s-title-2">박스가 여러개 일때 - 기본 한줄 : .box-wrap</h5>
+							<div class="box-wrap">
+								<div class="box flex-box border">
+									<span class="picto"><img src="../img/contents/picto_idcard.png" alt=""></span>
+									<div class="cont">
+										<strong class="s-title">공통</strong>
+										<p class="desc">본인을 확인할 수 있는 신분증(주민등록증, 장애인등록증, 여권 등 사진이 포함된 신분증)</p> 
+									</div>
+								</div>
+								<div class="box flex-box border">
+								  <span class="picto"><img src="../img/contents/picto_rollpaper.png" alt=""></span>
+									<div class="cont">
+										<strong class="s-title">초진</strong>
+										<p class="desc">요양급여 및 의료급여의뢰서</p> 
+									</div>
+								</div>
+							</div>
+						</article>
+						<!-- //box -->	
+
+						<article class="guide-article" id="heading">
+							<h4 class="s-title-1">콘텐츠 두번째 제목 : .s-title-1</h4>
+							<p>경제·인문사회연구회는 <strong class="text-point">「정부출연연구기관 등의 설립·운영 및 육성에 관한 법률」</strong>에 의하여 설립된 <strong
+									class="text-primary">국무총리 산하 공공기관</strong>으로, 경제·인문사회 분야의 정부출연연구기관을 지원·육성하고 체계적으로 관리함으로써
+								<strong class="text-secondary">국가의 연구사업정책 지원 및 지식산업발전</strong>에 이바지 함.
+							</p>
+							<h5 class="s-title-2">콘텐츠 세번째 제목 : .s-title-2</h5>
+							<p>경제·인문사회연구회는 「정부출연연구기관 등의 설립·운영 및 육성에 관한 법률」에 의하여 설립된 국무총리 산하 공공기관으로, 경제·인문사회 분야의 정부출연연구기관을 지원·육성하고 체계적으로 관리함으로써 국가의 연구사업정책 지원 및 지식산업발전에 이바지 함.</p>
+							<h6 class="s-title-3">콘텐츠 세번째 제목 : .s-title-3</h6>
+							<p>경제·인문사회연구회는 「정부출연연구기관 등의 설립·운영 및 육성에 관한 법률」에 의하여 설립된 국무총리 산하 공공기관으로, 경제·인문사회 분야의 정부출연연구기관을 지원·육성하고 체계적으로 관리함으로써 국가의 연구사업정책 지원 및 지식산업발전에 이바지 함 의하여 설립된 국무총리 산하 공공기관으로, 경제·인문사회 분야의 정부출연연구기관<i class="text-point">*</i>을 지원·육성하고 체계적으로 관리함으로써 국가의 연구사업정책 지원 및 지식산업발전에 이바지 함</p>
+							<p>경제·인문사회연구회는 「정부출연연구기관 등의 설립·운영 및 육성에 관한 법률」에 의하여 설립된 국무총리 산하 공공기관으로, 경제·인문사회 분야의 정부출연연구기관을 지원·육성하고 체계적으로 관리함</p>
+							
+							<h6 class="s-title-3">주석 : .note</h6>
+							<p class="note">정부출연연구기관(政府出捐硏究機關, 영어: government-funded/government-contributed research institute)은 운영 재원의 일정 부분 이상을 정부 출연금으로 충당하는 연구기관을 의미한다. 대표적으로는 "정부출연연구기관 등의 설립·운영 및 육성에 관한 법률"을 법적 근거로 하는 경제인문사회연구회 소관 연구기관과 "과학기술 분야 정부출연연구기관 등의 설립·운영 및 육성에 관한 법률"을 법적 근거로 하는 국가과학기술연구회 소관 연구기관이 있다.</p>
+							<h6 class="s-title-3">별표 : .asterisk</h6>
+							<p class="asterisk note">이외에도 소위 '정출연법' 제정과 개정 시 연구회 소관으로 이전되지 않고 부처 소관으로 남았거나 신설된 기타 정부출연연구기관[1]이 있다. 정부출연연구기관(政府出捐硏究機關, 영어: government-funded/government-contributed research institute)은 운영 재원의 일정 부분 이상을 정부 출연금으로 충당하는 연구기관을 의미한다. </p>
+							<p class="asterisk note">이외에도 소위 '정출연법' 제정과 개정 시 연구회 소관으로 이전되지 않고 부처 소관으로 남았거나 신설된 기타 정부출연연구기관[1]이 있다. 정부출연연구기관(政府出捐硏究機關, 영어: government-funded/government-contributed research institute)은 운영 재원의 일정 부분 이상을 정부 출연금으로 충당하는 연구기관을 의미한다. </p>
+							<h6 class="s-title-3">중요표시 : .refer-mark</h6>
+							<p class="refer-mark"> 대표적으로는 "정부출연연구기관 등의 설립·운영 및 육성에 관한 법률"을 법적 근거로 하는 경제인문사회연구회 소관 연구기관과 "과학기술 분야 정부출연연구기관 등의 설립·운영 및 육성에 관한 법률"을 법적 근거로 하는 국가과학기술연구회 소관 연구기관이 있다. </p>
+						</article>
+						<!-- //typography -->
+	
+						<article class="guide-article" id="list">
+	
+							<h4 class="s-title-1">목록스타일 (List)</h4>
+							<h5 class="s-title-2">.list-dot, .list-dot(병원 기존) <code>line-height: 1.8;</code></h5>
+							<ul class="list-dot">
+								<li>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>
+								<li>연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비 연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비</li>
+								<li>연구기관의 연구실적 및 경영내용 평가</li>
+							</ul>
+							<h5 class="s-title-2">.list-dash <code>line-height: 1.6;</code></h5>
+							<ul class="list-dash">
+								<li>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>
+								<li>연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비 연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비</li>
+								<li>연구기관의 연구실적 및 경영내용 평가</li>
+							</ul>
+							<h5 class="s-title-2">.list-sdot <code>font-size: 0.9375em; line-height: 1.6;</code></h5>
+							<ul class="list-sdot">
+								<li>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>
+								<li>연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비 연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비</li>
+								<li>연구기관의 연구실적 및 경영내용 평가</li>
+							</ul>	
+							<h5 class="s-title-2">.list-order</h5>
+							<ol class="list-order">
+								<li><i>1</i>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>
+								<li><i>2</i>연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비 연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비
+									<ol class="list-order type2">
+										<li><i>가</i>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>
+										<li><i>나</i>연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비 연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비</li>
+									</ol>
+								</li>
+								<li><i>3</i>연구기관의 연구실적 및 경영내용 평가</li>
+							</ol>	
+							<h5 class="s-title-2">.list-order.lg</h5>
+							<ul class="list-order lg">
+								<li>
+									<i>01</i>
+									<strong class="title">약물·증상관리</strong>
+									<p>질병의 원인과 증상, 경과 및 약물의 효과・부작용 등 치료에 대한 정보제공으로 약물순응도 향상시킴으로 증상관리와 재발율 최소화에 도움 </p>
+								</li>
+								<li>
+									<i>02</i>
+									<strong class="title">역량강화</strong>
+									<p>조현병 환자에게 질환의 모든 측면에 대한 지식정보제공으로 환자들의 능력을 강화하고 질병관리에 자발적인 주체가 되도록 돕기 위함.</p>
+								</li>
+								<li>
+									<i>03</i>
+									<strong class="title">가족교육</strong>
+									<p>가족과 당사자에게 관련지식과 정보 제공 및 경험공유를 통해 환자의 재활과   가족간의 유대감 및 신뢰형성에 도움</p>
+								</li>
+								<li>
+									<i>04</i>
+									<strong class="title">스트레스관리</strong>
+									<p>스트레스에 취약한 상황을 이해하고 적절한 수준의 스트레스를 유지하기 위한 대처방법 습득 및 자기관리능력향상에 도움</p>
+								</li>
+							</ul>					
+	
+							<h5 class="s-title-2">혼용사례</h5>
+							<ul class="list-dot">
+								<li>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>
+								<li>연구기관의 기능조정 및 정비 (연구기관의 신설·통합 및 해산에 관한 사항을 포함) 연구기관의 기능조정 및 정비
+									<ul class="list-dash">
+										<li>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>									
+										<li>연구기관의 연구실적 및 경영내용 평가
+											<ul class="list-sdot mb1">
+												<li>경제·인문사회 분야의 연구기획 및 연구기관의 발전방향기획</li>
+												<li>연구기관의 기능조정 및 정비<i class="emphasis">*</i>
+													<p class="note asterisk mb1">연구기관의 신설·통합 및 해산에 관한 사항을 포함</p>
+												</li>
+												<li>연구기관의 연구실적 및 경영내용 평가</li>
+											</ul>
+										</li>
+										<li>연구기관의 협동연구 지원</li>
+									</ul>
+									
+								</li>
+								<li>연구기관의 연구실적 및 경영내용 평가</li>
+							</ul>
+
+	
+						</article>
+						<!-- //list -->
+	
+						<article class="guide-article" id="image">
+							<h4 class="s-title-1">이미지스타일 (Image)</h4>
+							<h5 class="s-title-2">.img + .img-zoom(모바일에서 확대 필요한 이미지)</h5>				
+							<div class="box-wrap">
+								<figure class="img img-zoom">
+									<img src="../img/guide/sample_img1.png" alt="도식-상세내용 아래참조">
+									<figcaption class="sr-only">							도식 상세내용	
+									</figcaption>
+								</figure>
+							</div>			
+
+							<h5 class="s-title-2">.img + .box-wrap</h5>
+							<div class="box-wrap">
+								<figure class="img">
+									<img src="../img/guide/s1_main_poem1.jpg" alt="">
+									<figcaption>이미지 타이틀</figcaption>
+								</figure>
+								<figure class="img">
+									<img src="../img/guide/s1_main_poem2.jpg" alt="">
+									<figcaption>이미지 타이틀</figcaption>
+								</figure>
+							</div>
+
+	
+							<h5 class="s-title-2">.img + .box + .border</h5>
+							<div class="box border">
+								<figure class="img img-zoom">
+									<img src="../img/guide/sample_img2.gif" alt="도식-상세내용 아래참조">
+									<figcaption class="sr-only">
+										<ul>
+											<li>국무총리(기획재정부) - 경제인문사회위원회에 평가정책시달, 경제인문사회위원회로부터 평가결과제출</li>
+											<li>경제인문사회위원회(이사회) - 사무국에 평가기준확정, 평가결과 승인
+												<ul>
+													<li>기획평가위원회(기획총괄위원회) - 평가업무 자문·지원</li>
+												</ul>
+											</li>
+											<li>사무국(평가실) - 26개기관에 평가기준 제시, 평가결과 통보, 26개기관으로부터 평가자료제출(실적보고서)
+												<ul>
+													<li>평가기준개선팀(임시조직)</li>
+													<li>평가단(임시조직)</li>
+												</ul>
+											</li>
+											<li>26개기관(23개 연구기관, 2개 부설기관, 1개 대학원) - 평가단에 서면·실사평가</li>
+										</ul>
+									</figcaption>
+								</figure>
+							</div>
+							
+	
+						</article>
+						<!-- //image -->
+						
+						<article class="guide-article" id="table">
+							<h4 class="s-title-1">표 스타일 (Table)</h4>					
+	
+							<h5 class="s-title-2">.table : 표 기본 가운데 정렬</h5>
+							<div class="table responsive">
+								<div class="unit">(단위 : 원)</div>
+								<table>
+									<caption>표제목 - 사업별구분, 소속</caption>
+									<colgroup>
+										<col class="w40">
+										<col>
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">사업별 구분</th>
+											<th scope="col">소속</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>중장기 정책연구과제 기획</td>
+											<td class="text-left">
+												<ul class="list-dot">
+													<li>국가도약과제 발굴</li>
+													<li>국가적 핵심 아젠다에 대한 각종 연구사업 기획 및 정책연구협의회 운영 지원</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td>수시연구기획</td>
+											<td class="text-left">
+												<ul class="list-dot">
+													<li>정부부처, 연구기관 수요에 따른 국가 현안과제 등 수행</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td>국내외 유수 연구기관 등과 네트워크 구축</td>
+											<td class="text-left">
+												<ul class="list-dot">
+													<li>국가도약과제 발굴</li>
+													<li>국가적 핵심 아젠다에 대한 각종 연구사업 기획 및 정책연구협의회 운영 지원</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td>연구회 및 연구기관 발전방향 기획</td>
+											<td class="text-left">
+												<ul class="list-dot">
+													<li>우수인력 확보 및 유치를 위한 제도개선 추진</li>
+													<li>과학기술계 출연연구기관과의 협력강화</li>
+													<li>해외 싱크탱크 연구동향 및 운영시스템 조사ㆍ분석</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td>정책연구 플랫폼 구축ㆍ운영</td>
+											<td class="text-left">
+												<ul>
+													<li>6대 위원회 운영(세종국가리더십위원회, 미래혁신위원회, 통합정책관리위원회,
+														연구수월성위원회, 국제협력위원회, 한반도평화번영위원회)</li>
+													<li>공동연구단 운영(포용성장연구단, 혁신성장연구단, 한반도평화번영연구단)
+													</li>
+												</ul>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+							</div>
+	
+							<h5 class="s-title-2">.in-border : 중간에 라인이 있는 표</h5>
+							<div class="table responsive in-border">
+								<table>
+									<caption>구분, 1군(만성질환관리형), 2군(생활습관개선형), 3군(건강정보제공형)</caption>
+									<colgroup>
+										<col class="w20">
+										<col>
+										<col class="w20">
+										<col class="w20">
+										<col class="w20">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" colspan="2" rowspan="2">구분</th>
+											<th scope="col" colspan="3">타입</th>
+										</tr>
+										<tr>
+											<th scope="col">1군(만성질환관리형)</th>
+											<th scope="col">2군(생활습관개선형)</th>
+											<th scope="col">3군(건강정보제공형)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2"><strong>인증심사 통과 최소 기준</strong></td>
+											<td>80점/100점</td>
+											<td>64점/80점</td>
+											<td>32점/40점</td>
+										</tr>
+										<tr>
+											<td rowspan="3"><strong>항목별 최소 기준</strong></td>
+											<td>서비스 작용기전</td>
+											<td>30점/50점</td>
+											<td>24점/40점</td>
+											<td>12점/20점</td>
+										</tr>
+										<tr>
+											<td>서비스 효과</td>
+											<td>24점/40점</td>
+											<td>18점/30점</td>
+											<td>6점/10점</td>
+										</tr>
+										<tr>
+											<td>이용자 평가</td>
+											<td>6점/10점</td>
+											<td>6점/10점</td>
+											<td>6점/10점</td>
+										</tr>
+	
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2"><strong>총점</strong></td>
+											<td>100점</td>
+											<td>80점</td>
+											<td>40점</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+	
+							<h5 class="s-title-2">.horizontal : 가로형 테이블</h5>
+							<div class="table horizontal">
+								<table>
+									<caption>순번,개인정보파일의 명칭, 처리목적, 개인정보파일에 기록되는 개인정보의 항목에 관한 표입니다.</caption>
+									<colgroup>
+										<col class="w20">
+										<col>
+									</colgroup>
+	
+									<tbody>
+										<tr>
+											<th scope="row">기업명</th>
+											<td>회원정보DB</td>
+										</tr>
+										<tr>
+											<th scope="row">대표자</th>
+											<td>교육번호, 이름, 생년월일, 아이디, 비밀번호, 비밀번호확인, 이메일, 휴대폰, 주소, 업체명, 업체연락처, 업체주소, 수료내역(업종,
+												등록일, 수료일, 기간, 시간, 평가점수, 업체자료)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h5 class="s-title-2">.row-line : ul,li를 이용한 가로 줄</h5>
+							<ul class="row-line">
+								<li>
+									<strong class="label">기업명</strong>
+									<div class="label-cont">회원정보DB</div>
+								</li>
+								<li>
+									<strong class="label">대표자</strong>
+									<div class="label-cont">교육번호, 이름, 생년월일, 아이디, 비밀번호, 비밀번호확인, 이메일, 휴대폰, 주소, 업체명, 업체연락처, 업체주소, 수료내역(업종,
+										등록일, 수료일, 기간, 시간, 평가점수, 업체자료)</div>
+								</li>
+							</ul>
+							<h6 class="s-title-3">.col2</h6>
+							<ul class="row-line col2">
+								<li>
+									<strong class="label">기업명</strong>
+									<div class="label-cont">(주)플랜아이</div>
+								</li>
+								<li>
+									<strong class="label">대표자</strong>
+									<div class="label-cont">이명기</div>
+								</li>
+								<li>
+									<strong class="label">사업구분</strong>
+									<div class="label-cont">교육번호, 이름, 생년월일, 아이디, 비밀번호, 비밀번호확인, 이메일, 휴대폰, 주소, 업체명, 업체연락처, 업체주소, 수료내역(업종, 등록일, 수료일, 기간, 시간, 평가점수, 업체자료)</div>
+								</li>
+								<li>	
+									<strong class="label">대표 프로젝트</strong>
+									<div class="label-cont">교육번호, 이름, 생년월일, 아이디, 비밀번호, 비밀번호확인, 이메일, 휴대폰, 주소, 업체명, 업체연락처, 업체주소, 수료내역(업종, 등록일, 수료일, 기간, 시간, 평가점수, 업체자료)</div>
+								</li>
+							</ul>
+							<h6 class="s-title-3">.col3</h6>
+							<ul class="row-line col3">
+								<li>
+									<strong class="label">기업명</strong>
+									<div class="label-cont">(주)플랜아이</div>
+								</li>
+								<li>
+									<strong class="label">대표자</strong>
+									<div class="label-cont">이명기</div>
+								</li>
+								<li>
+									<strong class="label">대표전화</strong>
+									<div class="label-cont">042-482-9500</div>
+								</li>
+								<li>
+									<strong class="label">이메일</strong>
+									<div class="label-cont">master@plani.co.kr</div>
+								</li>
+								<li>
+									<strong class="label">사업구분</strong>
+									<div class="label-cont">교육번호, 이름, 생년월일, 아이디, 비밀번호, 비밀번호확인, 이메일, 휴대폰, 주소, 업체명, 업체연락처, 업체주소, 수료내역(업종, 등록일, 수료일, 기간, 시간, 평가점수, 업체자료)</div>
+								</li>
+								<li>	
+									<strong class="label">대표 프로젝트</strong>
+									<div class="label-cont">교육번호, 이름, 생년월일, 아이디, 비밀번호, 비밀번호확인, 이메일, 휴대폰, 주소, 업체명, 업체연락처, 업체주소, 수료내역(업종, 등록일, 수료일, 기간, 시간, 평가점수, 업체자료)</div>
+								</li>
+							</ul>
+						</article>
+						<!-- //table -->
+
+						<article class="guide-article" id="button">
+	
+							<h4 class="s-title-1">버튼(button)</h4>
+							
+							<h5 class="s-title-2">버튼-기본</h5>
+							<div class="btns">
+								<button type="button" class="btn xsm">xsm</button>
+								<button type="button" class="btn sm">sm</button>
+								<button type="button" class="btn md">md</button>
+								<button type="button" class="btn lg">lg</button>
+								<button type="button" class="btn xlg">xlg</button>
+							</div>
+	
+							<h5 class="s-title-2">버튼-색상</h5>
+							<div class="btns">
+								<a href="#" class="btn primary">primary</a>
+								<button type="button" class="btn secondary">secondary</button>
+								<button type="button" class="btn tertiary">tertiary</button>
+							</div>							
+	
+							<h5 class="s-title-2">버튼-SVG 아이콘</h5>
+							<div class="btns">
+								<button type="button" class="btn ico-prev">이전</button>
+								<button type="button" class="btn ico-arr-right1">자세히보기</button>
+								<button type="button" class="btn ico-arr">바로가기</button>
+								<button type="button" class="btn ico-more">더보기</button>
+								<button type="button" class="btn ico-down">다운로드</button>
+								<button type="button" class="btn ico-go">새창열림</button>
+								<button type="button" class="btn ico-sch">검색</button>
+								<button type="button" class="btn ico-share">공유</button>
+								<button type="button" class="btn ico-like">찜</button>
+								<button type="button" class="btn ico-filter">필터</button>
+								<button type="button" class="btn ico-close">닫기</button>
+								<button type="button" class="btn ico-reset">새로고침</button>
+								<button type="button" class="btn ico-setting">설정</button>
+								<button type="button" class="btn ico-time">시간</button>
+								<button type="button" class="btn ico-email">이메일</button>
+								<button type="button" class="btn ico-print">프린트</button>
+								<button type="button" class="btn ico-scrap">스크랩</button>
+								<button type="button" class="btn ico-comment">코멘트</button>
+								<button type="button" class="btn ico-log">로그인</button>
+								<button type="button" class="btn ico-logout">로그아웃</button>
+							</div>	
+							<h5 class="s-title-2">버튼-폰트아이콘</h5>
+							<div class="btns">
+								<button type="button" class="btn ic-prev">이전</button>
+								<button type="button" class="btn ic-arr-long">자세히보기</button>
+								<button type="button" class="btn ic-arr">바로가기</button>
+								<button type="button" class="btn ic-more">더보기</button>
+								<button type="button" class="btn ic-down">다운로드</button>
+								<button type="button" class="btn ic-go">새창열림</button>
+								<button type="button" class="btn ic-sch">검색</button>
+								<button type="button" class="btn ic-share">공유</button>
+								<button type="button" class="btn ic-like">찜</button>
+								<button type="button" class="btn ic-filter">필터</button>
+								<button type="button" class="btn ic-close">닫기</button>
+								<button type="button" class="btn ic-reset">새로고침</button>
+								<button type="button" class="btn ic-setting">설정</button>
+								<button type="button" class="btn ic-time">시간</button>
+								<button type="button" class="btn ic-email">이메일</button>
+								<button type="button" class="btn ic-print">프린트</button>
+								<button type="button" class="btn ic-scrap">스크랩</button>
+								<button type="button" class="btn ic-comment">코멘트</button>
+								<button type="button" class="btn ic-log">로그인</button>
+								<button type="button" class="btn ic-logout">로그아웃</button>
+								<button type="button" class="btn ic-arr-right">ic-arr-right</button>
+								<button type="button" class="btn ic-arr-down">ic-arr-down</button>
+								<button type="button" class="btn ic-map">ic-map</button>
+								<button type="button" class="btn ic-warning">ic-warning</button>
+								<button type="button" class="btn ic-info">ic-info</button>
+							</div>
+									
+						</article>
+						<!-- //button -->	
+
+						<article class="guide-article" id="step">
+	
+							<h4 class="s-title-1">스텝(step) : .step-list</h4>
+							<h5 class="s-title-2">.step-list.type1 : 스텝스타일1</h5>
+							<ol class="step-list type1 col2">
+								<li>
+									<div class="item">
+										<span class="num">01</span>
+										<strong class="title">사전방문</strong>
+										<span class="text">낮 병동 이용을 위한
+											방문 및 견학</span>
+										<span class="obj">회원 및 보호자</span>    
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">02</span>
+										<strong class="title">진료</strong>
+										<span class="text">정신건강의학과
+											전문의 진료 회원과
+											가족을 대상 초기면담</span>
+										<span class="obj">회원 및 보호자</span>  
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">03</span>
+										<strong class="title">입원등록</strong>
+										<span class="text">메디로 시스템 등록 및
+											상담 입원초기평가 등</span>
+										<span class="obj">낮 병동</span>  
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">04</span>
+										<strong class="title">낮병동 이용</strong>
+										<span class="text">등·하원 셔틀차량지원
+											및 자율등원</span>
+										<span class="obj">낮 병동</span>   
+									</div>
+								</li>
+							</ol>
+							
+							
+							<h5 class="s-title-2">.step-list.type2 : 스텝스타일2</h5>
+							<ol class="step-list type2">
+								<li>
+									<div class="item">
+										<span class="num">step 01</span>
+										<img src="../img/contents/picto_step1.png" alt="">
+										<span class="text">입원사실신고</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 02</span>
+										<img src="../img/contents/picto_step2.png" alt="">
+										<span class="text">서류점검</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 03</span>
+										<img src="../img/contents/picto_step3.png" alt="">
+										<span class="text">대면조사</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 04</span>
+										<img src="../img/contents/picto_step4.png" alt="">
+										<span class="text">입원적합성<br>조사보고서 작성</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 05</span>
+										<img src="../img/contents/picto_step5.png" alt="">
+										<span class="text">소위원회 개최</span>
+									</div>
+								</li>
+								
+							</ol>
+
+							<h5 class="s-title-2">.col로 column수 지정</h5>
+							<ol class="step-list type1 col3">
+								<li>
+									<div class="item">
+										<span class="num">01</span>
+										<span class="text">입원사실신고</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">02</span>
+										<span class="text">서류점검</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">03</span>
+										<span class="text">대면조사</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">04</span>
+										<span class="text">입원적합성<br>조사보고서 작성</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">05</span>
+										<span class="text">소위원회 개최</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">06</span>
+										<span class="text">결과통지</span>
+									</div>
+								</li>
+							</ol>
+							<ol class="step-list type2 col3">
+								<li>
+									<div class="item">
+										<span class="num">step 01</span>
+										<img src="../img/contents/picto_step1.png" alt="">
+										<span class="text">입원사실신고</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 02</span>
+										<img src="../img/contents/picto_step2.png" alt="">
+										<span class="text">서류점검</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 03</span>
+										<img src="../img/contents/picto_step3.png" alt="">
+										<span class="text">대면조사</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 04</span>
+										<img src="../img/contents/picto_step4.png" alt="">
+										<span class="text">입원적합성<br>조사보고서 작성</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 05</span>
+										<img src="../img/contents/picto_step5.png" alt="">
+										<span class="text">소위원회 개최</span>
+									</div>
+								</li>
+								<li>
+									<div class="item">
+										<span class="num">step 06</span>
+										<img src="../img/contents/picto_step6.png" alt="">
+										<span class="text">결과통지</span>
+									</div>
+								</li>
+							</ol>
+						</article>
+						<!-- //step -->		
+
+						<article class="guide-article" id="card">
+							<h4 class="s-title-1">카드(card)</h4>
+							<h5 class="s-title-2">.card</h5>
+							<div class="box-wrap col2">
+								<div class="card card-1">
+									<div class="card-header">직업재활 훈련 강화</div>
+									<div class="card-body">(프로그램) 단기 직업재활 프로그램 “손 job go” 만성정신질환자의 맞춤형 직업재활 프로그램으로 직업탐색, 면접, 구직훈련 등을 통해 취업동기 강화 및 사회복귀 촉귀</div>
+								</div>
+								<div class="card card-2 rowspan2">
+									<div class="card-header">전문화된 정신재활 프로그램 운영</div>
+									<div class="card-body">    
+										<div class="card-item">     
+											<strong class="title">전문치료 프로그램</strong>
+											<ul class="list-dot">
+												<li>인간관계훈련, 조현병환자 능력강화 프로그램(PEPS),
+													원예치료 등</li>
+											</ul>
+										</div>
+										<div class="card-item">
+											<strong class="title">정서강화 프로그램</strong>
+											<ul class="list-dot">
+												<li>합창, 시 낭송, 요가, 영화감상, 등 다양한 경험을 통해
+													삶의 질 향상, 발표회 및 작품전시회 등 계획</li>
+											</ul>
+										</div>
+										<div class="card-item">
+											<strong class="title">대집단행사 프로그램</strong>
+											<ul class="list-dot">
+												<li>정월대보름행사, 체육행사, 추석한가위잔치, 송년대잔치 등</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="card card-3">
+									<div class="card-header">사회적응훈련 강화</div>
+									<div class="card-body">사회적응 훈련을 확대 실시하여 공공시설이용, 대중교통 이용, 장보기, 은행업무, 캠프 등의 훈련으로 사회적응능력 강화</div>
+								</div>
+							</div>
+
+							<!-- <div class="card">									
+								<a href="" class="item">
+									<strong class="title">문장의 소리 제781회 : 2부 김유나 소설가</strong>
+									<p class="cont">문장의 소리 제781회 : 2부 김유나 소설가  문학광장 는 2005년 시작된 인터넷 문학 라디오 프로그램입니다. 2022년부터 시인 이영주, 소설가 김봄, 소설가 권혜영, 시인 최지은이 함께합니다.  - 3분 책방광고 : 전국 방방곡곡 특별한 책방을 홍보합니다. 단, 시간은 3분. - 당신의 첫 : 이제 막 활동을 시작한 신인들의 고군분투. 작가가 되기 위해 쏟았던 열정과 앞으로의 포부에 대해 이야기를 나눕니다.    김유나 소설가는 2020년 《창비》 신인문학상에 단편소설 「이름 없는 마음」이 당선되며 작품 활동을 시작하였다.  ● 3분 책방광고 : 제주도 한림읍 옹포리에 위치한 서점 &amp;lsquo;달리책방&amp;rsquo; ● 〈로고송〉 ● 2부 〈당신의 첫〉 / 김유나 소설가  Q. DJ 이영주 : 요즘 어떻게 지내고 계세요? A. 김유나 소설가 : 요새 주로 집에서 지내고요. 중편을 쓰고 있고, 단편을 같이 쓰고 있고요. 둘 다 마감이 12월에 있어서 열심히 쓰고 있습니다.  Q. 당선 연락이 왔을 때 어떤 일을 하고 계셨나요? A. 이사를 빨리해야 해서 부동산에서 집을 보러 오기로 한 날이었어요. 고무장갑 끼고 대청소를 하고 있었는데, 거실에서 휴대전화가 울렸어요. 거실만 다 끝내고 전화 다시 걸어야겠다 싶었는데, 전화를 걸려고 봤더니 &amp;lsquo;010&amp;rsquo;으로 번호가 시작하더라고요. 부동산이겠거니 싶어 전화를 다시 걸었는데 창비였어요.  Q. 수상 소식을 들은 주변 반응은 어땠나요? A. 다들 기뻐해 주셨어요. 저보다 더 많이 기뻐해 주셨고요. 아버지가 50부 정도 사고 싶다고 하셔서 사서 보내드렸는데, 사 드릴 때는 어디에다 드리나 싶었거든요. 저희 동네가 정육점 하나, 약국도 하나, 다 하나씩 있는 동네예요. 정육점에 고기를 사러 갔는데 가을호 계간지가 있더라고요. 동네 상가에 제 사진과 모든 신상을 돌리셔서 &amp;lsquo;저게 왜 저기에 있지? 저분은 나를 왜 알아보시지?&amp;rsquo; 싶었어요. 그게 인상 깊었어요.  Q. 소설을 쓰게 된 계기가 있으시다면? A. 초등학교 2학년 때 학교에서 부모님을 소환했던 때가 있어요. 개별적으로도 전화를 주셨더라고요. 제가 주의가 너무 산만하다고. 어린 저도 예상하긴 했었어요. 큰일 났다는 생각이었는데, 아버지가 선생님 만나고 나오시더니 냉면을 사 주시면서 환하게 웃으셨어요. 너 책이 재미있냐? 이렇게 물으셨어요. 좋다고 했고, 어린 저는 너무 의외였는데요. 알고 보니 선생님이 &amp;lsquo;유나가 산만하고 학업 성취도가 낮은데, 청소를 잘하고 책을 잘 읽는다, 디테일한 것까지 기억을 잘한다&amp;rsquo;고 말씀하셨던 거였어요. 아버지는 다른 건 쏙 빼놓고 좋은 것만 기억하신 거였고요. 그때부터 내가 책을 좀 좋아하나? 하는 생각에 계속 읽고, 썼던 것 같아요.  ※《문장의 소리》는 코로나바이러스감염증-19 예방을 위해 스튜디오 소독 등 방역 지침을 준수하여 제작되었습니다. 원고정리 : 강유리   문장의 소리 제781회는 팟빵과 팟캐스트, 네이버 오디오클립을 통해서도 간편하게 들을 수</p>
+
+									<ul class="info">
+										<li class="writer">관리자</li>
+										<li><i class="ri-time-line"></i><span>2023-12-27</span></li>
+									</ul>
+								</a>
+								<a href="" class="item">
+									<strong class="title">문장의 소리 제780회 : 2부 이정화 시인</strong>
+									<p class="cont">문장의 소리 제780회 : 2부 이정화 시인  문학광장 는 2005년 시작된 인터넷 문학 라디오 프로그램입니다.</p>
+									<ul class="info">
+										<li class="writer">관리자</li>
+										<li><i class="ri-time-line"></i><span>2023-12-20</span></li>
+									</ul>
+								</a>
+							</div>	
+							<h5 class="s-title-2">.col3 :  3칼럼</h5>
+							<div class="card col3">
+								<a href="#" class="item">
+									<em class="badge bg1">시</em>
+									<span class="thumb"><img src="../img/guide/s3_editor_sample_img1.png" alt=""></span>
+									<strong class="title">염원</strong>
+								</a>							
+								<a href="#" class="item">
+									<em class="badge bg2">소설</em>
+									<span class="thumb"><img src="../img/guide/s2_main_concert1.jpg" alt=""></span>
+									<strong class="title">내가 글을 계속 쓰는 이유</strong>
+								</a>							
+								<a href="#" class="item">
+									<em class="badge bg3">수필</em>
+									<span class="thumb"><img src="../img/contents/noimage.jpg" alt=""></span>
+									<strong class="title">짝사랑을 해본 적이 있나요?</strong>
+								</a>
+							</div>
+							<h5 class="s-title-2">.col4 :  4칼럼</h5>
+							<div class="card col4">
+								<a href="#" class="item">
+									<em class="badge bg1">시</em>
+									<span class="thumb"><img src="../img/guide/s3_editor_sample_img1.png" alt=""></span>
+									<strong class="title">염원</strong>
+								</a>							
+								<a href="#" class="item">
+									<em class="badge bg2">소설</em>
+									<span class="thumb"><img src="../img/guide/s2_main_concert1.jpg" alt=""></span>
+									<strong class="title">내가 글을 계속 쓰는 이유</strong>
+								</a>							
+								<a href="#" class="item">
+									<em class="badge bg3">수필</em>
+									<span class="thumb"><img src="../img/contents/noimage.jpg" alt=""></span>
+									<strong class="title">짝사랑을 해본 적이 있나요?</strong>
+								</a>
+								<a href="#" class="item">
+									<em class="badge bg4">수필</em>
+									<span class="thumb"><img src="../img/contents/noimage.jpg" alt=""></span>
+									<strong class="title">짝사랑을 해본 적이 있나요?</strong>
+								</a>
+							</div> -->
+	
+						</article>
+						<!-- //card -->
+
+						<article class="guide-article" id="grid">
+							<h4 class="s-title-1">그리드(grid) : .col, .col2 ~ .col5</h4>
+							<h5 class="s-title-2">세로형태 : .col</h5>
+							<div class="box-wrap col">
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>								
+							</div>
+
+							<h5 class="s-title-2">2칸 배열 : .col2</h5>
+							<div class="box-wrap col2">
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>	
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>								
+							</div>
+							<h5 class="s-title-2">3칸 배열 : .col3</h5>
+							<div class="box-wrap col3">
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>	
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>								
+							</div>
+							<h5 class="s-title-2">4칸 배열 : .col4</h5>
+							<div class="box-wrap col4">
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>	
+								<div class="box border"></div>
+								<div class="box border"></div>
+								<div class="box border"></div>								
+							</div>
+							
+							<h5 class="s-title-2">줄칸 병합 : rowspan, colspan</h5>
+							<div class="box-wrap col3">
+								<div class="box border">국방과학연구소는 변화와 개혁, 연구활동을 통해 국가안보를 기술력으로 보장하는 세계수준의 첨단연구소 입니다.</div>
+								<div class="box border">국방과학연구소는 변화와 개혁, 연구활동을 통해 국가안보를 기술력으로 보장하는 세계수준의 첨단연구소 입니다.</div>
+								<div class="box border rowspan2">rowspan2</div>
+								<div class="box border colspan2">colspan2</div>
+							</div>
+	
+						</article>
+						<!-- //card -->
+
+						<article class="guide-article" id="accordion">
+	
+							<h4 class="s-title-1">아코디언(accordion)</h4>
+							<div class="accordion">
+								<details>
+									<summary class="aco-title">
+										<strong class="title"><!-- <span class="category">Q</span> -->원자력 규제기관이란?</strong>
+										<i class="arrow ri-arrow-down-s-line"></i>
+									</summary>
+									<div class="aco-cont">
+										<!-- <span class="category">A</span> -->
+										<div class="cont">
+											<p>'규제(規制)'는 법에 따라 권리를 허락하거나 제한하는 일을 말합니다. 운전 면허, 특허, 인가, 허가, 승인 같은 것들도 모두 규제의 일부라고
+												할 수 있습니다.</p>
+											<p>원자력 규제 역시 마찬가지입니다. 원자력 규제의 목표는 원자력을 이용할때 생길 수 있는 위험으로부터 사람과 자연을 보호 하려는 것이에요. 원자력
+												규제를 책임지고 시행하는 기관을 원자력 규제기관이라고 합니다.</p>
+											<p>원자력의 연구, 개발, 생산, 이용에 따른 안전관리를 통해 방사선에 의한 재해방지와 공공의 안전을 도모하는 것입니다.</p>
+										</div>	
+									</div>
+								</details>
+								<details> 
+									<summary class="aco-title">
+										<strong class="title">우리나라의 원자력규제기관은?</strong> 
+										<i class="arrow ri-arrow-down-s-line"></i>
+									</summary>
+									<div class="aco-cont">
+										<p>우리나라의 원자력 규제기관은 원자력안전위원회입니다. 원자력의 생산과 이용에 따른 방사선 위험으로부터 국민과 환경을 보호하기 위해 2011년 설립된
+											독립적 행정 기구 입니다.</p>
+										<p>원자력안전위원회의 주된 업무는 원자력과 방사선의 안전관리 및 감독, 방사능방재, 핵비확산 이행 등으로, 정부 내 타 부처와 차별되는 규제 업무를
+											수행합니다.</p>
+										<p>원자력안전위원회는 산하기관으로 한국원자력안전기술원과 한국원자력안전통제기술원, 그리고 한국원자력안전재단을 두고 있습니다.</p>
+									</div>
+								</details>
+								<details> 
+									<summary class="aco-title">
+										<strong class="title">원자력 규제의 대상은 무엇인가요?</strong> 
+										<i class="arrow ri-arrow-down-s-line"></i>
+									</summary>									
+									<div class="aco-cont">
+										<p>원자력발전소를 비롯한 원자력시설의 사업자(한국수력원자력(주), 한국원자력연구원), 핵연료주기사업자(한국원자력연료), 방사성폐기물
+											처리사업자(한국원자력환경공단) 등이 규제 대상입니다. 또한 방사성 동위원소 및 핵물질 이용 산업체와 이를 이용하는 병원, 대학, 연구기관 등
+											원자력과 방사선을 이용하는 저 시설에 대하여 규제를 시행합니다.</p>
+									</div>
+								</details>
+							</div>	
+							<!-- <ul class="accordion">
+								<li>
+									<button class="aco-title">
+										<strong class="title">원자력 규제기관이란?</strong>
+										<i class="arrow ri-arrow-down-s-line"></i>
+									</button>
+									<div class="aco-cont">
+										<p>'규제(規制)'는 법에 따라 권리를 허락하거나 제한하는 일을 말합니다. 운전 면허, 특허, 인가, 허가, 승인 같은 것들도 모두 규제의 일부라고
+											할 수 있습니다.</p>
+										<p>원자력 규제 역시 마찬가지입니다. 원자력 규제의 목표는 원자력을 이용할때 생길 수 있는 위험으로부터 사람과 자연을 보호 하려는 것이에요. 원자력
+											규제를 책임지고 시행하는 기관을 원자력 규제기관이라고 합니다.</p>
+										<p>원자력의 연구, 개발, 생산, 이용에 따른 안전관리를 통해 방사선에 의한 재해방지와 공공의 안전을 도모하는 것입니다.</p>
+	
+									</div>
+								</li>
+								<li> 
+									<button class="aco-title">
+										<strong class="title">우리나라의 원자력규제기관은?</strong> 
+										<i class="arrow ri-arrow-down-s-line"></i>
+									</button>
+									<div class="aco-cont">
+										<p>우리나라의 원자력 규제기관은 원자력안전위원회입니다. 원자력의 생산과 이용에 따른 방사선 위험으로부터 국민과 환경을 보호하기 위해 2011년 설립된
+											독립적 행정 기구 입니다.</p>
+										<p>원자력안전위원회의 주된 업무는 원자력과 방사선의 안전관리 및 감독, 방사능방재, 핵비확산 이행 등으로, 정부 내 타 부처와 차별되는 규제 업무를
+											수행합니다.</p>
+										<p>원자력안전위원회는 산하기관으로 한국원자력안전기술원과 한국원자력안전통제기술원, 그리고 한국원자력안전재단을 두고 있습니다.</p>
+									</div>
+								</li>
+								<li> 
+									<button class="aco-title">
+										<strong class="title">원자력 규제의 대상은 무엇인가요?</strong> 
+										<i class="arrow ri-arrow-down-s-line"></i>
+									</button>									
+									<div class="aco-cont">
+										<p>원자력발전소를 비롯한 원자력시설의 사업자(한국수력원자력(주), 한국원자력연구원), 핵연료주기사업자(한국원자력연료), 방사성폐기물
+											처리사업자(한국원자력환경공단) 등이 규제 대상입니다. 또한 방사성 동위원소 및 핵물질 이용 산업체와 이를 이용하는 병원, 대학, 연구기관 등
+											원자력과 방사선을 이용하는 저 시설에 대하여 규제를 시행합니다.</p>
+									</div>
+								</li>
+							</ul> -->
+	
+						</article>
+						<!-- //accordion -->
+						
+						
+						<article class="guide-article" id="dialog">
+							<h4 class="s-title-1">팝업(dialog)</h4>
+							<div class="box border btns">
+								<button type="button" class="btn type2 open-dialog" data-target="dialog1">팝업1</button>
+								<button type="button" class="btn type3 open-dialog" data-target="dialog2">팝업2</button>
+							</div>
+							
+							<dialog class="dialog" id="dialog1">
+								<div class="dialog-cont">
+									<div class="text-center">
+										<i class="icon-info">!</i>
+										<p class="desc-txt"><strong>저장 하시겠습니까?</strong></p>
+									</div>
+								</div>
+								<div class="dialog-foot">
+									<button type="button" class="btn btn-cancel">취소</button>
+									<button type="button" class="btn type3">확인</button>
+								</div>
+								<button class="btn-close"><i></i><span class="sr-only">팝업닫기</span></button>						
+							</dialog>
+							<!-- //dialog -->							
+
+							<dialog class="dialog" id="dialog2">
+								<div class="dialog-title">타이틀</div>
+								<div class="dialog-cont">
+									<div class="text-center">
+										<i class="icon-warning">?</i>
+										<p class="desc-txt"><strong>팝업2 레이어가 맞습니까? 내용이 길면 넓이가 늘어납니다.</strong></p>
+									</div>
+								</div>
+								<div class="dialog-foot">
+									<button type="button" class="btn btn-cancel">취소</button>
+									<button type="button" class="btn type3">확인</button>
+								</div>
+								<button type="button" class="btn-close"><i></i><span class="sr-only">팝업닫기</span></button>						
+							</dialog>
+							<!-- //dialog -->
+
+							
+
+						</article>
+						<!-- //modal -->
+	
+						<article class="guide-article" id="pagination">
+							<h4 class="s-title-1">페이징 (pagination)</h4>
+
+							<h5 class="s-title-2">.pagination</h5>
+							<div class="pagination">
+								<a href="" class="page-navi prev">이전</a>
+								<div class="page-links">
+									<a href="" class="page-link">1</a>
+									<span class="page-link link-dot"></span>
+									<a href="" class="page-link">5</a>
+									<a href="" class="page-link">6</a>
+									<a href="" class="page-link active">7</a>
+									<a href="" class="page-link">8</a>
+									<a href="" class="page-link">9</a>
+									<span class="page-link link-dot"></span>
+									<a href="" class="page-link">120</a>
+								</div>
+								<a href="" class="page-navi next">다음</a>
+							</div>
+							<!-- //pagination -->
+
+						</article>
+						<!-- //pagination -->
+	
+						<article class="guide-article" id="slider">
+	
+							<h4 class="s-title-1">슬라이더(swiper)</h4>
+							<div class="item-cont swiper swiper-container"> 
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href=""  class="item">
+											<em class="badge">d-6</em>
+											<strong class="date">08.10(목)</strong>
+											<p class="desc">2학기 등록고지 기한</p>
+											<span class="view">자세히보기 <i class="ri-arrow-right-s-line"></i></span>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href=""  class="item active">
+											<em class="badge">Now</em>
+											<strong class="date">08.10(목)</strong>
+											<p class="desc">2학기 등록고지 기한</p>
+											<span class="view">자세히보기 <i class="ri-arrow-right-s-line"></i></span>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href=""  class="item">
+											<em class="badge">d-6</em>
+											<strong class="date">08.10(목)</strong>
+											<p class="desc">2학기 등록고지 기한</p>
+											<span class="view">자세히보기 <i class="ri-arrow-right-s-line"></i></span>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href=""  class="item">
+											<em class="badge">d-6</em>
+											<strong class="date">08.10(목)</strong>
+											<p class="desc">2학기 등록고지 기한</p>
+											<span class="view">자세히보기 <i class="ri-arrow-right-s-line"></i></span>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href=""  class="item">
+											<em class="badge">d-6</em>
+											<strong class="date">08.10(목)</strong>
+											<p class="desc">2학기 등록고지 기한</p>
+											<span class="view">자세히보기 <i class="ri-arrow-right-s-line"></i></span>
+										</a>
+									</div>
+								</div>
+								<!-- //swiper-wrapper -->
+								<div class="swiper-scrollbar"></div>
+								<button class="swiper-button swiper-button-prev">
+									<i class="ri-arrow-left-line"></i><span class="sr-only">이전</span>
+								</button>
+								<button class="swiper-button swiper-button-next">
+									<i class="ri-arrow-right-line"></i><span class="sr-only">다음</span>
+								</button>	
+								<div class="swiper-controls">
+									<div class="swiper-pagination"></div>
+									<div class="swiper-autoplay">
+										<button class="swiper-button-pause active" data-action="stop">
+											<i class="ri-pause-fill"></i><span class="sr-only">정지</span>
+										</button>
+										<button class="swiper-button-start" data-action="start">
+											<i class="ri-play-line"></i><span class="sr-only">시작</span>
+										</button>
+									</div>
+								</div>
+							</div>   
+							<!-- //item-cont swiper -->
+	
+							<script>
+								const swiperSlider = new Swiper(".swiper",  {
+									slidesPerView: 2,	
+									spaceBetween: 10,
+									/* centeredSlides: true, */
+									autoplay: {
+										delay: 2500,
+										disableOnInteraction: true,
+									},
+									scrollbar: {
+										el: ".swiper-scrollbar",
+										dragSize: "100%"
+									},
+									pagination: {
+										el: '.swiper-pagination',
+										clickable: true,
+										//type: 'fraction'
+									},
+									navigation: {
+										nextEl: '.swiper-button-next',
+										prevEl: '.swiper-button-prev',
+									},									
+									breakpoints: {
+										1024: {
+											slidesPerView: 4,			
+											spaceBetween: 30
+										}		
+									}
+								});
+
+								//썸네일 연결시 포커스 클릭
+								$(function(){
+									$('.thumb .swiper-slide').each(function(index){
+										$(this).attr('tabindex', 0);
+										$(this).on('keydown', function(e){
+											if(e.key === 'Enter' || e.key === ''){
+												e.preventDefault();
+												swiper.slideTo(index);
+												swiper2.slideTo(index);
+											}
+										})
+									})
+								})
+							</script>
+						</article>
+						<!-- //slider -->
+
+						
+
+					</section>
+
+					<section id="contInfo">
+						<h3 class="s-title-1" id="contInfo">담당자정보</h3>
+						<div class="in-charge">
+							<strong class="title">담당자정보</strong>
+							<ul class="cont">
+								<li><span>담당부서</span><strong>전략기획부</strong></li>
+								<li><span>담당자</span><strong>황지은</strong></li>
+								<li><span>문의처</span><strong>044-211-1100</strong></li>
+							</ul>
+						</div>
+											
+						<div class="cont-info">
+							<div class="kogl">
+								<img src="../img/contents/open_type4.png" alt="공공누리 제 4유형">
+								본 저작물은 <strong class="point">공공누리 제 4유형: 출처표시 + 상업적 이용금지 + 변경금지"</strong> 조건에 따라 이용할 수 있습니다.
+							</div>
+							<ul class="incharge">
+								<li><strong>관리부서</strong><span>미디어홍보팀</span></li>
+								<li><strong>담당자</strong><span>안길동</span></li>
+								<li><strong>전화번호</strong><span>02-000-0000</span></li>
+							</ul>
+							<div class="satisfaction-survey form">
+								<div class="survey-radio">
+									<div class="title"><i class="xi-comment-o"></i><span class="txt">이 페이지에서 제공하는 정보에 대하여
+											어느정도 만족하셨습니까?</span></div>
+									<ul class="radio-list custom-input">
+										<li><input type="radio" id="satisfy05" name="grade" value="5" title="매우만족 선택"><label
+												for="satisfy05">매우만족</label></li>
+										<li><input type="radio" id="satisfy04" name="grade" value="4" title="만족 선택"><label
+												for="satisfy04">만족</label></li>
+										<li><input type="radio" id="satisfy03" name="grade" value="3" title="보통 선택"><label
+												for="satisfy03">보통</label></li>
+										<li><input type="radio" id="satisfy02" name="grade" value="2" title="불만족 선택"><label
+												for="satisfy02">불만족</label></li>
+										<li><input type="radio" id="satisfy01" name="grade" value="1"
+												title="매우불만족 선택"><label for="satisfy01">매우불만족</label></li>
+									</ul>
+								</div>
+								<div class="opinion">
+									<input type="text" id="" name="" class="form-control" title="만족도 입력"
+										placeholder="의견을 남겨주세요."> <button type="submit" class="btn">등록</button>
+								</div>
+							</div>
+						</div>
+						<!-- //cont-info -->
+					</section>
+					<!-- //contInfo -->
+
+
+				</section><!--//content-->
+			</div>
+			<!--//contentWrap-->
+
+			<a href="#wrap" class="go-top fixed"><i class="ri-arrow-up-s-line" aria-hidden="true"></i><span>TOP</span></a>
+		</main>
+		<footer class="footer"></footer>
+		
+	</div>
+	<!-- //wrap -->
+	
+	<!-- 공통 JS -->
+	<script src="../js/func.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 서브 JS -->
+	<script src="../js/sub.js"></script>
+
+	<!-- 가이드 JS -->
+	<script src="guide.js"></script>
+	
+</body>
+
+</html>

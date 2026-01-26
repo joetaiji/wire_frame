@@ -1,0 +1,5 @@
+{
+  "liveSassCompile.settings.includeItems": [
+    "/project/css/scss/**/*.scss"
+  ]
+}

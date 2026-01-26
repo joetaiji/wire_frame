@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+	<meta name="title" content="">
+	<meta name="description" content="">
+	<meta name="keyword" content="">
+	<meta name="copyright" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="http://localhost/?">
+	<meta property="og:description" content="">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/layout/favicon_180px.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="../img/layout/favicon_192px.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/layout/favicon_32px.png">
+	<title>스타일가이드</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/output.css">
+	<link rel="stylesheet" href="../css/board.css">
+	<link rel="stylesheet" href="guide.css">
+
+	<!-- 공통 JS -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/swiper-bundle.min.js"></script>
+
+</head>
+
+<body class="guide">
+
+	<div id="wrap">
+		<header>
+			<h1><img src="logo.png" alt="web style guide"></h1>
+			<p class="menu">
+				<a href="guide_rule.html">규칙가이드</a>
+				<a href="guide_common.html">기본스타일</a>
+				<a href="board_list.html" class="active">게시판</a>
+			</p>
+		</header>
+
+		<main id="container">
+			<div class="inner in-between">
+				<section id="snb" class="left-menu">
+					<div class="snb" data-active="0">
+						<nav class="list">
+							<ul id="left_menu_top" class="head_menu_depth">
+								<li class="active is-depth3">
+									<a href="#">Board</a>
+									<ul class="depth3">
+										<li><a href="board_list.html">list</a></li>
+										<li><a href="board_view.html">view</a></li>
+										<li class="active"><a href="board_write.html">write</a></li>
+									</ul>
+								</li>
+								<li class="is-depth3">
+									<a href="#">Gallery</a>
+									<ul class="depth3">
+										<li class="active"><a href="gallery_list.html">list</a></li>
+									</ul>
+								</li>
+
+							</ul>
+						</nav>
+					</div>
+				</section>
+				<!-- //snb -->
+
+				<section id="contents" class="contents">
+					<h1 class="h-tit">게시판 쓰기</h1>
+					<div class="board">
+						<form action="" class="write-form">
+							<ul class="row-line form">
+								<li>
+									<label for="form1InputId" class="label">제목<i class="ic-star"><span
+												class="sr-only">필수입력</span></i></label>
+									<div class="label-cont form-row">
+										<input type="text" id="form1InputId" name="title" value="" title="제목을 입력하세요"
+											placeholder="제목을 입력하세요." class="form-item">
+									</div>
+								</li>
+								<li>
+									<label for="form1InputName" class="label">작성자</label>
+									<div class="label-cont">
+										<input type="text" id="form1InputName" name="m_name" readonly="readonly"
+											value="관리자" maxlength="12" title="작성자">
+									</div>
+								</li>
+								<li>
+									<label for="form1InputPw" class="label">비밀번호<i class="ic-star"><span
+												class="sr-only">필수입력</span></i></label>
+									<div class="label-cont">
+										<input type="password" id="form1InputPw" name="passwd" maxlength="12"
+											title="비밀번호를 입력하세요" value="">
+									</div>
+								</li>
+								<li>
+									<label for="form1TextArea" class="label">내용</label>
+									<div class="label-cont form-row">
+										<textarea name="content" id="form1TextArea" rows="10" title="내용을 입력하세요"
+											class="form-item"></textarea>
+									</div>
+								</li>
+								<li>
+									<strong class="label">파일첨부</strong>
+									<div class="label-cont">
+										<div class="file-add">
+											<div class="form-row file-input">
+												<input type="text" class="file-name form-item" readonly>
+												<label for="form1Upload1" class="file-label btn">찾아보기</label>
+												<input type="file" id="form1Upload1" class="file-upload">
+											</div>
+											<p class="note text-point"><span>jpg, gif, png</span>파일만 가능합니다.
+												업로드 용량제한 <span>5MB</span>
+											</p>
+											<ul class="file-list">
+												<li>
+													<a href="#" class="file-down">
+														<img src="../img/board/file_doc.png" alt="">
+														<span class="text">[보도참고자료] 응급의료포털 통해 지역, 질환, 지원치료별 암 진료협력병원 정보
+															확인 가능.doc</span>
+														<span class="file-size">(112KB)</span>
+													</a>
+													<span class="link">
+														<button class="btn xsm file-delete" href="">삭제하기<i
+																class="ri-close-fill" aria-hidden="true"></i></button>
+													</span>
+												</li>
+												<li>
+													<a href="#" class="file-down">
+														<img src="../img/board/file_img.png" alt="">
+														<span class="text">154873973477000.jpg</span>
+														<span class="file-size">(65KB)</span>
+													</a>
+													<span class="link">
+														<button class="btn xsm file-delete" href="">삭제하기<i
+																class="ri-close-fill" aria-hidden="true"></i></button>
+													</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</form>
+						<!-- //write_form -->
+						<div class="btns">
+							<button type="button" class="btn">취소</button>
+							<button type="button" onclick="ins('ins'); return false;" class="btn primary">등록</button>
+						</div>
+
+					</div>
+					<!--//board-->
+
+				</section><!--//content-->
+			</div>
+			<!--//contentWrap-->
+
+			<a href="#wrap" class="go-top fixed"><i class="ri-arrow-up-s-line"
+					aria-hidden="true"></i><span>TOP</span></a>
+		</main>
+		<footer class="footer">COPYRIGHTⓒ 2024 Plan I. ALL RIGHTS RESERVED.</footer>
+
+	</div>
+	<!-- //guide -->
+
+	<!-- 공통 JS -->
+	<script src="../js/func.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 서브 JS -->
+	<script src="../js/sub.js"></script>
+
+	<!-- 가이드 JS -->
+	<script src="guide.js"></script>
+
+</body>
+
+</html>

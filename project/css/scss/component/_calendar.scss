@@ -1,0 +1,207 @@
+@use "../mixin" as m;
+
+/* ==========================================================================================
+//Calendar
+============================================================================================*/
+.calendar {
+	&-select {
+		@include m.flex(5rem, center, center);
+		margin-bottom: 2rem;
+
+		strong {
+			font-size: 4.2rem;
+			color: (--gray-80);
+		}
+
+		button {
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+			transition: 0.2s;
+
+			&::before {
+				content: "";
+				font-family: var(--icon);
+				font-size: 2.8rem;
+				display: block;
+			}
+
+			&.btn-prev::before {
+				content: '\e93b';
+			}
+
+			&.btn-next::before {
+				content: '\e93e';
+			}
+
+			&:hover {
+				box-shadow: .3rem .3rem 1rem rgba(0, 0, 0, .13);
+			}
+		}
+	}
+
+	&-list {
+		overflow: hidden;
+
+		.sun {
+			color: var(--point-60);
+		}
+
+		.sat {
+			color: var(--blue);
+		}
+
+		.other-month {
+			background: var(--gray-5);
+		}
+	}
+
+	.bhead {
+		border-top: .3rem solid var(--gray-90);
+		border-bottom: 1px solid var(--gray-30);
+
+		ul {
+			display: flex;
+		}
+
+		li {
+			text-align: center;
+			padding: 1.5rem;
+			flex: 1;
+			color: var(--gray-90);
+		}
+	}
+
+	.bbody {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -1px;
+
+		.daybox {
+			flex: 1 1 20%;
+			padding: 1.6rem;
+			min-height: 14rem;
+			border: 1px solid var(--gray-30);
+			margin: -1px 0 0 -1px;
+			font-size: 1.5rem;
+
+			.day-num {
+				color: var(--gray-90);
+			}
+
+			.day-list {
+				li {
+					@include m.flex(1rem, flex-start);
+					margin-top: 1rem;
+				}
+
+				p {
+					margin-top: 0.4rem;
+				}
+			}
+
+			.more {
+				color: var(--gray-50);
+			}
+
+			.time-am {
+				padding: 0.3rem .6rem;
+				border-radius: 0.4rem;
+				color: var(--primary-60);
+				background: var(--primary-5);
+			}
+
+			.time-pm {
+				padding: 0.3rem .6rem;
+				border-radius: 0.4rem;
+				color: #397e1b;
+				background: #f0f7ee;
+			}
+
+			&:empty {
+				background: var(--gray-5);
+			}
+		}
+
+		.today {
+			.day-num {
+				@include m.circle(3rem);
+				background: var(--primary-50);
+				color: var(--gray-0);
+
+				+* {
+					margin-top: -.5rem;
+				}
+			}
+		}
+
+		.holiday {
+			.holiday-name {
+				margin-top: 1rem;
+
+				span {
+					padding: 0.3rem .6rem;
+					border-radius: 0.4rem;
+					color: var(--point-60);
+					background: var(--point-5);
+				}
+			}
+		}
+	}
+
+	&.nodata {
+		text-align: center;
+		background: var(--gray-5);
+		padding: 5rem;
+		color: var(--gray-90);
+		font-size: 2.1rem;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 5.4rem;
+			height: 5.4rem;
+			margin: 0 auto 1rem;
+			background: url(#{m.$url}/contents/picto_calendar.png) 0 0/contain no-repeat;
+		}
+	}
+}
+
+@include m.media(m.$mobile) {
+	.calendar {
+		.bhead {
+			display: none;
+		}
+
+		.bbody {
+			display: block;
+			border-top: 2px solid var(--gray-90);
+
+			.daybox {
+				display: flex;
+				gap: 1rem;
+				min-height: auto;
+
+				.day-num {
+					width: 3rem;
+				}
+
+				.day-list {
+					@include m.flex(2rem);
+
+					li {
+						margin-top: 0;
+					}
+				}
+
+				&:empty {
+					display: none;
+				}
+			}
+
+			.holiday .holiday-name {
+				margin-top: 0;
+			}
+		}
+	}
+}

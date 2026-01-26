@@ -1,0 +1,214 @@
+@use "../mixin" as m;
+
+/* box */
+.box {
+    color: var(--gray-90);
+    padding: 4rem;
+
+    &.bg-white {
+        background-color: var(--gray-0);
+    }
+
+    &.border {
+        border: 1px solid var(--gray-30);
+    }
+
+    &.round {
+        border-radius: var(--radius-large);
+    }
+
+    &.narrow {
+        padding: 1.6rem 2rem;
+
+        &.round {
+            border-radius: 0.8rem;
+        }
+    }
+
+    &.flex-box {
+        @include m.flex(2.4rem, center);
+    }
+
+    //&.vertical { @include m.flex(2rem, center, $fd:column); }
+    &.lg {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+
+    .picto-wrap {
+        text-align: center;
+    }
+
+    .cont {
+        flex: 1;
+    }
+
+    .title {
+        font-size: 2.4rem;
+        display: block;
+        position: relative;
+
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
+
+        &:has(+*) {
+            margin-bottom: 1.6rem;
+        }
+
+        small {
+            color: var(--gray-70);
+        }
+
+        &:has(.icon) {
+            padding-left: 5.2rem;
+
+            +.dash {
+                margin-top: 1.2rem;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3.6rem;
+            height: 3.6rem;
+        }
+    }
+
+    .s-title {
+        font-size: 1.9rem;
+        display: block;
+
+        &:has(+*) {
+            margin-bottom: .8rem;
+        }
+    }
+
+    /* //인포용
+        &.border-top { margin-bottom: 3.4rem; 
+            border-top: 2px solid; border-image: linear-gradient(to right, var(--primary-60), var(--primary-40)); border-image-slice: 1; background: var(--gray-5);
+            img { margin: .4rem auto 0;}
+            .s-title { font-size: 1.9rem;}
+            &:has(ul) { align-items: flex-start;}
+            .list-dot>li::before { background: var(--gray-70);}
+        } 
+        //공지용
+        &.pattern { margin-bottom: 4rem; border:9px solid; border-image: url('#{m.$url}/contents/box_pattern.gif') 9 / 9px round;
+            .picto { width: 10rem; height: 10rem;}
+            .s-title { font-size: 1.9rem;}
+        }
+        //타이틀용    
+        &.title-box { border: 1px solid #b8d7fd; background: linear-gradient(to right, #e5f2fd, #f2f9ff);margin-bottom: 4rem; padding: 4.8rem;
+            .picto { background: none; width: auto; height: auto;
+                img { max-height: initial;}
+            }
+            .cont {
+                .title { font-size: 2.8rem;} 
+            }
+        }
+        //준비용
+        &.ready { padding: 8rem; @include flex(null, center, center, column);
+            .title { font-size: 3.2rem; margin-top: 2.8rem;}
+        }
+         */
+}
+
+.info-box,
+.title-box {
+    border: 1px solid var(--gray-20);
+    border-radius: var(--radius-large);
+    margin: 2.4rem 0;
+    background: var(--gray-5);
+    padding: 4rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.img-box {
+    border: 1px solid var(--gray-20);
+    border-radius: var(--radius-xlarge);
+    margin: 2.4rem 0;
+    text-align: center;
+    padding: 6.4rem 2.4rem;
+}
+
+.helper-box {
+    padding: 1.6rem 2rem;
+    background: var(--gray-5);
+    border: 1px solid var(--gray-30);
+    border-radius: var(--radius-large);
+    font-size: 1.5rem;
+    position: relative;
+    margin-top: 1.6rem;
+
+    .ic-warning {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.8rem;
+        height: 1.8rem;
+
+        &::after {
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+    }
+
+    .helper-tit {
+        @include m.flex(1rem, center);
+        position: relative;
+        padding-left: 2rem;
+
+        +.helper-desc-wrap {
+            margin-top: .8rem;
+        }
+    }
+
+    .helper-desc-wrap {
+        position: relative;
+        padding-left: 2rem;
+    }
+
+    .btn.xsm {
+        height: 2.5rem;
+    }
+}
+
+//박스가 여러개일때 
+.box-wrap {
+    @include m.flex(2.4rem);
+    margin: 2.4rem 0;
+    padding: 0;
+
+    >* {
+        flex: 1;
+    }
+}
+
+
+
+
+@include m.media(m.$mobile) {
+
+    .box,
+    .info-box,
+    .title-box {
+        padding: 2.4rem;
+    }
+
+    .box-wrap {
+        flex-direction: column;
+
+        .box {
+            padding: 2.4rem;
+        }
+    }
+}

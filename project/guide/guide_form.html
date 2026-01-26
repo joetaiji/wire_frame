@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+	<meta name="title" content="">
+	<meta name="description" content="">
+	<meta name="keyword" content="">
+	<meta name="copyright" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="http://localhost/?">
+	<meta property="og:description" content="">
+	<meta name="theme-color" content="#003675">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/layout/favicon_180px.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../img/layout/favicon_192px.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/layout/favicon_32px.png">
+	<title>스타일가이드 V3</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/output.css">
+	<link rel="stylesheet" href="guide.css">
+
+	<!-- 공통 JS -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/swiper-bundle.min.js"></script>
+	
+</head>
+
+<body id="wrap">
+	<div id="guide" class="guide">
+		<header>
+            <h1><img src="logo.png" alt="web style guide"></h1> 
+            <p class="menu">
+                <a href="guide_rule.html">규칙가이드</a>
+                <a href="guide_common.html" class="active">기본스타일</a>
+                <a href="board_list.html">게시판</a>
+            </p>
+        </header>
+		
+		<main id="container">	
+
+			<div class="inner in-between">
+				<section id="snb" class="left-menu">
+					<div class="snb" data-active="2">
+						<nav class="list">
+							<ul id="left_menu_top" class="head_menu_depth">
+								<li class="is-depth3">
+									<a href="guide_common.html">Common</a>
+									<ul class="depth3">
+										<li><a href="guide_common.html#typography">typography</a></li>
+										<li><a href="guide_common.html#color">color</a></li>
+										<li><a href="guide_common.html#userDefine">user_define</a></li>
+									</ul>
+								</li>
+								<li class="is-depth3">
+									<a href="guide_component.html">Components</a>
+									<ul class="depth3">
+										<li><a href="guide_component.html#tab">tab</a></li>
+										<li><a href="guide_component.html#box">box</a></li>
+										<li><a href="guide_component.html#heading">heading</a></li>
+										<li><a href="guide_component.html#list">list</a></li>										
+										<li><a href="guide_component.html#image">image</a></li>
+										<li><a href="guide_component.html#table">table</a></li>	
+										<li><a href="guide_component.html#button">button</a></li>
+										<li><a href="guide_component.html#card">card</a></li>
+										<li><a href="guide_component.html#accordion">accordion</a></li>
+										<!-- <li><a href="#alert">alert</a></li>
+										<li><a href="#badge">badge</a></li> -->
+										<li><a href="guide_component.html#dialog">modal(dialog)</a></li>
+										<li><a href="guide_component.html#pagination">pagination</a></li>				
+										<li><a href="guide_component.html#slider">slider</a></li>											
+										<li><a href="guide_component.html#contInfo">콘텐츠정보</a></li>									
+									</ul>
+								</li>
+								<li class="is-depth3">
+									<a href="guide_form.html">Forms</a>
+									<ul class="depth3">
+										<li><a href="guide_form.html#formItem">form-item</a></li>
+										<li><a href="guide_form.html#formGroup">form-group</a></li>
+										<li><a href="guide_form.html#formInline">form-inline</a></li>
+										<li><a href="guide_form.html#formRow">form-row</a></li>
+									</ul>
+								</li>
+								
+							</ul>
+						</nav>
+					</div>
+				</section>
+				<!-- //snb -->		
+
+				<section id="contents" class="contents">
+					<section id="formSec">
+						<h1 class="h-tit">Forms (입력 폼 스타일)</h1>
+
+						<article class="guide-article form" id="formItem">
+						
+							<h4 class="s-title-1">폼 : .form</h4>
+							<ul class="row-line">
+								<li>
+									<label for="form1InputText" class="label">input[type=text]</label>
+									<div class="label-cont">
+										<input type="text" id="form1InputText" name=""
+										value="">
+									</div>
+								</li>
+								<li>
+									<label for="form1InputText2" class="label">필수 입력<i class="required" aria-required="true">*</i></label>
+									<div class="label-cont">
+										<input type="text" id="form1InputText2" name=""
+										value="" required>
+									</div>
+								</li>
+								<li>
+									<label for="form1InputReadonly" class="label">readonly</label>
+									<div class="label-cont">
+										<input type="text" id="form1InputReadonly" name=""
+										value="readonly" readonly>
+									</div>
+								</li>
+								<li>
+									<label for="form1InputDisabled" class="label">disabled</label>
+									<div class="label-cont">
+										<input type="text" id="form1InputDisabled" name=""
+										value="" disabled>
+									</div>
+								</li>
+								<li>
+									<label for="form1InputPw" class="label">input[type=password]</label>
+									<div class="label-cont">
+										<span class="form-item form-pw">
+											<input type="password" id="form1InputPw" name=""
+											value="">
+											<button class="btn-pw-view"><i class="ri-eye-line"></i><span class="sr-only">비밀번호 보기</span></button>
+										</span>
+										<p class="error invalid-feedback">
+											<i class="ri-check-line"></i>영문, 숫자, 특수문자를 포함한 10~20자 조합으로 입력해 주세요.
+										</p>
+										<p class="error invalid-feedback">
+											<i class="ri-check-line"></i>공백 및 3자 이상의 연속 또는 중복 문자는 사용 불가
+										</p>
+									</div>
+								</li>
+								<li>
+									<label for="form1InputDate" class="label">input[type=date]</label>
+									<div class="label-cont">
+										<div class="form-group">										
+											<input type="date" name="" id="form1InputDate" value="" title="시작일을 입력하세요." class="form-item">~
+											<input type="date" title="종료일을 입력하세요." class="form-item">
+										</div>										
+										<p class="error invalid-feedback">종료일은 시작일보다 빠를 수 없습니다.</p>
+									</div>
+								</li>
+								<!-- <li>
+									<label for="form1InputEmail" class="label">input[type=email]</label>
+									<div class="label-cont">
+										<input type="email" id="form1InputEmail" name=""
+										value="">
+									</div>
+								</li> -->
+								<li>
+									<label for="form1InputUrl" class="label">input[type=url]</label>
+									<div class="label-cont">
+										<input type="url" id="form1InputUrl" name=""
+										value="https://" pattern="https://.*" size="30">
+									</div>
+								</li>
+								<li>
+									<label for="form1InputNumber" class="label">input[type=number]</label>
+									<div class="label-cont">
+										<input type="number" id="form1InputNumber" name=""
+										value="" min="10" max="100" step="10">
+										<p class="error invalid-feedback">10 ~ 100, 10step</p>
+									</div>
+								</li>
+								<li>
+									<label for="form1Select1" class="label">select</label>
+									<div class="label-cont">
+										<select id="form1Select1" name="">
+											<option value="">분류 선택</option>
+											<option value="1">02</option>
+										</select>
+									</div>
+								</li>
+								<li>
+									<span class="label">input[type=checkbox]</span>
+									<div class="label-cont custom-input form-inline">
+										<span class="form-item">
+											<input type="checkbox" id="formInputChk3_1" name="" value=""><label for="formInputChk3_1">고혈압</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="formInputChk3_2" name="" value=""><label for="formInputChk3_2">당뇨</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="formInputChk3_3" name="" value=""><label for="formInputChk3_3">영양</label>
+										</span>	
+									</div>
+								</li>
+								<li>
+									<span class="label">input[type=radio]</span>
+									<div class="label-cont custom-input form-inline">
+										<span class="form-item">
+											<input type="radio" id="formSatisfy05" name="grade" value="5"><label for="formSatisfy05" class="satisfy05">매우만족</label>
+										</span>
+										<span class="form-item"><input type="radio" id="formSatisfy04" name="grade" value="4"><label for="formSatisfy04" class="satisfy04">만족</label></span>
+										<span class="form-item"><input type="radio" id="formSatisfy03" name="grade" value="3"><label for="formSatisfy03" class="satisfy03">보통</label></span>
+										<span class="form-item"><input type="radio" id="formSatisfy02" name="grade" value="2"><label for="formSatisfy02" class="satisfy02">불만</label></span>
+										<span class="form-item"><input type="radio" id="formSatisfy01" name="grade" value="1"><label for="formSatisfy01" class="satisfy01">매우불만</label></span>
+									</div>
+								</li>
+								<li>
+									<label for="form1TextArea" class="label">textarea</label>
+									<div class="label-cont">
+										<div class="form-row">
+											<textarea id="form1TextArea" name="" rows="10" class="form-item"></textarea>
+										</div>
+										<div class="textarea-foot">
+											<i class="ri-error-warning-fill mr1"></i><span class="note">200자 이내로 작성해 주세요.(공백포함)</span>
+											<span class="text-maxsize">0/500</span>	
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="btns both">
+								<button type="reset" class="btn">취소</button>
+								<button type="submit" class="btn primary">확인</button>
+							</div>
+							<script>
+								var inputTitle = $("#form1InputText2:invalid").attr("title");
+								console.log(inputTitle);
+							</script>
+						</article>	
+						<!--//form-item  -->						
+						
+						<article class="guide-article form" id="formGroup">
+							<h4 class="s-title-1">form-group : 폼 요소(form-item)의 묶음으로 블럭 형태</h4>
+							<ul class="list-dot mb1">
+								<li>화면이 줄어들때 줄이 바뀌지 않고 요소들이 꽉 찬 형태로 바뀝니다.</li>								
+							</ul>
+
+							<ul class="row-line">
+								<li>
+									<label for="form2Select1" class="label">전화번호</label>
+									<div class="label-cont">
+										<div class="form-group">
+											<select id="form2Select1" name="" class="form-item">
+												<option value="">지역번호</option>
+												<option value="1">02</option>
+											</select>
+											<span class="form-item">-</span>
+											<input type="text" class="form-item" name=""
+												value="" maxlength="4" size="4" title="전화번호 두번째 자리 입력">
+											<span class="form-item">-</span>
+											<input type="text" class="form-item" name=""
+												value="" maxlength="4" size="4" title="전화번호 세번째 자리 입력">
+										</div>
+									</div>
+								</li>
+								<li>
+									<label for="form2Email" class="label">이메일</label>
+									<div class="label-cont">
+										<div class="form-group">
+											<input class="form-item" type="text" name="title" id="form2Email" value="" title="메일아이디">
+											<span class="form-item"> @ </span>
+											<input class="form-item domain-input" type="text" name="title" value="" title="이메일 주소 직접입력"> 
+											<select class="form-item domain-select" title="이메일 주소 선택">
+												<option value="">직접입력</option>
+												<option value="naver.com">naver.com</option>
+												<option value="daum.net">daum.net</option>
+												<option value="gmail.com">gmail.com</option>
+											</select>
+										</div>
+									</div>
+								</li>
+								<li>
+									<label for="form2Zipcode" class="label">우편번호</label>
+									<div class="label-cont">
+										<div class="form-group mb1">
+											<input type="text" id="form2Zipcode" placeholder="우편번호"  class="form-item" maxlength="6" size="6">
+											<button type="button" class="btn gray2">우편번호</button>
+										</div>
+										<div class="form-row mb1">
+											<input type="text" placeholder="주소" title="기본 주소" class="form-item">
+										</div>
+										<div class="form-row">
+											<input type="text" placeholder="나머지 주소" title="상세 주소" class="form-item">
+										</div>
+									</div>
+								</li>								
+									
+							</ul>
+						</article>
+						<!-- //form-group -->
+
+						<article class="guide-article form" id="formInline">
+							<h4 class="s-title-1">form-inline : 폼 요소(form-item)의 묶음으로 인라인형태</h4>
+							<ul class="list-dot mb1">
+								<li>화면이 줄어들때 요소들이 늘어나지 않으면서 줄이 바뀝니다.</li>		
+							</ul>
+
+							<ul class="row-line">
+								<li>
+									<span class="label">input[type=checkbox]</span>
+									<div class="label-cont custom-input form-inline">
+										<span class="form-item">
+											<input type="checkbox" id="form2InputChk3_1" name="cs_health_field" value="고혈압"><label for="form2InputChk3_1">고혈압</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="form2InputChk3_2" name="cs_health_field" value="당뇨"><label for="form2InputChk3_2">당뇨</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="form2InputChk3_3" name="cs_health_field" value="영양"><label for="form2InputChk3_3">영양</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="form2InputChk3_4" name="cs_health_field" value="흡연"><label for="form2InputChk3_4">흡연</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="form2InputChk3_5" name="cs_health_field" value="음주"><label for="form2InputChk3_5">음주</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="form2InputChk3_6" name="cs_health_field" value="신체활동"><label for="form2InputChk3_6">신체활동</label>
+										</span>
+										<span class="form-item">
+											<input type="checkbox" id="formInputChk3_10" name="cs_health_field" value="수면"><label for="formInputChk3_10">수면</label>
+										</span>											
+										<span class="form-item">
+											<input type="checkbox" id="form2InputChk3_etc" value="etc"><label for="form2InputChk3_etc" class="mr15">기타</label>
+											<input type="text" id="etcInput" name="" value="" disabled="disabled">
+										</span>
+										
+									</div>
+								</li>
+							</ul>
+						</article>
+						<!-- //form-inline -->
+
+						<article class="guide-article form" id="formRow">
+							<h4 class="s-title-1">form-row</h4>
+							<ul class="list-dot">
+								<li>처음부터 요소들이 꽉 찬 형태</li>
+							</ul>
+							<ul class="row-line">
+								<li>
+									<label for="" class="label">제목</label>
+									<div class="label-cont">
+										<div class="form-row">
+											<input type="text" class="form-item">
+										</div>										
+									</div>
+								</li>	
+								<li>
+									<label for="" class="label">첨부파일</label>
+									<div class="label-cont">
+										<div class="form-row file-input">
+											<input type="text" class="file-name form-item" readonly="">
+											<input type="file" id="form1Upload1" class="file-upload ">
+											<label for="form1Upload1" class="file-label btn text-primary">찾아보기</label>
+											
+										</div>				
+									</div>
+								</li>								
+							</ul>
+	
+						</article>
+						<!-- //form-row -->
+
+					</section>
+					<!-- //formSec -->
+
+				</section><!--//content-->
+			</div>
+			<!--//contentWrap-->
+
+			<a href="#wrap" class="go-top fixed"><i class="ri-arrow-up-s-line" aria-hidden="true"></i><span>TOP</span></a>
+		</main>
+		<footer class="footer">COPYRIGHTⓒ 2024 Plan I. ALL RIGHTS RESERVED.</footer>
+		
+	</div>
+	<!-- //guide -->
+	
+	<!-- 공통 JS -->
+	<script src="../js/func.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 서브 JS -->
+	<script src="../js/sub.js"></script>
+
+	<!-- 가이드 JS -->
+	<script src="guide.js"></script>
+
+</body>
+
+</html>

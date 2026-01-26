@@ -1,0 +1,95 @@
+@use "../mixin" as m;
+
+/* card */
+.card {
+	@include m.flex($fd: column);
+	border: 1px solid rgba(#808080, .4);
+	background: var(--gray-0);
+	border-radius: var(--radius-large);
+
+	&-header {
+		display: flex;
+		padding: 1.2rem 0;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 0.4rem;
+		align-self: stretch;
+		background: var(--gray-5, #F4F5F6);
+		border-radius: var(--radius-large) 1.2rem 0 0;
+	}
+
+	&-body {
+		padding: 2rem 3rem;
+
+		strong {
+			color: var(--gray-90);
+		}
+	}
+
+	&-item~&-item {
+		border-top: 1px dashed var(--gray-30);
+		padding-top: 2rem;
+		margin-top: 2rem;
+	}
+
+	$bgs: (
+		"-1": #102c74,
+		"-2": #1b7eb4,
+		"-3": #1d4ca8
+	);
+
+@each $name, $bg in $bgs {
+	&#{$name} {
+		.card-header {
+			background: $bg;
+		}
+
+		.list-order>li i {
+			background: $bg;
+		}
+	}
+}
+}
+
+/* .title {
+		font-size: 2.4rem; font-weight: 600;		
+
+		+ .cont { margin-top: 2rem; }
+	}
+	.info {
+		color: var(--gray7); @include m.flex(1rem); margin-top: auto;
+
+		li { @include m.flex(.5rem, center); 
+			~ li{ @include m.bullet(.5rem, .5rem, var(--gray-30), 50%, 50%); }
+		}
+	}
+	.thumb { overflow: hidden; background: #000; height: 18rem; 
+		img { transition: 0.3s; width: 100%; height: 100%; object-fit: cover; }
+	} 
+	.cont { @include m.ellipsis-multi(5); }
+	a:hover { text-decoration: none; background: var(--gray-5);
+		.title { text-decoration: underline; }	
+		img { opacity:.7; transform:scale(1.1);}
+	}
+	*/
+/* 썸네일 비례적으로 줄어들게
+	.thumb { overflow: hidden; background: #000; height: 0; padding-bottom: 60%; position: relative; 
+		img { transition: 0.3s; width: 100%; height: 100%; object-fit: cover; @include m.pos(lt, 0, 0);}
+	} */
+
+
+
+@include m.media(m.$mobile) {
+	.card {
+		grid-template-columns: 1fr;
+
+		.item {
+			padding: 2rem;
+		}
+
+		&-body {
+			padding: 2rem 1.5rem;
+		}
+	}
+}
