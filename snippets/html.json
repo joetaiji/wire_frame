@@ -1,0 +1,353 @@
+{
+    // Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    "메인 html": {
+        "prefix": [
+            "main-html",
+            "html-main"
+        ],
+        "body": [
+            "<!doctype html>",
+            "",
+            "<html lang=\"ko\">",
+            "\t<head>",
+            "\t\t<meta charset=\"UTF-8\" />",
+            "\t\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes\" />",
+            "",
+            "\t\t<title>${1:메인 퍼블리싱}</title>",
+            "",
+            "\t\t<!-- 폰트 CSS -->",
+            "\t\t<link rel=\"stylesheet\" href=\"/resources/fonts/notosans/font_notosans.css\" />",
+            "\t\t<link rel=\"stylesheet\" href=\"/resources/fonts/pretendard/font_pretendard.css\" />",
+            "\t\t<link rel=\"stylesheet\" href=\"/resources/fonts/remixicon.css\" />",
+            "\t\t<!-- 초기화 스타일 -->",
+            "\t\t<link rel=\"stylesheet\" href=\"../css/reset.css\" />",
+            "\t\t<!-- 메인 스타일 -->",
+            "\t\t<link rel=\"stylesheet\" href=\"../css/main.css\" />",
+            "\t\t<!-- 공통 JS -->",
+            "\t\t<script src=\"../js/jquery.min.js\" defer></script>",
+            "\t\t<script src=\"../js/swiper-bundle.min.js\" defer></script>",
+            "\t\t<script src=\"../js/func.js\" defer></script>",
+            "\t\t<script src=\"../js/common.js\" defer></script>",
+            "\t\t<!-- 메인 JS -->",
+            "\t\t<script src=\"../js/main.js\" defer></script>",
+            "\t</head>",
+            "",
+            "\t<body>",
+            "\t\t<div id=\"skip-nav\">",
+            "\t\t\t<a href=\"#contents\">본문 바로가기</a>",
+            "\t\t</div>",
+            "\t\t<!-- 헤더 영역 -->",
+            "\t\t<header id=\"header\" class=\"header\">",
+            "\t\t\t<div class=\"inner\">",
+            "\t\t\t\t<h2 class=\"logo\">",
+            "\t\t\t\t\t<a href=\"/\">",
+            "\t\t\t\t\t\t",
+            "\t\t\t\t\t</a>",
+            "\t\t\t\t</h2>",
+            "\t\t\t</div>",
+            "\t\t</header>",
+            "\t\t<!-- //헤더 영역 -->",
+            "\t\t<!-- 메인 영역 -->",
+            "\t\t<main id=\"contents\" class=\"main\">",
+            "\t\t\t<h1 class=\"sr-only\">",
+            "\t\t\t\tMain Page",
+            "\t\t\t</h1>",
+            "\t\t\t<div class=\"inner\">",
+            "\t\t\t\t$0",
+            "\t\t\t</div>",
+            "\t\t</main>",
+            "\t\t<!-- //메인 영역 -->",
+            "\t\t<!-- 푸터 -->",
+            "\t\t<footer id=\"footer\" class=\"footer\">",
+            "\t\t\t<div class=\"inner\">",
+            "\t\t\t\t",
+            "\t\t\t</div>",
+            "\t\t</footer>",
+            "\t\t<!-- //푸터 -->",
+            "\t</body>",
+            "</html>"
+        ],
+        "description": "메인 HTML 기본 틀 (폰트·메인 스타일·공통 JS 포함)"
+    },
+    "서브 html": {
+        "prefix": [
+            "sub-html",
+            "html-sub"
+        ],
+        "body": [
+            "<!doctype html>",
+            "",
+            "<html lang=\"ko\">",
+            "\t<head>",
+            "\t\t<meta charset=\"UTF-8\" />",
+            "\t\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes\" />",
+            "",
+            "\t\t<title>${1:서브 퍼블리싱}</title>",
+            "",
+            "\t\t<!-- 폰트 CSS -->",
+            "\t\t<link rel=\"stylesheet\" href=\"/resources/fonts/notosans/font_notosans.css\" />",
+            "\t\t<link rel=\"stylesheet\" href=\"/resources/fonts/pretendard/font_pretendard.css\" />",
+            "\t\t<link rel=\"stylesheet\" href=\"/resources/fonts/remixicon.css\" />",
+            "\t\t<!-- 초기화 스타일 -->",
+            "\t\t<link rel=\"stylesheet\" href=\"../css/reset.css\" />",
+            "\t\t<!-- 서브 스타일 -->",
+            "\t\t<link rel=\"stylesheet\" href=\"../css/sub.css\" />",
+            "\t\t<!-- 공통 JS -->",
+            "\t\t<script src=\"../js/jquery.min.js\" defer></script>",
+            "\t\t<script src=\"../js/swiper-bundle.min.js\" defer></script>",
+            "\t\t<script src=\"../js/func.js\" defer></script>",
+            "\t\t<script src=\"../js/common.js\" defer></script>",
+            "\t\t<!-- 서브 JS -->",
+            "\t\t<script src=\"../js/sub.js\" defer></script>",
+            "\t</head>",
+            "",
+            "\t<body>",
+            "\t\t<div id=\"skip-nav\">",
+            "\t\t\t<a href=\"#contents\">본문 바로가기</a>",
+            "\t\t</div>",
+            "\t\t<!-- 헤더 영역 -->",
+            "\t\t<header id=\"header\" class=\"header\">",
+            "\t\t\t<div class=\"inner\">",
+            "\t\t\t\t<h2 class=\"logo\">",
+            "\t\t\t\t\t<a href=\"/\">",
+            "\t\t\t\t\t\t",
+            "\t\t\t\t\t</a>",
+            "\t\t\t\t</h2>",
+            "\t\t\t</div>",
+            "\t\t</header>",
+            "\t\t<!-- //헤더 영역 -->",
+            "\t\t<!-- 메인 영역 -->",
+            "\t\t<main class=\"main\">",
+            "\t\t\t<div class=\"visual\">",
+            "\t\t\t\t<div class=\"inner\">",
+            "\t\t\t\t\t",
+            "\t\t\t\t</div>",
+            "\t\t\t</div>",
+            "\t\t\t<!-- //visual -->",
+            "\t\t\t<div class=\"inner\">",
+            "\t\t\t\t<div class=\"side-nav\">",
+            "\t\t\t\t\t",
+            "\t\t\t\t</div>",
+            "\t\t\t\t<!-- //side-nav -->",
+            "\t\t\t\t<div id=\"contents\" class=\"contents\">",
+            "\t\t\t\t\t<div class=\"contents-header\">",
+            "\t\t\t\t\t\t<h1 class=\"h-tit\">",
+            "\t\t\t\t\t\t\t$2",
+            "\t\t\t\t\t\t</h1>",
+            "\t\t\t\t\t</div>",
+            "\t\t\t\t\t<!-- //contents-header -->",
+            "\t\t\t\t\t<div class=\"contents-body\">",
+            "\t\t\t\t\t\t$0",
+            "\t\t\t\t\t</div>",
+            "\t\t\t\t\t<!-- //contents-body -->",
+            "\t\t\t\t</div>",
+            "\t\t\t\t<!-- //contents -->",
+            "\t\t\t</div>",
+            "\t\t</main>",
+            "\t\t<!-- //메인 영역 -->",
+            "\t\t<!-- 푸터 -->",
+            "\t\t<footer id=\"footer\" class=\"footer\">",
+            "\t\t\t<div class=\"inner\">",
+            "\t\t\t\t",
+            "\t\t\t</div>",
+            "\t\t</footer>",
+            "\t\t<!-- //푸터 -->",
+            "\t</body>",
+            "</html>"
+        ],
+        "description": "서브 HTML 기본 틀 (폰트·서브 스타일·공통 JS 포함)"
+    },
+    "테이블": {
+        "prefix": [
+            "table",
+            "테이블"
+        ],
+        "body": [
+            "<div class=\"table responsive\">",
+            "\t<table>",
+            "\t\t<caption>${1:표 제목}</caption>",
+            "\t\t<colgroup>",
+            "\t\t\t<col span=\"4\">",
+            "\t\t</colgroup>",
+            "\t\t<thead>",
+            "\t\t\t<tr>",
+            "\t\t\t\t<th scope=\"col\"></th>",
+            "\t\t\t\t<th scope=\"col\"></th>",
+            "\t\t\t\t<th scope=\"col\"></th>",
+            "\t\t\t\t<th scope=\"col\"></th>",
+            "\t\t\t</tr>",
+            "\t\t</thead>",
+            "\t\t<tbody>",
+            "\t\t\t<tr>",
+            "\t\t\t\t<th scope=\"row\"></th>",
+            "\t\t\t\t<td></td>",
+            "\t\t\t\t<td></td>",
+            "\t\t\t\t<td></td>",
+            "\t\t\t</tr>",
+            "\t\t</tbody>",
+            "\t</table>",
+            "</div>"
+        ],
+        "description": "반응형 테이블 (caption·colgroup·thead·tbody, th scope 포함)"
+    },
+    "탭": {
+        "prefix": [
+            "tab"
+        ],
+        "body": [
+            "<div class=\"tab-nav full\" role=\"tablist\">",
+            "\t<a href=\"\" class=\"tab-btn active\" role=\"tab\" aria-selected=\"true\">Abstract Guideline</a>",
+            "\t<a href=\"\" class=\"tab-btn\" role=\"tab\" aria-selected=\"false\">Abstract Submission</a>",
+            "</div>",
+        ],
+        "description": "탭 (tab-nav, tab-btn)"
+    },
+    "리스트 점": {
+        "prefix": [
+            "list-dot"
+        ],
+        "body": [
+            "<ul class=\"list-dot\">",
+            "\t<li>리스트</li>",
+            "</ul>",
+        ],
+        "description": "리스트 (list-dot)"
+    },
+    "리스트 대시": {
+        "prefix": [
+            "list-dash"
+        ],
+        "body": [
+            "<ul class=\"list-dash\">",
+            "\t<li>리스트</li>",
+            "</ul>",
+        ],
+        "description": "리스트 (list-dash)"
+    },
+    "순서리스트": {
+        "prefix": [
+            "list-order"
+        ],
+        "body": [
+            "<ul class=\"list-order\">",
+            "\t<li><i class=\"number\">1</i>리스트</li>",
+            "\t<li><i class=\"number\">2</i>리스트</li>",
+            "\t<li><i class=\"number\">3</i>리스트</li>",
+            "</ul>",
+        ],
+        "description": "리스트 (list-dash)"
+    },
+    "박스": {
+        "prefix": [
+            "box"
+        ],
+        "body": [
+            "<div class=\"box border round bg\">",
+            "\t<strong class=\"box-title\">박스</strong>",
+            "\t<p class=\"box-desc\">설명글</p>",
+            "</div>",
+        ],
+        "description": "box(border, round, bg)"
+    },
+    "박스 2열": {
+        "prefix": [
+            "box-wrap"
+        ],
+        "body": [
+            "<div class=\"box-wrap col2 m-col\">",
+            "\t<div class=\"box border round\">",
+            "\t\t<strong class=\"box-title\">박스 1열</strong>",
+            "\t\t<p class=\"box-desc\">설명글</p>",
+            "\t</div>",
+            "\t<div class=\"box border round\">",
+            "\t\t<strong class=\"box-title\">박스 2열</strong>",
+            "\t\t<p class=\"box-desc\">We only accept KRW (Korea Won).</p>",
+            "\t</div>",
+            "</div>",
+        ],
+        "description": "box (box-wrap, box)"
+    },
+    "카드": {
+        "prefix": [
+            "card"
+        ],
+        "body": [
+            "<div class=\"card\">",
+            "\t<img src=\"https://picsum.photos/536/354\" class=\"card-img\" alt=\"image\">",
+            "\t<div class=\"card-body bg border\">",
+            "\t\t<p>${1:카드 설명}</p>",
+            "\t</div>",
+            "</div>",
+        ],
+        "description": "card (card-body, bg, border)"
+    },
+    "카드 가로형태": {
+        "prefix": [
+            "card-row"
+        ],
+        "body": [
+            "<div class=\"card row\">",
+            "\t<img src=\"https://picsum.photos/536/354\" class=\"card-img\" alt=\"image\">",
+            "\t<div class=\"card-body\">",
+            "\t\t<strong class=\"card-title\">${1:카드 타이틀}</strong>",
+            "\t\t<p class=\"card-desc\">${2:카드 설명}</p>",
+            "\t</div>",
+            "</div>",
+        ],
+        "description": "card (card-body, bg, border)"
+    },
+    "페이지네이션": {
+        "prefix": [
+            "pagination"
+        ],
+        "body": [
+            "<div class=\"pagination\">",
+            "\t<a href=\"\" class=\"first\"><i class=\"svg-icon ico-angle left\"></i><span class=\"sr-only\">처음페이지</span></a>",
+            "\t<a href=\"\" class=\"prev\"><span class=\"sr-only\">이전페이지</span></a>",
+            "\t<span><a class=\"active\">1</a></span>",
+            "\t<a href=\"\" class=\"next\"><span class=\"sr-only\">다음페이지</span></a>",
+            "\t<a href=\"\" class=\"last\"><i class=\"svg-icon ico-angle right\"></i><span class=\"sr-only\">마지막페이지</span></a>",
+            "</div>",
+        ],
+        "description": "pagination (card-body, bg, border)"
+    },
+    "스와이퍼 슬라이드": {
+        "prefix": [
+            "slider"
+        ],
+        "body": [
+            "<div class=\"swiper-controls\">",
+            "\t<button type=\"button\" class=\"swiper-button swiper-button-prev\" aria-label=\"이전 슬라이드\"><i class=\"svg-icon ico-angle left\" aria-hidden=\"true\"></i></button>",
+            "\t<div class=\"swiper-autoplay\">",
+            "\t\t<button type=\"button\" class=\"swiper-button-pause active\" data-swiper=\"${2:sponsor}\" aria-label=\"일시정지\"><i class=\"svg-icon ico-pause\" aria-hidden=\"true\"></i></button>",
+            "\t\t<button type=\"button\" class=\"swiper-button-start\" data-swiper=\"${2:sponsor}\" aria-label=\"재생\"><i class=\"svg-icon ico-play\" aria-hidden=\"true\"></i></button>",
+            "\t</div>",
+            "\t<button type=\"button\" class=\"swiper-button swiper-button-next\" aria-label=\"다음 슬라이드\"><i class=\"svg-icon ico-angle right\" aria-hidden=\"true\"></i></button>",
+            "</div>",
+            "<div class=\"swiper\">",
+            "\t<div class=\"swiper-wrapper\">",
+            "\t\t<a href=\"#\" class=\"sponsor-item swiper-slide\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"새 창으로 열림\">",
+            "\t\t\t<img src=\"https://picsum.photos/200/80\" alt=\"\" loading=\"lazy\" />",
+            "\t\t</a>",
+            "\t\t<a href=\"#\" class=\"sponsor-item swiper-slide\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"새 창으로 열림\">",
+            "\t\t\t<img src=\"https://picsum.photos/200/80\" alt=\"\" loading=\"lazy\" />",
+            "\t\t</a>",
+            "\t</div>",
+            "</div>",
+            "<!-- //swiper -->"
+        ],
+        "description": "스와이퍼 슬라이드 (swiper-controls, swiper-wrapper)"
+    }
+}
