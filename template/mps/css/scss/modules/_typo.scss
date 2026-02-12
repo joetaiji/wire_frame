@@ -1,0 +1,92 @@
+@use "../mixins" as m;
+
+
+.title {
+
+	&-1 {
+		font-size: 3.2rem;
+		margin: 4.8rem 0 2.4rem 0;
+		@include m.flex(1rem, center);
+		scroll-margin-top: 4rem;
+
+		small {
+			font-weight: bold;
+			font-size: 1.9rem;
+		}
+
+		&.up {
+			scroll-margin-top: 20.6rem;
+		}
+
+		~.title-2 {
+			margin-top: 10rem;
+		}
+	}
+
+	&-2 {
+		font-size: 2.4rem;
+		margin: 4rem 0 2rem;
+	}
+
+	&-3 {
+		font-size: 1.9rem;
+		margin: 2.4rem 0 1.6rem;
+	}
+
+	&-4 {
+		font-size: 1.7rem;
+		margin: 1.6rem 0 1.6rem;
+	}
+}
+
+
+[class*='title-'] {
+
+	//~ *:not([class*='s-title']) { margin: 2rem 0; }
+	&.icon {
+		@include m.flex(.8rem, center);
+	}
+}
+
+
+.note {
+	color: var(--gray-70);
+}
+
+.asterisk,
+.star {
+	position: relative;
+	padding-left: 1.4rem;
+	font-size: var(--font-size-small);
+
+	&::after {
+		content: "*";
+		display: block;
+		@include m.pos(lt, 0, 0);
+	}
+}
+
+.star2 {
+	padding-left: 1.8rem;
+
+	&::after {
+		content: "**";
+	}
+}
+
+.refer-mark {
+	position: relative;
+	padding-left: 1.8rem;
+
+	&::before {
+		content: '※';
+		@include m.pos(lt, 0, 0);
+	}
+}
+
+
+@include m.media(m.$mobile) {
+	.title-2~.title-2 {
+		margin-top: 6rem;
+	}
+}

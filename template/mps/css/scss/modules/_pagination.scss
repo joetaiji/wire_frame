@@ -1,0 +1,138 @@
+@use "../mixins" as m;
+
+
+.pagination {
+	margin: 4rem 0;
+	@include m.flex(.5rem, center, center);
+
+	.page-navi {
+		@include m.flex(null, center);
+		border-radius: var(--radius-small);
+		padding: 0.8rem;
+		transition: 0.2s;
+
+		&::before {
+			mask: url(#{m.$url}/component/ico_angle.svg) no-repeat center center / contain;
+		}
+
+		&:hover,
+		&:focus {
+			background: var(--secondary-5);
+		}
+
+		&.disabled {
+			color: var(--gray-50);
+			pointer-events: none;
+
+			&::before {
+				background-color: var(--gray-50);
+			}
+		}
+	}
+
+	/* .page-navi, */
+	.page-link {
+		width: 4rem;
+		height: 4rem;
+		padding: 1rem 0;
+		border-radius: var(--radius-small);
+		@include m.flex(null, center, center);
+		border: 1px solid transparent;
+		transition: 0.2s;
+
+		&:not(.active):hover,
+		&:not(.active):focus {
+			background: var(--secondary-5);
+		}
+	}
+
+	.page-links {
+		margin: 0 0.5rem;
+		@include m.flex(.8rem);
+	}
+
+	.prev,
+	.next,
+	.link-dot {
+		&::before {
+			content: "";
+			display: block;
+			width: 2rem;
+			height: 2rem;
+			background-color: var(--gray-80);
+		}
+	}
+
+	.link-dot {
+		&::before {
+			mask: url(#{m.$url}/component/ico_dot.svg) no-repeat center center / contain;
+		}
+
+		&:hover,
+		&:focus {
+			border-color: transparent;
+		}
+	}
+
+	.prev::before {
+		transform: rotate(90deg);
+	}
+
+	.next::before {
+		transform: rotate(-90deg);
+	}
+
+	// 	$icons: (
+	// 		"prev": "\ea64",
+	// 		"next": "\ea6e",
+	// 		"link-dot": "\ef79"
+	// 	);
+
+	// @each $name, $glyph in $icons {
+	// 	.#{$name}::before {
+	// 		content: $glyph;
+	// 		font-family: var(--icon);
+	// 		display: block;
+	// 	}
+	// }
+
+	.next {
+		flex-direction: row-reverse;
+	}
+
+	.active {
+		background-color: var(--primary-80);
+		color: var(--gray-0);
+	}
+}
+
+@include m.media(m.$mobile) {
+	.pagination {
+		position: relative;
+		padding-top: 5rem;
+
+		.page-navi {
+			position: absolute;
+			top: 0;
+
+			&.prev {
+				translate: -70% 0;
+			}
+
+			&.next {
+				translate: 70% 0;
+			}
+		}
+	}
+
+	/* .paging {
+		.page-none { display: none; }
+		.page-now { display: flex; }
+	}
+	.board-pager {
+		.group a { display: none; 
+			&.active { display: flex; }
+		}
+	}
+	.last_page { @include m.flex(1rem, center, center); } */
+}

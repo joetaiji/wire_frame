@@ -1,6 +1,6 @@
 {
   "liveSassCompile.settings.includeItems": [
-    "/project/css/scss/**/*.scss"
+    "/template/mps/css/scss/**/*.scss"
   ],
   "css.hover.references": false,
   "less.hover.references": false,
