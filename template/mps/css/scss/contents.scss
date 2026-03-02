@@ -1,7 +1,10 @@
 @use "mixins" as m;
-@use "contents_modules";
-@import "layout";
-@import "sub";
+//@use "contents_modules";
+@use "modules/typo";
+@use "modules/box";
+@use "modules/card";
+@use "modules/list";
+@use "modules/table";
 $path: m.$url + "/contents";
 
 /* =======================================================================================

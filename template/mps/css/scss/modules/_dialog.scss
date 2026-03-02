@@ -5,53 +5,53 @@
 popup-wrap
 ======================================================================================= */
 .popup-wrap {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    padding: 2rem 1.6rem;
-    overflow-y: auto;
-    background: var(--secondary-5);
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	padding: 2rem 1.6rem;
+	overflow-y: auto;
+	background: var(--secondary-5);
 
-    .popup-in {
-        padding: 8rem 0;
-        @include m.flex(null, center, $fd: column);
-        margin: 0 auto;
-        height: 100%;
-    }
+	.popup-in {
+		padding: 8rem 0;
+		@include m.flex(null, center, $fd: column);
+		margin: 0 auto;
+		height: 100%;
+	}
 
-    .popup {
-        @include m.flex($fd: column);
-        height: 100%;
-        padding: 0;
-        position: relative;
+	.popup {
+		@include m.flex($fd: column);
+		height: 100%;
+		padding: 0;
+		position: relative;
 
-        &-head {
-            margin-bottom: 4rem;
+		&-head {
+			margin-bottom: 4rem;
 
-            .pop-tit {
-                font-size: 2.5rem;
-            }
-        }
+			.pop-tit {
+				font-size: 2.5rem;
+			}
+		}
 
-        &-body {
-            flex: 1;
-            max-height: 100%;
-            @include m.scrollbar(var(--gray-60), var(--gray-30), $size: .6rem)
-        }
+		&-body {
+			flex: 1;
+			max-height: 100%;
+			@include m.scrollbar(var(--gray-60), var(--gray-30), $size: .6rem)
+		}
 
-        &-close {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 4rem;
-            height: 4rem;
-            background: url(#{$m.$url}/layout/ico_close_48.svg) no-repeat 0 0/contain;
-        }
-    }
+		&-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 4rem;
+			height: 4rem;
+			background: url(#{$m.$url}/layout/ico_close_48.svg) no-repeat 0 0/contain;
+		}
+	}
 }
 
 /* modal_popup */

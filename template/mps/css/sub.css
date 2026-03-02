@@ -41,9 +41,12 @@
   height: 1.6rem;
   background-color: var(--gray-80);
   /* background-repeat: no-repeat; background-size: contain; background-position: center; */
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
 }
 [class*=ico-]::after {
   display: inline-flex;
@@ -56,88 +59,116 @@
   display: none;
 }
 .ico-like::before, .ico-like::after {
-  mask-image: url("../img/component/ico_like.svg");
+  -webkit-mask-image: url("../img/component/ico_like.svg");
+          mask-image: url("../img/component/ico_like.svg");
 }
 .ico-share::before, .ico-share::after {
-  mask-image: url("../img/component/ico_share.svg");
+  -webkit-mask-image: url("../img/component/ico_share.svg");
+          mask-image: url("../img/component/ico_share.svg");
 }
 .ico-angle::before, .ico-angle::after {
-  mask-image: url("../img/component/ico_angle.svg");
+  -webkit-mask-image: url("../img/component/ico_angle.svg");
+          mask-image: url("../img/component/ico_angle.svg");
 }
 .ico-arr::before, .ico-arr::after {
-  mask-image: url("../img/component/ico_arr.svg");
+  -webkit-mask-image: url("../img/component/ico_arr.svg");
+          mask-image: url("../img/component/ico_arr.svg");
 }
 .ico-arr-right::before, .ico-arr-right::after {
-  mask-image: url("../img/component/ico_arr-right.svg");
+  -webkit-mask-image: url("../img/component/ico_arr-right.svg");
+          mask-image: url("../img/component/ico_arr-right.svg");
 }
 .ico-arr-right1::before, .ico-arr-right1::after {
-  mask-image: url("../img/component/ico_arr-right1.svg");
+  -webkit-mask-image: url("../img/component/ico_arr-right1.svg");
+          mask-image: url("../img/component/ico_arr-right1.svg");
 }
 .ico-arr-down::before, .ico-arr-down::after {
-  mask-image: url("../img/component/ico_arr-down.svg");
+  -webkit-mask-image: url("../img/component/ico_arr-down.svg");
+          mask-image: url("../img/component/ico_arr-down.svg");
 }
 .ico-more::before, .ico-more::after {
-  mask-image: url("../img/component/ico_more.svg");
+  -webkit-mask-image: url("../img/component/ico_more.svg");
+          mask-image: url("../img/component/ico_more.svg");
 }
 .ico-sch::before, .ico-sch::after {
-  mask-image: url("../img/component/ico_sch.svg");
+  -webkit-mask-image: url("../img/component/ico_sch.svg");
+          mask-image: url("../img/component/ico_sch.svg");
 }
 .ico-sch1::before, .ico-sch1::after {
-  mask-image: url("../img/component/ico_sch1.svg");
+  -webkit-mask-image: url("../img/component/ico_sch1.svg");
+          mask-image: url("../img/component/ico_sch1.svg");
 }
 .ico-go::before, .ico-go::after {
-  mask-image: url("../img/component/ico_go.svg");
+  -webkit-mask-image: url("../img/component/ico_go.svg");
+          mask-image: url("../img/component/ico_go.svg");
 }
 .ico-down::before, .ico-down::after {
-  mask-image: url("../img/component/ico_down.svg");
+  -webkit-mask-image: url("../img/component/ico_down.svg");
+          mask-image: url("../img/component/ico_down.svg");
 }
 .ico-filter::before, .ico-filter::after {
-  mask-image: url("../img/component/ico_filter.svg");
+  -webkit-mask-image: url("../img/component/ico_filter.svg");
+          mask-image: url("../img/component/ico_filter.svg");
 }
 .ico-reset::before, .ico-reset::after {
-  mask-image: url("../img/component/ico_reset.svg");
+  -webkit-mask-image: url("../img/component/ico_reset.svg");
+          mask-image: url("../img/component/ico_reset.svg");
 }
 .ico-log::before, .ico-log::after {
-  mask-image: url("../img/component/ico_log.svg");
+  -webkit-mask-image: url("../img/component/ico_log.svg");
+          mask-image: url("../img/component/ico_log.svg");
 }
 .ico-func::before, .ico-func::after {
-  mask-image: url("../img/component/ico_func.svg");
+  -webkit-mask-image: url("../img/component/ico_func.svg");
+          mask-image: url("../img/component/ico_func.svg");
 }
 .ico-logout::before, .ico-logout::after {
-  mask-image: url("../img/component/ico_logout.svg");
+  -webkit-mask-image: url("../img/component/ico_logout.svg");
+          mask-image: url("../img/component/ico_logout.svg");
 }
 .ico-email::before, .ico-email::after {
-  mask-image: url("../img/component/ico_email.svg");
+  -webkit-mask-image: url("../img/component/ico_email.svg");
+          mask-image: url("../img/component/ico_email.svg");
 }
 .ico-print::before, .ico-print::after {
-  mask-image: url("../img/component/ico_print.svg");
+  -webkit-mask-image: url("../img/component/ico_print.svg");
+          mask-image: url("../img/component/ico_print.svg");
 }
 .ico-scrap::before, .ico-scrap::after {
-  mask-image: url("../img/component/ico_scrap.svg");
+  -webkit-mask-image: url("../img/component/ico_scrap.svg");
+          mask-image: url("../img/component/ico_scrap.svg");
 }
 .ico-del::before, .ico-del::after {
-  mask-image: url("../img/component/ico_del.svg");
+  -webkit-mask-image: url("../img/component/ico_del.svg");
+          mask-image: url("../img/component/ico_del.svg");
 }
 .ico-plus::before, .ico-plus::after {
-  mask-image: url("../img/component/ico_plus.svg");
+  -webkit-mask-image: url("../img/component/ico_plus.svg");
+          mask-image: url("../img/component/ico_plus.svg");
 }
 .ico-setting::before, .ico-setting::after {
-  mask-image: url("../img/component/ico_setting.svg");
+  -webkit-mask-image: url("../img/component/ico_setting.svg");
+          mask-image: url("../img/component/ico_setting.svg");
 }
 .ico-link::before, .ico-link::after {
-  mask-image: url("../img/component/ico_link.svg");
+  -webkit-mask-image: url("../img/component/ico_link.svg");
+          mask-image: url("../img/component/ico_link.svg");
 }
 .ico-comment::before, .ico-comment::after {
-  mask-image: url("../img/component/ico_comment.svg");
+  -webkit-mask-image: url("../img/component/ico_comment.svg");
+          mask-image: url("../img/component/ico_comment.svg");
 }
 .ico-prev::before, .ico-prev::after {
-  mask-image: url("../img/component/ico_prev.svg");
+  -webkit-mask-image: url("../img/component/ico_prev.svg");
+          mask-image: url("../img/component/ico_prev.svg");
 }
 .ico-close::before, .ico-close::after {
-  mask-image: url("../img/component/ico_close.svg");
+  -webkit-mask-image: url("../img/component/ico_close.svg");
+          mask-image: url("../img/component/ico_close.svg");
 }
 .ico-time::before, .ico-time::after {
-  mask-image: url("../img/component/ico_time.svg");
+  -webkit-mask-image: url("../img/component/ico_time.svg");
+          mask-image: url("../img/component/ico_time.svg");
 }
 
 .underline {
@@ -200,20 +231,6 @@
   transition: 0.25s;
   background: var(--gray-0);
   border: 1px solid var(--gray-90);
-  /* &.tertiary {
-  	background: var(--gray-80);
-  	color: var(--gray-0);
-  	border-color: var(--gray-80);
-
-  	&:hover {
-  		background-color: var(--gray-90);
-  		border-color: var(--gray-90);
-  	}
-
-  	&:active {
-  		background-color: var(--gray-100);
-  	}
-  } */
 }
 .btn:hover {
   border-color: var(--gray-60);
@@ -318,6 +335,22 @@
 .btn.secondary:active {
   background-color: var(--primary-20);
 }
+.btn {
+  /* &.tertiary {
+  	background: var(--gray-80);
+  	color: var(--gray-0);
+  	border-color: var(--gray-80);
+
+  	&:hover {
+  		background-color: var(--gray-90);
+  		border-color: var(--gray-90);
+  	}
+
+  	&:active {
+  		background-color: var(--gray-100);
+  	}
+  } */
+}
 .btn-label input[type=radio] {
   position: absolute;
   opacity: 0;
@@ -370,7 +403,7 @@ breadcrumb
   display: block;
   width: 1.6rem;
   height: 1.6rem;
-  background: url(../img/component/ico_arr.svg) 0 0/contain no-repeat;
+  background: url(../img/layout/component/ico_arr.svg) 0 0/contain no-repeat;
 }
 .breadcrumb-wrap li a {
   text-decoration: underline;
@@ -579,12 +612,14 @@ content 공통
 .contents .page-title-wrap {
   position: relative;
   margin-bottom: 4.8rem;
-  /* &:has(.with-info) {
-  	margin-bottom: 2.4rem;
-  } */
 }
 .contents .page-title-wrap .h-tit {
   font-size: 4rem;
+}
+.contents .page-title-wrap {
+  /* &:has(.with-info) {
+  	margin-bottom: 2.4rem;
+  } */
 }
 .contents .print-btn {
   width: 4rem;

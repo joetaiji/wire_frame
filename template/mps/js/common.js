@@ -15,7 +15,7 @@ $(function () {
 
 	gnb('nodepth2')	//gnb메뉴
 
-	mobileGnb()	//모바일 gnb메뉴
+	//mobileGnb()	//모바일 gnb메뉴
 
 });
 

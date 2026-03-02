@@ -68,10 +68,13 @@ form
   background-color: rgba(230, 230, 230, 0.3);
 }
 .form select {
+  width: -moz-max-content;
   width: max-content;
   min-width: 10rem;
   background: var(--gray-0) url(../img/component/ico_angle.svg) right 0.75rem center/2.4rem 2.4rem no-repeat;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding-right: 2rem;
 }
 .form select::-ms-expand {
@@ -128,6 +131,7 @@ form
 .form-group > .form-item {
   flex: 1;
   width: 1%;
+  max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
@@ -300,7 +304,6 @@ form
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  /* .page-navi, */
 }
 .pagination .page-navi {
   display: flex;
@@ -310,7 +313,8 @@ form
   transition: 0.2s;
 }
 .pagination .page-navi::before {
-  mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
+  -webkit-mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
+          mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
 }
 .pagination .page-navi:hover, .pagination .page-navi:focus {
   background: var(--secondary-5);
@@ -321,6 +325,9 @@ form
 }
 .pagination .page-navi.disabled::before {
   background-color: var(--gray-50);
+}
+.pagination {
+  /* .page-navi, */
 }
 .pagination .page-link {
   width: 4rem;
@@ -351,7 +358,8 @@ form
   background-color: var(--gray-80);
 }
 .pagination .link-dot::before {
-  mask: url(../img/component/ico_dot.svg) no-repeat center center/contain;
+  -webkit-mask: url(../img/component/ico_dot.svg) no-repeat center center/contain;
+          mask: url(../img/component/ico_dot.svg) no-repeat center center/contain;
 }
 .pagination .link-dot:hover, .pagination .link-dot:focus {
   border-color: transparent;
@@ -420,7 +428,8 @@ form
   width: 3rem;
   padding: 0;
   transition: 0.2s;
-  mask: url("../img/board/icon_search.svg") 50% 50%/1.86rem 1.86rem no-repeat;
+  -webkit-mask: url("../img/board/icon_search.svg") 50% 50%/1.86rem 1.86rem no-repeat;
+          mask: url("../img/board/icon_search.svg") 50% 50%/1.86rem 1.86rem no-repeat;
   background-color: var(--gray-80);
   position: absolute;
   right: 1.2rem;
@@ -535,10 +544,13 @@ form
   height: 2.6rem;
   min-height: auto;
   cursor: pointer;
+  width: -moz-max-content;
   width: max-content;
   min-width: 6.5rem;
   background: var(--gray-0) url(../img/component/ico_angle.svg) right 0.3rem center/2rem 2rem no-repeat;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding-right: 2rem;
 }
 .board-info .board-sort .sort-select::-ms-expand {
@@ -573,8 +585,6 @@ form
 ============================================================================================*/
 .board-list {
   position: relative;
-  /* 테이블형 */
-  /* list */
 }
 .board-list .unit {
   text-align: right;
@@ -702,6 +712,9 @@ form
 .board-list .drop-wrap:not(:has(.drop-list > li)) {
   display: none;
 }
+.board-list {
+  /* 테이블형 */
+}
 .board-list table {
   width: 100%;
   margin: 1.5rem 0 1rem;
@@ -764,15 +777,15 @@ form
 .board-list table .btn {
   white-space: nowrap;
 }
+.board-list {
+  /* list */
+}
 .board-list .ul {
   border-top: 2px solid var(--gray-90);
 }
 .board-list .li {
   border-bottom: 1px solid var(--gray-30);
   min-height: 15rem;
-  /* &:hover .item {
-  	box-shadow: 2px 1px 1rem rgba(137, 137, 143, 0.3);
-  } */
 }
 .board-list .li .item {
   position: relative;
@@ -875,6 +888,11 @@ form
   top: 50%;
   translate: 0 -50%;
 }
+.board-list .li {
+  /* &:hover .item {
+  	box-shadow: 2px 1px 1rem rgba(137, 137, 143, 0.3);
+  } */
+}
 .board-list .li .btn-wrap {
   position: absolute;
   right: 2rem;
@@ -929,7 +947,8 @@ form
 .board-list.thumb-list .thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .board-list.thumb-list .subject {
   flex: 1;
@@ -964,7 +983,8 @@ form
   width: 100%;
   margin-top: -1rem;
   background-color: var(--gray-0);
-  mask-image: url(../img/component/ico_more.svg);
+  -webkit-mask-image: url(../img/component/ico_more.svg);
+          mask-image: url(../img/component/ico_more.svg);
   content: "";
   width: 2.4rem;
   height: 2.4rem;
@@ -986,7 +1006,8 @@ form
 .gallery-list .thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   opacity: 1;
   transition: 0.2s;
 }
@@ -1172,13 +1193,6 @@ form
 .prevnext {
   margin-top: 4rem;
   border-bottom: 1px solid var(--gray-30);
-  /* .prev span::before {
-  	content: "\ea78";
-  }
-
-  .next span::before {
-  	content: "\ea4e";
-  } */
 }
 .prevnext li {
   display: flex;
@@ -1198,7 +1212,8 @@ form
   z-index: 1;
   width: 100%;
   background-color: var(--gray-90);
-  mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
+  -webkit-mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
+          mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
   content: "";
   width: 2.4rem;
   height: 2.4rem;
@@ -1210,6 +1225,15 @@ form
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.prevnext {
+  /* .prev span::before {
+  	content: "\ea78";
+  }
+
+  .next span::before {
+  	content: "\ea4e";
+  } */
 }
 .prevnext .prev span::before {
   rotate: 180deg;
@@ -1342,7 +1366,8 @@ form
   border: 2px solid transparent;
   width: 100%;
   height: 14rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background: var(--gray-0);
   transition: 0.2s;
 }

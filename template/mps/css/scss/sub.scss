@@ -34,7 +34,7 @@ breadcrumb
 			display: block;
 			width: 1.6rem;
 			height: 1.6rem;
-			background: url(#{m.$path}/component/ico_arr.svg) 0 0 / contain no-repeat;
+			background: url(#{$path}/component/ico_arr.svg) 0 0 / contain no-repeat;
 		}
 
 		a {
@@ -364,7 +364,7 @@ content 공통
 }
 
 @include m.media(m.$pad) {
-	
+
 
 	.breadcrumb {
 
