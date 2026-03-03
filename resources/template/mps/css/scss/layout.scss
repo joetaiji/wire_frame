@@ -1,10 +1,10 @@
 @use "mixins" as m;
-@use "modules/skip";
-@use "modules/icon_svg";
-@use "modules/button";
-@use "modules/dialog";
+@use "variables";
+@use "/resources/css/components/skip";
+@use "/resources/css/components/icon_svg";
+@use "/resources/css/components/button";
+@use "/resources/css/components/dialog";
 $path: m.$url + "/layout";
-
 
 
 

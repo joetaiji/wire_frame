@@ -1,7 +1,14 @@
 @use "mixins" as m;
-@use "modules/skip";
-@use "modules/icon_svg";
-@use "modules/button";
+//@use "sub_modules";
+@use "/resources/css/components/breadcrumb";
+@use "/resources/css/components/snb";
+@use "/resources/css/components/inpage-nav";
+@use "/resources/css/components/go-top";
+@use "/resources/css/components/typo";
+@use "/resources/css/components/box";
+@use "/resources/css/components/card";
+@use "/resources/css/components/list";
+@use "/resources/css/components/table";
 $path: m.$url + "/layout";
 
 /* =======================================================================================

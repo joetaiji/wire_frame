@@ -41,12 +41,9 @@
   height: 1.6rem;
   background-color: var(--gray-80);
   /* background-repeat: no-repeat; background-size: contain; background-position: center; */
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-position: center;
-          mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
 }
 [class*=ico-]::after {
   display: inline-flex;
@@ -59,116 +56,88 @@
   display: none;
 }
 .ico-like::before, .ico-like::after {
-  -webkit-mask-image: url("../img/component/ico_like.svg");
-          mask-image: url("../img/component/ico_like.svg");
+  mask-image: url("../img/component/ico_like.svg");
 }
 .ico-share::before, .ico-share::after {
-  -webkit-mask-image: url("../img/component/ico_share.svg");
-          mask-image: url("../img/component/ico_share.svg");
+  mask-image: url("../img/component/ico_share.svg");
 }
 .ico-angle::before, .ico-angle::after {
-  -webkit-mask-image: url("../img/component/ico_angle.svg");
-          mask-image: url("../img/component/ico_angle.svg");
+  mask-image: url("../img/component/ico_angle.svg");
 }
 .ico-arr::before, .ico-arr::after {
-  -webkit-mask-image: url("../img/component/ico_arr.svg");
-          mask-image: url("../img/component/ico_arr.svg");
+  mask-image: url("../img/component/ico_arr.svg");
 }
 .ico-arr-right::before, .ico-arr-right::after {
-  -webkit-mask-image: url("../img/component/ico_arr-right.svg");
-          mask-image: url("../img/component/ico_arr-right.svg");
+  mask-image: url("../img/component/ico_arr-right.svg");
 }
 .ico-arr-right1::before, .ico-arr-right1::after {
-  -webkit-mask-image: url("../img/component/ico_arr-right1.svg");
-          mask-image: url("../img/component/ico_arr-right1.svg");
+  mask-image: url("../img/component/ico_arr-right1.svg");
 }
 .ico-arr-down::before, .ico-arr-down::after {
-  -webkit-mask-image: url("../img/component/ico_arr-down.svg");
-          mask-image: url("../img/component/ico_arr-down.svg");
+  mask-image: url("../img/component/ico_arr-down.svg");
 }
 .ico-more::before, .ico-more::after {
-  -webkit-mask-image: url("../img/component/ico_more.svg");
-          mask-image: url("../img/component/ico_more.svg");
+  mask-image: url("../img/component/ico_more.svg");
 }
 .ico-sch::before, .ico-sch::after {
-  -webkit-mask-image: url("../img/component/ico_sch.svg");
-          mask-image: url("../img/component/ico_sch.svg");
+  mask-image: url("../img/component/ico_sch.svg");
 }
 .ico-sch1::before, .ico-sch1::after {
-  -webkit-mask-image: url("../img/component/ico_sch1.svg");
-          mask-image: url("../img/component/ico_sch1.svg");
+  mask-image: url("../img/component/ico_sch1.svg");
 }
 .ico-go::before, .ico-go::after {
-  -webkit-mask-image: url("../img/component/ico_go.svg");
-          mask-image: url("../img/component/ico_go.svg");
+  mask-image: url("../img/component/ico_go.svg");
 }
 .ico-down::before, .ico-down::after {
-  -webkit-mask-image: url("../img/component/ico_down.svg");
-          mask-image: url("../img/component/ico_down.svg");
+  mask-image: url("../img/component/ico_down.svg");
 }
 .ico-filter::before, .ico-filter::after {
-  -webkit-mask-image: url("../img/component/ico_filter.svg");
-          mask-image: url("../img/component/ico_filter.svg");
+  mask-image: url("../img/component/ico_filter.svg");
 }
 .ico-reset::before, .ico-reset::after {
-  -webkit-mask-image: url("../img/component/ico_reset.svg");
-          mask-image: url("../img/component/ico_reset.svg");
+  mask-image: url("../img/component/ico_reset.svg");
 }
 .ico-log::before, .ico-log::after {
-  -webkit-mask-image: url("../img/component/ico_log.svg");
-          mask-image: url("../img/component/ico_log.svg");
+  mask-image: url("../img/component/ico_log.svg");
 }
 .ico-func::before, .ico-func::after {
-  -webkit-mask-image: url("../img/component/ico_func.svg");
-          mask-image: url("../img/component/ico_func.svg");
+  mask-image: url("../img/component/ico_func.svg");
 }
 .ico-logout::before, .ico-logout::after {
-  -webkit-mask-image: url("../img/component/ico_logout.svg");
-          mask-image: url("../img/component/ico_logout.svg");
+  mask-image: url("../img/component/ico_logout.svg");
 }
 .ico-email::before, .ico-email::after {
-  -webkit-mask-image: url("../img/component/ico_email.svg");
-          mask-image: url("../img/component/ico_email.svg");
+  mask-image: url("../img/component/ico_email.svg");
 }
 .ico-print::before, .ico-print::after {
-  -webkit-mask-image: url("../img/component/ico_print.svg");
-          mask-image: url("../img/component/ico_print.svg");
+  mask-image: url("../img/component/ico_print.svg");
 }
 .ico-scrap::before, .ico-scrap::after {
-  -webkit-mask-image: url("../img/component/ico_scrap.svg");
-          mask-image: url("../img/component/ico_scrap.svg");
+  mask-image: url("../img/component/ico_scrap.svg");
 }
 .ico-del::before, .ico-del::after {
-  -webkit-mask-image: url("../img/component/ico_del.svg");
-          mask-image: url("../img/component/ico_del.svg");
+  mask-image: url("../img/component/ico_del.svg");
 }
 .ico-plus::before, .ico-plus::after {
-  -webkit-mask-image: url("../img/component/ico_plus.svg");
-          mask-image: url("../img/component/ico_plus.svg");
+  mask-image: url("../img/component/ico_plus.svg");
 }
 .ico-setting::before, .ico-setting::after {
-  -webkit-mask-image: url("../img/component/ico_setting.svg");
-          mask-image: url("../img/component/ico_setting.svg");
+  mask-image: url("../img/component/ico_setting.svg");
 }
 .ico-link::before, .ico-link::after {
-  -webkit-mask-image: url("../img/component/ico_link.svg");
-          mask-image: url("../img/component/ico_link.svg");
+  mask-image: url("../img/component/ico_link.svg");
 }
 .ico-comment::before, .ico-comment::after {
-  -webkit-mask-image: url("../img/component/ico_comment.svg");
-          mask-image: url("../img/component/ico_comment.svg");
+  mask-image: url("../img/component/ico_comment.svg");
 }
 .ico-prev::before, .ico-prev::after {
-  -webkit-mask-image: url("../img/component/ico_prev.svg");
-          mask-image: url("../img/component/ico_prev.svg");
+  mask-image: url("../img/component/ico_prev.svg");
 }
 .ico-close::before, .ico-close::after {
-  -webkit-mask-image: url("../img/component/ico_close.svg");
-          mask-image: url("../img/component/ico_close.svg");
+  mask-image: url("../img/component/ico_close.svg");
 }
 .ico-time::before, .ico-time::after {
-  -webkit-mask-image: url("../img/component/ico_time.svg");
-          mask-image: url("../img/component/ico_time.svg");
+  mask-image: url("../img/component/ico_time.svg");
 }
 
 .underline {

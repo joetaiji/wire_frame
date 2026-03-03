@@ -1,7 +1,8 @@
 @use "mixins" as m;
 //@use "main_modules";
-@use "modules/slider";
-@use "modules/tab";
+@use "/resources/css/components/slider";
+@use "/resources/css/components/tab";
+
 $path: m.$url + "/main";
 /* =======================================================================================
 메인공통

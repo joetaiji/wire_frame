@@ -95,7 +95,7 @@
             .list-dot>li::before { background: var(--gray-70);}
         } 
         //공지용
-        &.pattern { margin-bottom: 4rem; border:9px solid; border-image: url('#{m.$url}/contents/box_pattern.gif') 9 / 9px round;
+        &.pattern { margin-bottom: 4rem; border:9px solid; border-image: url('#{m.$url}/sub/box_pattern.gif') 9 / 9px round;
             .picto { width: 10rem; height: 10rem;}
             .s-title { font-size: 1.9rem;}
         }

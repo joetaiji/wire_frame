@@ -68,13 +68,10 @@ form
   background-color: rgba(230, 230, 230, 0.3);
 }
 .form select {
-  width: -moz-max-content;
   width: max-content;
   min-width: 10rem;
   background: var(--gray-0) url(../img/component/ico_angle.svg) right 0.75rem center/2.4rem 2.4rem no-repeat;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   padding-right: 2rem;
 }
 .form select::-ms-expand {
@@ -131,7 +128,6 @@ form
 .form-group > .form-item {
   flex: 1;
   width: 1%;
-  max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
@@ -313,8 +309,7 @@ form
   transition: 0.2s;
 }
 .pagination .page-navi::before {
-  -webkit-mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
-          mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
+  mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
 }
 .pagination .page-navi:hover, .pagination .page-navi:focus {
   background: var(--secondary-5);
@@ -358,8 +353,7 @@ form
   background-color: var(--gray-80);
 }
 .pagination .link-dot::before {
-  -webkit-mask: url(../img/component/ico_dot.svg) no-repeat center center/contain;
-          mask: url(../img/component/ico_dot.svg) no-repeat center center/contain;
+  mask: url(../img/component/ico_dot.svg) no-repeat center center/contain;
 }
 .pagination .link-dot:hover, .pagination .link-dot:focus {
   border-color: transparent;
@@ -428,8 +422,7 @@ form
   width: 3rem;
   padding: 0;
   transition: 0.2s;
-  -webkit-mask: url("../img/board/icon_search.svg") 50% 50%/1.86rem 1.86rem no-repeat;
-          mask: url("../img/board/icon_search.svg") 50% 50%/1.86rem 1.86rem no-repeat;
+  mask: url("../img/board/icon_search.svg") 50% 50%/1.86rem 1.86rem no-repeat;
   background-color: var(--gray-80);
   position: absolute;
   right: 1.2rem;
@@ -544,13 +537,10 @@ form
   height: 2.6rem;
   min-height: auto;
   cursor: pointer;
-  width: -moz-max-content;
   width: max-content;
   min-width: 6.5rem;
   background: var(--gray-0) url(../img/component/ico_angle.svg) right 0.3rem center/2rem 2rem no-repeat;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   padding-right: 2rem;
 }
 .board-info .board-sort .sort-select::-ms-expand {
@@ -947,8 +937,7 @@ form
 .board-list.thumb-list .thumb img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .board-list.thumb-list .subject {
   flex: 1;
@@ -983,8 +972,7 @@ form
   width: 100%;
   margin-top: -1rem;
   background-color: var(--gray-0);
-  -webkit-mask-image: url(../img/component/ico_more.svg);
-          mask-image: url(../img/component/ico_more.svg);
+  mask-image: url(../img/component/ico_more.svg);
   content: "";
   width: 2.4rem;
   height: 2.4rem;
@@ -1006,8 +994,7 @@ form
 .gallery-list .thumb img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 1;
   transition: 0.2s;
 }
@@ -1212,8 +1199,7 @@ form
   z-index: 1;
   width: 100%;
   background-color: var(--gray-90);
-  -webkit-mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
-          mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
+  mask: url(../img/component/ico_angle.svg) no-repeat center center/contain;
   content: "";
   width: 2.4rem;
   height: 2.4rem;
@@ -1366,8 +1352,7 @@ form
   border: 2px solid transparent;
   width: 100%;
   height: 14rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   background: var(--gray-0);
   transition: 0.2s;
 }
