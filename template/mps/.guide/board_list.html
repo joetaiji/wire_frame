@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+	<meta name="title" content="">
+	<meta name="description" content="">
+	<meta name="keyword" content="">
+	<meta name="copyright" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="http://localhost/?">
+	<meta property="og:description" content="">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/layout/favicon_180px.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../img/layout/favicon_192px.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/layout/favicon_32px.png">
+	<title>스타일가이드</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/output.css">	
+	<link rel="stylesheet" href="../css/board.css">
+	<link rel="stylesheet" href="guide.css">
+
+	<!-- 공통 JS -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/swiper-bundle.min.js"></script>
+	
+</head>
+
+<body class="guide">
+	
+	<div id="wrap">
+		<header>
+            <h1><img src="logo.png" alt="web style guide"></h1> 
+            <p class="menu">
+                <a href="guide_rule.html">규칙가이드</a>
+                <a href="guide_common.html">기본스타일</a>
+                <a href="board_list.html" class="active">게시판</a>
+            </p>
+        </header>
+
+		<main id="container">	
+			<div class="inner in-between">
+				<section id="snb" class="left-menu">
+					<div class="snb" data-active="0">						
+						<nav class="list">
+							<ul id="left_menu_top" class="head_menu_depth">
+								<li class="active is-depth3">
+									<a href="#">Board</a>
+									<ul class="depth3">
+										<li class="active"><a href="board_list.html">list</a></li>
+										<li><a href="board_view.html">view</a></li>
+										<li><a href="board_write.html">write</a></li>
+									</ul>
+								</li>
+								<li class="is-depth3">
+									<a href="#">Gallery</a>
+									<ul class="depth3">
+										<li class="active"><a href="gallery_list.html">list</a></li>
+									</ul>
+								</li>
+								
+							</ul>
+						</nav>
+					</div>
+				</section>
+				<!-- //snb -->		
+
+				<section id="contents" class="contents">
+					<h1 class="h-tit">게시판 리스트</h1>
+					<div class="board-info">
+						<form action="">
+							<fieldset class="board-search-wrap form">
+								<ul class="search-list">
+									<li>						
+										<label for="frmName" class="label">담당부서명</label>
+										<div class="label-cont">
+											<input type="text" name="keyWord" value="" title="검색어를 입력하세요" placeholder="검색어를 입력하세요" id="frmName">
+											<button type="button" onclick="" class="btn search-btn sm">부서검색</button>
+										</div>
+									</li>
+									<li>					
+										<label for="frmStartDate" class="label">기간설정</label>
+										<div class="label-cont form-inline">
+											<div class="form-group">
+												<button type="button" onclick="" class="btn sm active">일주일</button>
+												<button type="button" onclick="" class="btn sm">최근1개월</button>
+												<button type="button" onclick="" class="btn sm">최근3개월</button>
+											</div>
+											<div class="form-group">
+												<input type="date" id="frmStartDate"> - <input type="date" id="frmEndDate">
+											</div>							
+										</div>
+									</li>
+									<li>					
+										<span class="label">정렬순서</span>
+										<div class="label-cont custom-input form-inline">
+											<input type="radio" name="sortRadio" id="sortDate"><label for="sortDate">생성일순</label>
+											<input type="radio" name="sortRadio" id="sortTitle"><label for="sortTitle">제목(가나다순)</label>
+										</div>
+									</li>
+									<li>					
+										<label for="frmTitle" class="label">제목</label>
+										<div class="label-cont">
+											<div class="form-row">	
+												<input type="text" id="frmTitle" name="keyWord" value="" title="검색어를 입력하세요" placeholder="검색어를 입력하세요" class="form-item">
+											</div>
+										</div>
+									</li>
+								</ul>
+								<button type="submit" onclick="" class="btn md search-btn">검색</button>
+							</fieldset>		
+						</form>
+						<div class="page-info">
+							<span class="total">
+								총 게시물 <b>3,290</b>
+							</span>
+							<span class="current">페이지
+								<strong>1</strong>
+								/
+								<b>275</b>
+							</span>
+						</div>					
+					</div>
+					<!-- //board-info -->
+
+					<div class="board-info">
+						<form action="">
+							<fieldset class="board-search-wrap form">	
+								<div class="board-search">		
+									<select name="keyField" id="searchSelect" title="검색어 분류를 선택하세요">
+										<option value="TITLE">제목</option>
+										<option value="CONTENT">내용</option>
+										<option value="M_NAME">작성자</option>
+										<option value="" selected>전체</option>
+									</select>
+									<input type="text" name="keyWord" value="" title="검색어를 입력하세요" placeholder="검색어를 입력하세요">
+									<button type="submit" onclick="" class="btn search-btn">검색</button>
+								</div>
+							</fieldset>
+						</form>
+						<div class="page-info">
+							<span class="total">
+								총 게시물 <b>3,290</b>
+							</span>
+							<span class="current">페이지
+								<strong>1</strong>
+								/
+								<b>275</b>
+							</span>
+						</div>
+						
+													
+					</div>
+					<!-- //board-info -->
+					<div class="board-list">
+						<table>
+							<caption>공지사항 목록 - 번호, 제목, 작성자, 작성일, 첨부파일, 조회수</caption>
+							<colgroup>
+								<col class="w8">
+								<col>
+								<col class="w13">
+								<col class="w13">
+								<col class="w8">
+								<col class="w8">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">제목</th>
+									<th scope="col">작성자</th>
+									<th scope="col">작성일</th>
+									<th scope="col">첨부파일</th>
+									<th scope="col">조회수</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td data-label="번호"><i class="ic-notice">공지</i></td>
+									<td data-label="제목" class="subject"><a href="">국가암데이터센터 결합전문기관 재지정 공고 국가암데이터센터 결합전문기관 재지정 공고</a><i class="ic-new"><span class="sr-only">새글</span></i></td>
+									<td data-label="작성자">신홍지</td>
+									<td data-label="작성일">2024-08-19</td>
+									<td data-label="첨부파일"><i class="ri-attachment-2"><span class="sr-only">첨부파일</span></i></td>
+									<td data-label="조회수">107</td>
+								</tr>
+								<tr>
+									<td data-label="번호">16904</td>
+									<td data-label="제목" class="subject"><a href="">함께해요 을지연습, 동참해요 을지연습</a><i class="ic-new"><span class="sr-only">새글</span></i></td>
+									<td data-label="작성자">담당자</td>
+									<td data-label="작성일">2024-08-19</td>
+									<td data-label="첨부파일"><i class="ri-attachment-2"><span class="sr-only">첨부파일</span></i></td>
+									<td data-label="조회수">107</td>
+								</tr>
+								<tr>
+									<td data-label="번호">16903</td>
+									<td data-label="제목" class="subject"><a href="">제11회 학교폭력예방 웹툰영상 공모전 수상작 발표</a></td>
+									<td data-label="작성자">정신건강사업팀</td>
+									<td data-label="작성일">2024-08-19</td>
+									<td data-label="첨부파일"><i class="ri-attachment-2"><span class="sr-only">첨부파일</span></i></td>
+									<td data-label="조회수">107</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //board-list -->
+					<div class="pagination">
+						<a href="" class="page-navi prev">이전</a>
+						<div class="page-links">
+							<a href="" class="page-link">1</a>
+							<span class="page-link link-dot"></span>
+							<a href="" class="page-link">5</a>
+							<a href="" class="page-link">6</a>
+							<a href="" class="page-link active">7</a>
+							<a href="" class="page-link">8</a>
+							<a href="" class="page-link">9</a>
+							<span class="page-link link-dot"></span>
+							<a href="" class="page-link">120</a>
+						</div>
+						<a href="" class="page-navi next">다음</a>
+					</div>
+					<!-- //pagination -->	
+
+				</section><!--//content-->
+			</div>
+			<!--//contentWrap-->
+
+			<a href="#wrap" class="go-top fixed"><i class="ri-arrow-up-s-line" aria-hidden="true"></i><span>TOP</span></a>
+		</main>
+		<footer class="footer">COPYRIGHTⓒ 2024 Plan I. ALL RIGHTS RESERVED.</footer>
+		
+	</div>
+	<!-- //guide -->
+	
+	<!-- 공통 JS -->
+	<script src="../js/func.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 서브 JS -->
+	<script src="../js/sub.js"></script>
+	
+	<!-- 가이드 JS -->
+	<script src="guide.js"></script>
+
+</body>
+
+</html>

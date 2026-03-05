@@ -1,0 +1,200 @@
+/* ===========================================================================================
+user defined style
+=========================================================================================== */
+
+html {
+	.m-page {
+		display: none;
+	}
+}
+
+$colors: "primary", "secondary", "gray";
+
+@each $color in $colors {
+	.text-#{$color} {
+		color: var(--#{$color}-60) !important;
+	}
+}
+
+.text-point {
+	color: var(--point-60) !important;
+}
+
+@each $color in $colors {
+	.bg-#{$color} {
+		background-color: var(--#{$color}-5);
+	}
+}
+
+.bg-primary-10 {
+	background-color: var(--primary-10);
+}
+
+.hidden,
+.hdn,
+.sr-only {
+	@include m.sr-only;
+}
+
+.text-bold {
+	font-weight: 700;
+}
+
+.text-underline {
+	text-decoration: underline !important;
+	text-underline-position: under;
+}
+
+.text-link {
+	text-decoration: underline;
+	color: var(--primary-50);
+	@include m.flex(.6rem, center, $fd: inline);
+
+	&.ico-go,
+	&.ico-arr {
+
+		&::before,
+		&::after {
+			background: var(--primary-50);
+			width: 1.7rem;
+			height: 1.7rem;
+		}
+	}
+}
+
+.keep-all {
+	word-break: keep-all !important;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+$txts: left, center, right;
+
+@each $txt in $txts {
+	.text-#{$txt} {
+		text-align: $txt !important;
+	}
+}
+
+//기존
+.ta_l {
+	text-align: left !important;
+}
+
+.ta_c {
+	text-align: center !important;
+}
+
+.ta_r {
+	text-align: right !important;
+}
+
+$jcs: center, space-around, space-evenly, space-between, flex-end, flex-start;
+
+@each $jc in $jcs {
+	.jc-#{$jc} {
+		justify-content: $jc !important;
+	}
+}
+
+$ais: flex-start, center, flex-end;
+
+@each $ai in $ais {
+	.ai-#{$ai} {
+		align-items: $ai !important;
+	}
+}
+
+@for $i from 1 through 20 {
+	.w#{$i} {
+		width: $i*1%;
+	}
+}
+
+@for $i from 5 through 20 {
+	.w#{$i*5} {
+		width: $i*5%;
+	}
+}
+
+@for $i from 0 through 10 {
+	.ml#{$i} {
+		margin-left: $i*.8rem !important;
+	}
+
+	.mt#{$i} {
+		margin-top: $i*.8rem !important;
+	}
+
+	.mr#{$i} {
+		margin-right: $i*.8rem !important;
+	}
+
+	.mb#{$i} {
+		margin-bottom: $i*.8rem !important;
+	}
+}
+
+.mla {
+	margin-left: auto;
+}
+
+.mra {
+	margin-right: auto;
+}
+
+.mta {
+	margin-top: auto;
+}
+
+.mba {
+	margin-bottom: auto;
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+	display: inline-block;
+	max-width: 96%;
+}
+
+.iframe {
+	display: block;
+	width: 100%;
+}
+
+@include m.media(m.$pad) {
+	html {
+		font-size: 9px;
+	}
+}
+
+@include m.media(m.$mobile) {
+	html {
+		font-size: 8px;
+
+		.w-page,
+		.m-hide {
+			display: none;
+		}
+
+		.m-page {
+			display: block;
+		}
+	}
+}
+
+@include m.media(m.$smobile) {
+	html {
+		font-size: 7px;
+	}
+}

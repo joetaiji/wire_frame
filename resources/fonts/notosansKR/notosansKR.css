@@ -1,0 +1,44 @@
+/* noto-sans-kr-300 - korean */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./noto-sans-kr-v39-korean-300.woff2') format('woff2');
+}
+
+/* noto-sans-kr-regular - korean */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./noto-sans-kr-v39-korean-regular.woff2') format('woff2');
+}
+
+/* noto-sans-kr-500 - korean */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./noto-sans-kr-v39-korean-500.woff2') format('woff2');
+}
+
+/* noto-sans-kr-600 - korean */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./noto-sans-kr-v39-korean-600.woff2') format('woff2');
+}
+
+/* noto-sans-kr-700 - korean */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./noto-sans-kr-v39-korean-700.woff2') format('woff2');
+}

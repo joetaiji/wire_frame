@@ -1,0 +1,221 @@
+@use "../mixins" as m;
+
+/* ==========================================================================================
+//button
+============================================================================================*/
+.btns {
+	@include m.flex(1rem, center, flex-end);
+	flex-wrap: wrap;
+	margin: 4rem 0;
+
+	&.both {
+		justify-content: space-between;
+	}
+
+	&.col {
+		flex-direction: column;
+		margin: 0;
+	}
+
+	&.center {
+		justify-content: center;
+	}
+}
+
+.btn {
+	@include m.flex(.4rem, center, center, inline);
+	border-radius: 0.8rem;
+	padding: 0 2rem;
+	line-height: inherit;
+	/* height: 4.8rem; min-width:12rem; */
+	transition: .25s;
+	background: var(--gray-0);
+	border: 1px solid var(--gray-90);
+
+	&:hover {
+		border-color: var(--gray-60);
+		background-color: var(--gray-10);
+		text-decoration: none;
+	}
+
+	//text
+	&-txt {
+		background: none;
+		border: 0;
+		padding: 0 .2rem;
+		min-width: initial;
+		@include m.hover;
+
+		&::after {
+			margin-left: 0;
+		}
+	}
+
+	//only icon
+	&-ico {
+		border: 0;
+		background: none;
+		height: auto;
+		min-width: inherit;
+		padding-left: 1rem;
+		padding-right: 1rem;
+
+		&::after {
+			margin-left: 0;
+		}
+	}
+
+	//size
+	&.xsm,
+	&.xsmall {
+		height: 3.2rem;
+		font-size: 1.5rem;
+		padding-left: .8rem;
+		padding-right: .8rem;
+		gap: .2rem;
+		border-radius: 0.4rem;
+
+		&::before,
+		&::after {
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+	}
+
+	&.sm,
+	&.small {
+		height: 4rem;
+		font-size: 1.5rem;
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+		border-radius: 0.6rem;
+
+		&::before,
+		&::after {
+			width: 2rem;
+			height: 2rem;
+		}
+	}
+
+	&.md,
+	&.medium {
+		height: 4.8rem;
+		font-size: 1.7rem;
+
+		&::before,
+		&::after {
+			width: 2.4rem;
+			height: 2.4rem;
+		}
+	}
+
+	&.lg,
+	&.large {
+		height: 5.6rem;
+		font-size: 1.9rem;
+
+		&::before,
+		&::after {
+			width: 2.4rem;
+			height: 2.4rem;
+		}
+	}
+
+	&.xlg,
+	&.xlarge {
+		height: 6.4rem;
+		font-size: 1.9rem;
+
+		&::before,
+		&::after {
+			width: 3.2rem;
+			height: 3.2rem;
+		}
+	}
+
+	//type
+	&.primary {
+		background: var(--primary-50);
+		color: var(--gray-0);
+		border-color: transparent;
+
+		&:hover {
+			border-color: var(--primary-60);
+			background-color: var(--primary-60);
+		}
+
+		&:active {
+			border-color: var(--primary-70);
+			background-color: var(--primary-70);
+		}
+
+		&::after {
+			background-color: var(--gray-0);
+		}
+	}
+
+	&.secondary {
+		background: var(--primary-5);
+		color: var(--primary-60);
+		border-color: var(--primary-50);
+
+		&:hover {
+			background-color: var(--primary-10);
+		}
+
+		&:active {
+			background-color: var(--primary-20);
+		}
+	}
+
+	/* &.tertiary {
+		background: var(--gray-80);
+		color: var(--gray-0);
+		border-color: var(--gray-80);
+
+		&:hover {
+			background-color: var(--gray-90);
+			border-color: var(--gray-90);
+		}
+
+		&:active {
+			background-color: var(--gray-100);
+		}
+	} */
+
+	//radio버튼
+	&-label {
+		input[type='radio'] {
+			position: absolute;
+			opacity: 0;
+
+			&:checked+label,
+			&:focus+label {
+				background: var(--primary-50);
+				color: var(--gray-0);
+				border-color: transparent;
+			}
+
+			&:focus+label {
+				outline: 2px dotted var(--gray-0);
+				outline-offset: -2px;
+			}
+		}
+
+		label {
+			cursor: pointer;
+		}
+	}
+
+}
+
+@include m.media(m.$mobile) {
+	.btns {
+		justify-content: center;
+	}
+
+	// .btn {
+	// 	padding-left: 1rem;
+	// 	padding-right: 1rem;
+	// }
+}

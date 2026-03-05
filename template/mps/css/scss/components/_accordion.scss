@@ -1,0 +1,160 @@
+@use "../mixins" as m;
+
+/* 아코디언 */
+.accordion {
+	border-top: 1px solid var(--gray-20);
+
+	details {
+		padding: .4rem 0;
+		border-bottom: 1px solid var(--gray-20);
+
+		.category {
+			font-size: 1.7rem;
+			font-weight: 700;
+			color: var(--primary-50);
+			@include m.circle(3.2rem, var(--gray-0));
+			border: 1px solid var(--gray-20);
+		}
+
+
+		&[open] {
+			padding-bottom: 2.4rem;
+
+			.aco-title {
+				background: var(--secondary-5);
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+
+			.title {
+				color: var(--secondary-80);
+			}
+
+			.ico-angle {
+				&::after {
+					transform: rotate(180deg);
+				}
+			}
+
+			.aco-cont {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+
+
+			}
+		}
+	}
+
+	.aco-title {
+		display: block;
+		padding: 2.4rem 4.8rem 2.4rem 2.4rem;
+		cursor: pointer;
+		position: relative;
+		border-radius: var(--radius-medium);
+
+		&:hover {
+			text-decoration: none;
+			background: var(--secondary-5);
+			transition: 0.2s;
+		}
+
+		.notice {
+			font-size: 1.5rem;
+			background: var(--gray-5);
+			@include m.flex(null, center, center, column);
+			width: 6rem;
+			min-width: 6rem;
+			height: 5.7rem;
+			margin: -1rem 2rem -1rem -2rem;
+			font-size: 1.3rem;
+			font-weight: 700;
+			color: var(--gray-70);
+
+			&::before {
+				@include m.icon("\f2a2");
+				font-size: 1.7rem;
+			}
+		}
+
+		.title {
+			@include m.flex(2.4rem, center);
+			font-weight: bold;
+		}
+
+		.ico-angle {
+			@include m.pos(rt, 2.4rem, 50%);
+
+			&::after {
+				width: 2.4rem;
+				height: 2.4rem;
+				transition: .25s;
+			}
+		}
+	}
+
+	.aco-cont {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: .4s;
+		padding: 2.4rem;
+		@include m.flex(2.4rem);
+		background: var(--secondary-5);
+		border-bottom-left-radius: var(--radius-medium);
+		border-bottom-right-radius: var(--radius-medium);
+
+		.category {
+			background: var(--primary-50);
+			border-color: transparent;
+			color: var(--gray-0);
+		}
+
+		.cont {
+			width: 100%;
+			overflow-x: auto;
+			word-break: break-all;
+
+			p {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+// details로 변경전 아코디언 
+// .accordion {
+// 	border-top: 1px solid var(--gray-90);
+
+// 	> li {
+// 		.aco-title {
+// 			@include m.flex($ai:center); border-bottom: 1px solid var(--gray-30); padding: 1rem 2rem; width: 100%;
+// 			&:hover { text-decoration:none; background: var(--secondary-5); transition: 0.2s;}
+
+// 			.title { font-size: 2rem; }
+// 			.arrow { margin-left: auto; font-size: 3rem; background: var(--gray-0); border: 1px solid #dedede; border-radius: 50%; padding: .6rem; transition: .25s; }
+// 		}
+// 		.aco-cont { @include m.inactive(.3s); padding: 0 4rem;}
+
+// 		&.active {
+// 			.arrow { transform: rotate(180deg); }
+// 			> .aco-cont { @include m.active; padding: 4rem; background-color: #fafafa;  border-bottom: 1px solid var(--gray-30); }
+// 		}
+// 	}		
+// }
+
+@include m.media(m.$pad) {
+	.accordion {
+		.aco-title {
+			padding: 1.2rem 3.6rem 1.2rem 0.8rem;
+
+			.ico-angle {
+				right: 0.8rem;
+			}
+		}
+
+		.aco-cont {
+			padding: 1.2rem;
+		}
+	}
+}

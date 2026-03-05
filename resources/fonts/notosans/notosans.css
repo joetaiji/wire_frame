@@ -1,0 +1,54 @@
+/* noto-sans-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans Light'), local('NotoSans-Light'), local('Noto Sans'),
+        url('./noto-sans-v42-latin-300.woff2') format('woff2'),
+        url('./noto-sans-v42-latin-300.woff') format('woff');
+}
+
+/* noto-sans-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('NotoSans-Regular'), local('Noto Sans'),
+        url('./noto-sans-v42-latin-regular.woff2') format('woff2'),
+        url('./noto-sans-v42-latin-regular.woff') format('woff');
+}
+
+/* noto-sans-500 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans Medium'), local('NotoSans-Medium'), local('Noto Sans 500'), local('NotoSans-500'), local('Noto Sans'),
+        url('./noto-sans-v42-latin-500.woff2') format('woff2'),
+        url('./noto-sans-v42-latin-500.woff') format('woff');
+}
+
+/* noto-sans-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Noto Sans SemiBold'), local('NotoSans-SemiBold'), local('Noto Sans 600'), local('NotoSans-600'), local('Noto Sans'),
+        url('./noto-sans-v42-latin-600.woff2') format('woff2'),
+        url('./noto-sans-v42-latin-600.woff') format('woff');
+}
+
+/* noto-sans-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans Bold'), local('NotoSans-Bold'), local('Noto Sans 700'), local('NotoSans-700'), local('Noto Sans'),
+        url('./noto-sans-v42-latin-700.woff2') format('woff2'),
+        url('./noto-sans-v42-latin-700.woff') format('woff');
+}
