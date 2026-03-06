@@ -1,0 +1,209 @@
+@charset "utf-8";
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+@use "sass:selector";
+@use "sass:meta";
+@use 'mixin' as mix;
+
+/*-------------------------------------------------
+title       : 컴포넌트 반응형
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+
+@media (max-width: 1023px)
+{
+    #utile 
+    {
+        bottom: auto; top: 1rem;
+        .btn {@include mix.nemo(3.5rem);}
+        .print {display: none;}
+    }
+}
+
+@media (max-width: mix.$pad)
+{
+    // 서브 레이아웃 일부
+    // =====================================================================================================
+    .contents_info .info 
+    {
+        display: block; padding-bottom: 5.5rem;
+
+        li
+        {
+            &:nth-last-child(n+2)
+            {
+                &:nth-child(n+2)::before {display: none;}            
+                strong {display: inline-block; width: 6rem; margin-right: 0; vertical-align: middle;}
+            }
+
+            &:nth-child(4):last-child {position: absolute; left: 0; bottom: 0; width: 100%; padding: 1rem; border-top: 1px dashed var(--bdc); text-align: right;}
+        }
+    }
+        
+    // 게시판 관련 요소
+    // =====================================================================================================
+    .board_info
+    {
+        display: block;
+
+        .search 
+        {
+            margin-bottom: 2rem; padding: 2rem; border-radius: var(--brd); background-color: #efefef;
+            
+            fieldset {justify-content: center;}
+            .form_text {width: 100%; flex: 1 1;}
+        }
+
+        .form_text {margin: 1rem 0;}
+    }
+
+    // 목록
+    .board_list table
+    {
+        thead {display: none;}
+        tr {display: block; position: relative; padding: 2rem 0 2rem 4.5rem; border-bottom: 1px solid var(--bdc); text-align: left;}
+
+        td 
+        {
+            display: block; padding: 0; border-bottom: 0 none;
+            &.txt_left, &[aria-label="번호"], &[aria-label="첨부파일"], &[aria-label="처리상태"], &[aria-label="링크"] { &::before {display: none;} }
+            &.txt_left {display: block; margin-bottom: 1rem; font-size: 1.8rem;}   
+            &[aria-label="번호"]:first-child {@include mix.nemo(3rem); position: absolute; left: 0; top: 2rem; border-radius: 100%; background-color: #000; font-size: 1.2rem; color: #fff;}
+            &[aria-label="조회수"] {display: none;}                     
+            &[aria-label="첨부파일"], &[aria-label="처리상태"], &[aria-label="링크"] {display: inline;}
+            img {height: 2.5rem;}
+            img, .icon1, .btn_s {margin: 1rem 0 0;}
+
+            &::before {display: inline-block; margin-right: 1rem; font-weight: 600; content: attr(aria-label); vertical-align: middle;}
+        }
+    }
+
+    // 페이징
+    .board_pager
+    {
+        .group > a:first-child, .item a:not(.active) {display: none;}
+        .item .active {display: inline; background: none; color: mix.$cl;}
+
+        .group
+        {
+            margin: 0 1rem;
+
+            & > a:last-child
+            {
+                display: inline; width: auto; padding: 0;
+                &::before {position: static; content: '/ '; opacity: 1;}
+            }
+        }
+    }
+
+    // 작성
+    .board_write
+    {
+        colgroup {display: none;}
+        td {display: block; width: 100%; height: auto;}
+        
+        th 
+        {
+            display: block; width: 100%; padding-left: 1rem; border-bottom: 0 none;
+            span[aria-label=필수항목] {position: static;}
+        }
+    }
+
+    // 목록(갤러리)
+    .list_gallery
+    {
+        margin: 0 -1.5rem;
+        & > li > a {padding: 3rem 1.5rem;}
+
+        ul:not(.type1) li 
+        {
+            display: block;
+            & + li::before {display: none;}
+        }
+    }
+
+    // 블로그형
+    .list_blog > li > a 
+    {
+        padding: 3rem 0;
+        & > i {width: 25rem; margin-right: 3rem;}
+    }
+}
+
+@media (max-width: mix.$mobile)
+{
+    // 서브 레이아웃 일부
+    // =====================================================================================================
+    .contents_info .survey
+    {
+        padding: 2rem 2rem 5.5rem;
+        small {top: auto; bottom: 1rem; right: 2rem; width: calc(100% - 4rem); padding-top: 1rem; border-top: 1px dashed var(--bdc); text-align: right;}
+        strong {font-size: inherit;}
+        li {display: block;}
+    }
+    
+    // 게시판 관련 요소
+    // =========================================================================================================
+    .board_gallery .thumb .list button {width: 10rem;}
+    .board_reply .info {position: static; margin: 0 -2rem 2rem; padding: 0 2rem 2rem; border-bottom: 1px solid var(--bdc); font-size: 90%;}
+
+    // 내용
+    .board_view
+    {
+        & > h2
+        {
+            padding: 1.5rem 0 1rem;
+    
+            & + .info
+            {
+                padding-bottom: 1.5rem; text-align: left;
+        
+                li 
+                {
+                    display: block; width: 18rem; margin: 0 auto !important;
+                    & + li {margin-left: 0;}
+                }
+            }
+        }
+
+        .contents {padding: 3rem 0;}
+    }
+
+    // 첨부파일
+    .board_file
+    {
+        display: block; padding: 2rem;
+        strong {display: block; padding: 0 0 1.5rem;}
+        li + li {margin-top: 0.5rem;}
+        img {height: 2rem;}
+    }
+
+    // 댓글
+    .board_comment .list .btns {display: block; position: static; margin-top: 1rem; text-align: right;}
+    
+    // 목록(갤러리)
+    .list_gallery
+    {
+        @include mix.list(0px, 0px, 2);
+        margin: 0 -1rem;
+        & > li > a {padding: 2rem 1rem;}
+    }
+
+    // 블로그형
+    .list_blog > li > a 
+    {
+        padding: 2rem 0; align-items: inherit;
+        .item {padding-bottom: 0;}
+        
+        & > i 
+        {
+            width: 12rem; min-width: 12rem; max-width: 12rem; margin-right: 2rem;
+            &::before {margin-top: 0;}
+            &::after {display: none;}
+        }
+    }
+}

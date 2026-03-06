@@ -1,0 +1,34 @@
+<div class="responsive-pe_ii">
+  <div class="responsive-tool responsive-tool-basic">
+    <div class="tabs">
+      <div class="tab-item" data-item-type="mobile" title="${NamoSELang.responsive_basic_mobile}">mobile</div>
+      <div class="tab-item" data-item-type="tablet" title="${NamoSELang.responsive_basic_tablet}">tablet</div>
+      <div class="tab-item" data-item-type="pc" title="${NamoSELang.responsive_basic_pc}">PC</div>
+    </div>
+  </div>
+  <div class="responsive-tool responsive-tool-detail">
+    <div class="tool-detail-pe_dZ">
+      <span>
+        <select id="responsive-device-list"></select>
+      </span>
+      <div class="responsive-resolution">
+        <label>
+          <input type="text" readonly="readonly" name="width" value="1024"/>
+          <span class="unit-size">px</span>
+        </label>
+        <span class="">&times;</span>
+        <label>
+          <input type="text" readonly="readonly" name="height" value="768"/>
+          <span class="unit-size">px</span>
+        </label>
+      </div>
+      <span style="display: none;">
+        <select id="responsive-zoom-list" value="100%"></select>
+      </span>
+      <button class="rotate-device" data-action="rotate-device" title="${NamoSELang.responsive_device_rotation}"/>
+    </div>
+  </div>
+  <div class="responsive-tool responsive-tool-common">
+    <label><input type="checkbox" name="show-detail"/>${NamoSELang.responsive_detail}</label>
+  </div>
+</div>

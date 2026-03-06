@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>IsPrivacyInfo</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="off">
+            <p class="pme">Param</p>
+        </td>
+        <td class="on">
+            <p class="pme2">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>IsPrivacyInfo</h2>
+            <p class="dscrpt">편집 중인 문서의 내용 중 개인정보에 해당하는 정보가 존재하는지 여부를 확인합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>HRESULT <span class="fname">IsPrivacyInfo</span>(bcheckJumin, bcheckPhone, bcheckEmail);</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="dscrpt">[get] <span class="para">bcheckJumin</span></p>
+            <p class="dscrpt">[in] true : 주민등록번호 검사, false : 검사 대상에서 제외</p>
+            <p class="dscrpt">[put] <span class="para">bcheckPhone</span></p>
+            <p class="dscrpt">[in] true : 전화번호 검사, false: 검사 대상에서 제외</p>
+			<p class="dscrpt">[get] <span class="para">bcheckEmail</span></p>
+            <p class="dscrpt">[in] true : 메일주소 검사, false: 검사 대상에서 제외</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Return Values</h4>
+            <table class="paradsc2">
+                <tr>
+                    <td class="eee">
+                        <p align="center">TRUE</p>
+                    </td>
+                    <td>
+                        <p>개인정보 대상 존재</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="eee">
+                        <p align="center">FALSE</p>
+                    </td>
+                    <td>
+                        <p>개인정보 대상 미존재</p>
+                    </td>
+                </tr>
+            </table>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">메소드는 Main class 호출 후 에디터가 로드된 다음 실행해야 정상적으로 실행됩니다.</p>
+			<p class="dscrpt">작성한 내용 중 개인정보가 존재할 경우 미리 체크하여 알려주는 기능입니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Sample Codes</h4>
+            <p class="scode">JavaScript</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.EditorStart();
+function <b>OnInitCompleted</b>(){
+   var info = object.<b>IsPrivacyInfo</b>(true, true, true);
+   if(info)
+   {
+       alert(&quot;개인정보가 발견되었습니다.&quot;);
+   }
+   else
+   {
+       var val = object.GetBodyValue();
+   }
+}</pre>
+            <p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

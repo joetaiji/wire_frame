@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import url('../../fonts/remixicon/font_remixicon.css');
+@import url('../../fonts/pretendard/font_pretendard.css');
+
+/*-------------------------------------------------
+title       : 토큰
+Author      : PLAN I
+Create date : 2025-08-19
+-------------------------------------------------*/
+
+:root
+{
+    
+    --width1 : 100%;
+    --width2 : 100%;
+    --time2  : all 0.2s;
+    
+    --ff     : 'Pretendard GOV';
+    --fs     : 1.6rem;
+    --cl     : #333;
+    --lh     : 1.5;
+
+    --brd    : 0.4rem;               
+    --bdc    : #d8d8d8;
+    --cmpH   : 4rem;   
+}
+
+.ir, .sr-only {overflow: hidden; position: absolute; width: 1px; height: 1px; padding: 0; border: 0 none; clip: rect(0, 0, 0, 0); white-space: nowrap;}
+
+.txt_left   {text-align: left !important;}
+.txt_center {text-align: center !important;}
+.txt_right  {text-align: right !important;}

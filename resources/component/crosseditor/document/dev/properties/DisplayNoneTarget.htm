@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>DisplayNoneTarget</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="on">
+            <p class="pme2">Param</p>
+        </td>
+        <td class="off">
+            <p class="pme">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>DisplayNoneTarget<sub>v1.1 higher</sub></h2>
+            <p class="dscrpt">에디터 최초 실행 시 웹 문서에 바로 출력하지(display:none) 않을 경우 출력을 제어하는 Element를 지정해 줍니다.</p>
+            <p class="dscrpt">출력을 제어하는 Element가 지정되어 있지 않은 경우에는 에디터의 출력 높이를 계산하지 못해 에디터가 정상적으로 화면에 출력되지 않습니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>[get] HRESULT <span class="fname">DisplayNoneTarget</span> (<br>      object* <span class="paraname">pVal</span><br>);</pre>
+            </ul>
+            <ul>
+                <pre>[put] HRESULT <span class="fname">DisplayNoneTarget</span> (<br>      object <span class="paraname">newVal</span><br>);</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="dscrpt">[get] <span class="para">pVal</span></p>
+            <p class="dscrpt">[out, retval] 설정된 Element를 반환합니다.</p>
+            <p class="dscrpt">[put] <span class="para">newVal</span></p>
+            <p class="dscrpt">[in] Element를 입력합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Return Values</h4>
+            <p class="dscrpt">현재 설정된 값을 돌려줍니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">DisplayNoneTarget 값을 설정하기 위해서는 에디터의 MainClass가 호출된 후, 에디터가 로드되기 전에 적용 시켜 주어야 합니다. 호출은 생성된 MainClass 객체의 &quot;params&quot;을 통하여 할 수 있습니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Sample Codes</h4>
+            <p class="scode">JavaScript [get]</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+var edit = object.params.<b>DisplayNoneTarget;</b></pre>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <p class="scode">JavaScript [put]</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.params.<b>DisplayNoneTarget</b> = document.getElementById(&quot;crosseditor&quot;);
+                // 크로스에디터를 감싸고 있는 Element
+object.EditorStart();</pre>
+            <p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

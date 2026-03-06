@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+// title       : 믹스인
+// Author      : PLAN I
+// Create date : 2024-10-25
+
+// 고정변수
+$icon   : 'remixicon';
+$ff     : var(--ff);
+$fs     : var(--fs);
+$cl     : var(--cl);
+$lh     : var(--lh);
+
+$time1  : all 0s;
+$time2  : var(--time2);
+
+$width1 : var(--width1);
+$width2 : var(--width2);
+
+$web    : 1280px;
+$pad    : 768px;
+$mobile : 500px;
+
+// 폰트
+@mixin font($size, $color, $lh) {font-size: $size; color: $color; line-height: $lh;}
+
+// 가로
+@mixin width($width1: $width1, $width2: $width2) {width: $width1; max-width: $width2; margin-left: auto !important; margin-right: auto !important;}
+
+// 라인이 있는 요소의 세로값
+@mixin height($height, $bdwidth, $bdcolor) {height: $height; border: $bdwidth solid $bdcolor; line-height: calc($height - ($bdwidth * 2));}
+
+// 한줄 줄임
+@mixin ellipsis($lines: 1, $line-height: inherit) 
+{
+    overflow: hidden; line-height: $line-height; text-overflow: ellipsis;
+    @if $lines == 1 { display: block; max-height: $line-height; white-space: nowrap; } 
+    @else { display: -webkit-box; max-height: calc($line-height * $lines); line-clamp: $lines; -webkit-line-clamp: $lines; box-orient: vertical; -webkit-box-orient: vertical; }
+}
+
+// position: relative
+@mixin bg1($zindex: inherit) {position: relative; z-index: $zindex;}
+
+// 가상선택자 배경
+@mixin bg2($type) 
+{
+    position: absolute; top: 0; z-index: -1; height: 100%; content: '';
+    @if $type == type1 { left: 50%; width: 10000%; transform: translateX(-50%); }
+    @if $type == type2 { left: 0; width: 100%; }
+}
+
+// 요소 가운데 정렬
+@mixin position($direction)
+{
+    @if $direction == left   { left: 50%; transform: translateX(-50%); } 
+    @if $direction == top    { top: 50%; transform: translateY(-50%); } 
+    @if $direction == center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+    @if $direction == none { position: relative; top: auto; left: auto; right: auto; bottom: auto; transform: translate(0, 0); }
+    @else { position: absolute; }
+}
+
+// 감춤
+@mixin hidden($width: 0, $height: 0) {visibility: hidden; overflow: hidden; width: $width; height: $height; opacity: 0;}
+
+// 보임
+@mixin visible($width: auto, $height: auto) {visibility: visible; overflow: visible; width: $width; height: $height; opacity: 1; transition: $time2;}
+
+// 아이콘
+@mixin icon($type, $content)
+{
+    font-family: $icon; content: $content;
+    @if $type == type1 { display: inline-block; position: relative; top: -0.1rem; vertical-align: middle; } 
+    @if $type == type2 { position: absolute; }
+    @if $type == type3 { display: flex; width: 100%; height: 100%; text-align: center; justify-content: center; align-items: center; line-height: inherit; }
+}
+
+// 정사각형
+@mixin nemo($size) {display: inline-block; overflow: hidden; width: $size; height: $size; text-align: center; line-height: $size; vertical-align: middle;}
+
+// 오버 시 회전
+@mixin hover($target)
+{
+    &::#{$target} {transform: rotate(0); transition: $time2;}
+    &:hover, &:focus { &::#{$target} {transform: rotate(180deg);} }
+}
+
+// 오버 시 라인
+@mixin line($target, $color : #fff)
+{    
+    position: relative;
+    &::#{$target} {@include position(left); bottom: 0; width: 0; height: 1px; background-color: $color; content: ''; transition: $time2;}
+    &:hover, &:focus { &::#{$target} {width: 100%;} }
+}
+
+// 타이틀
+@mixin title($margin, $font, $color) 
+{
+    @include font($font, $color, $lh);
+    display: block; margin: $margin;
+    &:first-child {margin-top: 0;}
+}
+
+// 블릿 리스트
+@mixin bul($padding)  
+{
+    position: relative; padding-left: $padding; text-align: left;
+    &::before {position: absolute; left: 0; top: auto; content: '';}
+}
+
+// 리스트
+@mixin list($mr, $mt, $ea)  {display: grid; grid-template-columns: repeat($ea, calc((100% / $ea) - (($mr * ($ea - 1)) / $ea))); column-gap: $mr; row-gap: $mt;}
+
+// 버튼
+@mixin btn($height, $padding, $bdwidth, $bdcolor, $bgcolor, $font, $color)
+{    
+    @include font($font, $color, inherit);
+    @include ellipsis(type1, $height);
+    @include height($height, $bdwidth, $bdcolor);
+    display: inline-block; padding: $padding; background-color: $bgcolor; text-align: center; vertical-align: middle; transition: $time2;
+
+    @if $bdcolor == $bgcolor                            { &:hover, &:focus {background-color: #fff; color: $bgcolor;} }
+    @if $bgcolor == #fff and $bgcolor == transparent  { &:hover, &:focus {background-color: $bdcolor; color: #fff;} }
+}
+
+// 이전 다음
+@mixin arr($nemo: 3rem, $rem: 0, $size: 2rem, $left: '\EA64', $right: '\EA6E')
+{
+    @include nemo($nemo);
+    font-size: $size;
+
+    $arrs:
+    (
+        prev: (direction: left, icon: $left),
+        next: (direction: right, icon: $right)
+    );
+
+    @each $keys, $map in $arrs
+    {
+        &[class*="#{$keys}"]
+        {
+            position: absolute; #{map-get($map, direction)}: $rem;
+            &::before {@include icon(type3, map-get($map, icon));}
+        }
+    }
+}
+
+// 재생 정지
+@mixin playstop($nemo: 3rem, $size: 2rem, $play: '\F00A', $stop: '\F1A0')
+{
+    @include nemo($nemo);
+    display: none; font-size: $size;
+    &.active {display: inline;}
+
+    $icons: (play: $play, stop: $stop);
+    @each $keys, $icon in $icons { &.#{$keys}::before {@include icon(type3, $icon);} }
+}
+
+// 닫기
+@mixin close($nemo: 3rem, $right: 2rem, $top: 2rem, $font: 2.5rem)
+{
+    @include nemo($nemo); 
+    @include hover(before);
+    position: absolute; right: $right; top: $top; font-size: $font;
+    &::before {@include icon(type3, '\EB99');}
+}
+
+// 페이저
+%pager
+{
+    span 
+    {
+        display: inline-block; position: relative; width: 2rem; height: 2rem; vertical-align: middle; cursor: pointer;
+        &::before {@include position(center); width: 60%; height: 60%; border-radius: 100%; border: 1px solid #fff; content: ''; transition: $time2;}
+        &[class*="active"]::before {background-color: #fff;}
+    }
+}

@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/*-------------------------------------------------
+title       : 하단배너
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+.footbanner {
+  clear: both;
+  position: relative;
+  padding: 2rem 6rem;
+  border-top: 1px solid var(--bdc);
+  text-align: center;
+}
+.footbanner .item {
+  padding: 0 2rem;
+}
+.footbanner .pager, .footbanner .count, .footbanner .btns {
+  display: none;
+}
+.footbanner .list {
+  align-items: center;
+}
+.footbanner .list[style*="translate3d(0px, 0px, 0px)"] {
+  justify-content: center;
+}
+.footbanner .list img {
+  max-height: 5.5rem;
+}
+.footbanner .arrs button {
+  display: inline-block;
+  overflow: hidden;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  line-height: 4rem;
+  vertical-align: middle;
+  font-size: 2rem;
+  top: 3rem;
+  border-radius: 100%;
+  border: 1px solid var(--bdc);
+  background-color: #fff;
+  transition: var(--time2);
+}
+.footbanner .arrs button[class*=prev] {
+  position: absolute;
+  left: 2rem;
+}
+.footbanner .arrs button[class*=prev]::before {
+  font-family: "remixicon";
+  content: "\ea64";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+}
+.footbanner .arrs button[class*=next] {
+  position: absolute;
+  right: 2rem;
+}
+.footbanner .arrs button[class*=next]::before {
+  font-family: "remixicon";
+  content: "\ea6e";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+}
+.footbanner .arrs button:hover, .footbanner .arrs button:focus {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+}
+.footbanner .arrs button[class*=lock] {
+  visibility: hidden;
+  opacity: 0;
+}/*# sourceMappingURL=footbanner.css.map */

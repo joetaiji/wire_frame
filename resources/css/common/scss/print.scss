@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/*-------------------------------------------------
+title       : 인쇄
+Author      : PLAN I
+Create date : 2025-03-04
+-------------------------------------------------*/
+
+@page {margin: 1rem;}
+
+@media print 
+{
+    * {color-adjust: exact; -webkit-print-color-adjust: exact;}
+    #krds-masthead, #krds-header, #krds-footer, #visual,.krds-side-navigation {display: none;}
+    #contents {float: none; width: 100%;}
+}

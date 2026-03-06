@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>GetEditorDocument</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="off">
+            <p class="pme">Param</p>
+        </td>
+        <td class="on">
+            <p class="pme2">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>GetEditorDocument<sub>v3.0.0.26 or higher</sub></h2>
+            <p class="dscrpt">에디터에서 사용 중인 문서에 접근(access)하기 위해 필요한 객체를 리턴합니다.</p>
+			<p class="dscrpt">단, 편집모드 상태에서만 DOM객체에 접근하여 값을 가져올 수 있습니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>HRESULT <span class="fname">GetEditorDocument</span> (<br>        BSTR<span class="paraname"> pVal</span><br>);</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="dscrpt">없음</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Return Values</h4>
+            <p class="dscrpt">객체를 반환합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">메소드는 Main class 호출 후 에디터가 로드된 다음 실행해야 정상적으로 실행됩니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Sample Codes</h4>
+            <p class="scode">JavaScript</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.EditorStart();
+function <b>OnInitCompleted</b>(){
+   var doc = object.<b>GetEditorDocument</b>('doc');
+   var info = doc.getElementById(&quot;에디터에 선언된 태그 id값&quot;).value;
+   alert(info);
+}</pre>
+            <p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

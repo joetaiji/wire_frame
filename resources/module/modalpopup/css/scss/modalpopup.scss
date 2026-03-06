@@ -1,0 +1,98 @@
+@charset "utf-8";
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+@use "sass:selector";
+@use "sass:meta";
+@use '../../../../css/common/scss/mixin.scss' as mix;
+
+/*-------------------------------------------------
+title       : 모달팝업
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+
+.modalpopup
+{
+    --width2 : calc(100% - 6rem);
+    --mpArr : -8rem; 
+
+    .open 
+    {
+        @include mix.nemo(10rem);
+        @include mix.position(top); 
+        overflow: visible; position: fixed; left: 5rem; z-index: 777; border-radius: 100%; background-color: #000; color: #fff; line-height: 1.2;
+        span {display: block;}
+        b {color: red;}
+        &::before {@include mix.position(center); z-index: -1; width: 100%; height: 100%; border-radius: 100%; background-color: #000; content: ''; opacity: 0;}
+        &:hover, &:focus { &::before {animation: modalpopup 1s infinite;} }
+    }
+    
+    &.active #modalpopup {@include mix.visible(100%, 100%); left: 0; top: 0;}
+}
+
+@keyframes modalpopup
+{
+    0% {opacity: 1; transform: translate(-50%, -50%) scale(1);}
+    100% {opacity: 0; transform: translate(-50%, -50%) scale(2);}
+}
+
+#modalpopup
+{
+    @include mix.hidden;
+    display: flex; position: fixed; left: 50%; top: 50%; z-index: 888; backdrop-filter: blur(5px); background-color: rgba(0, 0, 0, 0.5); color: #fff; align-items: center;
+
+    h1 {margin-bottom: 2rem; font-size: 5rem;}
+    .group {@include mix.position(center); @include mix.width;}
+    .count {position: absolute; right: 4.6rem; top: 2rem; left: auto; width: auto; height: 4.5rem; padding: 0 2rem; border-radius: 4.5rem; background-color: #000; line-height: 4.5rem;}
+    .arrs button {@include mix.position(top); @include mix.arr(5rem, var(--mpArr), 5rem); z-index: 1; text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);}
+    .btns button {@include mix.playstop(4.5rem); position: absolute; right: 0; top: 2rem; border-radius: 100%; background-color: #000;}
+    
+    .swiper:not(.swiper-initialized)
+    {
+        .list {display: flex; justify-content: center;}
+        & + .control { .count, .arrs, .btns {display: none;} }
+    }
+    
+    .pager 
+    {
+        @extend %pager; margin: 2rem 0; text-align: center;
+        span {background: none;}
+    }
+    
+    .item 
+    {
+        display: flex; overflow: hidden; margin-right: 3rem; align-items: center;
+        img {transition: $time2;}
+        &:last-child {margin-right: 0;}
+        &:hover, &:focus { img {transform: scale(1.2); opacity: 0.75;} }
+    }
+    
+    .close
+    {
+        margin-top: 2rem; text-align: center;
+
+        button 
+        {
+            @include mix.hover(after);
+            @include mix.height(4.5rem, 1px, rgba(255, 255, 255, 0.2));
+            padding: 0 2rem; border-radius: 4.5rem;
+            &::after {@include mix.icon(type1, '\EB99'); margin-left: 0.5rem;}
+        }
+    }
+}
+
+// 반응형
+// =================================================================================================================
+@media (max-width: 1600px) 
+{ 
+    .modalpopup 
+    {
+        --mpArr: -3rem;
+        .open {left: 1rem;} 
+    }
+}
+
+@media (max-width: $mobile) { #modalpopup .item {width: 34rem; margin-right: 1rem;} }

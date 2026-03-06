@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*-------------------------------------------------
+title       : 레이어팝업
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+#layerpopup .group {
+  position: absolute;
+  z-index: 999;
+  min-width: 25rem;
+  max-width: var(--width1);
+  width: auto !important;
+  height: auto !important;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+#layerpopup .group a {
+  display: block;
+  overflow: hidden;
+}
+#layerpopup .group a, #layerpopup .group a img {
+  transition: var(--time2);
+}
+#layerpopup .group a img {
+  min-width: 100%;
+  height: auto !important;
+}
+#layerpopup .group a:hover, #layerpopup .group a:focus {
+  background-color: #000;
+}
+#layerpopup .group a:hover img, #layerpopup .group a:focus img {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+#layerpopup .control {
+  display: flex;
+  padding: 1.5rem;
+}
+#layerpopup .close {
+  margin-left: auto;
+}
+#layerpopup .close::after {
+  transform: rotate(0);
+  transition: var(--time2);
+}
+#layerpopup .close:hover::after, #layerpopup .close:focus::after {
+  transform: rotate(180deg);
+}
+#layerpopup .close::after {
+  font-family: "remixicon";
+  content: "\eb99";
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  vertical-align: middle;
+  position: relative;
+  top: -0.2rem;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 500px) {
+  .group {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+  }
+}/*# sourceMappingURL=layerpopup.css.map */

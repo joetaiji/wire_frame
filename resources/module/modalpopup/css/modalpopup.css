@@ -1,0 +1,361 @@
+@charset "UTF-8";
+#modalpopup .pager span {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#modalpopup .pager span::before {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  content: "";
+  -webkit-transition: var(--time2);
+  transition: var(--time2);
+}
+#modalpopup .pager span[class*=active]::before {
+  background-color: #fff;
+}
+
+/*-------------------------------------------------
+title       : 모달팝업
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+.modalpopup {
+  --width2: calc(100% - 6rem);
+  --mpArr: -8rem;
+}
+.modalpopup .open {
+  display: inline-block;
+  overflow: hidden;
+  width: 10rem;
+  height: 10rem;
+  text-align: center;
+  line-height: 10rem;
+  vertical-align: middle;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  overflow: visible;
+  position: fixed;
+  left: 5rem;
+  z-index: 777;
+  border-radius: 100%;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.2;
+}
+.modalpopup .open span {
+  display: block;
+}
+.modalpopup .open b {
+  color: red;
+}
+.modalpopup .open::before {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: #000;
+  content: "";
+  opacity: 0;
+}
+.modalpopup .open:hover::before, .modalpopup .open:focus::before {
+  -webkit-animation: modalpopup 1s infinite;
+          animation: modalpopup 1s infinite;
+}
+.modalpopup.active #modalpopup {
+  visibility: visible;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: var(--time2);
+  transition: var(--time2);
+  left: 0;
+  top: 0;
+}
+
+@-webkit-keyframes modalpopup {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(2);
+            transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+@keyframes modalpopup {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(2);
+            transform: translate(-50%, -50%) scale(2);
+  }
+}
+#modalpopup {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 888;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#modalpopup h1 {
+  margin-bottom: 2rem;
+  font-size: 5rem;
+}
+#modalpopup .group {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  width: var(--width1);
+  max-width: var(--width2);
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+#modalpopup .count {
+  position: absolute;
+  right: 4.6rem;
+  top: 2rem;
+  left: auto;
+  width: auto;
+  height: 4.5rem;
+  padding: 0 2rem;
+  border-radius: 4.5rem;
+  background-color: #000;
+  line-height: 4.5rem;
+}
+#modalpopup .arrs button {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  line-height: 5rem;
+  vertical-align: middle;
+  font-size: 5rem;
+  z-index: 1;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+#modalpopup .arrs button[class*=prev] {
+  position: absolute;
+  left: var(--mpArr);
+}
+#modalpopup .arrs button[class*=prev]::before {
+  font-family: "remixicon";
+  content: "\ea64";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+}
+#modalpopup .arrs button[class*=next] {
+  position: absolute;
+  right: var(--mpArr);
+}
+#modalpopup .arrs button[class*=next]::before {
+  font-family: "remixicon";
+  content: "\ea6e";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+}
+#modalpopup .btns button {
+  display: inline-block;
+  overflow: hidden;
+  width: 4.5rem;
+  height: 4.5rem;
+  text-align: center;
+  line-height: 4.5rem;
+  vertical-align: middle;
+  display: none;
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top: 2rem;
+  border-radius: 100%;
+  background-color: #000;
+}
+#modalpopup .btns button.active {
+  display: inline;
+}
+#modalpopup .btns button.play::before {
+  font-family: "remixicon";
+  content: "\f00a";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+}
+#modalpopup .btns button.stop::before {
+  font-family: "remixicon";
+  content: "\f1a0";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: inherit;
+}
+#modalpopup .swiper:not(.swiper-initialized) .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#modalpopup .swiper:not(.swiper-initialized) + .control .count, #modalpopup .swiper:not(.swiper-initialized) + .control .arrs, #modalpopup .swiper:not(.swiper-initialized) + .control .btns {
+  display: none;
+}
+#modalpopup .pager {
+  margin: 2rem 0;
+  text-align: center;
+}
+#modalpopup .pager span {
+  background: none;
+}
+#modalpopup .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  margin-right: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#modalpopup .item img {
+  -webkit-transition: var(--time2);
+  transition: var(--time2);
+}
+#modalpopup .item:last-child {
+  margin-right: 0;
+}
+#modalpopup .item:hover img, #modalpopup .item:focus img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 0.75;
+}
+#modalpopup .close {
+  margin-top: 2rem;
+  text-align: center;
+}
+#modalpopup .close button {
+  height: 4.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: calc(4.5rem - 2px);
+  padding: 0 2rem;
+  border-radius: 4.5rem;
+}
+#modalpopup .close button::after {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: var(--time2);
+  transition: var(--time2);
+}
+#modalpopup .close button:hover::after, #modalpopup .close button:focus::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#modalpopup .close button::after {
+  font-family: "remixicon";
+  content: "\eb99";
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 1600px) {
+  .modalpopup {
+    --mpArr: -3rem;
+  }
+  .modalpopup .open {
+    left: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  #modalpopup .item {
+    width: 34rem;
+    margin-right: 1rem;
+  }
+}

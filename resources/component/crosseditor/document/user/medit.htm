@@ -1,0 +1,209 @@
+<html>
+<head>
+	<title>나모 크로스에디터 도움말</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="NamoEditor Co., Ltd." />
+	<link href="../common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table class="t_center" class="center">
+    <tr>
+        <td>
+            <h1>편집 메뉴</h1>
+            <p class="mtext">문서 편집을 위한 기본적인 기능을 모아 놓았습니다.</p>
+			<div class="mtext">
+				<ul class="list">
+					<li class="ctsmall2"><a href="#undo">돌이킴</a>, <a href="#redo">되돌이킴</a></li>
+					<li class="ctsmall2"><a href="#cut">자르기</a>, <a href="#copy">복사하기</a>, <a href="#paste">붙여넣기</a>, <a href="#pastetext">텍스트로 붙여넣기</a></li>
+					<li class="ctsmall2"><a href="#find">찾기</a>, <a href="#replace">바꾸기</a></li>
+					<li class="ctsmall2"><a href="#select_all">전체선택</a></li>
+				</ul>
+			</div>
+			
+			<a name="undo"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">돌이킴</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.undo.gif" class="middle" />&lt;Ctrl+Z&gt;</p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">편집 작업을 취소하거나 취소했던 작업을 다시 원래대로 실행합니다.</p>
+            <p class="mtext">가장 최근에 한 작업을 취소하고 이전의 상태로 되돌립니다. 선택할 때마다 가장 최근에 한 작업이 한 단계씩 취소됩니다. <br />
+			더 이상 취소할 작업이 없다면 아무런 변화없이 툴바가 비활성화 상태로 변경됩니다. 문서를 열고 아무런 작업도 하지 않았거나 진행한 작업을 모두 돌이킨 후에는 돌이킴을 할 수 없습니다.</p>
+
+			<a name="redo"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">되돌이킴</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.redo.gif" class="middle" />&lt;Ctrl+Y&gt;</p>
+					</td>
+				</tr>
+			</table>
+			<p class="mtext">취소했던 편집 작업을 다시 원래대로 실행합니다. 가장 최근에 돌이켰던 작업이 한 단계씩 실행됩니다. <br/>
+			더 이상 취소할 돌이킴 작업이 없다면 아무런 변화없이 툴바가 비활성화 상태로 변경됩니다.</p>
+
+			<a name="cut"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">자르기</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.cut.gif" class="middle" />&lt;Ctrl+X&gt;</p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">블록으로 선택되어 있는 부분이 클립보드로 복사되고, 문서에서는 삭제됩니다. 잘라낸 부분은 클립보드에 보관되어 있으므로 다른 곳에 붙여 넣을 수 있습니다.</p>
+			
+			<a name="copy"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">복사하기</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.copy.gif" class="middle" />&lt;Ctrl+C&gt;</p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">블록으로 선택되어 있는 부분이 클립보드로 복사되고, 문서에도 그대로 남아있습니다. 복사한 부분은 클립보드에 보관되어 있으므로 다른 곳에 붙여 넣을 수 있습니다.</p>
+            <p class="mtext">클립보드에 새로운 내용을 복사하면 이전에 보관되어 있던 내용은 사라집니다.</p>
+			<p class="mtext">크로스에디터 4버전에서는 MS Office 문서의 이미지를 선택하여 복사하기가 가능합니다.<br />
+			단, Internet Explorer 11 이상, Chrome, Firefox, Opera 브라우저에서 가능하며 MS Office 2007 이상 호환 가능합니다.</p>
+
+			
+			<a name="paste"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">붙여넣기</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.paste.gif" class="middle" />&lt;Ctrl+V&gt;</p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">클립보드에 보관되어 있는 내용을 커서가 있는 위치에 삽입합니다.</p>
+            <p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">붙여넣기</span>를 하려면 먼저 <span class="menu">자르기</span>나 <span class="menu">복사하기</span>를 해야 합니다.</p>
+			<p class="mtext">크로스에디터 4버전에서는 MS Office 문서에서 복사한 이미지의 붙여넣기가 가능합니다.<br />
+			단, Internet Explorer 11 이상, Chrome, Firefox, Opera 브라우저에서 가능하며 MS Office 2007 이상 호환 가능합니다.</p>
+
+
+			<a name="pastetext"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">텍스트로 붙여넣기</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.pastetext.gif" class="middle" /></p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">클립보드에 보관되어 있는 내용 중 텍스트 형식 데이터를 커서가 있는 위치에 삽입합니다.</p>
+            <p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">붙여넣기</span>를 하려면 먼저 <span class="menu">자르기</span>나 <span class="menu">복사하기</span>를 해야 합니다.</p>
+
+			<a name="find"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">찾기</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.find.gif" class="middle" />&lt;Ctrl+F&gt;</p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">작업 중인 문서에서 특정 낱말을 찾습니다.</p>
+            <p class="mtext"><img src="images/medit_find.png" /></p>
+            <p class="mlabel1">찾을 내용 </p>
+            <p class="mlabeltext">찾을 내용을 입력 상자에 입력합니다.</p>
+            <p class="mlabel1">찾기</p>
+            <p class="mlabeltext"><span class="mlabel2">찾을 내용</span>에 입력한 내용을 하나씩 찾습니다.</p>
+            <p class="mlabel1">검색옵션</p>
+            <p class="mlabeltext"><span class="mlabel2">대소문자 구분</span>: 대문자와 소문자를 구별하면서 낱말을 찾습니다. 'bori'를 찾는 경우 'Bori'나 'BORI'는 찾지 않습니다.</p>
+            <p class="mlabeltext"><span class="mlabel2">문서 끝에서 되돌리기</span>: 현재 커서의 위치에서 문서의 아래쪽으로 입력한 내용을 찾은 후 문서의 처음부터 입력한 내용을 찾습니다.</p>
+			<p class="mlabeltext"><span class="mlabel2">단어 단위</span>: 단어 단위로 입력한 내용을 찾습니다.</p>
+            <p class="mlabel1">검색방향</p>
+            <p class="mlabeltext"><span class="mlabel2">위로</span>: 현재 커서 위치에서 위쪽에 있는 문서에서 입력한 내용을 찾습니다.</p>
+            <p class="mlabeltext"><span class="mlabel2">아래로</span>: 현재 커서 위치에서 아래쪽에 있는 문서에서 입력한 내용을 찾습니다. </p>
+			
+			<a name="replace"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">바꾸기</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.replace.gif" class="middle" />&lt;Ctrl+R&gt;</p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">작업 중인 문서에서 특정 낱말을 찾아 지정한 낱말로 변경합니다.</p>
+            <p class="mtext"><img src="images/medit_replace.png" /></p>
+            <p class="mlabel1">찾을 내용 </p>
+            <p class="mlabeltext">찾을 내용을 입력 상자에 입력합니다.</p>
+            <p class="mlabel1">바꿀 내용</p>
+            <p class="mlabeltext"><span class="mlabel2">바꿀 내용</span>을 선택한 다음  입력 상자에 바꿀 내용을 입력합니다.</p>
+            <p class="mlabel1">찾기</p>
+            <p class="mlabeltext"><span class="mlabel2">찾을 내용</span>에 입력한 내용을 하나씩 찾습니다.</p>
+            <p class="mlabel1">바꾸기</p>
+            <p class="mlabeltext"><span class="mlabel2">찾을 내용</span>에 입력한 내용을 모두 찾아 <span class="mlabel2">바꿀 내용</span>에 입력한 내용으로 하나씩 바꿉니다.</p>
+            <p class="mlabel1">모두 바꾸기</p>
+            <p class="mlabeltext"><span class="mlabel2">찾을 내용</span>에 입력한 내용을 모두 찾아 <span class="mlabel2">바꿀 내용</span>에 입력한 내용으로 모두 바꿉니다.</p>
+            <p class="mlabel1">검색 옵션</p>
+            <p class="mlabeltext"><span class="mlabel2">대소문자 구분</span>: 대문자와 소문자를 구별하면서 낱말을 찾습니다. 'bori'를 찾는 경우 'Bori'나 'BORI'는 찾지 않습니다.</p>
+            <p class="mlabeltext"><span class="mlabel2">문서 끝에서 되돌리기</span>: 현재 커서의 위치에서 문서의 아래쪽으로 입력한 내용을 찾은 후 문서의 처음부터 입력한 내용을 찾습니다.</p>
+			<p class="mlabeltext"><span class="mlabel2">단어 단위</span>: 단어 단위로 입력한 내용을 찾습니다.</p>
+            <p class="mlabel1">검색 방향</p>
+            <p class="mlabeltext"><span class="mlabel2">위로</span>: 현재 커서 위치에서 위쪽에 있는 문서에서 입력한 내용을 찾습니다.</p>
+            <p class="mlabeltext"><span class="mlabel2">아래로</span>: 현재 커서 위치에서 아래쪽에 있는 문서에서 입력한 내용을 찾습니다. </p>			
+			
+			<a name="select_all"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">전체선택</p>
+					</td>
+					<td class="w285">
+						<p><img src="images/icon.edit.selectall.gif" class="middle" />&lt;Ctrl+A&gt;</p>
+					</td>
+				</tr>
+			</table>
+            <p class="mtext">커서 위치에 상관없이 현재 편집 중인 문서의 모든 내용이 블록으로 선택됩니다. 이 상태에서 <span class="menu">복사하기</span>, <span class="menu">자르기</span>, <span class="menu">지우기</span>, <span class="menu">붙이기</span> 등의 편집 작업을 할 수 있습니다.</p>
+			
+			<a name="change_char"></a>
+			<table border="0" class="mtitle_table">
+				<tr>
+					<td class="top w285">
+						<p class="mtitle" style="line-height:2;">변환</p>
+					</td>
+					<td class="w285">
+						<p>&nbsp;</p>
+					</td>
+				</tr>
+			</table>
+			<p class="mtext">영문을 블록으로 선택하여 그 안에 있는 대문자와 소문자를 지정한 형식으로 바꿉니다.</p>
+			<p class="mlabel1">대문자로 변환</p>
+			<p class="mlabeltext">모든 글자를 대문자로 바꿔줍니다.</p>
+			<p class="mlabel1">소문자로 변환</p>
+			<p class="mlabeltext">모든 글자를 소문자로 바꿔줍니다.</p>
+			<p class="mlabel1">첫 글자만 대문자로 변환</p>
+			<p class="mlabeltext">첫 글자만 대문자로 바꿔줍니다.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+			<hr /><p class="center">Copyright ⓒ 2017 NamoEditor Co., Ltd. All rights reserved.</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

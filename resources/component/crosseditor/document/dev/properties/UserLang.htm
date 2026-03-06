@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>UserLang</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="on">
+            <p class="pme2">Param</p>
+        </td>
+        <td class="off">
+            <p class="pme">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td width="634" height="886">
+            <h2>UserLang<sub>v1.3 higher</sub></h2>
+            <p class="dscrpt">브라우저 언어와 상관없이 사용하는 다국어 리소스 중 특정 언어 리소스를 사용하고자 할 경우 사용 합니다.<br></p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>[get] HRESULT <span class="fname">UserLang</span> (<br>      BSTR* <span class="paraname">pVal</span><br>);</pre>
+            </ul>
+            <ul>
+                <pre>[put] HRESULT <span class="fname">UserLang</span> (<br>      BSTR <span class="paraname">newVal</span><br>);</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="dscrpt">[put] <span class="para">pVal</span></p>
+            <p class="dscrpt">[out, retval] 지정된 언어를 반환합니다. </p>
+            <p class="dscrpt">[get] <span class="para">newVal</span></p>
+            <p class="dscrpt">[in] 사용할 언어를 지정합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Return Values</h4>
+            <p class="dscrpt">현재 설정된 값을 돌려줍니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">UserLang 값을 설정하기 위해서는 에디터의 MainClass가 호출된 후, 에디터가 로드되기 전에 적용시켜 주어야 합니다. 호출은 생성된 MainClass 객체의 &quot;params&quot;을 통하여 할 수 있습니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+            <p class="dscrpt">UserLang Params는 2개 국어 이상의 다국어 지원 크로스에디터를 사용하는 경우에만 사용할 수 있습니다. 기본 언어에서 다국어 리소스를 추가할 경우 언어별 10% 비용이 추가됩니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+            <p class="dscrpt">지원 가능한 다국어 및 UserLang에 사용될 언어 값은 다음과 같습니다.<br><br>
+			<ul>
+				<li class="dscrpt">한국어 : <b>kor</b>
+				<li class="dscrpt">영어 : <b>enu</b>
+				<li class="dscrpt">일본어 : <b>jpn</b>
+				<li class="dscrpt">중국어 간체 : <b>chs</b>
+				<li class="dscrpt">중국어 번체 : <b>cht</b>
+				<li class="dscrpt">베트남어 : <b>vit</b>
+				<li class="dscrpt">인도네시아어 : <b>ind</b>
+				<li class="dscrpt">자동설정 : <b>auto</b>(브라우저 언어에 해당하는 언어 리소스가 없을 경우 기본 언어로 설정됨)</li>
+			</ul>           
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Sample Codes</h4>
+            <p class="scode">JavaScript [get]</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+var edit = object.params.<b>UserLang;</b></span></pre>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <p class="scode">JavaScript [put]</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.params.<b>UserLang</b></span> = &quot;enu&quot;;
+object.EditorStart();</pre>
+            <p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

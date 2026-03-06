@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>CBResizeEditor</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="on">
+            <p class="pme2">Param</p>
+        </td>
+        <td class="off">
+            <p class="pme">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>CBResizeEditor<sub>v4.2.0.08 or higher</sub></h2>
+            <p class="dscrpt">에디터의 ResizeBar 실행 시 에디터의 너비, 높이 정보를 반환합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>void <span class="fname">event.CBResizeEditor</span> (<br>     long <span class="paraname">width</span><br>     long <span class="paraname">height</span><br>);</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="paradsc">[out] 이벤트 발생 시 아래와 같은 정보를 반환 합니다.</p>
+            <table class="paradsc2" border="1" cellspacing="0" width="200" bordercolordark="white" bordercolorlight="#999999" >
+                <tr>
+                    <td width="50" bgcolor="#EEEEEE">
+						 <p align="center">객체명</p>
+                    </td>
+                    <td width="150" bgcolor="#EEEEEE">
+                        <p align="center">용도</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50">            
+                        <p align="center">width</p>
+                    </td>
+                    <td width="150">
+                        <p align="left">에디터 너비</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50">
+                        <p align="center">height</p>
+                    </td>
+                    <td width="150">
+                        <p align="left">에디터 높이</p>
+                    </td>
+                </tr>
+            </table>
+			
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">CBResizeEditor 값을 설정하기 위해서는 에디터의 MainClass가 호출된 후, 에디터가 로드되기 전에 적용시켜 주어야 합니다.</p>
+            <p class="dscrpt">호출은 생성된 MainClass 객체의 &quot;params&quot;을 통하여 할 수 있습니다. </p>
+			<p class="dscrpt">&nbsp;</p>
+            
+			<h4>Sample Codes</h4>
+            <p class="scode">JavaScript [put]</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.params.<b>event.CBResizeEditor</b> = function(obj){;
+	console.log("width:" + obj.width);
+	console.log("height:" + obj.height);
+}
+object.EditorStart();</pre>
+            <p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

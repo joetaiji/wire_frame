@@ -1,0 +1,115 @@
+p {
+	font-SIZE: 9pt; font-FAMILY: ±¼¸²,serif
+}
+li {
+	font-SIZE: 9pt; font-FAMILY: ±¼¸²,serif
+}
+pre {
+	PADDING-RIGHT: 5pt; MARGIN-TOP: 0px; PADDING-LEFT: 5pt; font-SIZE: 10pt; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 5pt; MARGIN-LEFT: 0px; PADDING-TOP: 5pt; font-FAMILY: 'courier new',courier,serif,±¼¸²; BACKGROUND-COLOR: rgb(238,238,238)
+}
+dd {
+	MARGIN-TOP: 0px; font-SIZE: 10pt; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 25px; LINE-HEIGHT: 150%; font-FAMILY: ±¼¸²,serif
+}
+.para {
+	MARGIN-TOP: 0px; font-SIZE: 10pt; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 15px; COLOR: blue; LINE-HEIGHT: 150%; font-STYLE: italic; font-FAMILY: 'courier new',sans-serif
+}
+.dscrpt {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 5px; MARGIN-LEFT: 35px; LINE-HEIGHT: 150%; font-FAMILY: ±¼¸²,sans-serif
+}
+.paradsc2 {
+	MARGIN-TOP: 0px; font-SIZE: 10pt; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 35px; LINE-HEIGHT: 120%; font-FAMILY: ±¼¸²,sans-serif;
+}
+.paraname {
+	COLOR: blue; font-STYLE: italic; font-FAMILY: 'courier new',sans-serif
+}
+.fname {
+	font-WEIGHT: bold; COLOR: blue
+}
+.scode {
+	MARGIN-TOP: 0px; font-SIZE: 9pt; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 35px; COLOR: blue; LINE-HEIGHT: 150%; font-FAMILY: ±¼¸²,serif
+}
+.scodedsc {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 35px; LINE-HEIGHT: 150%
+}
+.scodecmt {
+	font-SIZE: 9pt; COLOR: rgb(51,153,0); font-FAMILY: ±¼¸²
+}
+h1 {
+	font-SIZE: 16pt; MARGIN-BOTTOM: 30px; COLOR: rgb(72,82,133); font-FAMILY: ±¼¸², Verdana
+}
+h2 {
+	MARGIN-TOP: 5px; font-SIZE: 12pt; MARGIN-BOTTOM: 10px; font-FAMILY: Verdana
+}
+h3 {
+	MARGIN-TOP: 40pt; font-SIZE: 12pt; MARGIN-LEFT: 30pt; COLOR: rgb(70,115,160); font-FAMILY: ±¼¸²
+}
+h4 {
+	MARGIN-TOP: 5px; font-SIZE: 11pt; MARGIN-BOTTOM: 10px; COLOR: rgb(51,51,153); font-FAMILY: Verdana,serif
+}
+h5 {
+	font-SIZE: 10pt; MARGIN-LEFT: 30pt; COLOR: #000066; font-FAMILY: µ¸¿ò
+}
+h2 sub {
+	font-SIZE: 10pt; MARGIN-LEFT: 25px; COLOR: #999999; font-FAMILY: Verdana
+}
+.mtext {
+	MARGIN-TOP: 0pt; font-SIZE: 9pt; MARGIN-BOTTOM: 5pt; MARGIN-LEFT: 30pt; LINE-HEIGHT: 150%; font-FAMILY: ±¼¸²
+}
+.ini_title {
+	font-WEIGHT: bold; font-SIZE: 12pt; MARGIN-LEFT: 30pt
+}
+.ini_syntax {
+	font-WEIGHT: bold; font-SIZE: 10pt; MARGIN-BOTTOM: 0pt; MARGIN-LEFT: 30pt; COLOR: rgb(72,82,133)
+}
+.ini_text {
+	MARGIN-TOP: 0pt; font-SIZE: 10pt; MARGIN-BOTTOM: 0pt; MARGIN-LEFT: 50pt; LINE-HEIGHT: 150%
+}
+.ini_example {
+	font-SIZE: 10pt; COLOR: #000066
+}
+.ini_italic {
+	font-WEIGHT: normal; font-SIZE: 10pt; font-STYLE: italic
+}
+.ctbic {
+	font-WEIGHT: bold; font-SIZE: 10pt; font-FAMILY: ±¼¸²,serif
+}
+.ctmid {
+	MARGIN-TOP: 15pt; font-WEIGHT: bold; font-SIZE: 9pt; MARGIN-BOTTOM: 3pt; COLOR: rgb(72,82,133); font-FAMILY: ±¼¸²,serif
+}
+.ctsmall {
+	MARGIN-TOP: 0pt; font-SIZE: 9pt; MARGIN-BOTTOM: 3pt; MARGIN-LEFT: 11pt; font-FAMILY: µ¸¿ò
+}
+.pme {
+	font-SIZE: 8pt; COLOR: #999999; font-FAMILY: Verdana; text-align: center;
+}
+.pme2 {
+	font-SIZE: 8pt; COLOR: white; font-FAMILY: Verdana; text-align: center;
+}
+.menu {
+	font-SIZE: 9pt; COLOR: rgb(0,102,153); font-FAMILY: µ¸¿ò
+}
+.order {
+	font-SIZE: 10pt; COLOR: rgb(153,153,153); font-FAMILY: 'Arial Black'
+}
+
+.on { width:10%; background-color:#5a7fc1; border-color:#999999; }
+.off { width:10%; background-color:#eeeeee; border-color:#999999; }
+.eee { background-color:#eeeeee; }
+.center { text-align:center; }
+
+.main { width:640px; border:0; margin-left:20px;}
+.top {margin-top: 30px;}
+.paradsc2 { border-collapse: collapse; }
+.paradsc2 td { border: 1px solid #bcbcbc; padding: 5px 5px; min-width:50px; }
+.fonts p {font-family:Verdana;}
+.fonts td { min-width:120px;}
+
+body{ 
+ 		scrollbar-3dlight-color:9B9B9B;
+		scrollbar-arrow-color:ffffff;
+		scrollbar-base-color:E2E2E2;
+		scrollbar-darkshadow-color:FFFFFF;
+		scrollbar-face-color:E2E2E2;
+		scrollbar-highlight-color:FFFFF;
+		scrollbar-shadow-color:9B9B9B
+	}

@@ -1,0 +1,17 @@
+@media print {
+
+    #header-top,
+    #header,
+    #snb,
+    .breadcrumb-wrap,
+    .print-btn,
+    .in-page-navigation-area,
+    .board-search-wrap,
+    .pagination,
+    .board-view .file,
+    .page-contents .btns,
+    .prevnext,
+    #footer {
+        display: none !important;
+    }
+}

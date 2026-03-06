@@ -1,0 +1,296 @@
+
+/* indicator*/
+.indicator-list {
+    display: flex;
+
+    >li {
+        flex: 1 1 0px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            top: 0.8rem;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 0.2rem;
+            background: var(--gray-20);
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+        >span {
+            display: flex;
+            flex-direction: column;
+            padding-top: 3.2rem;
+            padding-right: 3.2rem;
+            position: relative;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                border: 0.3rem solid var(--primary-50);
+                background: #fff;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 2;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 1.2rem;
+                height: 1.2rem;
+                background: var(--primary-50);
+                border-radius: 50%;
+                position: absolute;
+                left: 0.4rem;
+                top: 0.4rem;
+                z-index: 3;
+            }
+        }
+
+        .step {
+            font-size: 1.3rem;
+        }
+
+        .step-tit {
+            color: var(--gray-90);
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/* step */
+.step-list {
+    display: flex;
+    gap: 3.6rem;
+    margin-top: 4rem;
+    width: 100%;
+
+    >li {
+        flex: 1;
+        text-align: center;
+        position: relative;
+
+        .item {
+            width: 100%;
+            height: 100%;
+            min-height: 13rem;
+            padding: 4.4rem 1rem 2.8rem;
+            margin: auto;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-direction: column;
+            background: var(--gray-0);
+            border: 1px solid var(--gray-30);
+
+            &:has(.text) {
+                justify-content: flex-start;
+            }
+
+        }
+
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) .num {
+                background-color:var(--primary-#{($i+3)*10});
+            }
+        }
+
+        .num {
+            font-weight: 700;
+            color: var(--gray-0);
+            position: absolute;
+            left: 50%;
+            top: 0;
+            translate: -50% -50%;
+        }
+
+        &:nth-child(7) .num,
+        &:nth-child(8) .num,
+        &:nth-child(9) .num {
+            background: #000;
+        }
+
+        .title {
+            display: block;
+            width: 100%;
+            color: var(--gray-90);
+            font-size: 1.7rem;
+
+            &:has(+.text),
+            &:has(~.obj) {
+                border-bottom: 1px dashed var(--gray-30);
+                padding-bottom: 1.6rem;
+            }
+        }
+
+        .text:has(+.obj) {
+            display: block;
+            width: 100%;
+            border-bottom: 1px dashed var(--gray-30);
+            padding-bottom: 2rem;
+        }
+
+        .obj {
+            position: relative;
+            z-index: 0;
+            color: var(--gray-90);
+            font-weight: 700;
+            margin-top: auto;
+
+            &::before {
+                content: '';
+                display: block;
+                background: var(--primary-5);
+                height: 1.5rem;
+                width: 100%;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
+
+        &::after {
+            content: "\ea6e";
+            font-family: var(--icon);
+            display: block;
+            font-size: 2rem;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateX(40%);
+            z-index: 1;
+        }
+
+        &:last-child::after {
+            display: none !important;
+        }
+    }
+
+    &.type1 {
+        .item {
+            border-radius: 1rem;
+        }
+
+        .num {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+        }
+
+        >li::after {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            min-width: 3rem;
+            border: 1px solid var(--gray-30);
+            background: var(--gray-0);
+            transform: translateX(10%);
+        }
+    }
+
+    &.type2 {
+        .num {
+            color: #fff;
+            border-radius: 1.5rem;
+            padding: 0.4rem 1rem;
+            text-transform: uppercase;
+        }
+
+        >li::after {
+            content: "\ea6d";
+            font-family: var(--icon);
+            display: block;
+        }
+
+    }
+
+    //칼럼수에 따른 화살표 삭제
+    @for $i from 2 through 5 {
+        &.col#{$i} {
+            >li:nth-child(#{$i}n)::after {
+                display: none;
+            }
+        }
+    }
+}
+
+//리스트가 6개 이상일때
+/* &.more6 {
+        >li { 
+            &:nth-child(3)::after { display: inline-flex; left: 50%; top:auto; bottom: -7rem; transform:translateX(-50%) rotate(90deg);} 
+            &:nth-child(4){ order:6; 
+                &::after { left: auto; right: 100%; rotate: 180deg;}
+            }
+            &:nth-child(5){ order:5; 
+                &::after { left: auto; right: 100%; rotate: 180deg;}
+            } 
+        }
+    } 
+    &.more6 { @include grid(8rem, repeat(3, 1fr)); 
+        >li {    
+            &::after { width: 3.6rem; height: 3.6rem; font-size: 2.8rem; transform:translateX(60%); }
+            &:nth-child(3n)::after {display: none; }
+        }
+    }
+    */
+
+
+
+@media (max-width: 768px) {
+
+    .indicator-list>li {
+        flex: 1 1 0px;
+        min-width: 0;
+    }
+
+    .step-list {
+        gap: 1rem !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+        display: flex !important;
+        flex-direction: column !important;
+
+        >li {
+            .item {
+                padding: 1rem 1rem 1rem 6rem;
+                gap: 1rem;
+                min-height: inherit;
+            }
+
+            .num {
+                left: 1rem;
+                top: 50%;
+                translate: 0 -50%;
+            }
+
+            .title:has(+ .text) {
+                padding-bottom: 1rem;
+            }
+
+            &::after {
+                display: none !important;
+            }
+        }
+
+        &.type2 {
+            .item {
+                flex-direction: row;
+                padding-left: 12rem;
+            }
+        }
+    }
+
+}

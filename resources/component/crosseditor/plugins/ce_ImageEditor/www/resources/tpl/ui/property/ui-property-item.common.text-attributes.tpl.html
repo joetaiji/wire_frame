@@ -1,0 +1,51 @@
+<div class="text-attributes">
+	<div class="item-tpl" data-form-tpl="text-attr-fontFamily" style="display:none;">
+		<span data-cps-lang="&lt;%=data.langCode%&gt;" style="font-family:&lt;%=data.label%&gt;">&lt;%=data.label%&gt;</span>
+	</div>
+	<select name="font-family" id="text-attr-fontFamily" title="<%=NHIE_Lang['PluginImageEditor_text_attr_font_family']%>">
+		<% for (var i=0; i<data.fontFamilyList.length; i++) { %>
+		<option value="<%=data.fontFamilyList[i].value%>"><%=data.fontFamilyList[i].title%></option>
+		<% } %>
+	</select>
+	<!--
+ title="<%=NHIE_Lang['']%>"
+	-->
+	<select name="font-size" title="<%=NHIE_Lang['PluginImageEditor_text_attr_font_size']%>">
+		<% for (var i=0;i<data.fontSizeList.length;i++) { %>
+		<option value="<%=data.fontSizeList[i]%><%=data.fontSizeUnit%>"><%=data.fontSizeList[i]%><%=data.fontSizeUnit%></option>
+		<% } %>
+	</select>
+
+	<div class="button-group">
+		<button class="button" data-action="bold" data-btn-type="toggle" title="<%=NHIE_Lang['PluginImageEditor_text_attr_bold']%>">
+			<i aria-hidden="true" class="fa fa-fw fa-bold"></i>
+		</button>
+		<button class="button" data-action="italic" data-btn-type="toggle"  title="<%=NHIE_Lang['PluginImageEditor_text_attr_italic']%>">
+			<i aria-hidden="true" class="fa fa-fw fa-italic"></i>
+		</button>
+		<button class="button" data-action="underline" data-btn-type="toggle"  title="<%=NHIE_Lang['PluginImageEditor_text_attr_underline']%>">
+			<i aria-hidden="true" class="fa fa-fw fa-underline"></i>
+		</button>
+	</div>
+	<div class="button-group">
+		<button class="button on" data-action="align-left" data-btn-type="toggle" data-toggle-group="align" title="<%=NHIE_Lang['PluginImageEditor_text_attr_align_left']%>">
+			<i aria-hidden="true" class="fa fa-fw fa-align-left"></i>
+		</button>
+		<button class="button" data-action="align-center" data-btn-type="toggle" data-toggle-group="align" title="<%=NHIE_Lang['PluginImageEditor_text_attr_align_center']%>">
+			<i aria-hidden="true" class="fa fa-fw fa-align-center"></i>
+		</button>
+		<button class="button" data-action="align-right" data-btn-type="toggle" data-toggle-group="align" title="<%=NHIE_Lang['PluginImageEditor_text_attr_align_right']%>">
+			<i aria-hidden="true" class="fa fa-fw fa-align-right"></i>
+		</button>
+		<!--
+		<button class="button" data-action="align-justify" data-btn-type="toggle" data-toggle-group="align" title="<%=NHIE_Lang['PluginImageEditor_text_attr_align_justify']%>">
+			<i aria-hidden="true" class="fa fa-fw fa-align-justify"></i>
+		</button>
+		-->
+	</div>
+	<div class="button-group" style="clear:both;">
+		<button class="button" data-action="color" title="<%=NHIE_Lang['PluginImageEditor_text_attr_color']%>">
+			<span class="color"></span>
+		</button>
+	</div>
+</div>

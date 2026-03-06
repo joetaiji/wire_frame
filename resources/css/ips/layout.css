@@ -1,0 +1,149 @@
+@charset "UTF-8";
+@import url("../common/default.css");
+/*-------------------------------------------------
+title       : 레이아웃
+Author      : PLAN I
+Create date : 2025-01-15
+-------------------------------------------------*/
+html {
+  font-size: 9px !important;
+}
+
+#wrap {
+  background-color: #F0F5FB;
+}
+
+#header {
+  display: flex;
+  width: 100%;
+  height: 8rem;
+  padding-right: 2rem;
+  border-bottom: 1px solid #E4E4E4;
+  background-color: #fff;
+  align-items: center;
+}
+
+#content {
+  width: var(--width1);
+  max-width: var(--width2);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 2rem;
+}
+
+#logo {
+  width: 23rem;
+  text-align: center;
+}
+#logo img {
+  height: 3.5rem;
+}
+
+#hnb {
+  display: flex;
+  width: calc(100% - 23rem);
+  font-size: calc(var(--fs) - 0.1rem);
+  align-items: center;
+}
+#hnb strong {
+  margin-right: 1rem;
+}
+#hnb b {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: calc(100% + 3rem);
+  font-size: 2rem;
+  color: #000;
+  white-space: nowrap;
+}
+#hnb li {
+  display: flex;
+  position: relative;
+  height: 4rem;
+  padding: 0 2rem;
+  border-radius: 1rem;
+  border: 1px solid #E4E4E4;
+  align-items: center;
+}
+#hnb li:nth-child(n+3) {
+  margin-left: 1rem;
+}
+#hnb a {
+  display: flex;
+  height: 100%;
+  margin: 0 -2rem;
+  padding: 0 1.5rem;
+  border-radius: 1rem;
+  color: #000;
+  align-items: center;
+  transition: var(--time2);
+}
+#hnb a::before {
+  position: relative;
+  margin-right: 0.5rem;
+}
+#hnb a[href="/"]::before {
+  font-family: "remixicon";
+  content: "\ee1c";
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  vertical-align: middle;
+}
+#hnb a[href*=logout]::before {
+  font-family: "remixicon";
+  content: "\eeda";
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  vertical-align: middle;
+}
+#hnb a:hover, #hnb a:focus {
+  background-color: #000;
+  color: #fff;
+}
+#hnb .timer {
+  height: 5rem;
+  margin-right: auto;
+  padding-right: 0.8rem;
+  white-space: nowrap;
+}
+#hnb .timer::before {
+  font-family: "remixicon";
+  content: "\f20f";
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1rem;
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
+#hnb .timer input {
+  height: 3rem;
+  margin-left: 1.5rem;
+  padding: 0 1rem;
+  border-radius: var(--brd);
+  border: 1px solid #000;
+  background-color: #000;
+  font-size: 95%;
+  color: #fff;
+  line-height: 2.8rem;
+  cursor: pointer;
+  transition: var(--time2);
+}
+#hnb .timer input:hover, #hnb .timer input:focus {
+  background-color: #fff;
+  color: #000;
+}
+#hnb .timer input + input.btn-black {
+  margin-left: 0.5rem;
+  background-color: #fff !important;
+  color: #000 !important;
+}
+#hnb .timer input + input.btn-black:hover, #hnb .timer input + input.btn-black:focus {
+  background-color: #000 !important;
+  color: #fff !important;
+}/*# sourceMappingURL=layout.css.map */

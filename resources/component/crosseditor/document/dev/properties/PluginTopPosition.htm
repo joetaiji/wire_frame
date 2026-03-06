@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>PluginTopPosition</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="on">
+            <p class="pme2">Param</p>
+        </td>
+        <td class="off">
+            <p class="pme">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>PluginTopPosition<sub>v3.5.1.04 or higher</sub></h2>
+            <p class="dscrpt">아이프레임안에 에디터 생성 시 플러그인 높이보다 아이프레임이 작은 경우 가려지지 않도록 설정합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+            
+			<h4>Syntax</h4>
+            <ul>
+                <pre>[get] HRESULT <span class="fname">PluginTopPosition</span> (<br>      boolean* <span class="paraname">pVal</span><br>);</pre>
+
+            </ul>
+            <ul>
+                <pre>[put] HRESULT <span class="fname">PluginTopPosition</span> (<br>      boolean <span class="paraname">newVal</span><br>);</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="dscrpt">[get] <span class="para">pVal</span></p>
+            <p class="dscrpt">[out, retval] 설정된 값을 돌려줍니다.</p>
+            <p class="dscrpt">[put] <span class="para">newVal</span></p>
+            <p class="dscrpt">[in] 속성 값을 설정합니다.</p>
+            <table class="paradsc2">
+                <tr>
+                    <td class="eee">            
+                        <p align="center">TRUE</p>
+                    </td>
+                    <td>
+                        <p>사용</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="eee">            
+                        <p align="center">FALSE</p>
+                    </td>
+                    <td>
+                        <p>사용 안함(기본값)</p>
+                    </td>
+                </tr>
+            </table>            
+			<p class="dscrpt">&nbsp;</p>
+            
+			<h4>Return Values</h4>
+            <p class="dscrpt">현재 설정된 값을 돌려줍니다.</p>            
+			<p class="dscrpt">&nbsp;</p>
+            
+			<h4>Remarks</h4>
+            <p class="dscrpt">PluginTopPosition 값을 설정하기 위해서 에디터의 MainClass가 호출된 후, 에디터가 로드되기 전에 적용시켜 주어야 합니다.</p>
+            <p class="dscrpt">호출은 생성된 MainClass 객체의 &quot;params&quot;을 통하여 할 수 있습니다.</p>
+			<p class="dscrpt">true로 설정하면 window.top에 플러그인이 생성되도록 합니다.</p>
+			<p class="dscrpt">&nbsp;</p>
+            
+			<h4>Sample Codes</h4>
+            <p class="scode">JavaScript [get]</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+var edit = object.params.<b>PluginTopPosition</b>;</pre>            
+			<p class="dscrpt">&nbsp;</p>
+            
+			<p class="scode">JavaScript [put]</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.params.<b>PluginTopPosition</b> = true;
+object.EditorStart();</pre>            
+			<p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

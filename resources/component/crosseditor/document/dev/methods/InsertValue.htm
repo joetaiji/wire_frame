@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>InsertValue</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="off">
+            <p class="pme">Param</p>
+        </td>
+        <td class="on">
+            <p class="pme2">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>InsertValue</h2>
+            <p class="dscrpt">현재 편집 중인 문서의 특정 위치에 html 형식의 내용을 삽입합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>HRESULT <span class="fname">InsertValue</span> (<br>        long <span class="paraname">position,</span><br>        BSTR<span class="paraname"> newVal</span><br>);</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="dscrpt"><span class="paraname">position</span></p>
+            <p class="dscrpt">[in] 내용을 삽입할 위치를 입력합니다.</p>
+            <table class="paradsc2">
+                <tr>
+                    <td class="eee">
+                        <p align="center">0</p>
+                    </td>
+                    <td>
+                        <p>문서 맨 앞</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="eee">
+                        <p align="center">-1</p>
+                    </td>
+                    <td>
+                        <p>문서 맨 뒤</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="eee">
+                        <p align="center">1</p>
+                    </td>
+                    <td>
+                        <p>현재 커서 위치</p>
+                    </td>
+                </tr>
+            </table><br/>
+            <p class="dscrpt"><span class="paraname">newVal</span></p>
+            <p class="dscrpt">[in] 삽입할 내용을 html 형식으로 입력합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Return Values</h4>
+            <p class="dscrpt">없음</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">메소드는 Main class 호출 후 에디터가 로드된 다음 실행해야 정상적으로 실행됩니다..</p>
+            <p class="dscrpt">position값을 설정하지 않거나 지정한 위치 값과 다른 값을 입력했을 경우 현재 커서 위치에 내용이 삽입됩니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Sample Codes</h4>
+            <p class="scode">JavaScript</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.EditorStart();
+function <b>OnInitCompleted</b>(){
+   object.<b>InsertValue</b>(1, &quot;&lt;p style=color:red&gt;Test&lt;/p&gt;&quot;);
+}</pre>
+			<p class="dscrpt">&nbsp;</p>
+		</td>
+    </tr>	
+</table>	
+</body>
+</html>

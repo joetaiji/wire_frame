@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>GetBodyValue</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="off">
+            <p class="pme">Param</p>
+        </td>
+        <td class="on">
+            <p class="pme2">Method</p>
+        </td>
+        <td class="off">
+            <p class="pme">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>GetBodyValue</h2>
+            <p class="dscrpt">현재 편집 중인 문서의 html body정보(&lt;body&gt;~&lt;/body&gt;)를 얻어 옵니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>HRESULT<span class="fname"> GetBodyValue</span>();</pre>
+            </ul>
+			
+            <h4>Parameters</h4>
+            <p class="dscrpt"><span class="paraname">type</span></p>
+            <p class="dscrpt">[in] HTML 양식을 설정합니다.</p>
+            <table class="paradsc2">
+                <tr>
+                    <td class="eee">
+                        <p align="center">HTML</p>
+                    </td>
+                    <td>
+                        <p>HTML 문법으로 반환(기본)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="eee">
+                        <p align="center">XHTML</p>
+                    </td>
+                    <td>
+                        <p>XHTML 문서 양식으로 반환</p>
+                    </td>
+                </tr>
+            </table>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Return Values</h4>
+            <p class="dscrpt">body 정보를 문자열(XHTML 문법)로 반환합니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">메소드는 Main class 호출 후 에디터가 로드된 다음 실행해야 정상적으로 실행됩니다. </p>
+            <p class="dscrpt"><span class="paraname">type</span>에 값을 지정하지 않은 경우 기본값인 'html'로 설정됩니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Sample Codes</h4>
+            <p class="scode">JavaScript</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.EditorStart();
+function <b>OnInitCompleted</b>(){
+   var info = object.<b>GetBodyValue</b>(&quot;XHTML&quot;);
+   alert(info);
+}</pre>
+            <p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

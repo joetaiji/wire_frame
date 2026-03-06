@@ -1,0 +1,35 @@
+<div title="${NamoSELang.responsive_device_config}" class="dialog-responsive-custom-resolution-config">
+
+  <div class="custom-resolution-list disabled">
+    <button class="ce-dialog-btn" data-action = "add-custom-resolution">${NamoSELang.responsive_device_config_addCustomResolution}</button>
+    <ul class="device-resolution-items empty disabled">
+      <li class="device-resolution-item empty-item">(${NamoSELang.responsive_device_config_noItem})</li>
+
+
+    </ul>
+  </div>
+  <div class="form-custom-resolution disabled">
+    
+      <fieldset style="border: 0;margin:0px;padding:0px">
+        <label for = "responsive-custom-resolution-name">
+          <span class="field-label">${NamoSELang.responsive_device_config_deviceName}: </span>
+          <input type="text" id="responsive-custom-resolution-name"  placeholder="${NamoSELang.responsive_device_config_customResolutionDefaultName}"/>
+        </label>
+        <label for = "responsive-custom-resolution-width">
+          <span class="field-label">${NamoSELang.responsive_device_config_width}(px): </span>
+          <input type="number" id="responsive-custom-resolution-width" />
+        </label>
+        <label for = "responsive-custom-resolution-height">
+          <span class="field-label">${NamoSELang.responsive_device_config_height}(px):</span>
+          <input type="number" id="responsive-custom-resolution-height" />
+        </label>
+        <div class="pe_ii">
+          <button class="ce-dialog-btn" data-action="save-custom-resolution">${NamoSELang.PluginBtnSave}</button>
+          <button class="ce-dialog-btn" data-action="reset-custom-resolution">${NamoSELang.PluginBtnCancel}</button>
+        </div>
+      </fieldset>
+    
+  </div>
+
+
+</div>

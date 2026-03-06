@@ -1,0 +1,125 @@
+<html>
+<head>
+	<title>OnInitCompleted</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="NamoEditor Co., Ltd." />
+	<link rel="stylesheet" href="../images/linkstyle.css" />
+</head>
+<body>
+<table class="main top">
+    <tr>
+        <td class="off">
+            <p class="pme">Param</p>
+        </td>
+        <td class="off">
+            <p class="pme">Method</p>
+        </td>
+        <td class="on">
+            <p class="pme2">Event</p>
+        </td>
+        <td width="10%">
+            <p class="pme">&nbsp;</p>
+        </td>
+        <td width="50%">
+            <p class="pme">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td>
+            <h2>OnInitCompleted<sub>v1.1 or higher</sub></h2>
+            <p class="dscrpt">크로스에디터가 정상적으로 초기화되어 메소드의 호출이 가능하다는 것을 알리는 이벤트입니다.</p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Syntax</h4>
+            <ul>
+                <pre>void<span class="fname"> OnInitCompleted </span>(<br>   <span class="paraname">void</span><br>);</pre>
+            </ul>
+			
+            <p class="scodedsc"><b>&lt;1.5 버전 이상&gt;</b></p>
+            <ul>
+				<pre>void <span class="fname">OnInitCompleted</span> (<br>     BSTR* <span class="paraname">type</span><br>     Object* <span class="paraname">editorTarget</span><br>     BSTR* <span class="paraname">editorName</span><br>);</pre>
+            </ul>
+			
+            <H4>Parameters</H4>
+            <p class="scodedsc"><b>&lt;1.5 버전 이상&gt;</b></p>
+            <p class="dscrpt">[out] 이벤트 발생 시 아래와 같은 객체를 반환합니다.</p>
+			<table class="paradsc2">
+                <tbody>
+                <tr>
+                    <td class="eee">
+                        <p align="center">객체명</p>
+                    </td>
+                    <td class="eee">
+                        <p align="center">용도</p>
+                    </td>
+                    <td class="eee">
+                        <p align="center">구분</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <p>type</p>
+                    </td>
+                    <td>
+                        <p>이벤트 발생 type (load)</p>
+                    </td>
+                    <td>
+                        <p>이벤트 공통</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>editorTarget</p>
+                    </td>
+                    <td>
+                        <p>에디터 메인 클래스 객체</p>
+                    </td>
+                    <td>
+                        <p>이벤트 공통</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>editorName</p>
+                    </td>
+                    <td>
+                        <p>설정된 에디터 이름</p>
+                    </td>
+                    <td>
+                        <p>이벤트 공통</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Remarks</h4>
+            <p class="dscrpt">크로스에디터의 Main class 호출 후 에디터가 로드된 다음 메소드를 실행해야 정상적으로 실행이 됩니다.</p>
+            <p class="dscrpt">크로스에디터의 Main class 호출 후 에디터가 로드됨과 동시에 메소드를 실행 시킬 때 환경적인 영향으로 메소드가 정상적으로 실행이 되지 않는 경우가 있습니다. 이런 경우 크로스에디터의 초기화가 정상적으로 완료 후 발생하는 OnInitCompleted 이벤트를 통해 메소드를 실행하면 안정적으로 메소드를 실행시킬 수 있습니다. </p>
+            <p class="dscrpt">&nbsp;</p>
+			
+            <h4>Sample Codes</h4>
+            <p class="scode">JavaScript</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.EditorStart();
+
+function <b>OnInitCompleted</b>(){
+   object.SetBodyValue(&quot;&lt;p&gt;크로스에디터 샘플 페이지에 오신 것을 환영합니다.&lt;/p&gt;&quot;);
+}</pre>
+            <p class="scodedsc">&nbsp;</p>
+            <p class="scodedsc"><b>&lt;1.5 버전 이상&gt; </b></p>
+            <p class="scode">JavaScript</p>
+            <pre class="scodedsc">var object = new NamoSE(&quot;test&quot;);
+object.EditorStart();
+
+function <b>OnInitCompleted</b>(e){
+   e.editorTarget.SetBodyValue(&quot;&lt;p&gt;크로스에디터 샘플 페이지에 오신 것을 환영합니다.&lt;/p&gt;&quot;);
+} </pre>
+            <p class="dscrpt">&nbsp;</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

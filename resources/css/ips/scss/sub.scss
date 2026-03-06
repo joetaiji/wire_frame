@@ -1,0 +1,143 @@
+@charset "utf-8";
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+@use "sass:selector";
+@use "sass:meta";
+@use '../../common/scss/mixin' as mix;
+@import url('layout.css');
+@import url('contents.css');
+
+/*-------------------------------------------------
+title       : 서브
+Author      : PLAN I
+Create date : 2025-01-15
+-------------------------------------------------*/
+
+#main {display: flex; width: 100%; min-height: calc(100vh - 9.5rem - 1px);}
+.contents_body {margin-top: 2rem; margin-left: -4rem; padding: 3rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.06); border-radius: 2rem; background-color: #fff;}
+
+#snb 
+{
+    position: relative; min-width: 23rem; max-width: 23rem; margin-right: 4.5rem; background-color: #3E5277; color: #fff !important; transition: mix.$time2;
+    a {display: block; overflow: hidden; color: inherit !important; white-space: nowrap; text-decoration: none !important;}
+    i {margin-right: 1rem; transition: mix.$time2;}
+
+    & > button 
+    {
+        @include mix.nemo(4.5rem); 
+        position: absolute; left: 100%; top: 0; border: 1px solid #303F5A; background-color: #303F5A; font-size: 2rem; transition: mix.$time2;
+        &::before {@include mix.icon(type3, '\F4F9');}
+        &:hover, &:focus {background-color: #fff; color: #303F5A;}
+    }
+
+    .depth1 > li
+    {
+        & > a 
+        {
+            display: flex; position: relative; height: 6.5rem; padding: 0 2rem; border-bottom: 1px solid #4A618C; align-items: center; transition: mix.$time2;
+            &::after {@include mix.position(top); @include mix.nemo(2.5rem); @include mix.icon(type2, '\EA78'); right: 2rem; border-radius: var(--brd); background-color: rgba(255, 255, 255, 0.1);}
+            &:hover, &:focus {background-color: #009DFF;}
+        }
+        
+        &.active
+        {
+            & > a {background-color: #009DFF;}
+            
+            .depth2 
+            {
+                @include mix.visible; padding: 2rem 0.5rem;
+                & + .depth2 {margin-top: -1rem; padding-top: 0;}
+            }
+        }
+    }
+
+    .depth2
+    {
+        @include mix.hidden;
+        min-width: 100%; padding: 0 0.5rem; background-color: #2B3D5E; font-size: calc(mix.$fs - 0.1rem);
+
+        & > li
+        {
+            &.active > a {background-color: #34476B;}
+
+            & > a 
+            {
+                height: 3.5rem; margin: 0 0.5rem; padding: 0 1rem; border-radius: 4rem; line-height: 3.5rem; transition: mix.$time2;
+                &:hover, &:focus {background-color: #34476B;}
+            }
+        }        
+    }
+
+    .depth3
+    {
+        margin: 0.8rem 0 0.8rem 2.7rem; padding-left: 1.2rem; border-left: 1px solid #526891; font-size: 95%; color: #8590A6;
+        i {display: none;}
+        li + li {margin-top: 1.5rem;}
+        a {height: 2rem; line-height: 2rem;}
+        .active a {color: #fff !important; text-decoration: underline;}
+    }
+}
+
+#header.active + #main #snb 
+{
+    min-width: 6.5rem; max-width: 6.5rem;
+    i {display: flex; min-width: 3.5rem; max-width: 3.5rem; height: 100%; margin-right: 2rem; justify-content: center; align-items: center;}
+
+    .depth1 > li 
+    {
+        &.active .depth2 {padding: 2rem 1.5rem;}        
+
+        & > a 
+        {
+            padding: 0 1.5rem; 
+            &::after {display: none;}
+        }
+    }
+    
+    .depth2
+    {
+        padding: 0 1.5rem;        
+        & > li > a {width: 3.5rem; padding: 0;}
+    }
+}
+
+.contents_util 
+{
+    display: flex; color: #000;
+    h1 {font-size: 2.4rem; font-weight: 700;}
+}
+
+.breadcrumb 
+{
+    margin-left: auto; font-size: calc(mix.$fs - 0.1rem);
+    &::before {@include mix.icon(type1, '\EE1C');}
+    &, li { &::before {position: relative; top: 0.05rem;} }
+    a {@include mix.line(before, #000);}
+
+    li 
+    {
+        display: inline; font-weight: 300;
+        & + li::before {@include mix.nemo(2.5rem); @include mix.icon(type1, '\EA6E');}
+    }
+}
+
+.tab_menu
+{
+    display: flex; margin-bottom: 3rem; border-bottom: 1px solid #D5D5D5; font-weight: 300;
+    
+    a 
+    {
+        display: flex; position: relative; height: 5rem; margin-bottom: -1px; padding: 0 2rem; color: #000; transition: mix.$time2; align-items: center;
+        &::before {@include mix.position(left); bottom: 0; width: 0; height: 0.3rem; background-color: #2157D6; content: ''; transition: mix.$time2;}
+        &:hover, &:focus {color: #2157D6;}
+    }
+
+    .on a
+    {
+        color: #2157D6;
+        &::before {width: 100%;}
+    }
+}

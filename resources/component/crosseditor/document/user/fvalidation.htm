@@ -1,0 +1,198 @@
+<html>
+<head>
+	<title>나모 크로스에디터 도움말</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="NamoEditor Co., Ltd." />
+	<link href="../common.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" src="../popup.js"></script> 	
+</head>
+<body>
+<table class="t_center" class="center">
+    <tr>
+        <td>
+            <h1>웹 접근성 검증</h1>
+            <p class="mtext">크로스에디터에서 작성한 문서가 웹 접근성에 적합한지 확인하고 수정 할 수 있습니다.</p>
+            <p class="mtext">&nbsp;</p>        
+            <hr />
+        
+            <h3><a name="v_alt">적절한 대체 텍스트</a></h3>
+            <p class="mtext">텍스트가 아닌 콘텐츠에는 대체 텍스트를 제공해야 합니다.</p>
+			<p class="mtext">&nbsp;</p>
+			<p class="mlabel1">검증 방법</p>
+			<table class="table">
+                <tr>
+                    <td>
+                        <p>&lt;img&gt;, &lt;area&gt;, &lt;input type=&quot;image&quot;&gt; 요소 중에 alt 속성이 존재하지 않는 항목을 확인합니다.</p>
+                    </td>
+				</tr>
+			</table>
+			<p class="mtext">&nbsp;</p>
+			<p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">잘못된 사례</span> : 텍스트 이미지에 대체 텍스트가 제공되지 않은 경우</p>		
+			<p class="mlabeltext"><span class="menu">[예제]</span> &lt;img src=&quot;http://comp.namoeditor.co.kr/ce4/demo/binary/images/000001/tulips.jpg&quot; /&gt;</p>
+			<p class="mlabeltext"><span class="menu">[수정]</span> &lt;img src=&quot;http://comp.namoeditor.co.kr/ce4/demo/binary/images/000001/tulips.jpg&quot; <span class="red">alt="튤립"</span> /&gt;</p>
+			<p class="mlabeltext"><img src="images/fvalidation.alt.png" class="middle" /></p>
+						
+            <hr />
+        
+            <h3><a name="v_title">제목 제공(title)</a></h3>
+            <p class="mtext">페이지, 프레임, 콘텐츠 블록에는 적절한 제목을 제공해야 합니다.</p>
+			<p class="mtext">&nbsp;</p>
+			<p class="mlabel1">검증 방법</p>
+			<table class="table">
+                <tr>
+                    <td>
+                        <p>&lt;frame&gt;, &lt;iframe&gt;, &lt;frameset&gt; 요소 중에 title 속성이 존재하지 않거나 빈 문자열인 항목을 확인합니다.</p>
+                    </td>
+				</tr>
+			</table>
+			<p class="mtext">&nbsp;</p>
+			<p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">잘못된 사례</span> : &lt;frame&gt;, &lt;iframe&gt;, &lt;frameset&gt; 요소의 title 속성이 없거나 값을 비워둔 경우</p>		
+			<p class="mlabeltext"><span class="menu">[예제]</span> &lt;iframe name=&quot;frame&quot; id=&quot;namo1&quot; src=&quot;http://comp.namoeditor.co.kr/ce4/demo/doc/sample1.htm&quot;&gt;&lt;/iframe&gt;</p>
+			<p class="mlabeltext" style="margin-left:100px;">&lt;iframe name=&quot;frame&quot; id=&quot;namo2&quot; title=&quot;&quot; src=&quot;http://comp.namoeditor.co.kr/ce4/demo/doc/sample3.htm&quot;&gt;&lt;/iframe&gt;</p>
+			<p class="mlabeltext"><span class="menu">[수정]</span> &lt;iframe name=&quot;frame&quot; id=&quot;namo2&quot; <span class="red">title=&quot;템플릿문서용&quot;</span> src=&quot;http://comp.namoeditor.co.kr/ce3/demo/doc/sample1.htm&quot;&gt;&lt;/iframe&gt;</p>
+			<p class="mlabeltext"><img src="images/fvalidation.title.png" class="middle" /></p>
+			
+            <hr />
+			
+			<h3><a name="v_focus">초점 이동</a></h3>
+            <p class="mtext">키보드에 의한 초점은 논리적으로 이동해야 하며 시각적으로 구별할 수 있어야 합니다.</p>
+			<p class="mtext">&nbsp;</p>
+			<p class="mlabel1">검증 방법</p>
+			<table class="table">
+                <tr>
+                    <td>
+                        <p>요소에서 onfocus 속성이 존재하는 항목을 확인합니다.</p>
+                    </td>
+				</tr>
+			</table>
+			<p class="mtext">&nbsp;</p>
+			<p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">잘못된 사례</span> : 초점 또는 키보드의 위치를 나타내는 요소를 자바스크립트로 감춘 경우</p>		
+			<p class="mlabeltext"><span class="menu">[예제]</span> &lt;a href=&quot;&quot; <span class="red">onfocus=&quot;this.blur();&quot;</span> title=&quot;크로스에디터 바로가기&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;크로스에디터 배너&quot; /&gt;</a></p>
+			<p class="mlabeltext"><span class="menu">[수정]</span> &lt;a href=&quot;&quot; title=&quot;크로스에디터 바로가기&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;크로스에디터 배너&quot; /&gt;</p>
+			<p class="mlabeltext"><img src="images/fvalidation.onfocus.png" class="middle" /></p>
+			
+            <hr />
+			
+			<h3><a name="v_link">적절한 링크 텍스트</a></h3>
+            <p class="mtext">링크 텍스트는 용도나 목적을 이해할 수 있도록 제공해야 합니다.</p>
+			<p class="mtext">&nbsp;</p>
+			<p class="mlabel1">검증 방법</p>
+			<table class="table">
+                <tr>
+                    <td>
+                        <p>&lt;a&gt; 요소에서 title 속성이 존재하지 않거나 빈 문자열인 항목을 확인합니다.</p>
+                    </td>
+				</tr>
+			</table>
+			<p class="mtext">&nbsp;</p>
+			<p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">잘못된 사례</span> : 목적이나 용도를 알기 어려운 링크 텍스트를 제공한 경우</p>
+			<p class="mlabeltext"><span class="menu">[예제]</span> &lt;a href=&quot;http://comp.namoeditor.co.kr/ce4/demo/doc/guide3.htm&quot; /&gt;PDF보기&lt;/a&gt;</p>
+			<p class="mlabeltext"><span class="menu">[수정]</span> &lt;a href=&quot;http://comp.namoeditor.co.kr/ce4/demo/doc/guide3.htm&quot; <span class="red">title=&quot;크로스에디터 도움말&quot;</span> /&gt;PDF보기&lt;/a&gt;</p>
+			<p class="mlabeltext"><img src="images/fvalidation.a.title.png" class="middle" /></p>
+			
+            <hr />
+			
+			<h3><a name="v_table">표의 구성</a></h3>
+            <p class="mtext">표는 이해하기 쉽게 구성해야 합니다.</p>
+			<p class="mtext">&nbsp;</p>
+			<p class="mlabel1">검증 방법</p>
+			<table class="table">
+                <tr>
+                    <td>
+                        <p>1) summary : &lt;table&gt; 요소에서 summary 속성이 존재하지 않거나 빈 문자열인 항목을 확인합니다.</p>
+						<p>2) caption : &lt;table&gt; 요소에서 caption 속성이 존재하지 않거나 빈 문자열인 항목을 확인합니다.</p>
+                    </td>
+				</tr>
+			</table>
+			<p class="mtext">&nbsp;</p>
+			<p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">잘못된 사례</span> : summary, caption 요소를 제공하지 않은 경우</p>
+			<p class="mlabeltext"><span class="menu">[예제]</span></p>
+			<p class="mlabeltext">
+				&lt;table&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;0&lt;/p&gt;&lt;/td&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;감추기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;보이기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+				&lt;/table&gt;
+			</p>
+			<p class="mlabeltext"><span class="menu">[수정]</span></p>
+			<p class="mlabeltext">
+				&lt;table <span class="red">summary=&quot;0,감추기,1,보이기&quot;</span>&gt;<br/>
+					<span class="order">&nbsp;</span><span class="red">&lt;caption style=&quot;display:none;&quot;&gt;ShowToolbar 속성값&lt;/caption&gt;</span><br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;0&lt;/p&gt;&lt;/td&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;감추기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;보이기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+				&lt;/table&gt;
+			</p>
+			<p class="mlabeltext"><img src="images/fvalidation.table.png" class="middle" /></p>
+			<p class="mtext">&nbsp;</p>
+			<p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">잘못된 사례</span> : 데이터 테이블에 제목 셀과 내용 셀을 &lt;th&gt;와 &lt;td&gt; 요소로 구분하지 않은 경우</p>
+			<p class="mlabeltext"><span class="menu">[예제]</span></p>
+			<p class="mlabeltext">
+				&lt;table summary=&quot;0,감추기,1,보이기&quot;&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;caption style=&quot;display:none;&quot;&gt;ShowToolbar 속성값&lt;/caption&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;0&lt;/p&gt;&lt;/td&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;감추기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;보이기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+				&lt;/table&gt;
+			</p>
+			<p class="mlabeltext"><span class="menu">[수정]</span></p>
+			<p class="mlabeltext">
+				&lt;table summary=&quot;0,감추기,1,보이기&quot;&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;caption style=&quot;display:none;&quot;&gt;ShowToolbar 속성값&lt;/caption&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;<span class="red">th scope=&quot;row&quot;</span>&gt;&lt;p&gt;0&lt;/p&gt;&lt;/th&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;감추기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;tr&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;<span class="red">th scope=&quot;row&quot;</span>&gt;&lt;p&gt;1&lt;/p&gt;&lt;/th&gt;<br/>
+						<span class="order">&nbsp;</span><span class="order">&nbsp;</span>&lt;td&gt;&lt;p&gt;&nbsp;보이기&lt;/p&gt;&lt;/td&gt;<br/>
+					<span class="order">&nbsp;</span>&lt;/tr&gt;<br/>
+				&lt;/table&gt;
+			</p>
+			<p class="mlabeltext"><img src="images/fvalidation.table.1.png" class="middle" /></p>
+			
+            <hr />
+			
+			<h3><a name="v_id">마크업 오류 방지</a></h3>
+            <p class="mtext">마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 합니다.</p>
+			<p class="mtext">&nbsp;</p>
+			<p class="mlabel1">검증 방법</p>
+			<table class="table">
+                <tr>
+                    <td>
+                        <p>서로 다른 요소 간에 동일한 id를 사용하고 있는지 확인합니다.</p>
+                    </td>
+				</tr>
+			</table>
+			<p class="mtext">&nbsp;</p>
+			<p class="mtext"><img src="images/icon-notice.gif" class="middle" /> <span class="menu">잘못된 사례</span> : 중복 선언된 속성 오류</p>
+			<p class="mlabeltext"><span class="menu">[예제]</span> &lt;a id=&quot;namo&quot; title=&quot;홈페이지 바로가기&quot; href=&quot;http://namoeditor.co.kr&quot; /&gt;나모 홈페이지&lt;/a&gt;</p>
+			<p class="mlabeltext" style="margin-left:100px;">&lt;a id=&quot;namo&quot; title=&quot;체험하기 바로가기&quot; href=&quot;http://comp.namoeditor.co.kr&quot; /&gt;체험하기&lt;/a&gt;</p>
+			<p class="mlabeltext"><span class="menu">[수정]</span> &lt;a <span class="red">id=&quot;namo1&quot;</span> title=&quot;홈페이지 바로가기&quot; href=&quot;http://namoeditor.co.kr&quot; /&gt;나모 홈페이지&lt;/a&gt;</p>
+			<p class="mlabeltext" style="margin-left:100px;">&lt;a <span class="red">id=&quot;namo&quot;</span> title=&quot;체험하기 바로가기&quot; href=&quot;http://comp.namoeditor.co.kr&quot; /&gt;체험하기&lt;/a&gt;</p>
+			<p class="mlabeltext"><img src="images/fvalidation.id.png" class="middle" /></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+			<hr /><p class="center">Copyright ⓒ 2017 NamoEditor Co., Ltd. All rights reserved.</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,614 @@
+{
+	"version": "0.4",
+	"default-language":"ko",
+
+	"maxImageWidth": 1600,
+	"maxImageHeight": 1600,
+	"minImageWidth": 50,
+	"minImageHeight": 50,
+
+	"resources": {
+		"font-family": [
+			"gulim",
+			"gulimche",
+			"dotum",
+			"dotumche",
+			"batang",
+			"batangche",
+			"gungsuh",
+			"gungsuhche",
+			"malgun gothic",
+			"tahoma",
+			"verdana",
+			"arial"
+		],
+		"font-size-unit": "px",
+		"font-size": [
+			8,9,10,11,12,14,16,18,20,24,28,32,36,40,44,48,54,60,66,72,80,88,96
+		]
+	},
+	"defaultFontConfig": {
+		"fontFamily": "",
+		"fontSize": "14px"
+	},
+	"ui": {
+		"toolbar": [
+			["history-reset"],
+			"|",
+			["history-undo", "history-redo"],
+			"|",
+			["resize-workspace"],
+			"|",
+			["move-layer", "rotate-left", "rotate-right", "inverse-h", "inverse-v"],
+			"|",
+			["crop-layer", "resize-layer"],
+			"|",
+			["insert-textbox", "insert-textballoon", "insert-sticker"],
+			"|",
+			["adjust-color", "apply-filter"]
+		],
+		"navigator": {
+			"zoom_steps": [10,20,30,40,50,100,150,200,300,400,500]
+		}
+	},
+
+	"assets": {
+		"stickers": [{
+			"id": "sticker_01",
+			"name": "sticker_01",
+			"src": "resources/images/stickers/sticker_01.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_02",
+			"name": "sticker_02",
+			"src": "resources/images/stickers/sticker_02.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_03",
+			"name": "sticker_03",
+			"src": "resources/images/stickers/sticker_03.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_04",
+			"name": "sticker_04",
+			"src": "resources/images/stickers/sticker_04.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_05",
+			"name": "sticker_05",
+			"src": "resources/images/stickers/sticker_05.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_06",
+			"name": "sticker_06",
+			"src": "resources/images/stickers/sticker_06.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_07",
+			"name": "sticker_07",
+			"src": "resources/images/stickers/sticker_07.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_08",
+			"name": "sticker_08",
+			"src": "resources/images/stickers/sticker_08.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_09",
+			"name": "sticker_09",
+			"src": "resources/images/stickers/sticker_09.png",
+			"width": 400,
+			"height": 400
+
+		},{
+			"id": "sticker_10",
+			"name": "sticker_10",
+			"src": "resources/images/stickers/sticker_10.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_11",
+			"name": "sticker_11",
+			"src": "resources/images/stickers/sticker_11.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_12",
+			"name": "sticker_12",
+			"src": "resources/images/stickers/sticker_12.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_13",
+			"name": "sticker_13",
+			"src": "resources/images/stickers/sticker_13.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_14",
+			"name": "sticker_14",
+			"src": "resources/images/stickers/sticker_14.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_15",
+			"name": "sticker_15",
+			"src": "resources/images/stickers/sticker_15.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_16",
+			"name": "sticker_16",
+			"src": "resources/images/stickers/sticker_16.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_17",
+			"name": "sticker_17",
+			"src": "resources/images/stickers/sticker_17.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_18",
+			"name": "sticker_18",
+			"src": "resources/images/stickers/sticker_18.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_19",
+			"name": "sticker_19",
+			"src": "resources/images/stickers/sticker_19.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_20",
+			"name": "sticker_20",
+			"src": "resources/images/stickers/sticker_20.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_21",
+			"name": "sticker_21",
+			"src": "resources/images/stickers/sticker_21.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_22",
+			"name": "sticker_22",
+			"src": "resources/images/stickers/sticker_22.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_23",
+			"name": "sticker_23",
+			"src": "resources/images/stickers/sticker_23.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_24",
+			"name": "sticker_24",
+			"src": "resources/images/stickers/sticker_24.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_25",
+			"name": "sticker_25",
+			"src": "resources/images/stickers/sticker_25.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_26",
+			"name": "sticker_26",
+			"src": "resources/images/stickers/sticker_26.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_27",
+			"name": "sticker_27",
+			"src": "resources/images/stickers/sticker_27.png",
+			"width": 400,
+			"height": 400
+		},{
+			"id": "sticker_28",
+			"name": "sticker_28",
+			"src": "resources/images/stickers/sticker_28.png",
+			"width": 400,
+			"height": 400
+		}],
+
+
+		"textballoons": [{
+			"id": "balloon_01",
+			"name": "balloon_01",
+			"src": "resources/images/balloons/balloon_01.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "58",
+          "y": "128",
+          "width": "284",
+          "height": "110"
+        }
+		},{
+			"id": "balloon_02",
+			"name": "balloon_02",
+			"src": "resources/images/balloons/balloon_02.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "58",
+          "y": "128",
+          "width": "284",
+          "height": "110"
+        }
+		},{
+			"id": "balloon_03",
+			"name": "balloon_03",
+			"src": "resources/images/balloons/balloon_03.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "50",
+          "y": "94",
+          "width": "298",
+          "height": "156"
+        }
+		},{
+			"id": "balloon_04",
+			"name": "balloon_04",
+			"src": "resources/images/balloons/balloon_04.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "50",
+          "y": "94",
+          "width": "298",
+          "height": "156"
+        }
+		},{
+			"id": "balloon_05",
+			"name": "balloon_05",
+			"src": "resources/images/balloons/balloon_05.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "68",
+          "y": "94",
+          "width": "276",
+          "height": "100"
+        }
+		},{
+			"id": "balloon_06",
+			"name": "balloon_06",
+			"src": "resources/images/balloons/balloon_06.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "68",
+          "y": "94",
+          "width": "276",
+          "height": "100"
+        }
+		},{
+			"id": "balloon_07",
+			"name": "balloon_07",
+			"src": "resources/images/balloons/balloon_07.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "34",
+          "y": "94",
+          "width": "334",
+          "height": "128"
+        }
+		},{
+			"id": "balloon_08",
+			"name": "balloon_08",
+			"src": "resources/images/balloons/balloon_08.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "34",
+          "y": "94",
+          "width": "334",
+          "height": "128"
+        }
+		},{
+			"id": "balloon_09",
+			"name": "balloon_09",
+			"src": "resources/images/balloons/balloon_09.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "60",
+          "y": "79",
+          "width": "278",
+          "height": "136"
+        }
+		},{
+			"id": "balloon_10",
+			"name": "balloon_10",
+			"src": "resources/images/balloons/balloon_10.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "60",
+          "y": "79",
+          "width": "278",
+          "height": "136"
+        }
+		},{
+			"id": "balloon_11",
+			"name": "balloon_11",
+			"src": "resources/images/balloons/balloon_11.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "60",
+          "y": "113",
+          "width": "284",
+          "height": "132"
+        }
+		},{
+			"id": "balloon_12",
+			"name": "balloon_12",
+			"src": "resources/images/balloons/balloon_12.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "60",
+          "y": "113",
+          "width": "284",
+          "height": "132"
+        }
+		},{
+			"id": "balloon_13",
+			"name": "balloon_13",
+			"src": "resources/images/balloons/balloon_13.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "49",
+          "y": "56",
+          "width": "300",
+          "height": "224"
+        }
+		},{
+			"id": "balloon_14",
+			"name": "balloon_14",
+			"src": "resources/images/balloons/balloon_14.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "49",
+          "y": "56",
+          "width": "300",
+          "height": "224"
+        }
+		},{
+			"id": "balloon_15",
+			"name": "balloon_15",
+			"src": "resources/images/balloons/balloon_15.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "60",
+          "y": "113",
+          "width": "284",
+          "height": "132"
+        }
+		},{
+			"id": "balloon_16",
+			"name": "balloon_16",
+			"src": "resources/images/balloons/balloon_16.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "95",
+          "y": "94",
+          "width": "205",
+          "height": "130"
+        }
+		},{
+			"id": "balloon_17",
+			"name": "balloon_17",
+			"src": "resources/images/balloons/balloon_17.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "78",
+          "y": "63",
+          "width": "254",
+          "height": "226"
+        }
+		},{
+			"id": "balloon_18",
+			"name": "balloon_18",
+			"src": "resources/images/balloons/balloon_18.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "104",
+          "y": "115",
+          "width": "190",
+          "height": "112"
+        }
+		},{
+			"id": "balloon_19",
+			"name": "balloon_19",
+			"src": "resources/images/balloons/balloon_19.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "86",
+          "y": "55",
+          "width": "230",
+          "height": "172"
+        }
+		},{
+			"id": "balloon_20",
+			"name": "balloon_20",
+			"src": "resources/images/balloons/balloon_20.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "27",
+          "y": "92",
+          "width": "342",
+          "height": "140"
+        }
+		},{
+			"id": "balloon_21",
+			"name": "balloon_21",
+			"src": "resources/images/balloons/balloon_21.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "76",
+          "y": "149",
+          "width": "242",
+          "height": "104"
+        }
+		},{
+			"id": "balloon_22",
+			"name": "balloon_22",
+			"src": "resources/images/balloons/balloon_22.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "94",
+          "y": "106",
+          "width": "216",
+          "height": "90"
+        }
+		},{
+			"id": "balloon_23",
+			"name": "balloon_23",
+			"src": "resources/images/balloons/balloon_23.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "139",
+          "y": "138",
+          "width": "158",
+          "height": "90"
+        }
+		},{
+			"id": "balloon_24",
+			"name": "balloon_24",
+			"src": "resources/images/balloons/balloon_24.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "127",
+          "y": "147",
+          "width": "138",
+          "height": "96"
+        }
+		},{
+			"id": "balloon_25",
+			"name": "balloon_25",
+			"src": "resources/images/balloons/balloon_25.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "30",
+          "y": "47",
+          "width": "340",
+          "height": "232"
+        }
+		},{
+			"id": "balloon_26",
+			"name": "balloon_26",
+			"src": "resources/images/balloons/balloon_26.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "38",
+          "y": "71",
+          "width": "326",
+          "height": "212"
+        }
+		},{
+			"id": "balloon_27",
+			"name": "balloon_27",
+			"src": "resources/images/balloons/balloon_27.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "69",
+          "y": "108",
+          "width": "248",
+          "height": "130"
+        }
+		},{
+			"id": "balloon_28",
+			"name": "balloon_28",
+			"src": "resources/images/balloons/balloon_28.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "61",
+          "y": "108",
+          "width": "288",
+          "height": "116"
+        }
+		},{
+			"id": "balloon_29",
+			"name": "balloon_29",
+			"src": "resources/images/balloons/balloon_29.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "49",
+          "y": "89",
+          "width": "300",
+          "height": "128"
+        }
+		},{
+			"id": "balloon_30",
+			"name": "balloon_30",
+			"src": "resources/images/balloons/balloon_30.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "77",
+          "y": "112",
+          "width": "245",
+          "height": "118"
+        }
+		},{
+			"id": "balloon_31",
+			"name": "balloon_31",
+			"src": "resources/images/balloons/balloon_31.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "59",
+          "y": "85",
+          "width": "288",
+          "height": "154"
+        }
+		},{
+			"id": "balloon_32",
+			"name": "balloon_32",
+			"src": "resources/images/balloons/balloon_32.png",
+			"width": 400,
+			"height": 400,
+			"textPos": {
+          "x": "59",
+          "y": "85",
+          "width": "288",
+          "height": "154"
+        }
+		}]
+	}
+}

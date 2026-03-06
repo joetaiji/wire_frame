@@ -1,0 +1,1366 @@
+@charset "utf-8";
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+@use "sass:selector";
+@use "sass:meta";
+@use 'mixin' as mix;
+
+/*-------------------------------------------------
+title       : 컴포넌트
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+
+span[aria-label*="필수"] {color: #DA2752 !important;}
+
+// 타이틀
+.title.type1
+{
+    @include mix.title(1rem 0 1.5rem, 2.3rem, #111);
+    span {margin-left: 1rem; font-weight: 400; font-size: mix.$fs; color: #727272;}
+}
+
+// 박스
+.box.type1
+{
+    position: relative; margin-bottom: 2rem; padding: 3rem 3rem 3rem 6.5rem; border-radius: 1.2rem; background-color: #F7F7F8;
+    &::before {@include mix.icon(type2, '\ECA1'); @include mix.position(top); left: 3rem; font-size: 2.5rem; color: #000;}
+    strong {display: block; color: #D72020;}
+}
+
+// 서브 레이아웃 일부
+// =========================================================================================================
+
+.contents_util {position: relative;}
+
+// 유틸
+#utile 
+{
+    position: absolute; right: 0; bottom: 1rem;
+    .print::before {@include mix.icon(type3, '\F029');}
+    
+    .btn 
+    {
+        @include mix.nemo(4.5rem); 
+        border-radius: 100%; border: 1px solid var(--bdc); font-size: 2rem; transition: mix.$time2;
+        &:hover, &:focus {border-color: #000; background-color: #000; color: #fff;}
+    }
+
+    .share 
+    {
+        display: inline-block; position: relative; vertical-align: middle;
+        .open::before {@include mix.icon(type3, '\F185')}
+        [class*="ri-"] {position: relative; top: -0.3rem;}
+        #share {@include mix.hidden; @include mix.position(left); top: calc(100% + 1rem); z-index: 1; min-width: 5rem; text-align: center;}
+        .list {border-radius: 5rem; border: 1px solid var(--bdc); background-color: #fff;}
+        .svg-icon {margin-left: 0;}
+        a {@include mix.nemo(2rem); display: block; margin: 1rem auto;}
+    
+        &.active
+        {
+            .open {border-color: #000; background-color: #000; color: #fff;}
+            #share {@include mix.visible;}
+            .list {padding: 1rem 0;}
+        }
+
+        .close 
+        {
+            @include mix.nemo(3rem); border-radius: 100%; background-color: var(--bdc); color: #fff;
+            &::before {@include mix.icon(type3, '\EB99');}
+        }
+    }
+}
+
+// 하단
+.contents_info
+{
+    margin: 10rem 0 0;
+
+    .info 
+    {
+        display: flex; position: relative; min-height: 6rem; padding: 1rem 2rem 1rem 6rem; border-radius: var(--brd); border: 1px solid var(--bdc); align-items: center;
+        &::before {@include mix.nemo(3rem); @include mix.icon(type2, '\F264'); left: 2rem; top: 1.5rem; border-radius: 100%; background-color: #000; color: #fff;}
+        strong {margin-right: 0.5rem; color: #000;}
+        
+        li
+        {
+            &:nth-child(4):last-child {margin-left: auto;}
+            & + li::before {display: inline-block; width: 1px; height: 1.2rem; margin: 0 0.5rem 0 1rem; background-color: var(--bdc); content: ''; vertical-align: middle;}
+        }
+
+        & + .satisfaction {margin-top: -1px;}
+    }
+
+    // 만족도조사
+    .satisfaction
+    {
+        overflow: hidden; position: relative; padding: 3rem; border-radius: var(--brd); border: 1px solid var(--bdc); background-color: var(--krds-light-color-surface-gray-subtler);
+        small {position: absolute; right: 3rem; top: 5.8rem; opacity: 0.8;}
+        h2 {font-size: 1.8rem; color: #000;}
+        ul {float: left; max-width: calc(100% - 10rem); margin-top: 1rem;}
+        li {display: inline-block; margin-right: 2rem; vertical-align: middle;}
+        button {float: right; background-color: #fff; line-height: var(--krds-button--size-height-small);}
+    }
+}
+
+// 검색 결과
+#search_result
+{
+    .form 
+    {
+        padding: 5rem; border-radius: 1.2rem; background-color: #F7F7F8;        
+        ul {@include mix.width(78rem, 100%); display: flex; margin-top: -1rem; flex-wrap: wrap;}
+        strong {margin-right: 2rem !important; font-size: 1.9rem; color: #111;}
+        .form_text {width: calc(100% - 17rem); height: 5.5rem;}
+        .btn_b {width: 10.5rem; height: 5.5rem; padding: 0 1rem; line-height: calc(5.5rem - 2px);}
+        
+        li 
+        {
+            display: flex; margin-top: 1rem; flex: 1 1; align-items: center; white-space: nowrap;
+            &.type1 {min-width: 100%;}
+            
+            & > * 
+            {
+                margin-right: 0.8rem;
+                &:last-child {margin-right: 0;}
+            }
+        }
+    }
+
+    h2 
+    {
+        margin: 7rem 0; font-size: 3.5rem; color: #111; text-align: center;
+        em {color: #0975BA;}
+    }
+
+    .group
+    {
+        position: relative; margin-top: 8rem;
+        
+        h3
+        {
+            @include mix.title(0 0 1.5rem, 2.3rem, #111);
+            span {margin-left: 0.5rem; font-size: mix.$fs; color: #D72020;}
+        }
+
+        .more 
+        {
+            position: absolute; right: 0; top: 1rem; font-size: 1.5rem; color: #BFBFBF;
+            &::after {@include mix.icon(type1, '\EA6C');}
+        }
+    }
+
+    .list, .thumb
+    {
+        @extend %board; overflow: hidden; border-bottom: 1px dashed var(--bdc) !important; border-top-width: 1px !important; 
+        em {color: #0975BA;}
+        p {@include mix.ellipsis(3, 2.2rem);}
+        
+        a 
+        {
+            display: flex; position: relative; margin: 1rem 0; font-size: 2.1rem; font-weight: 600; color: #111; align-items: start;
+            &:hover, &:focus {text-decoration: underline;}
+            & > * {flex: 1 1;}
+            p {font-size: mix.$fs; font-weight: 400; color: mix.$cl;}
+
+            i:last-child 
+            {
+                @include mix.bg1(0);
+                min-width: 7rem; max-width: 7rem; margin-left: 2rem; text-align: center;
+                &::before {@include mix.nemo(7rem); position: absolute; top: 0; right: 0; z-index: -1; border-radius: 0.8rem; background-color: #F8F8F8; content: '';}
+                img {@include mix.position(center); top: 3.5rem;}
+            }
+            
+            &:first-child 
+            {
+                margin-top: 0;
+                & + em { &, & + span {margin-top: 0;} }
+            }
+            
+            &:first-child:last-child 
+            {
+                display: block; margin: 0;
+                span::after {@include mix.icon(type1, '\EA6E'); margin: 0 0.5rem 0 1rem; font-weight: 400;}
+            }
+
+            & + p + em, & + em
+            {
+                display: inline-block; margin-top: 2.5rem; vertical-align: middle;
+                span + span::before {@include mix.icon(type1, '\EA6E'); margin: 0 1rem 0 0.5rem; font-weight: 400;}
+
+                & + span 
+                {
+                    margin: 2.5rem 0 0 1.5rem; padding: 0; background: none; font-size: 95%; color: #5E5E5E;
+                    &.type1 {margin-left: -0.5rem;}
+                }
+            }
+        }
+
+        & > li 
+        {
+            margin-bottom: -1px; padding: 4rem 0; border-bottom: 1px dashed var(--bdc);
+            & > span {display: inline-block; height: 3.5rem; padding: 0 1.2rem; border-radius: 0.4rem; background-color: #EBF2F7; color: #111; line-height: 3.5rem; vertical-align: middle;}
+        }
+
+        .info
+        {
+            margin-top: 1.5rem;
+            strong {margin-right: 0.5rem; color: #555;}
+            
+            li 
+            {
+                display: inline-block; vertical-align: middle;
+                & + li::before {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1.2rem; margin: 0 1.2rem; background-color: var(--bdc); content: ''; vertical-align: middle;}
+            }
+        }
+    }
+
+    .thumb 
+    {
+        @include mix.list(0px, 0px, 4); grid-template-columns: calc(25% - 1rem) calc(25% + 1rem) calc(25% + 1rem) calc(25% - 1rem);
+
+        & > li 
+        {
+            padding: 4rem 2rem;
+            &:nth-child(4n+1) {padding-left: 0;}
+            &:nth-child(4n) {padding-right: 0;}
+        }
+
+        a
+        {
+            display: block;
+            strong {@include mix.ellipsis(2, 2.5rem);}
+
+            i 
+            {
+                display: block; overflow: hidden; position: relative; width: 100%; height: 0; padding-top: 65%; margin-bottom: 2.5rem; border-radius: 0.8rem; transition: mix.$time2;
+                img {@include mix.position(center); min-width: 100%; min-height: 100%; max-height: 100%; transition: mix.$time2;}
+            }
+
+            &:hover, &:focus
+            {
+                i
+                {
+                    background-color: #000;
+                    img {transform: translate(-50%, -50%) scale(1.2); opacity: 0.75;}
+                }
+            }
+        }
+
+        p span 
+        {
+            font-size: 95%;
+            & + span::before {@include mix.icon(type1, '\EA6E'); position: relative; top: -0.1rem; margin: 0 0.5rem 0 0.25rem;}
+        }
+    }
+}
+
+// UI 다이얼로그
+// =========================================================================================================
+.ui-widget-overlay {position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #000; content: ''; opacity: 0.5;}
+.ui-dialog {overflow: hidden; z-index: 999;  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.06); border-radius: 2rem; background-color: #fff;}
+.ui-dialog-titlebar {display: flex; padding: 1.5rem 2rem 1.5rem 3rem; background-color: #3E5277; font-weight: 700; color: #fff; align-items: center;}
+.ui-dialog-content {overflow-y: auto; padding: 2rem;}
+
+.ui-dialog-titlebar-close 
+{
+    @include mix.hover(before);
+    @include mix.nemo(2rem); 
+    margin-left: auto;
+    &::before {@include mix.icon(type3, '\F4C8');}
+}
+
+// 아이콘
+// =========================================================================================================
+%icon {@include mix.nemo(2rem); position: relative; top: -0.2rem;}
+
+.icon_notice 
+{
+    @include mix.nemo(3rem); 
+    margin: -1rem 0; border-radius: 100%; background-color: #000; font-size: mix.$fs; color: #fff;
+    &::before {@include mix.icon(type3, '\F2A2');}
+}
+
+.icon_new
+{
+    @extend %icon;
+    border-radius: 100%; background-color: #000; color: #fff;
+    &::before {display: block; padding-top: 1px; font-size: 1.1rem; font-weight: 900; text-indent: -1px; content: 'N';}
+}
+
+.icon_secret
+{
+    @extend %icon;
+    &::before {@include mix.icon(type3, '\EECB'); color: mix.$cl;}
+}
+
+.icon_reply
+{
+    @extend %icon; color: #999;
+    &::before {@include mix.icon(type3, '\F308');}
+}
+
+.icon1 
+{
+    display: inline-block; min-width: 6rem; height: 3rem; padding: 0 1.5rem; border-radius: 3rem; border: 1px solid transparent; font-size: 1.4rem; text-align: center; line-height: 2.8rem; vertical-align: middle;
+    &.type1 {border-color: var(--bdc);}
+    &.type2 {background-color: #efefef;}
+    &.type3 {background-color: #ECEEFA; color: #345BEF;}
+    &.type4 {background-color: #000; color: #fff;}
+    &.type5 {background-color: #F7EBEE; color: #DA2752;}
+}
+
+// 버튼
+// =========================================================================================================
+$btns_ :
+(
+    b: (height: 6rem, padding: 0 3rem, size: 110%),
+    m: (height: var(--cmpH), padding: 0 2rem, size: mix.$fs),
+    s: (height: 3rem, padding: 0 1rem, size: 90%)
+);
+
+@each $keys, $map in $btns_
+{
+    .btn_#{$keys} 
+    {
+        @include mix.btn(map-get($map, height), map-get($map, padding), 1px, var(--bdc), #fff, map-get($map, size), mix.$cl); border-radius: var(--brd);
+        &:hover, &:focus {box-shadow: 0.2rem 0.2rem 0.7rem rgba(0, 0, 0, 0.2); border-color: #000; background-color: #000; color: #fff;}
+
+        $colors: (#000, #0975BA);
+
+        @each $color in $colors
+        {
+            $i: index($colors, $color);
+
+            &.type#{$i}
+            {
+                border-color: $color; background-color: $color; color: #fff;
+                &:hover, &:focus {background-color: #fff; color: $color;}
+            }
+        }
+    }
+}
+
+.btn_del 
+{
+    @include mix.nemo(2rem); 
+    @include mix.hover(before);
+    border-radius: 100%; background-color: var(--bdc); font-size: 1.4rem;
+    &::before {@include mix.icon(type3, '\EB99');}
+}
+
+// 폼
+// =========================================================================================================
+
+// 텍스트박스, 셀렉트박스
+%form_box 
+{
+    height: var(--cmpH); padding: 0 1.5rem; outline: 0 none; border-radius: var(--brd); border: 1px solid var(--bdc); background-color: #fff; transition: mix.$time2;
+    &:hover, &:focus {box-shadow: 0.2rem 0.2rem 0.7rem rgba(0, 0, 0, 0.2); border-color: #000;}
+}
+
+// 텍스트박스
+.form_text 
+{
+    @extend %form_box;
+    &.hasDatepicker {width: 25rem;}
+    
+    &:read-only, &[readonly], &[disabled]
+    {
+        background-color: #f8f8f8;
+        &:hover, &:focus {box-shadow: inherit; border-color: var(--bdc); cursor: default;}
+    }
+}
+textarea.form_text {height: auto; padding: 2rem;}
+
+// 텍스트박스(혼합)
+[class*="form_textbox"] 
+{
+    display: inline-block; width: 100%; text-align: center; vertical-align: middle; white-space: nowrap;
+
+    *
+    {
+        &:first-child {float: left;}
+        &:last-child {float: right;}
+        &:nth-child(2):nth-last-child(2) {margin: 0 0.25rem;}
+    }
+}
+
+// 텍스트박스(연락처)
+.form_textbox1 
+{
+    max-width: 35rem;
+    .form_text {width: calc(33.333% - 1.2rem);}
+}
+
+// 텍스트박스(이메일)
+.form_textbox2
+{
+    max-width: 60rem;
+    .form_text {width: calc(35% - 1.8rem);}
+    .form_select {width: 30%;}
+}
+
+// 텍스트박스(생년월일)
+.form_textbox3
+{
+    max-width: 37rem;
+
+    [class*="form_"]
+    {
+        width: calc(30% - 3.5rem); margin-right: 1rem !important;
+        &:nth-child(n+2) {margin-left: 1rem !important;}
+        &:first-child {width: calc(40% - 3.5rem);}
+        &:first-child, &:last-child {float: none;}
+    }
+}
+
+// 텍스트박스(주소)
+.form_textbox4 
+{
+    text-align: left;
+
+    .form_text 
+    {
+        float: none !important; width: 100%;
+        &:first-child {width: 20rem; max-width: calc(100% - 14rem);}
+    }
+    
+    .btn_m
+    {
+        width: 13rem;
+        & + input {display: block; margin: 0.5rem 0;}
+    }
+}
+
+// 텍스트박스(기간)
+.form_textbox5
+{
+    position: relative; max-width: 53rem; text-align: left; line-height: var(--cmpH);
+
+    .form_text
+    {
+        width: calc(50% - 1.5rem);
+        
+        &:first-child 
+        {
+            margin-right: 1rem;
+            & + button {transform: translateX(calc(-100% - 1rem));}
+        }
+
+        &:nth-child(3) 
+        {
+            float: right;
+            & + button {right: 0; transform: translate(0);}
+        }
+    }
+}
+
+// datepicker
+.ui-datepicker-trigger 
+{
+    @include mix.nemo(var(--cmpH)); 
+    position: absolute; left: auto; top: auto; font-size: 1.8rem; color: #000; transform: translateX(-100%); transition: mix.$time2;
+    &::before {@include mix.icon(type3, '\EB20');}
+}
+
+// 모달 달력
+.ui-datepicker
+{
+    overflow: hidden; width: 25rem; border-radius: var(--brd); background-color: #fff;
+    &[style] {border: 1px solid var(--bdc);}
+    table {width: calc(100% - 2rem); margin: 1.5rem 1rem;}
+    th {padding: 0.5rem;}    
+    td a {display: block; padding: 0.5rem; border-radius: 100%; border-bottom: 1px solid var(--brd); font-weight: 300; text-align: center;}
+    
+    tr > *
+    {
+        font-size: 1.3rem;
+        &:first-child {color: #cb152b;}
+        &:last-child {color: #116eb4;}
+    }
+
+    .ui-state-highlight {background-color: #000; color: #fff;}
+
+    .ui-datepicker-title 
+    {
+        height: 4.5rem; margin-bottom: 1rem; background-color: #000; color: #fff; text-align: center; line-height: 4.5rem;
+
+        select 
+        {
+            border: 0 none; background: transparent;
+            & + select {margin-left: 1rem;}
+        }
+    }
+
+    .ui-datepicker-header a 
+    {
+        @include mix.arr(4.5rem);
+        top: 0; color: #fff;
+    }
+    
+    .ui-widget-content 
+    {
+        display: flex; margin-top: -0.5rem; padding: 0 1rem 1.5rem; text-align: center;
+        
+        button 
+        {
+            margin: 0 0.5rem; padding: 0.5rem 1rem; border-radius: var(--brd); border: 1px solid var(--bdc); font-size: 1.4rem; transition: mix.$time2;
+            &:first-child {margin-right: auto;}
+            &:hover, &:focus {border-color: #000; background-color: #000; color: #fff;}
+        }
+    }
+}
+
+// 비밀번호 보기
+.form_password
+{
+    display: inline-block; position: relative; vertical-align: middle;
+    &:hover, &:focus, &.active { .form_text {box-shadow: 0.2rem 0.2rem 0.7rem rgba(0, 0, 0, 0.2); border-color: #000;} }
+    &.active button::before {content: '\ECB7';}
+
+    button 
+    {
+        @include mix.nemo(var(--cmpH)); 
+        position: absolute; right: 0; top: 0;
+        &::before {@include mix.icon(type3, '\ECB5');}
+    }
+}
+
+// 셀렉트박스
+.form_select
+{
+    display: inline-block; position: relative; vertical-align: middle;
+    &::after {@include mix.icon(type2, '\EA4E'); right: 1.25rem; line-height: var(--cmpH); transition: mix.$time2;}
+    select {@extend %form_box; width: 100%; padding-right: 4rem; background-color: #fff;}
+}
+
+// 파일박스
+.form_file
+{
+    display: block; position: relative; height: var(--cmpH); line-height: calc(var(--cmpH) - 2px);
+    &::after {@include mix.ellipsis; position: absolute; left: 10.5rem; top: 0; right: 0; height: 100%; padding: 0 1rem; border-radius: var(--brd); border: 1px solid var(--bdc); content: attr(data-value);}
+    span {position: absolute; left: 0; top: 0; width: 10rem; height: 100%; border-radius: var(--brd); border: 1px solid #000; background-color: #000; color: #fff; text-align: center; transition: mix.$time2; cursor: pointer;}
+    
+    input 
+    {
+        position: absolute; left: 0; top: 0; z-index: 1; width: 10rem; height: 100%; opacity: 0; cursor: pointer;
+        &::-webkit-file-upload-button {cursor: pointer;}
+        &:hover, &:focus { & + span {box-shadow: 0.2rem 0.2rem 0.7rem rgba(0, 0, 0, 0.2); background-color: #fff; color: #000;} }
+    }
+}
+
+// 체크박스, 라디오박스
+%form_label
+{
+    display: inline-block; position: relative; margin-right: 2rem; vertical-align: middle;
+    &:last-child {margin-right: 0;}
+
+    input 
+    {
+        position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0;
+        &:checked + label::before {color: #000;}
+        &:hover, &:focus, &:active { & + label::before {box-shadow: 0.2rem 0.2rem 0.7rem rgba(0, 0, 0, 0.2); border-color: #000;} }
+    }
+
+    label
+    {
+        @include mix.bul(3rem); cursor: pointer;
+        &::before {@include mix.nemo(2rem !important); position: absolute; left: 0; top: 0; border: 1px solid var(--bdc); background-color: #fff; color: transparent; transition: mix.$time2;}
+    }
+}
+
+// 체크박스
+.form_check
+{
+    @extend %form_label;
+    label::before {@include mix.icon(type3, '\EB7B'); border-radius: calc(var(--brd) - 0.3rem); line-height: 1.8rem;}
+}
+
+// 라디오
+.form_radio
+{
+    @extend %form_label;
+    label::before {@include mix.icon(type3, '\F3C1'); border-radius: 100%; font-size: 1.2rem;}
+}
+
+// 스위치
+.form_switch
+{
+    @include mix.bg1(0);
+
+    input 
+    {
+        position: absolute; z-index: 1; width: 100%; height: 100%; opacity: 0;
+        &:checked + label::before {left: 100%; transform: translate(calc(-100% - 0.2rem), -50%);}
+    }
+
+    label 
+    {
+        @include mix.height(3rem, 0.2rem, #485F8A);
+        display: inline-block; overflow: hidden; position: relative; width: 5.5rem; border-radius: 5rem; vertical-align: middle; text-indent: 100%; white-space: nowrap;
+        &::before {@include mix.position(top); @include mix.nemo(2rem); left: 0.2rem; border-radius: 100%; background-color: #485F8A; content: ''; transform: translate(0, -50%); transition: mix.$time2;}
+    }
+}
+
+// 게시판 관련 요소
+// =========================================================================================================
+%board {border-top: 2px solid #000; border-bottom: 1px solid #aaa;}
+
+[class*="board_"]
+{
+    overflow: hidden;
+    table {margin-bottom: -1px; white-space: nowrap;} 
+    th {padding: 2rem 0.5rem; border-bottom: 1px solid #aaa; color: #000;}
+    td {padding: 1.8rem 1rem; border-bottom: 1px solid var(--bdc);}
+}
+
+// 상단
+.board_info
+{
+    display: flex; margin-bottom: 2rem; align-items: center; flex-direction: row-reverse;
+
+    .count 
+    {
+        margin-right: auto;
+        span + span::before {display: inline-block; width: 1px; height: 1rem; margin: 0 1rem; background-color: var(--bdc); content: ''; vertical-align: middle;}
+        strong, b {color: #000;}
+    }
+
+    .search
+    {
+        fieldset 
+        {
+            display: flex;
+            & > *:nth-child(n+2):nth-last-child(n+2) {margin-right: 0.5rem;}
+        }
+
+        button 
+        {
+            height: var(--cmpH); padding: 0 2rem; border-radius: var(--brd); border: 1px solid #000; background-color: #000; color: #fff; transition: mix.$time2; white-space: nowrap;
+            &:hover, &:focus {background-color: #fff; color: #000;}
+        }
+    }
+
+    &.type1
+    {
+        display: block; overflow: hidden;
+
+        .viewtype 
+        {
+            float: right; margin-right: 0;
+            & + .count {float: left; line-height: 4rem;}
+        }
+
+        .search 
+        {
+            margin-bottom: 2rem; padding: 2rem; border-radius: 1rem; background-color: #F7F7F8; text-align: center;
+            .form_select + .form_select + .form_select ~ .form {display: block; margin-top: 1rem;}
+        }
+    }
+}
+
+// 상단 목록 구분
+.viewtype
+{
+    overflow: hidden; height: var(--cmpH); margin-right: 2rem; border-radius: var(--brd); border: 1px solid var(--bdc);
+
+    button 
+    {
+        overflow: hidden; float: left; width: var(--cmpH); height: 100%; background-color: #f8f8f8;
+        & + button {border-left: 1px solid var(--bdc);}
+        &[class*="_on"] {background-color: #fff; color: #000;}   
+
+        $icons: (btnTextStyle: '\F46C', btnImageStyle: '\F44C', btnGalleryStyle: '\F444');
+        @each $keys, $icon in $icons { &##{$keys}::before {@include mix.icon(type3, $icon);} }         
+    }
+}
+
+// KRDS 게시판 속
+.g-wrap .viewtype 
+{
+    float: right; margin: 3.5rem 0 0;
+    & + .search-list-top {display: inline-block; clear: both; vertical-align: middle;}
+}
+
+// 게시판 목록 중 아이콘
+// .krds-structured-list.type2 .community-notice-list.inquire .krds-badge[class*="outline-"] {min-width: 7rem;}
+
+// 카테고리
+.board_category
+{
+    overflow: hidden; overflow-x: auto; margin-bottom: 2rem; white-space: nowrap;
+    li {display: inline;}
+    
+    a 
+    {
+        display: inline-block; height: 3.5rem; padding: 0 2rem; border-radius: 3.5rem; border: 1px solid var(--bdc); line-height: 3.3rem; vertical-align: middle; transition: mix.$time2;
+        &:hover, &:focus {border-color: #000; color: #000;}
+    }
+    
+    .active a 
+    {
+        border-color: #000; background-color: #000; color: #fff !important;
+        &::after {@include mix.icon(type1, '\EA4E'); margin: 0 -0.7rem 0 0.5rem;}
+    }
+}
+
+// 목록
+.board_list
+{
+    @extend %board;
+    clear: both; text-align: center;
+    .btn_s, .icon1 {margin: -1rem 0;}
+
+    $widths : (번호: 8rem, 작성자: 12rem, 등록일: 15rem, 보도일: 15rem, 상황: 12rem, 링크: 12rem);
+    @each $keys, $width in $widths { td[aria-label*="#{$keys}"] {width: $width;} }
+    
+    .txt_left 
+    {
+        max-width: 50%; font-weight: 500; color: #000; white-space: normal; word-break: keep-all;
+        a {display: -webkit-box; overflow: hidden; max-height: 2.5rem; -webkit-line-clamp: 1; -webkit-box-orient: vertical;}
+    }
+
+    tbody tr
+    {
+        transition: mix.$time2;
+        &:hover, &:focus {background-color: #f8f8f8;}
+    }
+}
+
+// 팝업
+.board_popup
+{
+    @include mix.hidden;
+    position: fixed; left: 50%; top: 50%; z-index: 10; background-color: rgba(0, 0, 0, 0.5);
+    h2 {font-size: 2.2rem; color: #000;}
+    .group {@include mix.position(center); padding: 5rem; border-radius: 1rem; background-color: #fff; text-align: center;}
+    .form {margin-top: 2rem;}
+    &.active {@include mix.visible(100%, 100%); left: 0; top: 0;}
+    
+    .close 
+    {
+        @include mix.nemo(4rem); 
+        @include mix.hover(before);
+        position: absolute; right: 2rem; bottom: 100%; border-radius: 100%; background-color: #000; font-size: 2rem; color: #fff; transform: translateY(50%);
+        &::before {@include mix.icon(type3, '\EB99');}
+    }
+
+}
+
+// 페이저
+.board_pager
+{
+    margin-top: 4rem; text-align: center;
+    & > a {@include mix.arr(4rem); position: static !important; border-radius: 100%; border: 1px solid var(--bdc);}
+    img {vertical-align: top;}
+
+    .group
+    {
+        margin: 0 1rem;
+
+        & > a
+        {
+            display: inline-block; position: relative; width: 8rem; text-align: center; vertical-align: middle;
+            &:first-child::after, &:last-child::before {position: absolute; top: 0; width: 4rem; content: '···'; opacity: 0.5;}
+            &.disable {display: none;}
+    
+            &:first-child 
+            {
+                padding-right: 4rem;
+                &::after {right: 0;}
+            }
+    
+            &:last-child 
+            {
+                padding-left: 4rem;
+                &::before {left: 0;}
+            }
+        }
+        
+        &:first-child:last-child > a 
+        { 
+            width: 4rem; padding: 0;
+            &::before, &::after {display: none;} 
+        }
+    }
+
+    .item, & > span
+    {
+        margin: 0 1rem;
+        a {@include mix.nemo(4rem); border-radius: 100%;}
+        .active {background-color: #000; color: #fff;}
+    }
+
+    // 버튼
+    & + .board_btns 
+    {
+        position: relative; height: 0; margin-top: 0;
+        .btn_m {position: absolute; right: 0; bottom: 0;}
+    }
+}
+
+// 버튼
+.board_btns {display: flex; overflow: inherit; margin-top: 5rem; text-align: center; justify-content: center; gap: 0.5rem;}
+
+// 내용
+.board_view
+{
+    @extend %board;
+
+    & > h2 
+    {
+        padding: 4rem 0 2rem; font-size: 2.5rem; color: #000; text-align: center;
+        strong {display: block; margin-top: 0.5rem;}
+
+        & + .info
+        {
+            padding-bottom: 4rem; border-bottom: 1px solid var(--bdc); text-align: center;
+
+            strong
+            {
+                color: #333;
+                &::after {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1.2rem; margin: 0 1rem; background-color: var(--bdc); content: ''; vertical-align: middle;}
+            }
+            
+            li 
+            {
+                display: inline-block; vertical-align: top;
+                & + li {margin-left: 3rem;}
+            }
+            
+        }
+    }
+
+    .contents 
+    {
+        padding: 5rem 3rem;
+        *:first-child {margin-top: 0; padding-top: 0;}
+        *:last-child {margin-bottom: 0; padding-bottom: 0;}
+
+        .img 
+        {
+            display: block; margin: 3rem 0;
+            &:first-child {margin-top: 0;}
+            &:last-child {margin-bottom: 0;}
+        }
+    }
+
+    // ebook
+    &.ebook
+    {
+        position: relative; margin-bottom: 5rem; border-bottom: 0 none;
+        .contents {display: inline-block; width: 100%; margin-top: 4rem; background-color: #f8f8f8; vertical-align: top;}
+        .btns i {margin-left: 1rem;}
+
+        & > i:has(img) 
+        {
+            overflow: hidden; float: left; position: relative; width: 30rem; height: 40rem; margin: 4rem 4rem 4rem 0; border: 1px solid var(--bdc);
+            & ~ * {text-align: left;}
+            img {@include mix.position(left); top: 0; max-width: inherit; height: 100%;}
+            
+            & + h2
+            {
+                & > strong {@include mix.ellipsis(4, 4rem);}
+
+                & + .info 
+                {
+                    padding-bottom: 8rem; border-bottom: 0 none;
+                    li {display: block; margin-left: 0 !important;}
+                    & + .btns {position: absolute; left: 0; top: 44rem; right: 0; margin-top: 4rem; padding: 0 0 4rem 34rem; border-bottom: 1px solid var(--bdc); text-align: left; transform: translateY(-100%);}
+                }
+            }
+        }
+    }
+}
+
+// 스와이퍼
+.swiper-initialized
+{
+    overflow: hidden;
+
+    [id*="swiper-wrapper"]
+    {
+        display: flex;        
+        & > * {flex-shrink: 0;}
+    }
+
+    &.swiper-vertical
+    {
+        &, [id*="swiper-wrapper"], [id*="swiper-wrapper"] > * {height: 100%;}
+        [id*="swiper-wrapper"] {flex-direction: column;}
+    }
+}
+
+// 갤러리
+.board_gallery
+{
+    margin-bottom: var(--krds-gap-6); 
+    &.type1 { .swiper-indicator, .thumb {display: none !important;} }
+
+    .viewer
+    {
+        position: relative; padding: var(--krds-pc-padding-card-medium); border-radius: var(--krds-radius-xlarge2); border: var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-border-gray-light);
+        .swiper-pagination {border: var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-border-gray-light);}
+        .count {display: flex; align-items: center; justify-content: center; height: var(--krds-size-height-6); padding: 0 calc(var(--krds-padding-5) - 0.5rem) 0 var(--krds-padding-5); border-radius: var(--krds-radius-max); border: var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-border-gray-light); background-color: var(--krds-light-color-element-inverse); font-weight: var(--krds-font-weight-bold); color: var(--krds-light-color-text-basic); letter-spacing: 0.5rem;}
+
+        .list
+        {
+            li {display: flex; align-items: center; justify-content: center;}
+
+            a 
+            {
+                @include mix.bg1;
+                &::before {@include mix.bg2(type2); z-index: 0; background-color: rgba(0, 0, 0, 0.2); opacity: 0; transition: mix.$time2;}
+                span {@include mix.position(center); opacity: 0; transition: mix.$time2;}
+                &:hover, &:focus { &::before, span {opacity: 1;} }
+            }
+        }
+        
+        .swiper-indicator 
+        {
+            display: flex; align-items: end; justify-content: center; flex-direction: row; margin-top: var(--krds-gap-6);
+            & > * {flex: 0 0;}
+        }
+    }
+
+    .thumb
+    {
+        position: relative; margin-top: var(--krds-gap-3); padding: var(--krds-pc-padding-card-medium); border-radius: var(--krds-radius-xlarge2); border: var(--krds-light-border-width-variable-regular) solid var(--krds-light-color-border-gray-light);
+        .swiper-indicator {position: static;}
+        .arrs {display: none;}
+
+        & > .swiper.swiper-initialized
+        {
+            .list {justify-content: initial;}
+            & + .control .arrs {display: block;}
+        }
+
+        .list
+        {
+            display: flex; justify-content: center;
+
+            & > li 
+            {
+                width: 17.45rem; margin-right: var(--krds-padding-7); text-align: center;
+                &:last-child {margin-right: 0;}
+                &.active button::before {opacity: 1;}
+            }
+            
+            button 
+            {
+                @include mix.bg1;
+                display: block; overflow: hidden; width: 100%; height: 0; margin-bottom: var(--krds-gap-3); padding-top: 55%; border-radius: var(--krds-radius-xlarge2); transition: mix.$time2;
+                &::before {@include mix.bg2(type2); z-index: 1; border-radius: var(--krds-radius-xlarge2); border: 0.2rem solid var(--krds-light-color-element-primary); opacity: 0; transition: mix.$time2;}
+                img {@include mix.position(center); transition: mix.$time2;}
+
+                &:hover, &:focus
+                {
+                    background-color: #000;
+                    img {opacity: 0.7;}
+                }
+            }
+        }
+        
+        .arrs button 
+        {
+            @include mix.position(top); margin-top: -1.5rem;
+            &.swiper-button-prev {left: calc(var(--krds-pc-padding-card-medium) / 2);}        
+            &.swiper-button-next {right: calc(var(--krds-pc-padding-card-medium) / 2);}
+        }
+    }
+}
+
+// 비디오
+.board_video
+{
+    margin-bottom: 5rem;
+
+    .youtube
+    {
+        overflow: hidden; position: relative; width: 100%; height: 0; padding-top: 65%;
+        iframe {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+    }
+
+    .subtitle
+    {
+        overflow: hidden; overflow-y: auto; max-height: 20rem; margin-top: 1rem; padding: 3rem; border: 1px solid var(--bdc); background-color: #f8f8f8;
+    }
+}
+
+// 첨부파일
+.board_file
+{
+    display: flex; padding: 3rem; background-color: #f8f8f8; align-items: center;
+    strong {padding: 0 5rem 0 2rem; color: #000;}
+    ul {flex: 1 1;}
+    p {@include mix.ellipsis; margin-right: auto; padding-right: 2rem;}
+    span {margin: 0 0.5rem;}
+    small {font-weight: 300; opacity: 0.7;}
+    
+    li
+    {
+        display: flex; align-items: center;
+        & + li {margin-top: 1rem;}
+    }
+}
+
+// 답변
+.board_reply
+{
+    @extend %board;
+    position: relative; margin-top: 5rem; padding: 2rem;
+    .board_file {margin: 2rem -2rem -2rem;}
+    h2 {margin-bottom: 1rem; font-size: 1.8rem; color: #000;}
+    
+    .info 
+    {
+        position: absolute; right: 2rem; top: 2rem;
+        strong {color: #000;}
+        
+        li 
+        {
+            display: inline;
+            & + li::before {display: inline-block; width: 1px; height: 1rem; margin: 0 1rem; background-color: var(--bdc); content: ''; vertical-align: middle;}
+        }
+    }
+}
+
+// 댓글
+.board_comment
+{
+    margin-top: 5rem;
+
+    .write fieldset
+    {
+        display: flex; overflow: hidden; margin-bottom: 3rem; border-radius: var(--brd); border: 1px solid var(--bdc); background-color: #f8f8f8; flex-wrap: wrap; align-items: center;
+        .form_text {min-width: 100%; height: 10rem; border-radius: 0; border: 0 none;}
+        .length {padding-left: 1.5rem; font-size: 90%; font-weight: 300;}
+        [class*="btn_"] {margin-left: auto; border-radius: 0;}
+    }
+
+    .list
+    {
+        h2 {margin-bottom: 1rem; font-size: mix.$fs; font-weight: normal;}
+        ul {@extend %board;}
+        strong {color: #000;}     
+        p {margin-top: 1rem;}
+        .date {margin-left: 1rem; font-size: 90%; font-weight: 300;}
+        
+        li 
+        {
+            position: relative; padding: 2rem 1rem;
+            & + li {border-top: 1px solid var(--bdc);}
+            &::before {@include mix.icon(type2, '\F309'); color: #999; transform: translateX(calc(-100% - 1rem));}
+            &.depth1::before {display: none;}
+        }   
+        
+        .btns 
+        {
+            position: absolute; right: 1rem; top: 2rem; font-size: 90%; font-weight: 300;
+            a + a::before {display: inline-block; width: 1px; height: 1rem; margin: 0 0.75rem 0 0.5rem; background-color: var(--bdc); content: ''; vertical-align: middle;}
+        }
+        
+        .write fieldset
+        {
+            margin: 1.5rem -1rem 0;
+            .form_text {height: 6rem;}
+        }
+
+        @for $i from 1 through 100
+        {
+            .depth#{$i} {padding-left: calc(2rem * $i);}
+        }
+    }
+}
+
+// 이전글 다음글
+.board_prevnext
+{
+    margin-top: 5rem; border-top: 1px solid var(--bdc);
+    li {display: flex; padding: 1.8rem 0; border-bottom: 1px solid var(--bdc);}
+    a {@include mix.ellipsis;}
+    
+    strong 
+    {
+        padding: 0 3rem; white-space: nowrap;
+        &::after {margin-left: 1rem;}
+    }
+
+    $icons: (prev: '\EA78', next: '\EA4E');
+    @each $keys, $icon in $icons { .#{$keys} span::after {@include mix.icon(type1, $icon);} }
+}
+
+// 팁
+.board_tip 
+{
+    @include mix.bul(2rem);
+    margin: 1rem 0; font-size: 90%; font-weight: 300; color: #DA2752; white-space: normal; word-break: keep-all;
+    &::before {@include mix.icon(type2, '\ECA0'); left: 0; top: -0.1rem; font-size: mix.$fs;}
+    &:first-child {margin-top: 0;}
+    &:last-child {margin-bottom: 0;}
+}
+
+// 작성
+p.txt_right + .board_write {margin-top: 1.5rem;}
+.board_write
+{
+    @extend %board; border-top-width: 1px;
+    table {table-layout: fixed;}
+    td {width: auto; height: 6.5rem; padding: 1rem 1rem;}
+    .plupload_header {display: none;}
+
+    th 
+    {
+        position: relative; padding: 2rem 1.2rem 0 1.5rem; border-bottom-color: var(--bdc); font-size: 1.9rem; text-align: left; vertical-align: top;
+        //span[aria-label*="필수"] {position: absolute; top: auto; left: 2rem;}
+        & + td {padding-left: 0;}
+    }
+
+    .file .list
+    {
+        margin: 1.5rem -1rem 0 0;
+        span {margin: 0 0.5rem;}
+        small {font-weight: 300; opacity: 0.7;}
+        a {@include mix.ellipsis; display: inline-block; max-width: calc(100% - 3rem); vertical-align: middle;}
+
+        li 
+        {
+            padding: 1rem 0; border-top: 1px solid var(--bdc);
+            &:last-child {padding-bottom: 0;}
+        }
+    }
+}
+
+// 목록
+%list_utile 
+{
+    b {margin-right: 0.5rem; font-weight: 500; color: #000;}
+    span + span, ul:not(.type1) li + li { &::before {display: inline-block; position: relative; top: -0.1rem; width: 1px; height: 1rem; margin: 0 0.5rem; background-color: var(--bdc); content: ''; vertical-align: middle;} }
+    span + span::before {margin-right: 0.75rem;}
+
+    strong 
+    {
+        @include mix.ellipsis(2, 2.5rem); 
+        margin: 2rem 0 1rem; font-size: 1.8rem; color: #000;
+        &:first-child {margin-top: 0;}
+    }
+        
+    ul:not(.type1)
+    {
+        white-space: nowrap;
+        li {display: inline-block; vertical-align: middle;}
+    }
+
+    p:not(.btns) 
+    {
+        @include mix.ellipsis(2, 2.5rem); margin-bottom: 1.5rem;
+        & ~ span {font-size: 90%; font-weight: 300; opacity: 0.7;}
+    }
+
+    i:has(img), .thumb
+    {
+        @include mix.bg1(0);
+        display: block; overflow: hidden; border: 1px solid var(--bdc); transition: mix.$time2;
+        &::before {@include mix.icon(type2, '\F4B2'); @include mix.position(center); z-index: 1; margin-top: -1.5rem; font-size: 2.5rem; color: #fff; opacity: 0; transition: mix.$time2;}
+        &::after {@include mix.position(center); margin-top: 2rem; font-weight: 600; color: #fff; content: '자세히 보기'; text-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2); opacity: 0; white-space: nowrap; transition: mix.$time2 0.1s;}
+        &.video::before {content: '\F508'; transform: translate(-50%, -50%) scale(3);}
+        img {width: 100%; min-height: 100%; transition: mix.$time2;}
+    }    
+
+    & > li
+    {
+        & > a[target="_blank"] { & > i, .thumb { &::before {content: '\ECAF'; transform: translate(-50%, -50%) !important;} } }
+
+        a:hover > i, a:focus > i, .thumb:hover, .thumb:focus
+        {
+            background-color: #000;
+            &::before {opacity: 1; transform: translate(-50%, -50%) rotate(180deg);}
+            &::after {margin-top: 2.5rem; opacity: 1;}
+            &.video::before {transform: translate(-50%, -50%) scale(1);}
+            img {opacity: 0.75; transform: scale(1.2);}
+        }
+    }
+}
+
+// 갤러리형
+.list_gallery
+{
+    @include mix.list(0px, 0px, 3);
+    @extend %list_utile;
+    margin: -1px -2rem 0;
+    &.type1 {@include mix.list(0px, 0px, 4);}
+
+    & > li > a
+    {
+        display: block; position: relative; padding: 4rem 2rem; text-align: left;
+        &::before {position: absolute; left: 0; top: 0; width: 1000%; height: 1px; background-color: var(--bdc); content: '';}
+
+        & > i 
+        {
+            height: 0; padding-top: 60%;
+            img {position: absolute; left: 0; top: 0; width: 100%;}
+        }
+    }
+}
+
+// 블로그형
+.list_blog
+{
+    @extend %list_utile;
+    margin-bottom: -1px;    
+
+    & > li
+    {
+        display: flex; position: relative; padding: 4rem 0; border-bottom: 1px solid var(--bdc); text-align: left; align-items: center;        
+        & > i, .thumb {width: 30rem; margin-right: 4rem;}
+    }
+
+    .item
+    {
+        flex: 1 1; //padding-bottom: 3rem;
+        &:first-child {padding-bottom: 0;}
+        
+        a
+        {
+            display: block;
+            &:hover, &:focus { strong {text-decoration: underline;} }
+        }
+    }
+}
+
+// ebook형
+.list_ebook
+{
+    @extend %list_utile;
+    margin-bottom: -1px;    
+    .item {position: relative; height: 25rem; padding: 1rem 0 calc(var(--cmpH) + 1rem); flex: 1 1;}
+
+    & > li 
+    {
+        position: relative;
+        
+        & > a
+        {
+            display: flex; position: relative; padding: 4rem 0; border-bottom: 1px solid var(--bdc); text-align: left;
+            &:hover, &:focus { & > i img {transform: translateX(-50%) scale(1.2);} }
+    
+            & > i 
+            {
+                width: 20rem; margin-right: 5rem;
+                img {@include mix.position(left); top: 0; max-width: inherit; height: 100%;}
+            }
+        }
+    }
+
+    .btns 
+    {
+        position: absolute; left: 25rem; bottom: 5rem; right: 0; padding-top: 1rem; text-align: left;
+        i {margin-left: 2rem;}
+    }
+}
+
+// 첨부파일
+.attach_file 
+{
+    position: absolute; left: auto; top: auto; z-index: 1; width: 30rem; padding: 2rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.06); border-radius: var(--brd); background-color: #fff; text-align: left; transform: translateX(-100%);
+    dt {margin-bottom: 1rem; font-size: 1.8rem; font-weight: 600; color: #000;}
+
+    li 
+    {
+        & + li {margin-top: 0.5rem;}
+        span {display: block; float: right; height: 3rem; margin-top: 1rem; padding: 0 1rem; border-radius: var(--brd); border: 0.1rem solid #000; background-color: #000; font-size: 1.5rem; font-weight: 500; color: #fff; line-height: 2.8rem;}
+        img {position: absolute; left: 1.5rem; top: 1.8rem;}
+        
+        a 
+        {
+            display: block; overflow: hidden; position: relative; padding: 1.5rem 1.5rem 1.5rem 4rem; border-radius: var(--brd); border: 1px solid var(--bdc); font-weight: 300; word-break: break-all; white-space: normal; transition: mix.$time2;
+            &:hover, &:focus {border-color: #000;}
+        }
+    }
+
+    .file_close button 
+    {
+        @include mix.hover(before);
+        @include mix.nemo(2rem); 
+        position: absolute; right: 2rem; top: 2rem;
+        &::before {@include mix.icon(type3, '\EB99');}
+    }
+}
+
+// 회원서비스 관련 요소
+// =========================================================================================================
+#login
+{
+    padding: 15rem 2rem; border-radius: 1.2rem; background-color: #F7F7F8;
+    .group {@include mix.width(61.5rem, 100%);}
+
+    h2 
+    {
+        margin-bottom: 4rem; font-size: mix.$fs; font-weight: inherit; color: #727272; text-align: center;
+        strong {display: block; margin: 1.5rem 0 0.8rem; font-size: 3.5rem; color: #111;}
+        i {@include mix.nemo(12.5rem); border-radius: 100%; background-color: #fff;}
+        img {vertical-align: middle;}
+    }
+
+    .form
+    {
+        position: relative; padding-right: 15.5rem;
+        input[type="password"] {margin-top: 1rem;}
+        .form_text {width: 100%; height: 6.5rem;}
+
+        button 
+        {
+            position: absolute; right: 0; top: 0; width: 14.5rem; height: 100%; border-radius: 1.2rem; border: 1px solid #333; background-color: #333; color: #fff; transition: mix.$time2;
+            &:hover, &:focus {background-color: #fff;}
+        }
+    }
+
+    .item
+    {
+        display: flex; margin-top: 2rem; flex-direction: row-reverse; align-items: center;
+        .form_check {margin-right: 0;}
+        .link {margin-right: auto;}
+    }
+
+    &.guest
+    {
+        @include mix.list(0px, 6rem, 2);
+        padding: 11rem 8rem; text-align: center;
+        grid-template-areas: 
+        " a1 a2 "
+        " a3 a3 ";
+
+        @for $i from 1 through 3 { & > *:nth-child(#{$i}) {grid-area: a#{$i};} }
+        h2 strong {font-size: 2.5rem;}
+
+        .group
+        {
+            & + .group {border-left: 1px solid #C8CAD0;}
+
+            a 
+            {
+                @include mix.width(27rem, mix.$width2); 
+                @include mix.height(6rem, 1px, #333); 
+                display: block; margin: 4rem auto 0; border-radius: var(--brd); background-color: #333; color: #fff; text-align: center; transition: mix.$time2;
+                &:hover, &:focus {background-color: #fff; color: #000;}
+    
+                & + p 
+                {
+                    @include mix.bul(4rem);
+                    display: inline-block; margin-top: 4rem; vertical-align: middle; line-height: 3rem;
+                    &::before {@include mix.nemo(3rem); @include mix.icon(type2, '\EC0C'); border-radius: 100%; background-color: #fff;}
+                }
+            }
+        }
+
+        .txt 
+        {
+            margin: 0 3rem; padding: 2rem; border-radius: 0.8rem; background-color: #fff; font-size: 95%; color: #727272;
+            a {margin-left: 5rem;}
+        }
+    }
+}

@@ -1,0 +1,355 @@
+@charset "UTF-8";
+#topbanner .pager span {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#topbanner .pager span::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  content: "";
+  transition: var(--time2);
+}
+#topbanner .pager span[class*=active]::before {
+  background-color: #fff;
+}
+
+/*-------------------------------------------------
+title       : 상단띠배너
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+.topbanner {
+  --tbH: 15rem;
+  --tbB: 12rem;
+  position: relative;
+  z-index: 80;
+}
+.topbanner .open {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 999;
+  height: 4rem;
+  margin-top: -1px;
+  padding: 0 1rem 0 1.5rem;
+  outline: 0 none;
+  border-radius: 0 0 0 0.5rem;
+  border-left: 1px solid var(--bdc);
+  border-bottom: 1px solid var(--bdc);
+  background-color: #eef2f7;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: var(--hnb);
+}
+.topbanner .open::after {
+  font-family: "remixicon";
+  content: "\ea4e";
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  vertical-align: middle;
+  transition: var(--time2);
+}
+.topbanner .open b {
+  color: #000;
+}
+.topbanner .open strong {
+  font-weight: inherit;
+}
+.topbanner.active #topbanner {
+  visibility: visible;
+  overflow: visible;
+  width: 100%;
+  height: var(--tbH);
+  opacity: 1;
+  transition: var(--time2);
+  border-top: 1px solid var(--bdc);
+  border-bottom: 1px solid var(--bdc);
+}
+.topbanner.active .open::after {
+  transform: rotate(180deg) translateY(0.1rem);
+}
+
+#topbanner {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: inherit !important;
+  min-width: 100%;
+  background-color: #eef2f7;
+  transition: var(--time2);
+}
+#topbanner .group {
+  overflow: hidden;
+  height: 100%;
+}
+#topbanner .arrs button {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+#topbanner .arrs button[class*=prev] {
+  position: absolute;
+  left: 1rem;
+}
+#topbanner .arrs button[class*=prev]::before {
+  font-family: "remixicon";
+  content: "\ea64";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+}
+#topbanner .arrs button[class*=next] {
+  position: absolute;
+  right: 1rem;
+}
+#topbanner .arrs button[class*=next]::before {
+  font-family: "remixicon";
+  content: "\ea6e";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+}
+#topbanner .btns button {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+  display: none;
+  font-size: 2rem;
+  right: 3.5rem;
+}
+#topbanner .btns button.active {
+  display: inline;
+}
+#topbanner .btns button.play::before {
+  font-family: "remixicon";
+  content: "\f00a";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+}
+#topbanner .btns button.stop::before {
+  font-family: "remixicon";
+  content: "\f1a0";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+}
+#topbanner .control {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  height: 4rem;
+  padding: 0 6rem 0 4.5rem;
+  border-radius: 4rem;
+  border: 1px solid var(--bdc);
+  background-color: #fff;
+  line-height: 4rem;
+}
+#topbanner .control p {
+  display: inline;
+}
+#topbanner .pager {
+  position: relative;
+  top: -0.2rem;
+}
+#topbanner .pager span {
+  background: none;
+}
+#topbanner .pager span::before {
+  background-color: #666;
+}
+#topbanner .pager span[class*=active]::before {
+  background-color: #000;
+}
+#topbanner .close1 {
+  display: inline-block;
+  overflow: hidden;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  vertical-align: middle;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  z-index: 1;
+  font-size: 2.5rem;
+}
+#topbanner .close1::before {
+  transform: rotate(0);
+  transition: var(--time2);
+}
+#topbanner .close1:hover::before, #topbanner .close1:focus::before {
+  transform: rotate(180deg);
+}
+#topbanner .close1::before {
+  font-family: "remixicon";
+  content: "\f4c8";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+}
+#topbanner .close2 {
+  position: relative;
+  padding-left: 3rem;
+  text-align: left;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1;
+}
+#topbanner .close2::before {
+  position: absolute;
+  left: 0;
+  top: auto;
+  content: "";
+}
+#topbanner .close2::before {
+  font-family: "remixicon";
+  content: "\eb7b";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+  display: inline-block;
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  border-radius: var(--brd);
+  border: 1px solid var(--bdc);
+  color: transparent;
+  transition: var(--time2);
+}
+#topbanner .close2:hover::before, #topbanner .close2:focus::before {
+  color: inherit;
+}
+#topbanner .item {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: var(--tbH);
+  justify-content: center;
+  flex-direction: column;
+}
+#topbanner .item img {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  max-width: inherit;
+  height: 100%;
+  transition: var(--time2);
+}
+#topbanner .item strong, #topbanner .item span {
+  width: var(--width1);
+  max-width: var(--width2);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  padding-left: 6rem;
+  text-align: left;
+}
+#topbanner .item span {
+  overflow: hidden;
+  line-height: 2rem;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  max-height: 4rem;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+  margin-bottom: 3rem;
+}
+#topbanner .item:hover img, #topbanner .item:focus img {
+  transform: translateX(-50%) scale(1.2);
+  opacity: 0.75;
+}
+#topbanner .item:hover strong, #topbanner .item:focus strong {
+  text-decoration: underline;
+}
+#topbanner .item strong {
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+#topbanner .item strong::before {
+  font-family: "remixicon";
+  content: "\f2a1";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 4rem;
+}
+
+@media (max-width: 1450px) {
+  .topbanner .open {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .topbanner {
+    --tbB: 9rem;
+  }
+  .topbanner .open span {
+    display: none;
+  }
+}/*# sourceMappingURL=topbanner.css.map */

@@ -1,0 +1,113 @@
+@charset "utf-8";
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+@use "sass:selector";
+@use "sass:meta";
+@use '../../../../css/common/scss/mixin.scss' as mix;
+
+/*-------------------------------------------------
+title       : 상단띠배너
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+
+.topbanner
+{
+    --tbH   : 15rem;                // 상단띠배너 세로값
+    --tbB   : 12rem;                // 상단띠배너 열기 버튼 가로값
+
+    @include mix.bg1(80);
+    
+    .open 
+    {
+        position: absolute; right: 0; top: 100%; z-index: 999; height: 4rem; margin-top: -1px; padding: 0 1rem 0 1.5rem; outline: 0 none; border-radius: 0 0 0 0.5rem; border-left: 1px solid var(--bdc); border-bottom: 1px solid var(--bdc); background-color: #eef2f7; font-size: 1.5rem; text-align: center; line-height: var(--hnb);
+        &::after {@include mix.icon(type1, '\EA4E'); transition: mix.$time2;}
+        b {color: #000;}
+        strong {font-weight: inherit;}
+    }
+
+    &.active
+    {
+        #topbanner {@include mix.visible(100%, var(--tbH)); border-top: 1px solid var(--bdc); border-bottom: 1px solid var(--bdc);}    
+        .open::after {transform: rotate(180deg) translateY(0.1rem);}
+    }
+}
+
+#topbanner 
+{
+    @include mix.hidden; overflow: inherit !important; min-width: 100%; background-color: #eef2f7; transition: mix.$time2;
+    .group {overflow: hidden; height: 100%;}
+    .arrs button {@include mix.position(top); @include mix.arr(2rem, 1rem, 2rem);}
+    .btns button {@include mix.position(top); @include mix.playstop(2rem, 2rem); right: 3.5rem;}
+
+    .control 
+    {
+        position: absolute; left: 1rem; bottom: 1rem; z-index: 1; height: 4rem; padding: 0 6rem 0 4.5rem; border-radius: 4rem; border: 1px solid var(--bdc); background-color: #fff; line-height: 4rem;
+        p {display: inline;}
+    }
+    
+    .pager 
+    {
+        @extend %pager; 
+        position: relative; top: -0.2rem;
+
+        span 
+        {
+            background: none;
+            &::before {background-color: #666;}
+            &[class*="active"]::before {background-color: #000;}
+        }
+    }
+    
+    .close1 
+    {
+        @include mix.nemo(2.5rem); 
+        @include mix.hover(before);
+        position: absolute; right: 3rem; top: 3rem; z-index: 1; font-size: 2.5rem;
+        &::before {@include mix.icon(type3, '\F4C8');}
+    }
+
+    .close2 
+    {
+        @include mix.bul(3rem);
+        position: absolute; right: 2rem; bottom: 2rem; z-index: 1;
+        &::before {@include mix.icon(type3, '\EB7B'); @include mix.nemo(2rem); position: absolute; left: 0; top: 0.2rem; border-radius: var(--brd); border: 1px solid var(--bdc); color: transparent; transition: mix.$time2;}
+        &:hover, &:focus { &::before {color: inherit;} }
+    }
+
+    .item 
+    {
+        display: flex; overflow: hidden; position: relative; height: var(--tbH); justify-content: center; flex-direction: column;
+        img {@include mix.position(left); top: 0; max-width: inherit; height: 100%; transition: mix.$time2;}
+        strong, span {@include mix.width; display: block; padding-left: 6rem; text-align: left;}
+        span {@include mix.ellipsis(2, 2rem); margin-bottom: 3rem;}
+
+        &:hover, &:focus 
+        { 
+            img {transform: translateX(-50%) scale(1.2); opacity: 0.75;} 
+            strong {text-decoration: underline;}
+        }
+        
+        strong 
+        {
+            position: relative; margin-bottom: 0.5rem; font-size: 2rem;
+            &::before {@include mix.icon(type2, '\F2A1'); left: 0; top: 0; font-size: 4rem;}
+        }
+    }
+}
+
+// 반응형
+// =================================================================================================================
+@media (max-width: 1450px) { .topbanner .open {display: none;} }
+
+@media (max-width: mix.$pad) 
+{ 
+    .topbanner
+    {
+        --tbB: 9rem;
+        .open span {display: none;} 
+    }
+}

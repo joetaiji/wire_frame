@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/*-------------------------------------------------
+title       : KRDS MIXIN
+Author      : PLAN I
+Create date : 2025-03-04
+-------------------------------------------------*/
+
+$mode-setting: light;
+$breakpoint-medium: 768px !default;
+$breakpoint-large: 1024px !default;
+
+// mixin
+@mixin flex-layout($d: flex, $ai: flex-start, $jc: flex-start, $fd: row) { display: $d; align-items: $ai; justify-content: $jc; flex-direction: $fd; }
+@mixin pseudo($c:null) { content: ""+$c+""; }
+@mixin square($w, $h: $w) { width: $w; height: $h; }
+
+@mixin size-medium-more { @media (min-width: calc($breakpoint-medium)) { @content; } }  // 768이상
+@mixin size-medium { @media (max-width: $breakpoint-medium - 1px) { @content; } }       // 767까지
+@mixin size-large-less { @media (max-width: $breakpoint-large - 1px) { @content;	} } // 1023까지
+
+@mixin svg-icon($size: var(--krds-icon--size-large), $mode: light, $effect: null) {
+	display: inline-flex;
+	@include square($size);
+	background-color: var(--krds-#{$mode}-color-text-basic);
+	@if ($effect == 'pure') { //mask 효과 없이 디자인된 svg 그대로 사용
+		background-color: transparent !important;
+	}
+	forced-color-adjust: none;
+	// @media (forced-colors: active) {
+	// }
+}
+
+@mixin underline($offset: var(--krds-font-underline-offset)) {
+	text-decoration: underline;
+	text-underline-offset: $offset;
+}
+
+@mixin icon-set ($name, $effect: null) {
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center center;
+	-webkit-mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center center;
+	mask-size: contain;
+	-webkit-mask-image: url(../img/icon/#{$name}.svg);
+	mask-image: url(../img/icon/#{$name}.svg);
+	@if ($effect == 'pure') { //mask 효과 없이 디자인된 svg 그대로 사용
+		-webkit-mask-image: none;
+		mask-image: none;
+		background-image: url(../img/icon/#{$name}.svg);
+		background-color: transparent !important;
+		background-size: contain;
+		background-repeat: no-repeat;
+		-webkit-mask: none;
+		mask: none;
+	}
+}
+
+//icon check 형식
+@mixin icon-check-msg($mode:light) {
+    position: relative;
+    padding-left: calc(var(--krds-size-height-4) + var(--krds-padding-3));
+    font-size: var(--krds-pc-font-size-body-large);
+    color: var(--krds-#{$mode}-color-text-primary);
+    &::before {
+        position: absolute; top: var(--krds-gap-1); left: 0;
+        @include pseudo();  
+        @include svg-icon($effect: pure);
+        background-image: url(../img/ico_outline_chk.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @if( $mode == 'high-contrast' ){
+            background-image: url(../img/ico_outline_chk_fill.svg);
+           
+        }
+    }
+
+    @include size-medium {
+        font-size: var(--krds-mobile-font-size-body-large);
+    }
+}

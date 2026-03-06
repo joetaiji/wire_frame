@@ -1,0 +1,259 @@
+.left-menu {
+    margin-bottom: 6.4rem;
+
+    .title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        border: 0;
+    }
+
+    .head_menu_depth {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+
+        &:has(.is-depth3.active) {
+            padding-bottom: 8rem;
+            transition: 0.2s;
+        }
+
+        &:has(li:only-child) {
+            display: none;
+        }
+
+        >li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            border: 1px solid var(--gray-30);
+            font-size: var(--font-size-large);
+            transition: var(--trs-base);
+
+            ~li {
+                margin-left: -1px;
+            }
+
+            a {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 0 0.8rem;
+                text-align: center;
+                width: 100%;
+                height: 5.6rem;
+                font-weight: bold;
+                color: var(--gray-70);
+            }
+
+            &.active {
+                border-color: var(--secondary-70);
+                background-color: var(--secondary-70);
+
+                >a {
+                    color: var(--gray-0);
+                }
+
+                .depth2-tab {
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+            }
+
+            &:not(.active) {
+
+                &:hover,
+                &:focus {
+                    transition: var(--trs-base);
+                    background-color: var(--secondary-5);
+                }
+            }
+
+            &:first-of-type {
+                border-radius: 0.6rem 0 0 0.6rem;
+            }
+
+            &:last-of-type {
+                border-radius: 0 0.8rem 0.8rem 0;
+            }
+
+            &:only-of-type {
+                border-radius: 0.8rem;
+            }
+
+            >ul {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 8rem;
+            }
+        }
+    }
+
+    .depth2-tab {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 8rem;
+
+        >ul {
+            display: flex !important;
+        }
+
+        li {
+            width: auto;
+            flex: 1;
+
+            &.active {
+                a {
+                    color: var(--secondary-80);
+
+                    &::before {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+
+            a {
+                background: var(--gray-0);
+                border-bottom: 1px solid var(--gray-30);
+                text-align: center;
+                font-size: var(--font-size-large);
+                font-weight: bold;
+                position: relative;
+                word-break: break-all;
+                &:hover {
+                    transition: var(--trs-base);
+                    background-color: var(--secondary-5);
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 0.4rem;
+                    background: var(--secondary-80);
+                    transition: var(--trs-base);
+                    position: absolute;
+                    left: 50%;
+                    bottom: -0.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .left-menu {
+        margin-bottom: 4rem;
+
+        .list {
+            .head_menu_depth {
+                display: block;
+                margin-bottom: 3.2rem;
+
+                >li {
+                    display: none;
+
+                    ~li {
+                        margin: -1px 0 0 0;
+                    }
+
+                    &.active {
+                        display: block;
+                        border-radius: 0.6rem;
+                        overflow: hidden;
+
+                        >a {
+                            &::after {
+                                content: '\ea4e';
+                                font-family: var(--icon);
+                                display: block;
+                                width: 2.2rem;
+                                height: 2.2rem;
+                                position: absolute;
+                                right: 1.4rem;
+                                top: 1.7rem;
+                                transition: .2s;
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+
+                &:has(.is-depth3) {
+                    padding-bottom: 0;
+                }
+            }
+
+            .depth2-tab {
+                position: static;
+                padding: 0.8rem 1.2rem;
+                background: var(--gray-5);
+
+                li {
+                    a {
+                        border-bottom: 0;
+                        height: auto;
+                        padding: 0.8rem;
+                        font-size: var(--font-size-small);
+                    }
+
+                    &.active {
+                        >a::before {
+                            display: block;
+                            width: auto;
+                            height: auto;
+                            background: none;
+                            left: auto;
+                        }
+                    }
+
+                    &:last-child>a {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            &.active {
+                .head_menu_depth {
+                    >li {
+                        display: block;
+
+                        >a::after {
+                            transform: rotate(180deg);
+                        }
+
+                        &.active.is-depth3 {
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+
+                        &:first-of-type {
+                            border-radius: 0.6rem 0.6rem 0 0;
+                        }
+
+                        &:last-of-type {
+                            border-radius: 0 0 0.6rem 0.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

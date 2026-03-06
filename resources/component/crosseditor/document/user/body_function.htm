@@ -1,0 +1,139 @@
+<!doctype html> 
+<html>
+<head>
+	<title>나모 크로스에디터 도움말</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="JIRANSOFT Co., Ltd." />
+	<link href="../common.css" rel="stylesheet" type="text/css" />
+	<base target="right">
+	<script src="../jquery-1.8.3.min.js"></script>
+	<script>
+	function resizeH(){
+		$('#menuWrapper').css('height',$(window).height()-20+'px')}
+	$(function(){
+		resizeH();
+	})
+	$(window).resize(resizeH)
+	</script>
+	<script language="javascript" src="../popup.js"></script>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" scroll="no">
+<table style="width:100%; height:100%;">
+    <tr>
+        <td style="width:250px; height:100%" valign="top">
+            <div id="menuWrapper" style="padding:10px;height:100%;overflow:auto;">
+				<p class="ctbic"><img src="../images/icon_list_01.png" style="vertical-align:middle" border="0"><a href="function.htm">크로스에디터 기능 익히기</a></p>
+				
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp1)" href="fbasic.htm">기본적인 사용 방법</a></p>
+				<div id="exp1" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#text_input">내용 입력</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#para_change_font">글자 속성 설정하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#emoticon">이모티콘 넣기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#insert_picture">그림넣기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#insert_hyperlink">하이퍼링크 만들기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#search_replace">찾기와 바꾸기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#editor_quickmenu">퀵메뉴</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#editor_ptag">문단 삽입 기능</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fbasic.htm#editor_height">에디터 높이 조절</a></p>					
+				</div>
+
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp2)" href="ftable.htm">표 만들기</a></p>
+				<div id="exp2" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#insert_table">표 삽입하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#insert_tabledrag">표 그리기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#insert_bg">표 테두리 색 수정하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#table_size1">표 크기 바꾸기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#merge_cell">셀 합치기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#align_cel">셀 내용 정렬하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#split_cell">셀 나누기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#insert_row">행 삽입하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#table_indent">표 들여쓰기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#table_indent2">표 내어쓰기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#table_calculate">표 계산 기능 사용하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#table_border">표 테두리 고치기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="ftable.htm#table_copy">표 복사 &amp; 붙여 넣기</a></p>
+				</div>
+
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp3)" href="fpicture.htm">그림</a></p>
+				<div id="exp3" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fpicture.htm#insert_picture">그림 넣기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fpicture.htm#insert_bg">배경 그림 넣기</a></p>
+				</div>
+				
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp4)" href="fvalidation.htm">웹 접근성 검증</a></p>
+				<div id="exp4" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fvalidation.htm#v_alt">적절한 대체 텍스트</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fvalidation.htm#v_title">제목 제공(title)</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fvalidation.htm#v_focus">초점 이동</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fvalidation.htm#v_link">적절한 링크 텍스트</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fvalidation.htm#v_table">표의 구성</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="fvalidation.htm#v_id">마크업 오류 방지</a></p>
+				</div>
+				
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp11)" href="pluginmode.htm">플러그인 모드</a></p>
+				<div id="exp11" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="pluginmode.htm#install_t">자동설치인 경우</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="pluginmode.htm#install_f">자동설치가 아닌 경우</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="pluginmode.htm#uninstall">삭제 방법</a></p>
+				</div>
+				
+				<p class="ctbic"><img src="../images/icon_list_01.png" style="vertical-align:middle" border="0"><a href="photo_function.htm">포토에디터 기능 익히기</a></p>
+				<p class="ctmid"><img src="images/icon.tools.imageeditor.gif"> <a href="photo_h5_intro.htm#open">HTML5</a></p>
+				
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp5)" href="photo_h5_basic.htm">기본 기능</a></p>
+				<div id="exp5" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_h5_basic.htm#open">사진 불러오기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_h5_basic.htm#reset">편집 내용 되돌리기</a></p>
+				</div>
+
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp6)" href="photo_h5_editing.htm">사진 편집하기</a></p>
+				<div id="exp6" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_h5_editing.htm#crop">사진 자르기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_h5_editing.htm#resize">크기 조절하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_h5_editing.htm#transform">변형</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_h5_editing.htm#text">글자 추가하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_h5_editing.htm#filter">필터 효과 넣기</a></p>
+				</div>
+				
+				<p>&nbsp;</p>
+				<p class="ctmid"><img src="images/icon.tools.photoeditor.gif"> <a href="photo_intro.htm#open">FLEX</a></p>
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp7)" href="photo_basic.htm">기본 기능</a></p>
+				<div id="exp7" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_basic.htm#open">사진 불러오기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_basic.htm#delete">사진 삭제하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_basic.htm#reset">편집 내용 되돌리기</a></p>
+				</div>
+
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp8)" href="photo_editing.htm">사진 편집하기</a></p>
+				<div id="exp8" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_editing.htm#crop">사진 자르기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_editing.htm#resize">크기 조절하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_editing.htm#transform">변형</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_editing.htm#text">글자 추가하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_editing.htm#filter">필터 효과 넣기</a></p>
+				</div>
+
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp9)" href="photo_slideshow.htm">슬라이드 쇼</a></p>
+				<div id="exp9" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_slideshow.htm#slideshow">슬라이드 쇼 효과 적용하기</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="photo_slideshow.htm#thumbnail">슬라이드 쇼 대기 열 활용하기</a></p>
+				</div>
+				
+				
+				<p class="ctbic"><img src="../images/icon_list_01.png" style="vertical-align:middle" border="0"><a href="chart_function.htm">차트 기능 익히기</a></p>
+				<p class="ctmid"><img src="../images/icon_list_02.png" style="vertical-align:middle" border="0"><a OnClick="doExpand(exp10)" href="chart_basic.htm">기본 기능</a></p>
+				<div id="exp10" style="display:none;">
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="chart_basic.htm#chart_type">차트 종류</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="chart_basic.htm#chart_data">차트 데이터</a></p>
+					<p class="ctsmall"><img src="../images/icon_list_03.png" style="vertical-align:middle" border="0"><a href="chart_basic.htm#chart_setup">차트 속성</a></p>
+				</div>				
+            </div>
+        </td>
+		<td style="width:1px;" bgcolor="#C2CDD4"></td>
+		<td valign="top" style="height:100%">
+			<iframe name="right" src="function.htm" style="width:100%;height:100%;" frameborder="0" scrolling="auto"></iframe>
+		</td>
+    </tr>
+</table>
+</body>
+</html>	

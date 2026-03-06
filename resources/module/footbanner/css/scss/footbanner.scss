@@ -1,0 +1,37 @@
+@charset "utf-8";
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
+@use "sass:list";
+@use "sass:map";
+@use "sass:selector";
+@use "sass:meta";
+@use '../../../../css/common/scss/mixin.scss' as mix;
+
+/*-------------------------------------------------
+title       : 하단배너
+Author      : PLAN I
+Create date : 2024-10-25
+-------------------------------------------------*/
+
+.footbanner
+{
+    clear: both; position: relative; padding: 2rem 6rem; border-top: 1px solid var(--bdc); text-align: center;
+    .item {padding: 0 2rem;}
+    .pager, .count, .btns {display: none;}
+
+    .list 
+    {
+        align-items: center;
+        &[style*="translate3d(0px, 0px, 0px)"] {justify-content: center;}
+        img {max-height: 5.5rem;}
+    }
+
+    .arrs button 
+    {
+        @include mix.arr(4rem, 2rem); 
+        top: 3rem; border-radius: 100%; border: 1px solid var(--bdc); background-color: #fff; transition: mix.$time2;
+        &:hover, &:focus {border-color: #000; background-color: #000; color: #fff;}
+        &[class*="lock"] {visibility: hidden; opacity: 0;}
+    }
+}

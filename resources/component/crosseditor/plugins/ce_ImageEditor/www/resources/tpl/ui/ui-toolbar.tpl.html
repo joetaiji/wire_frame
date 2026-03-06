@@ -1,0 +1,20 @@
+<div class="toolbar-wrap">
+	<div class="button add-photo" data-action="add-image">
+		<i aria-hidden="true" class="fa fa-fw fa-camera"></i>
+		<span class=""> <%=NHIE_Lang.PluginImageEditor_addPhoto%></span>
+		<form name="file-input-form">
+			<input type="file" class="fff file-input file-input-add-photo" name="add-photo" accept=".jpg, .png, .gif, .bmp"/>
+			<button type="reset" style="display:none"></button>
+		</form>
+		<div class="" style="position:absolute; left:0px;top:0px;">
+			<object id="file-object" class="file-input file-input-add-photo"></object>
+		</div>
+	</div>
+	<div class="tools-main"></div>
+	<div class="tools-info">
+		<span class="info info-workspace-size">
+			<i aria-hidden="true" class="fa fa-cog"></i>
+			<span class="content">W: 1024px, H: 768px</span>
+		</span>
+	</div>
+</div>

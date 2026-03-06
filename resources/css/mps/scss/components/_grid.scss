@@ -1,0 +1,51 @@
+
+//세로 수직형태
+.col {
+    display: grid !important;
+}
+
+@for $i from 1 through 5 {
+
+    //칼럼 수
+    .col#{$i} {
+        display: grid !important;
+        grid-template-columns: repeat($i, 1fr) !important;
+    }
+
+    //칸병합
+    .colspan#{$i} {
+        grid-column: span $i;
+    }
+
+    //줄병합
+    .rowspan#{$i} {
+        grid-row: span $i;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .col4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .m-col {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        @for $i from 2 through 5 {
+            .colspan#{$i} {
+                grid-column: span 1;
+            }
+
+            .rowspan#{$i} {
+                grid-row: span 1;
+            }
+        }
+    }
+
+    .m-col2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

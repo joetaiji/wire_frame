@@ -1,0 +1,28 @@
+.badge {
+    max-width: fit-content;
+    padding: .3rem .7rem;
+    border-radius: 0.4rem;
+    font-size: var(--font-size-small);
+    background: var(--gray-0);
+    color: var(--primary-60);
+    border: 1px solid var(--primary-50);
+
+    $badges: (
+        "1": (background: var(--primary-10),
+            text-color: var(--primary-60)),
+        "2": (background: var(--secondary-10),
+            text-color: var(--secondary-60)),
+        "3": (background: var(--gray-10),
+            text-color: var(--gray-60)),
+        "4": (background: var(--point-10),
+            text-color: var(--point-60))
+    );
+
+@each $num, $props in $badges {
+    &.bg#{$num} {
+        background: map-get($props, background);
+        color: map-get($props, text-color);
+        border-color: transparent;
+    }
+}
+}
