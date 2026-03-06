@@ -1883,6 +1883,55 @@ main
   position: relative;
 }
 
+.go-top {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: var(--radius-medium);
+  background: var(--gray-0);
+  color: var(--gray-70);
+  border: 1px solid var(--gray-20);
+  flex-direction: column;
+  position: sticky;
+  left: calc(100% - 8rem);
+  bottom: 6.4rem;
+  transform: translateY(50%);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--trs-base);
+  box-shadow: 0 0.4rem 0.8rem 0 var(--gray-10);
+}
+.go-top span {
+  font-weight: bold;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+}
+.go-top i {
+  font-size: 2rem;
+}
+.go-top i::before {
+  content: "\ec5a";
+  display: block;
+  transform: rotate(180deg);
+}
+.go-top:hover {
+  transition: var(--trs-base);
+  background-color: var(--secondary-5);
+}
+.go-top.fixed {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* =======================================================================================
 footer
 ======================================================================================= */

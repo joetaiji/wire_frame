@@ -16,7 +16,6 @@ export { snb } from './snb.js';
 export { tabs } from './tabs.js';
 export { listOpen } from './listOpen.js';
 export { accordion } from './accordion.js';
-export { goTop } from './goTop.js';
 export { layerPopup } from './layerPopup.js';
 export { inPageNav } from './inPageNav.js';
 export { headerFixed } from './headerFixed.js';

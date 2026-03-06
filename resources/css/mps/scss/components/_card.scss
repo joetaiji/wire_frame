@@ -1,5 +1,3 @@
-@use "../mixins" as m;
-
 /* card */
 .card {
 	display: flex;
@@ -53,35 +51,11 @@
 }
 }
 
-/* .title {
-		font-size: 2.4rem; font-weight: 600;		
-
-		+ .cont { margin-top: 2rem; }
-	}
-	.info {
-		color: var(--gray7); @include m.flex(1rem); margin-top: auto;
-
-		li { @include m.flex(.5rem, center); 
-			~ li{ @include m.bullet(.5rem, .5rem, var(--gray-30), 50%, 50%); }
-		}
-	}
-	.thumb { overflow: hidden; background: #000; height: 18rem; 
-		img { transition: 0.3s; width: 100%; height: 100%; object-fit: cover; }
-	} 
-	.cont { @include m.ellipsis-multi(5); }
-	a:hover { text-decoration: none; background: var(--gray-5);
-		.title { text-decoration: underline; }	
-		img { opacity:.7; transform:scale(1.1);}
-	}
-	*/
-/* 썸네일 비례적으로 줄어들게
-	.thumb { overflow: hidden; background: #000; height: 0; padding-bottom: 60%; position: relative; 
-		img { transition: 0.3s; width: 100%; height: 100%; object-fit: cover; @include m.pos(lt, 0, 0);}
-	} */
 
 
 
-@include m.media(m.$mobile) {
+
+@media (max-width: 768px) {
 	.card {
 		grid-template-columns: 1fr;
 
