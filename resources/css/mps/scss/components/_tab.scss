@@ -1,5 +1,6 @@
+@use "../mixins" as m;
 
-//메뉴탭
+/* tab */
 .tabs {
 	margin-bottom: 4rem;
 
@@ -248,3 +249,16 @@
 .anchor_tab { 
 	&.fixed { position: fixed; top:var(--headerHeight); width:100%;z-index: 1; }   
  }     */
+
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
+
+//1024px 이상
+@media (max-width: m.$pad) {}
+
+//768px 이상
+@media (max-width: m.$mobile) {}
+
+//320px 이상
+@media (max-width: m.$smobile) {}

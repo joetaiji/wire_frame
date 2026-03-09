@@ -1,39 +1,39 @@
 @import url("/resources/css/common/reset.css");
 @import url("/resources/fonts/notosanskr/notosanskr.css");
-/* ===========================================================================================
-user defined style
-=========================================================================================== */
+
+
+/* ==========================================================================
+기본 스타일
+========================================================================== */
 
 html {
-    .m-page {
-        display: none;
-    }
+    font-size: var(--font-size);
 }
 
-$colors: "primary", "secondary", "gray";
-
-@each $color in $colors {
-    .text-#{$color} {
-        color: var(--#{$color}-60) !important;
-    }
+body {
+    font-size: 1.6rem;
+    line-height: var(--line-height);
+    font-family: var(--font-type);
+    color: var(--gray-90);
 }
 
-.text-point {
-    color: var(--point-60) !important;
+*:focus {
+    outline: 2px solid var(--primary-50);
+    outline-offset: -2px;
+    box-shadow: inset 0 0 0 3px var(--gray-0);
 }
 
-@each $color in $colors {
-    .bg-#{$color} {
-        background-color: var(--#{$color}-5);
-    }
+::selection {
+    background: var(--primary-60);
+    color: var(--gray-0);
 }
 
-.bg-primary-10 {
-    background-color: var(--primary-10);
-}
+
+/* ==========================================================================
+유틸리티
+========================================================================== */
 
 .hidden,
-.hdn,
 .sr-only {
     position: absolute;
     width: 1px;
@@ -41,131 +41,10 @@ $colors: "primary", "secondary", "gray";
     padding: 0;
     margin: -1px;
     overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
     border: 0;
-}
-
-.text-bold {
-    font-weight: 700;
-}
-
-.text-underline {
-    text-decoration: underline !important;
-    text-underline-position: under;
-}
-
-.text-link {
-    text-decoration: underline;
-    color: var(--primary-50);
-    display: inline-flex;
-    gap: .6rem;
-    align-items: center;
-
-    &.ico-go,
-    &.ico-arr {
-
-        &::before,
-        &::after {
-            background: var(--primary-50);
-            width: 1.7rem;
-            height: 1.7rem;
-        }
-    }
-}
-
-.keep-all {
-    word-break: keep-all !important;
-}
-
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
-}
-
-$txts: left, center, right;
-
-@each $txt in $txts {
-    .text-#{$txt} {
-        text-align: $txt !important;
-    }
-}
-
-//기존
-.ta_l {
-    text-align: left !important;
-}
-
-.ta_c {
-    text-align: center !important;
-}
-
-.ta_r {
-    text-align: right !important;
-}
-
-$jcs: center, space-around, space-evenly, space-between, flex-end, flex-start;
-
-@each $jc in $jcs {
-    .jc-#{$jc} {
-        justify-content: $jc !important;
-    }
-}
-
-$ais: flex-start, center, flex-end;
-
-@each $ai in $ais {
-    .ai-#{$ai} {
-        align-items: $ai !important;
-    }
-}
-
-@for $i from 1 through 20 {
-    .w#{$i} {
-        width: $i*1%;
-    }
-}
-
-@for $i from 5 through 20 {
-    .w#{$i*5} {
-        width: $i*5%;
-    }
-}
-
-@for $i from 0 through 10 {
-    .ml#{$i} {
-        margin-left: $i*.8rem !important;
-    }
-
-    .mt#{$i} {
-        margin-top: $i*.8rem !important;
-    }
-
-    .mr#{$i} {
-        margin-right: $i*.8rem !important;
-    }
-
-    .mb#{$i} {
-        margin-bottom: $i*.8rem !important;
-    }
-}
-
-.mla {
-    margin-left: auto;
-}
-
-.mra {
-    margin-right: auto;
-}
-
-.mta {
-    margin-top: auto;
-}
-
-.mba {
-    margin-bottom: auto;
 }
 
 .ellipsis {
@@ -182,29 +61,93 @@ $ais: flex-start, center, flex-end;
     width: 100%;
 }
 
-@media (max-width: 1024px) {
-    html {
-        font-size: 9px;
+
+/* ==========================================================================
+텍스트
+========================================================================== */
+
+$colors: "primary", "secondary", "gray";
+
+.text {
+    @each $txt in left, center, right {
+        &-#{$txt} { text-align: $txt !important; }
+    }
+
+    &-bold { font-weight: 700; }
+
+    &-underline {
+        text-decoration: underline !important;
+        text-underline-position: under;
+    }
+
+    &-link {
+        text-decoration: underline;
+        color: var(--primary-50);
+        display: inline-flex;
+        gap: .6rem;
+        align-items: center;
+
+        &.ico-go,
+        &.ico-arr {
+            &::before,
+            &::after {
+                background: var(--primary-50);
+                width: 1.7rem;
+                height: 1.7rem;
+            }
+        }
+    }
+
+    @each $color in $colors {
+        &-#{$color} { color: var(--#{$color}-60) !important; }
+    }
+
+    &-point { color: var(--point-60) !important; }
+}
+
+
+/* ==========================================================================
+배경색
+========================================================================== */
+
+@each $color in $colors {
+    .bg-#{$color} { background-color: var(--#{$color}-5); }
+}
+
+
+/* ==========================================================================
+Flex 정렬
+========================================================================== */
+
+@each $jc in center, space-around, space-evenly, space-between, flex-end, flex-start {
+    .jc-#{$jc} { justify-content: $jc !important; }
+}
+
+@each $ai in flex-start, center, flex-end {
+    .ai-#{$ai} { align-items: $ai !important; }
+}
+
+
+/* ==========================================================================
+너비
+========================================================================== */
+
+@for $i from 1 through 100 {
+    @if $i <= 20 or $i % 5 == 0 {
+        .w#{$i} { width: $i * 1%; }
     }
 }
 
-@media (max-width: 768px) {
-    html {
-        font-size: 8px;
 
-        .w-page,
-        .m-hide {
-            display: none;
-        }
+/* ==========================================================================
+마진
+========================================================================== */
 
-        .m-page {
-            display: block;
-        }
+$margin-directions: (l: left, t: top, r: right, b: bottom);
+
+@each $key, $dir in $margin-directions {
+    @for $i from 0 through 10 {
+        .m#{$key}#{$i} { margin-#{$dir}: $i * 0.8rem !important; }
     }
-}
-
-@media (max-width: 320px) {
-    html {
-        font-size: 7px;
-    }
+    .m#{$key}a { margin-#{$dir}: auto; }
 }

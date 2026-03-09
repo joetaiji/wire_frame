@@ -1,112 +1,42 @@
+@use "../mixins" as m;
 
+/* svg-icon */
+$iconSvgs:
+    like, share, angle,
+    arr, arr-right, arr-right1, arr-down,
+    more, sch, sch1, go, down,
+    filter, reset, log, func,
+    logout, email, print, scrap,
+    del, plus, setting, link,
+    comment, prev, close, time, go-top;
 
-/* ==========================================================================================
-//icons
-============================================================================================*/
-
-$iconSvgs: like,
-	share,
-	angle,
-	arr,
-	arr-right,
-	arr-right1,
-	arr-down,
-	more,
-	sch,
-	sch1,
-	go,
-	down,
-	filter,
-	reset,
-	log,
-	func,
-	logout,
-	email,
-	print,
-	scrap,
-	del,
-	plus,
-	setting,
-	link,
-	comment,
-	prev,
-	close,
-	time;
-
-[class*=ico-] {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-
-	&::before,
-	&::after {
-		content: '';
-		display: none;
-		width: 1.6rem;
-		height: 1.6rem;
-		background-color: var(--gray-80);
-		/* background-repeat: no-repeat; background-size: contain; background-position: center; */
-		mask-repeat: no-repeat;
-		mask-size: contain;
-		mask-position: center;
-	}
-
-	&::after {
-		display: inline-flex;
-	}
+.svg-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--gray-80);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
 }
 
-.ico- {
-	&before {
-		&::before {
-			display: inline-flex;
-		}
-
-		&::after {
-			display: none;
-		}
-	}
-
-	@each $iconSvg in $iconSvgs {
-		&#{$iconSvg} {
-
-			&::before,
-			&::after {
-				mask-image: url('/component/ico_' + $iconSvg + '.svg');
-			}
-		}
-
-	}
-
+@each $name in $iconSvgs {
+    .ico-#{$name} {
+        mask-image: url("#{m.$iconImg}/ico_#{$name}.svg");
+    }
 }
 
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
 
-.underline {
-	text-decoration: underline;
-}
+//1024px 이상
+@media (max-width: m.$pad) {}
 
-.picto {
+//768px 이상
+@media (max-width: m.$mobile) {}
 
-	//@include m.circle(8.5rem); 
-	img {
-		max-height: 5.6rem;
-	}
-}
-
-.s-picto {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 3.6rem;
-	height: 3.6rem;
-	background-color: var(--gray-20);
-	border-radius: 50%;
-	font-size: 2rem;
-}
-
-/* 
-.ico-filter {
-	position: relative;	
-	.num { display: inline-flex; position: absolute; right: 0.1rem; z-index: 1; height: 2rem; margin-top: -3rem; border-radius: 2rem; }
-}
- */
+//320px 이상
+@media (max-width: m.$smobile) {}

@@ -1,286 +1,57 @@
-@use "mixins" as m;
+@use "./mixins" as m;
 
-/* 메인에 사용할 컴포넌트 */
+/* 컴포넌트 import */
 @use "./components/slider";
 @use "./components/tab";
 
-$path: m.$url + "/main";
+/* ==========================================================================
+메인
+========================================================================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
 
-/* =======================================================================================
-메인 비주얼
-======================================================================================= */
 .visual {
-    width: 100%;
-    max-width: inherit;
-    padding: 10rem 0 0;
-    position: relative;
-    height: 60rem;
-
-    .inner {
-        @include m.flex(1rem, $ai: flex-start, $fd: column);
-        position: relative;
-        z-index: 1;
-    }
-
-    &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        transition: .8s;
-        backdrop-filter: blur(0);
-
-        @starting-style {
-            backdrop-filter: blur(1.5rem);
-        }
-    }
-
-    &-img {
-        object-fit: cover;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-    }
+    background: url(#{m.$mainImg}/visual.webp) no-repeat center center / cover;
+    height: 64rem;
+    padding-top: 18rem;
 
     &-txt {
-        @include m.flex(2rem, $fd: column);
-        color: var(--gray-0);
-
-        .title {
-            font-size: 4.4rem;
-
-            @starting-style {
-                opacity: 0;
-                visibility: hidden;
-                height: 0;
-                overflow: hidden;
-                transform: translateY(3rem);
-            }
-
-            transform: translateY(0);
-            transition: var(--trs-base) .4s;
-        }
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
 
         .desc {
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: -0.048rem;
+            transition: .4s .2s;
+
             @starting-style {
                 opacity: 0;
-                visibility: hidden;
-                height: 0;
-                overflow: hidden;
-                transform: translateY(6rem);
+                transform: translateY(2rem);
             }
-
-            transform: translateY(0);
-            transition: var(--trs-base) .6s;
-        }
-    }
-
-}
-
-/* =======================================================================================
-통합돌봄 정의
-======================================================================================= */
-
-.define {
-    margin-top: -8rem;
-    z-index: 1;
-
-    .item {
-        background: var(--primary-5);
-        border-radius: var(--radius-xxlarge);
-        padding: 4rem 4rem 4rem 35.9rem;
-        position: relative;
-        @include m.flex(4.5rem, center);
-
-        &::after {
-            content: '';
-            display: block;
-            width: 27.4rem;
-            height: 20.1rem;
-            background: url(#{$path}/define_img1.png) 0 0 / contain no-repeat;
-            position: absolute;
-            left: 4.4rem;
-            top: 0;
         }
 
         .title {
-            font-size: 2.4rem;
-            width: 100%;
-            display: block;
-            margin-bottom: 2rem;
-        }
+            font-size: 5.2rem;
+            font-weight: 600;
+            line-height: 100%;
+            letter-spacing: -0.104rem;
+            transition: .4s .4s;
 
-        .btn-group {
-            min-width: 22.4rem;
-            @include m.flex(0.8rem, $fd: column);
-
-            .btn {
-                font-weight: 700;
-                justify-content: space-between;
-                font-size: 1.7rem;
-            }
-
-            .bg-secondary {
-                background: var(--secondary-70);
-                color: var(--gray-0);
-                border-color: var(--secondary-70);
-
-                &.ico-arr::after {
-                    background: var(--gray-0);
-                }
-
-                &:hover {
-                    background: var(--secondary-80);
-                    border-color: var(--secondary-80);
-                }
-            }
-        }
-    }
-
-    a.item {
-        transition: var(--trs-base);
-
-        &:hover {
-            background: var(--gray-10);
-        }
-    }
-
-}
-
-/* =======================================================================================
-우리지역 통합돌봄 - 주요 링크
-======================================================================================= */
-.link-list {
-    margin-top: 8rem;
-
-    .inner {
-        position: relative;
-    }
-
-    .item-wrap {
-        @include m.flex(3.6rem);
-    }
-
-    .item-list {
-        flex: 1;
-        min-width: 0;
-        align-self: stretch;
-        @include m.flex(null, $fd: column);
-
-        .major-item {
-            padding: 6rem 3.6rem;
-            border-radius: var(--radius-xlarge2, 1.2rem);
-            position: relative;
-            @include m.flex(1.1rem, $fd: column);
-
-            .icon {
-                @include m.pos(rt, 3.6rem, 50%);
-                width: 12rem;
-                height: 12rem;
-            }
-
-            .title {
-                font-size: 2.4rem;
-            }
-
-            &:hover .shortcut {
-                text-decoration: underline;
-                text-underline-offset: under;
-            }
-        }
-
-        .sub-item {
-            @include m.flex(0.8rem, center, space-between);
-            padding: 2.1rem 0;
-            border-bottom: 1px solid #DDD;
-            position: relative;
-
-            .ico-arr-right1 {
-                display: flex;
+            @starting-style {
                 opacity: 0;
-                width: 4rem;
-                height: 4rem;
-                justify-content: center;
-                align-items: center;
-                gap: 1rem;
-                border-radius: var(--radius-large);
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-
-                &::after {
-                    background: var(--gray-0);
-                }
-            }
-
-            &:hover {
-                .date {
-                    display: none;
-                }
-
-                .ico-arr-right1 {
-                    opacity: 1;
-                    transition: var(--trs-base);
-                }
-            }
-        }
-
-        &-col1 {
-            .major-item {
-                background: linear-gradient(97deg, #FFEBE4 8.99%, #FFDACC 146.12%);
-            }
-        }
-
-        &-col2 {
-            .major-item {
-                background: linear-gradient(97deg, #F4EFFA 8.99%, #DED1F1 146.12%);
-            }
-        }
-
-        &-col3 {
-            .major-item {
-                background: linear-gradient(97deg, #EDF8F8 8.99%, #CEEBEB 146.12%);
-            }
-        }
-
-        $link-cols: (
-            1: #E1502A,
-            2: #7A45C6,
-            3: #177495
-        );
-
-    @each $i, $col in $link-cols {
-        &-col#{$i} {
-            .major-item .title {
-                color: $col;
-            }
-
-            .sub-item .ico-arr-right1 {
-                background-color: $col;
-            }
-
-            .sub-item:hover {
-                border-bottom-color: $col;
+                transform: translateY(3rem);
             }
         }
     }
 }
 
-.date {
-    color: var(--gray-70)
-}
-}
-
-/* =======================================================================================
-카드
-======================================================================================= */
 .card-news {
     margin: 10rem 0 3.6rem;
 
@@ -289,13 +60,16 @@ $path: m.$url + "/main";
     }
 
     .title-tab-nav {
-        @include m.flex(2.4rem);
+        display: flex;
+        gap: 2.4rem;
     }
 
     .more {
-        @include m.pos(rt, 0, -6.2rem);
-        transition: var(--trs-base);
-        border-radius: var(--radius-small);
+        position: absolute;
+        right: 0;
+        top: -6.2rem;
+        transition: 0.25s;
+        border-radius: 0.4rem;
         padding: .2rem .4rem;
         gap: 0.4rem;
 
@@ -326,7 +100,9 @@ $path: m.$url + "/main";
         position: relative;
 
         .swiper-controls {
-            @include m.pos(rt, 8.8rem, -6.8rem);
+            position: absolute;
+            right: 8.8rem;
+            top: -6.8rem;
             margin: 0;
             gap: 0.4rem;
         }
@@ -334,7 +110,9 @@ $path: m.$url + "/main";
 
     .item-list {
         &.row2-col2 {
-            @include m.grid(3.2rem, 1fr 1fr);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3.2rem;
         }
     }
 
@@ -342,12 +120,13 @@ $path: m.$url + "/main";
         flex: 1;
         min-width: 0;
         align-self: stretch;
-        @include m.flex(null, $fd: column);
+        display: flex;
+        flex-direction: column;
         border: 1px solid #e4e4e4;
-        border-radius: var(--radius-xlarge);
+        border-radius: 0.8rem;
         overflow: hidden;
         padding: 2.8rem 3.2rem;
-        transition: var(--trs-base);
+        transition: 0.25s;
 
         &:has(.thumb) {
             padding: 0;
@@ -370,7 +149,7 @@ $path: m.$url + "/main";
         .thumb {
             aspect-ratio: 16/10;
             overflow: hidden;
-            transition: var(--trs-base);
+            transition: 0.25s;
 
             &::backdrop {
                 background: rgba(0, 0, 0, 0);
@@ -380,25 +159,37 @@ $path: m.$url + "/main";
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: var(--trs-base);
+                transition: 0.25s;
 
             }
         }
 
         .card-info {
-            @include m.flex(1.6rem, $fd: column);
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+
+            .shortcut {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
         }
 
         .card-txt {
             flex: 1;
-            @include m.flex(1.2rem, $fd: column);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
         }
 
 
 
         .title {
             font-size: 1.9rem;
-            @include m.ellipsis;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             word-break: break-all;
 
             &::after {
@@ -407,7 +198,11 @@ $path: m.$url + "/main";
         }
 
         .desc {
-            @include m.ellipsis-multi(2);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             min-height: 5.2rem;
             color: var(--gray-70)
         }
@@ -428,137 +223,16 @@ $path: m.$url + "/main";
 
 }
 
-/* .item {
-		flex: 1;
-		min-width: 0;
-		@include m.flex($fd: column);
-		position: relative;
-		
 
-		
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
 
-		
+//1024px 이상
+@media (max-width: m.$pad) {}
 
-		
-	} */
+//768px 이상
+@media (max-width: m.$mobile) {}
 
-/* =======================================================================================
-반응
-======================================================================================= */
-
-@include m.media(m.$web) {
-    .link-list .item-wrap {
-        gap: 2rem;
-    }
-
-    .link-list .item-list .major-item {
-        padding: 2.4rem 2rem;
-    }
-
-    .link-list .item-list .major-item .icon {
-        width: 8rem;
-        height: 8rem;
-    }
-
-    .link-list .item-list .item .title {
-        display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        word-break: break-all;
-    }
-}
-
-@include m.media(m.$pad) {
-    .main-vban-wrap {
-        height: 40rem;
-
-        .main-visual {
-            object-position: 70% 50%;
-        }
-
-
-        &::before {
-            background: linear-gradient(270deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
-        }
-    }
-
-    .define .item {
-        padding: 2.4rem 2.4rem 20rem;
-        flex-direction: column;
-
-        &::after {
-            left: 50%;
-            transform: translateX(-50%);
-            top: auto;
-            bottom: 0;
-        }
-
-        .btn-group {
-            flex-direction: row;
-
-            .btn {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-    }
-
-    .link-list .item-list .major-item .icon {
-        right: 1.8rem;
-    }
-
-    .card-news .item:has(.thumb) .card-info {
-        padding: 1.6rem;
-    }
-
-}
-
-@include m.media(m.$mobile) {
-    .link-list {
-        margin-top: 6rem;
-    }
-
-    .link-list .item-wrap {
-        flex-direction: column;
-    }
-
-    .link-list .item-list .sub-item {
-        padding: 1.2rem 0;
-    }
-
-    .card-news {
-        margin-top: 6rem;
-        margin-bottom: 0;
-    }
-
-    .card-news .title-tab-nav {
-        flex-direction: column;
-    }
-
-    .card-news .item-list.row2-col2 {
-        gap: 2rem;
-    }
-
-    .card-news .item {
-        padding: 1.6rem;
-    }
-
-    .card-news .item .title {
-        white-space: normal;
-        display: -webkit-box;
-        line-clamp: 2;
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        min-height: 5.2rem;
-    }
-
-    .card-news .item .desc {
-        display: none;
-    }
-
-
-
-
-
-}
+//320px 이상
+@media (max-width: m.$smobile) {}

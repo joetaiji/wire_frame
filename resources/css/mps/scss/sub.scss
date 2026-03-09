@@ -1,6 +1,6 @@
-@use "mixins" as m;
+@use "./mixins" as m;
 
-/* 서브에 사용할 컴포넌트 */
+/* 컴포넌트 import */
 @use "./components/breadcrumb";
 @use "./components/inpageNav";
 @use "./components/snb";
@@ -9,13 +9,10 @@
 @use "./components/card";
 @use "./components/list";
 @use "./components/table";
-
-$path: m.$url + "/layout";
-
-
-/* =======================================================================================
+@use "./components/accordion";
+/* ==========================================================================
 contentWrap = #snb + #content
-======================================================================================= */
+========================================================================== */
 #container {
     position: relative;
     z-index: 0;
@@ -27,9 +24,9 @@ contentWrap = #snb + #content
 }
 
 
-/* =======================================================================================
+/* ==========================================================================
 content 공통
-======================================================================================= */
+========================================================================== */
 
 .contents {
     flex: 1;
@@ -80,119 +77,15 @@ content 공통
 }
 
 
-/* =======================================================================================
-반응형 ======================================================================================= */
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
 
-@media (max-width: 1024px) {
+//1024px 이상
+@media (max-width: m.$pad) {}
 
-    
-}
+//768px 이상
+@media (max-width: m.$mobile) {}
 
-@media (max-width: 768px) {
-
-
-    .left-menu .list {
-        .head_menu_depth {
-            display: block;
-            margin-bottom: 3.2rem;
-
-            >li {
-                display: none;
-
-                ~li {
-                    margin: -1px 0 0 0;
-                }
-
-                &.active {
-                    display: block;
-                    border-radius: 0.6rem;
-                    overflow: hidden;
-
-                    >a {
-                        &::after {
-                            content: '\ea4e';
-                            font-family: var(--icon);
-                            display: block;
-                            width: 2.2rem;
-                            height: 2.2rem;
-                            position: absolute;
-                            right: 1.4rem;
-                            top: 1.7rem;
-                            transition: .2s;
-                            font-weight: normal;
-                        }
-                    }
-                }
-            }
-
-            &:has(.is-depth3) {
-                padding-bottom: 0;
-            }
-        }
-
-        .depth2-tab {
-            position: static;
-            padding: 0.8rem 1.2rem;
-            background: var(--gray-5);
-
-            li {
-                a {
-                    border-bottom: 0;
-                    height: auto;
-                    padding: 0.8rem;
-                    font-size: var(--font-size-small);
-                }
-
-                &.active {
-                    >a::before {
-                        display: block;
-                        width: auto;
-                        height: auto;
-                        background: none;
-                        left: auto;
-                    }
-                }
-
-                &:last-child>a {
-                    border-bottom: 0;
-                }
-            }
-        }
-
-        &.active {
-            .head_menu_depth {
-                >li {
-                    display: block;
-
-                    >a::after {
-                        transform: rotate(180deg);
-                    }
-
-                    &.active.is-depth3 {
-                        border-bottom-left-radius: 0;
-                        border-bottom-right-radius: 0;
-                    }
-
-                    &:first-of-type {
-                        border-radius: 0.6rem 0.6rem 0 0;
-                    }
-
-                    &:last-of-type {
-                        border-radius: 0 0 0.6rem 0.6rem;
-                    }
-                }
-            }
-        }
-    }
-
-    .breadcrumb-wrap {
-        margin-top: 3.6rem;
-    }
-
-    .left-menu {
-        margin-bottom: 4rem;
-    }
-
-
-
-}
+//320px 이상
+@media (max-width: m.$smobile) {}

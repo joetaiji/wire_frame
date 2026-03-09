@@ -1,5 +1,12 @@
 @charset "UTF-8";
-/* 서브에 사용할 컴포넌트 */
+/* ==========================================================================
+SCSS 설정 변수 (breakpoint, 이미지 경로)
+========================================================================== */
+/* ==========================================================================
+믹스인 함수
+========================================================================== */
+/* 컴포넌트 import */
+/* 브레드크럼 */
 .breadcrumb-wrap {
   font-size: 1.5rem;
   margin: 5.6rem auto 4rem;
@@ -114,6 +121,7 @@
     width: 100%;
   }
 }
+/* snb */
 .left-menu {
   margin-bottom: 6.4rem;
 }
@@ -313,6 +321,7 @@
     border-radius: 0 0 0.6rem 0.6rem;
   }
 }
+/* typo */
 .title-1 {
   font-size: 3.2rem;
   margin: 4.8rem 0 2.4rem 0;
@@ -643,7 +652,7 @@
     padding: 2rem 1.5rem;
   }
 }
-/* list - grid로 변형 = table 줄어들었을때 스크롤바 생기지 않아 flex로 변경 */
+/* list */
 .list-dot,
 .list-sdot,
 .list-dash,
@@ -1037,9 +1046,131 @@
     flex-direction: column;
   }
 }
-/* =======================================================================================
+/* 아코디언 */
+.accordion {
+  border-top: 1px solid var(--gray-20);
+}
+.accordion details {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--gray-20);
+}
+.accordion details .category {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primary-50);
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: var(--gray-0);
+  border: 1px solid var(--gray-20);
+}
+.accordion details[open] {
+  padding-bottom: 2.4rem;
+}
+.accordion details[open] .aco-title {
+  background: var(--secondary-5);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.accordion details[open] .title {
+  color: var(--secondary-80);
+}
+.accordion details[open] .ico-angle::after {
+  transform: rotate(180deg);
+}
+.accordion details[open] .aco-cont {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.accordion .aco-title {
+  display: block;
+  padding: 2.4rem 4.8rem 2.4rem 2.4rem;
+  cursor: pointer;
+  position: relative;
+  border-radius: var(--radius-medium);
+}
+.accordion .aco-title:hover {
+  text-decoration: none;
+  background: var(--secondary-5);
+  transition: 0.2s;
+}
+.accordion .aco-title .notice {
+  font-size: 1.5rem;
+  background: var(--gray-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  min-width: 6rem;
+  height: 5.7rem;
+  margin: -1rem 2rem -1rem -2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gray-70);
+}
+.accordion .aco-title .notice::before {
+  content: "\f2a2";
+  font-size: 1.7rem;
+}
+.accordion .aco-title .title {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  font-weight: bold;
+}
+.accordion .aco-title .ico-angle {
+  position: absolute;
+  right: 2.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.accordion .aco-title .ico-angle::after {
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: 0.25s;
+}
+.accordion .aco-cont {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.4s;
+  padding: 2.4rem;
+  display: flex;
+  gap: 2.4rem;
+  background: var(--secondary-5);
+  border-bottom-left-radius: var(--radius-medium);
+  border-bottom-right-radius: var(--radius-medium);
+}
+.accordion .aco-cont .category {
+  background: var(--primary-50);
+  border-color: transparent;
+  color: var(--gray-0);
+}
+.accordion .aco-cont .cont {
+  width: 100%;
+  overflow-x: auto;
+  word-break: break-all;
+}
+.accordion .aco-cont .cont p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .accordion .aco-title {
+    padding: 1.2rem 3.6rem 1.2rem 0.8rem;
+  }
+  .accordion .aco-title .ico-angle {
+    right: 0.8rem;
+  }
+  .accordion .aco-cont {
+    padding: 1.2rem;
+  }
+}
+/* ==========================================================================
 contentWrap = #snb + #content
-======================================================================================= */
+========================================================================== */
 #container {
   position: relative;
   z-index: 0;
@@ -1049,9 +1180,9 @@ contentWrap = #snb + #content
   flex-direction: column;
 }
 
-/* =======================================================================================
+/* ==========================================================================
 content 공통
-======================================================================================= */
+========================================================================== */
 .contents {
   flex: 1;
   min-width: 1px;
@@ -1093,82 +1224,4 @@ content 공통
 .contents .article {
   scroll-margin-top: 15rem;
   min-height: 20rem;
-}
-
-/* =======================================================================================
-반응형 ======================================================================================= */
-@media (max-width: 768px) {
-  .left-menu .list .head_menu_depth {
-    display: block;
-    margin-bottom: 3.2rem;
-  }
-  .left-menu .list .head_menu_depth > li {
-    display: none;
-  }
-  .left-menu .list .head_menu_depth > li ~ li {
-    margin: -1px 0 0 0;
-  }
-  .left-menu .list .head_menu_depth > li.active {
-    display: block;
-    border-radius: 0.6rem;
-    overflow: hidden;
-  }
-  .left-menu .list .head_menu_depth > li.active > a::after {
-    content: "\ea4e";
-    font-family: var(--icon);
-    display: block;
-    width: 2.2rem;
-    height: 2.2rem;
-    position: absolute;
-    right: 1.4rem;
-    top: 1.7rem;
-    transition: 0.2s;
-    font-weight: normal;
-  }
-  .left-menu .list .head_menu_depth:has(.is-depth3) {
-    padding-bottom: 0;
-  }
-  .left-menu .list .depth2-tab {
-    position: static;
-    padding: 0.8rem 1.2rem;
-    background: var(--gray-5);
-  }
-  .left-menu .list .depth2-tab li a {
-    border-bottom: 0;
-    height: auto;
-    padding: 0.8rem;
-    font-size: var(--font-size-small);
-  }
-  .left-menu .list .depth2-tab li.active > a::before {
-    display: block;
-    width: auto;
-    height: auto;
-    background: none;
-    left: auto;
-  }
-  .left-menu .list .depth2-tab li:last-child > a {
-    border-bottom: 0;
-  }
-  .left-menu .list.active .head_menu_depth > li {
-    display: block;
-  }
-  .left-menu .list.active .head_menu_depth > li > a::after {
-    transform: rotate(180deg);
-  }
-  .left-menu .list.active .head_menu_depth > li.active.is-depth3 {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .left-menu .list.active .head_menu_depth > li:first-of-type {
-    border-radius: 0.6rem 0.6rem 0 0;
-  }
-  .left-menu .list.active .head_menu_depth > li:last-of-type {
-    border-radius: 0 0 0.6rem 0.6rem;
-  }
-  .breadcrumb-wrap {
-    margin-top: 3.6rem;
-  }
-  .left-menu {
-    margin-bottom: 4rem;
-  }
 }/*# sourceMappingURL=sub.css.map */

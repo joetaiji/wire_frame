@@ -1,4 +1,6 @@
+@use "../mixins" as m;
 
+/* pagination */
 .pagination {
 	margin: 4rem 0;
 	display: flex;
@@ -143,3 +145,16 @@
 	}
 	.last_page { @include m.flex(1rem, center, center); } */
 }
+
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
+
+//1024px 이상
+@media (max-width: m.$pad) {}
+
+//768px 이상
+@media (max-width: m.$mobile) {}
+
+//320px 이상
+@media (max-width: m.$smobile) {}

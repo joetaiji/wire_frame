@@ -1,3 +1,5 @@
+@use "../mixins" as m;
+
 /* 아코디언 */
 .accordion {
     border-top: 1px solid var(--gray-20);
@@ -153,7 +155,8 @@
 // 	}		
 // }
 
-@media (max-width: 1024px) {
+
+@media (max-width: m.$pad) {
     .accordion {
         .aco-title {
             padding: 1.2rem 3.6rem 1.2rem 0.8rem;
@@ -168,3 +171,16 @@
         }
     }
 }
+
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {} 
+
+//1024px 이상
+@media (max-width: m.$pad) {}
+
+//768px 이상
+@media (max-width: m.$mobile) {}
+
+//320px 이상
+@media (max-width: m.$smobile) {}

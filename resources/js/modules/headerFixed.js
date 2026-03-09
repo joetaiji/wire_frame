@@ -11,7 +11,6 @@ let lastScroll = 0;
 export function headerFixed() {
     const $win = $(window);
     const $header = $('header');
-    const $goTop = $('.go-top');
 
     $win.on('load scroll', () => {
         const scrollT = $win.scrollTop();
@@ -20,7 +19,5 @@ export function headerFixed() {
             $header.toggleClass(FX, scrollT > lastScroll);
             lastScroll = scrollT;
         }
-
-        $goTop.toggleClass(FX, scrollT > 0);
     });
 }

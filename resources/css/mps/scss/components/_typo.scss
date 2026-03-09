@@ -1,6 +1,6 @@
 @use "../mixins" as m;
 
-
+/* typo */
 .title {
 
 	&-1 {
@@ -98,3 +98,16 @@
 		margin-top: 6rem;
 	}
 }
+
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
+
+//1024px 이상
+@media (max-width: m.$pad) {}
+
+//768px 이상
+@media (max-width: m.$mobile) {}
+
+//320px 이상
+@media (max-width: m.$smobile) {}

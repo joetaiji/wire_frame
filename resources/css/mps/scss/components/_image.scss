@@ -1,3 +1,4 @@
+@use "../mixins" as m;
 
 /* 이미지 */
 .img {
@@ -69,3 +70,16 @@
 		height: auto;
 	}
 }
+
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
+
+//1024px 이상
+@media (max-width: m.$pad) {}
+
+//768px 이상
+@media (max-width: m.$mobile) {}
+
+//320px 이상
+@media (max-width: m.$smobile) {}

@@ -32,321 +32,144 @@
 <body>
     <div id="wrap">
         <!-- 본문 바로가기 영역  -->
-        <div id="skip-nav">
-            <a href="#contents">본문 바로가기</a>
+        <div id="skip-link">
+            <a href="#container">본문 바로가기</a>
         </div>
         <!-- //본문 바로가기 영역  -->
-
-        <!-- //상단 배너영역  -->
-        <div id="header-top">
-            <div class="toggle-wrap">
-                <div class="toggle-head">
-                    <div class="inner">
-                        <span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //상단 배너영역  -->
-
+        
         <!-- 헤더 영역 -->
         <header id="header" class="header">
             <!-- 헤더 컨텐츠 영역  -->
-            <div class="header-in">
-                <!-- 헤더 상단 기타메뉴 -->
-                <div class="head-body">
-                    <div class="inner">
-                        <a href="index.html" class="logo">
-                            <img loading="lazy" src="/resources/images/mps/layout/logo.svg" class="logo-im" alt="보건복지부 통합돌봄">
-                        </a>
-                        <div class="right">
-                            <div class="head-etc">
-                                <ul class="etc-ul">
-                                    <li class="li">
-                                        <a href="https://www.mohw.go.kr/" class="btn btn-txt ico-go"
-                                            target="_blank">보건복지부</a>
-                                    </li>
-                                    <li class="li">
-                                        <div class="drop-wrap zoom-drop">
-                                            <button type="button" class="btn btn-txt ico-arr-down drop-btn"
-                                                aria-haspopup="listbox">
-                                                글자크기
-                                            </button>
-                                            <div class="drop-menu">
-                                                <div class="drop-in">
-                                                    <ul class="drop-list" role="listbox">
-                                                        <li>
-                                                            <button class="item-link xsm" role="option">
-                                                                작게
-                                                            </button>
-                                                        </li>
-                                                        <li>
-                                                            <button class="item-link sm" role="option">
-                                                                보통
-                                                            </button>
-                                                        </li>
-                                                        <li>
-                                                            <button class="item-link md" role="option">
-                                                                조금 크게
-                                                            </button>
-                                                        </li>
-                                                        <li>
-                                                            <button class="item-link lg" role="option">
-                                                                크게
-                                                            </button>
-                                                        </li>
-                                                        <li>
-                                                            <button class="item-link xlg" role="option">
-                                                                가장크게
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="drop-btm-btn">
-                                                        <button type="button"
-                                                            class="btn sm btn-txt ico-reset ico-before">
-                                                            초기화
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="btn-navi-wrap">
-                                <button type="button" class="btn-navi sch" title="통합검색 레이어" data-id="popTotalSch">
-                                    통합검색
-                                </button>
-                                <button type="button" class="btn-navi all pc-all" title="전체메뉴 레이어" data-id="popSiteMap">
-                                    전체메뉴
-                                </button>
-                                <button type="button" class="btn-navi all" id="m-gnb-open">
-                                    전체메뉴
-                                </button>
-                            </div>
-                        </div>
+            <div class="inner">
+                <!-- 헤더 브랜딩 영역 -->
+                <div class="header-branding">
+                    <a href="index.html" class="logo" title="홈으로 이동">
+                        <span class="sr-only">로고</span>
+                    </a>
+                    <div class="actions">
+                        <button type="button" class="btn-navi sch" title="통합검색 레이어" data-id="popTotalSch">통합검색</button>
+                        <button type="button" class="btn-navi all" title="전체메뉴 레이어" data-id="popSiteMap">전체메뉴</button>
                     </div>
                 </div>
-                <!-- //헤더 상단 기타메뉴 -->
-
-                <!-- 웹 : 메뉴 영역 -->
-                <nav id="gnb1" class="head-gnb">
-                    <div class="inner">
-                        <ul id="head_menu" class="topmenu">
+                <!-- //헤더 브랜딩 영역 -->
+        
+                <!-- 메뉴 영역 -->
+                <nav class="header-gnb">
+                    <ul class="gnb-menu">
+                        <li class="lnb1 mnfirst">
+                            <a href="01010000.html" class="gnb-main-trigger">메뉴1</a>
+        
+                        </li>
+                        <li class="lnb2">
+                            <a href="02010000.html" class="gnb-main-trigger">메뉴2</a>
+        
+                        </li>
+                        <li class="lnb3">
+                            <a href="03010000.html" class="gnb-main-trigger">메뉴3</a>
+                            <div class="submenu" style="display:none;">
+        
+                                <ul class="sub03">
+                                    <li class="sub01 subfirst"><a href="03010000.html">메뉴3-1</a></li>
+                                    <li class="sub02"><a href="03020000.html">메뉴3-2</a></li>
+                                    <li class="sub03 sublast"><a href="03030000.html">메뉴3-3</a></li>
+                                </ul>
+        
+        
+                            </div>
+                        </li>
+                        <li class="lnb4 mnlast">
+                            <a href="04010000.html" class="gnb-main-trigger">메뉴4</a>
+                            <div class="submenu" style="display:none;">
+        
+                                <ul class="sub04">
+                                    <li class="sub01 subfirst"><a href="
+                                                04010000.html">메뉴4-1</a></li>
+                                    <li class="sub02"><a href="04020000.html">메뉴4-2</a></li>
+                                    <li class="sub03 sublast"><a href="04030000.html">메뉴4-3</a></li>
+                                </ul>
+        
+        
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- //메뉴 영역 -->
+        
+            </div>
+            <!-- //헤더 컨텐츠 영역  -->
+        
+            <!-- 모바일 : 전체메뉴 -->
+            <div class="m-gnb">
+                <div class="m-gnb-head">
+                    <div class="m-gnb-top-etc">
+                    </div>
+                    <div class="sch-input">
+                        <input type="text" class="form-control md" name="menu_name" onkeyup="fn_menu_search('',2);"
+                            placeholder="찾고자 하는 메뉴명을 입력해 주세요" title="메뉴명 검색">
+                        <button type="button" class="btn btn-ico ico-sch" onclick="fn_menu_search('',1);">
+                            <span class="sr-only">검색</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="m-sch-result"></div>
+                <div class="m-gnb-body">
+                    <div class="m-gnb-menu type1">
+        
+        
+        
+                        <ul id="head_menu_all" class="topmenu_all">
                             <li class="lnb1 mnfirst">
                                 <a href="a60101000000.html">통합돌봄 한눈에 보기</a>
-                                <div class="submenu" style="display: none">
+                                <div class="submenu">
                                     <ul class="sub01">
-                                        <li class="sub01 subfirst">
-                                            <a href="a60101000000.html">통합돌봄 소개</a>
-                                        </li>
-                                        <li class="sub02">
-                                            <a href="/menu.es?mid=a60105000000">대상자 소개</a>
-                                        </li>
-                                        <li class="sub03 sublast">
-                                            <a href="/menu.es?mid=a60105000000">지원내용</a>
-                                        </li>
+                                        <li class="sub01 subfirst"><a href="a60101000000.html">통합돌봄 한눈에 보기</a>
                                     </ul>
                                 </div>
                             </li>
                             <li class="lnb2">
                                 <a href="a60201000000.html">통합돌봄 이용안내</a>
-                                <div class="submenu" style="display: none">
+                                <div class="submenu">
                                     <ul class="sub02">
-                                        <li class="sub01 subfirst">
-                                            <a href="a60201000000.html">신청방법 및 절차</a>
-                                        </li>
+                                        <li class="sub01 subfirst"><a href="a60201000000.html">통합돌봄 이용안내</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="lnb3">
                                 <a href="board_list.html">우리지역 통합돌봄</a>
-                                <div class="submenu" style="display: none">
+                                <div class="submenu">
                                     <ul class="sub03">
-                                        <li class="sub01 subfirst">
-                                            <a href="board_list.html">지자체 추진상황</a>
+                                        <li class="sub01 subfirst"><a href="board_list.html">지자체 추진상황</a>
                                         </li>
-                                        <li class="sub02">
-                                            <a href="board_list.html">시군구 전담조직 연락망</a>
-                                        </li>
-                                        <li class="sub03 sublast">
-                                            <a href="/menu.es?mid=a60302000000">지자체 우수사례</a>
+                                        <li class="sub02"><a href="board_list.html">시군구 전담조직 연락망</a></li>
+                                        <li class="sub03 sublast"><a href="/menu.es?mid=a60302000000">지자체 우수사례</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="lnb4 mnlast">
                                 <a href="board_list.html">자료실</a>
-                                <div class="submenu" style="display: none">
+                                <div class="submenu">
                                     <ul class="sub04">
-                                        <li class="sub01 subfirst">
-                                            <a href="board_list.html">정책자료</a>
-                                        </li>
-                                        <li class="sub02">
-                                            <a href="gallery_list.html">홍보자료</a>
-                                        </li>
-                                        <li class="sub03 sublast">
-                                            <a href="faq.html">절차 FAQ</a>
+                                        <li class="sub01 subfirst"><a href="board_list.html">정책자료</a></li>
+                                        <li class="sub02"><a href="gallery_list.html">홍보자료</a></li>
+                                        <li class="sub03 sublast"><a href="faq.html">절차 FAQ</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
+        
+        
+        
                     </div>
-                </nav>
-                <!-- //웹 : 메뉴 영역 -->
-            </div>
-            <!-- //헤더 컨텐츠 영역  -->
-
-            <!-- 모바일 : 전체메뉴 -->
-            <nav id="m-gnb" class="m-gnb-wrap">
-                <div class="m-gnb-in type1">
-                    <div class="m-gnb-head">
-                        <div class="m-gnb-top-etc"></div>
-                        <div class="sch-input">
-                            <input type="text" class="form-control md" name="menu_name" onkeyup="fn_menu_search('', 2)"
-                                placeholder="찾고자 하는 메뉴명을 입력해 주세요" title="메뉴명 검색">
-                            <button type="button" class="btn btn-ico ico-sch" onclick="fn_menu_search('', 1)">
-                                <span class="sr-only">검색</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="m-sch-result"></div>
-                    <div class="m-gnb-body">
-                        <div class="m-gnb-menu type1">
-                            <ul id="head_menu_all" class="topmenu_all">
-                                <li class="lnb1 mnfirst">
-                                    <a href="a60101000000.html">통합돌봄 한눈에 보기</a>
-                                    <div class="submenu">
-                                        <ul class="sub01">
-                                            <li class="sub01 subfirst">
-                                                <a href="a60101000000.html">통합돌봄 소개</a>
-                                            </li>
-                                            <li class="sub02">
-                                                <a href="/menu.es?mid=a60105000000">대상자 소개</a>
-                                            </li>
-                                            <li class="sub03 sublast">
-                                                <a href="/menu.es?mid=a60105000000">지원내용</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="lnb2">
-                                    <a href="a60201000000.html">통합돌봄 이용안내</a>
-                                    <div class="submenu">
-                                        <ul class="sub02">
-                                            <li class="sub01 subfirst">
-                                                <a href="a60201000000.html">개요</a>
-                                            </li>
-                                            <li class="sub02">
-                                                <a href="/menu.es?mid=a60202000000">위원명단</a>
-                                            </li>
-                                            <li class="sub03 sublast">
-                                                <a href="/menu.es?mid=a60203000000">운영현황</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="lnb3">
-                                    <a href="board_list.html">우리지역 통합돌봄</a>
-                                    <div class="submenu">
-                                        <ul class="sub03">
-                                            <li class="sub01 subfirst">
-                                                <a href="board_list.html">지자체 추진상황</a>
-                                            </li>
-                                            <li class="sub02">
-                                                <a href="board_list.html">시군구 전담조직 연락망</a>
-                                            </li>
-                                            <li class="sub03 sublast">
-                                                <a href="/menu.es?mid=a60302000000">지자체 우수사례</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="lnb4 mnlast">
-                                    <a href="board_list.html">자료실</a>
-                                    <div class="submenu">
-                                        <ul class="sub04">
-                                            <li class="sub01 subfirst">
-                                                <a href="board_list.html">정책자료</a>
-                                            </li>
-                                            <li class="sub02">
-                                                <a href="gallery_list.html">홍보자료</a>
-                                            </li>
-                                            <li class="sub03 sublast">
-                                                <a href="faq.html">절차 FAQ</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn btn-ico ico-close">
-                        <span class="sr-only">전체메뉴 닫기</span>
-                    </button>
                 </div>
-            </nav>
+        
+                <button type="button" class="btn btn-ico ico-close">
+                    <span class="sr-only">전체메뉴 닫기</span>
+                </button>
+            </div>
             <!-- //모바일 : 전체메뉴 -->
-
-            <!-- 레이어 : 통합 검색 -->
-            <div class="popup-wrap" data-type="full" id="popTotalSch">
-                <div class="popup-in">
-                    <div class="popup">
-                        <div class="popup-head sr-only">
-                            <h1 class="pop-tit">통합검색</h1>
-                        </div>
-                        <div class="popup-body">
-                            <!-- 통합검색 -->
-                            <div class="pop-total-serch-wrap">
-                                <!-- 통합검색 정보입력 영역 -->
-                                <div class="search-total-top">
-                                    <!-- 검색어 타이틀 -->
-                                    <div class="search-tit">검색어를 입력해주세요</div>
-                                    <!-- //검색어 타이틀 -->
-
-                                    <!-- 검색어 입력 폼 -->
-                                    <form name="totSearch" action="/reform/search.es?mid=a50700000000" method="post"
-                                        onsubmit="return fn_tot_search();">
-                                        <div class="sch-form-wrap vert">
-                                            <div class="sch-input">
-                                                <input type="text" class="form-control xlg" id="search-total-input-id"
-                                                    placeholder="검색어 입력" name="totKeyWord" title="검색어 입력" value="">
-                                                <button type="submit" class="btn btn-ico ico-sch">
-                                                    <span class="sr-only">검색</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <!-- //검색어 입력 폼 -->
-                                </div>
-                                <!-- //통합검색 정보입력 영역 -->
-
-                                <!-- 검색어 리스트 -->
-                                <div class="search-text" tabindex="0">
-                                    <ul class="sch-info-list">
-                                        <li class="li li2">
-                                            <h3 class="tit">최근검색어</h3>
-                                            <ul class="list recentSearch"></ul>
-                                            <button type="button" class="btn btn-txt ico-del sm searchTotDel">
-                                                최근검색어 전체 삭제
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- //검색어 리스트 -->
-                            </div>
-                            <!-- //통합검색 -->
-                        </div>
-                        <button type="button" class="popup-close">
-                            <span class="sr-only">레이어 닫기</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- //레이어 : 통합 검색 -->
-
+        
             <!-- 레이어 : 사이트맵 -->
             <div class="popup-wrap" data-type="full" id="popSiteMap">
                 <div class="popup-in">
@@ -357,18 +180,17 @@
                         <div class="popup-body">
                             <!-- gnb 클론 영역 -->
                         </div>
-                        <button type="button" class="popup-close">
-                            <span class="sr-only">레이어 닫기</span>
-                        </button>
+                        <button type="button" class="popup-close"><span class="sr-only">레이어 닫기</span></button>
                     </div>
                 </div>
             </div>
             <!-- //레이어 : 사이트맵 -->
+        
         </header>
         <!-- //헤더 영역 -->
 
         <!-- 컨테이너 영역 -->
-        <main id="container">
+        <main id="container" class="container">
             <!-- breadcrumb -->
             <nav class="breadcrumb-wrap" aria-label="Breadcrumb">
                 <ol class="breadcrumb">
@@ -650,72 +472,36 @@
         <!-- //컨테이너 영역 -->
 
         <a href="#wrap" class="go-top" data-tooltip="페이지 상단으로 이동">
-            <i class="ri-arrow-up-s-line" aria-hidden="true"></i>
-            <span>TOP</span>
+            <i class="svg-icon ico-go-top" aria-hidden="true"></i>
+            <span class="sr-only">TOP</span>
         </a>
 
         <!-- 푸터 영역 -->
         <footer id="footer" class="footer">
+        
             <div class="inner">
-                <div class="f-logo">
-                    <a href="/communityCare" class="logo-im">
-                        <img loading="lazy" src="/resources/images/mps/layout/logo.svg" alt="보건복지부 통합돌봄">
+                <div class="footer-link">
+                    <div class="link-go">
+                        <a href="">찾아오시는 길</a>
+                    </div>
+                </div>
+                <div class="footer-logo">
+                    <a href="/communityCare" class="logo">
+                        <span class="sr-only">로고</span>
                     </a>
                 </div>
-                <div class="f-cnt">
-                    <div class="f-info">
-                        <p class="info-addr">
-                            (30113) 세종특별자치시 도움4로 13 보건복지부 (정부세종청사 10동)
-                        </p>
-                        <ul class="info-cs">
-                            <li>
-                                <strong class="key-info">안내전화
-                                    <span><a href="tel:129">보건복지상담센터 국번없이 129(무료)</a></span></strong>
-                                <span class="more-info">평일 09:00~18:00, 긴급지원상담은 24시</span>
-                            </li>
-                            <li>
-                                <strong class="key-info">당직실
-                                    <span><a href="tel:044-202-2118">044-202-2118</a></span></strong>
-                            </li>
-                            <li>
-                                <strong class="key-info">FAX
-                                    <span><a href="tel:044-202-3910">044-202-3910</a></span></strong>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="f-link">
-                        <div class="link-go">
-                            <a href="https://mohw.go.kr/menu.es?mid=a10608000000" class="btn btn-txt ico-arr">찾아오시는
-                                길</a>
-                        </div>
-                        <div class="link-sns">
-                            <a href="https://facebook.com/mohwpr" class="facebook" target="_blank"
-                                rel="noopener noreferrer"><span class="sr-only">페이스북</span></a>
-                            <a href="https://twitter.com/mohwpr" class="twitter" target="_blank"
-                                rel="noopener noreferrer"><span class="sr-only">트위터</span></a>
-                            <a href="https://youtube.com/user/mohwpr" class="youtube" target="_blank"
-                                rel="noopener noreferrer"><span class="sr-only">유튜브</span></a>
-                            <a href="https://blog.naver.com/mohw2016" class="blog" target="_blank"
-                                rel="noopener noreferrer"><span class="sr-only">블로그</span></a>
-                            <a href="https://instargram.com/mohw_kr/" class="instagram" target="_blank"
-                                rel="noopener noreferrer"><span class="sr-only">인스타그램</span></a>
-                        </div>
-                    </div>
+                <div class="footer-cont">
+                    <address class="addr">대전 유성구 문지로 282-10 / 042-934-3508</address>
                 </div>
-
-                <div class="f-btm">
-                    <div class="f-btm-text">
-                        <div class="f-menu">
-                            <a href="https://mohw.go.kr/menu.es?mid=a10803000000" class="point ico-go"
-                                title="새창열림">개인정보처리방침</a>
-                        </div>
-                        <p class="f-copy">© COPYRIGHT MOHW. ALL RIGHTS RESERVED</p>
-                    </div>
+        
+                <div class="footer-bottom">
+                    <p>© 2025. (주)플랜아이. ALL Rights Reserved. 사업자 번호: 305-81-72470</p>
                 </div>
-            </div>
+            </div>       
+        
         </footer>
         <!-- //푸터 영역 -->
+
     </div>
 
     <script>

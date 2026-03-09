@@ -1,52 +1,73 @@
+@use "../mixins" as m;
 
-/* ==========================================================================================
-//icons
-============================================================================================*/
-[class*=ic-]::after {
-	content: '';
-	display: inline-flex;
-	align-items: center;
-	font-family: var(--icon);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+/* font-icon */
+@font-face {
+    font-family: "remixicon";
+    src: url("./file/remixicon.woff2") format("woff2"),
+        url("./file/remixicon.woff") format("woff"),
+        url("./file/remixicon.ttf") format("truetype");
+    font-display: swap;
 }
 
-//rimixicon
 $iconGlyph: (
-	"prev": "\ea60",
-	"arr-long": "\ea6c",
-	"arr": "\ea6e",
-	"more": "\ea12",
-	"down": "\ec54",
-	"go": "\ecaf",
-	"sch": "\f0d1",
-	"share": "\f0fe",
-	"like": "\ee0b",
-	"filter": "\f162",
-	"close": "\eb98",
-	"reset": "\f541",
-	"setting": "\f0ea",
-	"time": "\f20f",
-	"email": "\eef6",
-	"print": "\f029",
-	"scrap": "\eae5",
-	"comment": "\ef46",
-	"log": "\eed4",
-	"logout": "\eed8",
-	"arr-right": "\ea6c",
-	"arr-down": "\ea4e",
-	"map": "\ef06",
-	"warning": "\eca1",
-	"info": "\ee59",
-	"cal": "\eb21",
-	"lock": "\eecd",
-	"new": "N",
-	"star": "*"
-
+    "prev":      "\ea60",
+    "arr-long":  "\ea6c",
+    "arr":       "\ea6e",
+    "arr-right": "\ea6c",
+    "arr-down":  "\ea4e",
+    "more":      "\ea12",
+    "down":      "\ec54",
+    "go":        "\ecaf",
+    "sch":       "\f0d1",
+    "share":     "\f0fe",
+    "like":      "\ee0b",
+    "filter":    "\f162",
+    "close":     "\eb98",
+    "reset":     "\f541",
+    "setting":   "\f0ea",
+    "time":      "\f20f",
+    "email":     "\eef6",
+    "print":     "\f029",
+    "scrap":     "\eae5",
+    "comment":   "\ef46",
+    "log":       "\eed4",
+    "logout":    "\eed8",
+    "map":       "\ef06",
+    "warning":   "\eca1",
+    "info":      "\ee59",
+    "cal":       "\eb21",
+    "lock":      "\eecd",
+    "new":       "N",
+    "star":      "*"
 );
 
-@each $name, $glyph in $iconGlyph {
-	.ic-#{$name}::after {
-		content: $glyph;
-	}
+.font-icon {
+    &::after {
+        content: '';
+        display: inline-flex;
+        align-items: center;
+        font-style: normal;
+        font-family: 'remixicon' !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    @each $name, $glyph in $iconGlyph {
+        &.ico-#{$name}::after {
+            content: $glyph;
+        }
+    }
 }
+
+//반응형
+//1200px 이상
+@media (max-width: m.$web) {}
+
+//1024px 이상
+@media (max-width: m.$pad) {}
+
+//768px 이상
+@media (max-width: m.$mobile) {}
+
+//320px 이상
+@media (max-width: m.$smobile) {}
