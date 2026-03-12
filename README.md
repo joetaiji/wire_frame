@@ -1,6 +1,6 @@
-# MPS 와이어프레임
+# 와이어프레임
 
-공공기관 웹사이트 퍼블리싱 와이어프레임 프로젝트입니다.  
+웹사이트 퍼블리싱 와이어프레임 프로젝트입니다.  
 번들러 없이 ES Module + jQuery + Swiper 조합으로 구성되어 있으며, SCSS는 VSCode Live Sass Compiler로 컴파일합니다.
 
 ---
@@ -9,9 +9,9 @@
 
 | 구분 | 내용 |
 |---|---|
-| JS | Vanilla ES Module + jQuery + Swiper |
+| JS | ES Module + jQuery + Swiper |
 | CSS | SCSS → Live Sass Compiler 컴파일 |
-| 빌드 도구 | VSCode [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass) 확장 |
+| 빌드 도구 | VSCode [Live Sass Compiler] |
 | 폰트 | Noto Sans KR, Pretendard GOV, Remix Icon |
 | 반응형 기준 | 1200px / 1024px / 768px / 320px |
 
