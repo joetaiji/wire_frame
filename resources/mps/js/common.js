@@ -1,4 +1,4 @@
-import { zoom, listOpen, layerPopup, gnb, mobileGnb, headerFixed } from '../modules/index.js';
+import { zoom, listOpen, layerPopup, gnb, mobileGnb, headerFixed } from './modules/index.js';
 
 // 헤더 고정 초기화
 headerFixed();
@@ -13,9 +13,9 @@ $(function () {
     $('#head_menu').clone().appendTo('#popSiteMap .popup-body');//사이트맵 메뉴복제
     layerPopup('.header .btn-navi') 	//통합검색, 전체메뉴
 
-    //gnb()	//gnb메뉴
+    gnb('#head_menu', '.submenu')	//gnb메뉴
 
-    //mobileGnb()	//모바일 gnb메뉴
+    mobileGnb()	//모바일 gnb메뉴
 
 });
 

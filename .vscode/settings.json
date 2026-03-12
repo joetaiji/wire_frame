@@ -1,5 +1,5 @@
 {
   "liveSassCompile.settings.includeItems": [
-    "/resources/css/mps/scss/*.scss"
+    "/resources/mps/css/scss/*.scss"
   ]  
 }

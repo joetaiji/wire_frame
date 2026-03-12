@@ -602,119 +602,126 @@ Flex 정렬
 }
 
 .ico-like {
-  mask-image: url("/resources/images/mps/icon/ico_like.svg");
+  mask-image: url("../images/icon/ico_like.svg");
 }
 
 .ico-share {
-  mask-image: url("/resources/images/mps/icon/ico_share.svg");
+  mask-image: url("../images/icon/ico_share.svg");
 }
 
 .ico-angle {
-  mask-image: url("/resources/images/mps/icon/ico_angle.svg");
+  mask-image: url("../images/icon/ico_angle.svg");
 }
 
 .ico-arr {
-  mask-image: url("/resources/images/mps/icon/ico_arr.svg");
+  mask-image: url("../images/icon/ico_arr.svg");
 }
 
 .ico-arr-right {
-  mask-image: url("/resources/images/mps/icon/ico_arr-right.svg");
+  mask-image: url("../images/icon/ico_arr-right.svg");
 }
 
 .ico-arr-right1 {
-  mask-image: url("/resources/images/mps/icon/ico_arr-right1.svg");
+  mask-image: url("../images/icon/ico_arr-right1.svg");
 }
 
 .ico-arr-down {
-  mask-image: url("/resources/images/mps/icon/ico_arr-down.svg");
+  mask-image: url("../images/icon/ico_arr-down.svg");
 }
 
 .ico-more {
-  mask-image: url("/resources/images/mps/icon/ico_more.svg");
+  mask-image: url("../images/icon/ico_more.svg");
 }
 
 .ico-sch {
-  mask-image: url("/resources/images/mps/icon/ico_sch.svg");
+  mask-image: url("../images/icon/ico_sch.svg");
 }
 
 .ico-sch1 {
-  mask-image: url("/resources/images/mps/icon/ico_sch1.svg");
+  mask-image: url("../images/icon/ico_sch1.svg");
 }
 
 .ico-go {
-  mask-image: url("/resources/images/mps/icon/ico_go.svg");
+  mask-image: url("../images/icon/ico_go.svg");
 }
 
 .ico-down {
-  mask-image: url("/resources/images/mps/icon/ico_down.svg");
+  mask-image: url("../images/icon/ico_down.svg");
 }
 
 .ico-filter {
-  mask-image: url("/resources/images/mps/icon/ico_filter.svg");
+  mask-image: url("../images/icon/ico_filter.svg");
 }
 
 .ico-reset {
-  mask-image: url("/resources/images/mps/icon/ico_reset.svg");
+  mask-image: url("../images/icon/ico_reset.svg");
 }
 
 .ico-log {
-  mask-image: url("/resources/images/mps/icon/ico_log.svg");
+  mask-image: url("../images/icon/ico_log.svg");
 }
 
 .ico-func {
-  mask-image: url("/resources/images/mps/icon/ico_func.svg");
+  mask-image: url("../images/icon/ico_func.svg");
 }
 
 .ico-logout {
-  mask-image: url("/resources/images/mps/icon/ico_logout.svg");
+  mask-image: url("../images/icon/ico_logout.svg");
 }
 
 .ico-email {
-  mask-image: url("/resources/images/mps/icon/ico_email.svg");
+  mask-image: url("../images/icon/ico_email.svg");
 }
 
 .ico-print {
-  mask-image: url("/resources/images/mps/icon/ico_print.svg");
+  mask-image: url("../images/icon/ico_print.svg");
 }
 
 .ico-scrap {
-  mask-image: url("/resources/images/mps/icon/ico_scrap.svg");
+  mask-image: url("../images/icon/ico_scrap.svg");
 }
 
 .ico-del {
-  mask-image: url("/resources/images/mps/icon/ico_del.svg");
+  mask-image: url("../images/icon/ico_del.svg");
 }
 
 .ico-plus {
-  mask-image: url("/resources/images/mps/icon/ico_plus.svg");
+  mask-image: url("../images/icon/ico_plus.svg");
 }
 
 .ico-setting {
-  mask-image: url("/resources/images/mps/icon/ico_setting.svg");
+  mask-image: url("../images/icon/ico_setting.svg");
 }
 
 .ico-link {
-  mask-image: url("/resources/images/mps/icon/ico_link.svg");
+  mask-image: url("../images/icon/ico_link.svg");
 }
 
 .ico-comment {
-  mask-image: url("/resources/images/mps/icon/ico_comment.svg");
+  mask-image: url("../images/icon/ico_comment.svg");
 }
 
 .ico-prev {
-  mask-image: url("/resources/images/mps/icon/ico_prev.svg");
+  mask-image: url("../images/icon/ico_prev.svg");
 }
 
 .ico-close {
-  mask-image: url("/resources/images/mps/icon/ico_close.svg");
+  mask-image: url("../images/icon/ico_close.svg");
 }
 
 .ico-time {
-  mask-image: url("/resources/images/mps/icon/ico_time.svg");
+  mask-image: url("../images/icon/ico_time.svg");
 }
 
 .ico-go-top {
-  mask-image: url("/resources/images/mps/icon/ico_go-top.svg");
+  mask-image: url("../images/icon/ico_go-top.svg");
+}
+
+.ico-angle.left {
+  transform: rotate(90deg);
+}
+.ico-angle.right {
+  transform: rotate(-90deg);
 }
 
 /* ==========================================================================
@@ -774,7 +781,7 @@ Flex 정렬
   height: 3.2rem;
   transform: translateY(-50%);
   left: 0;
-  background: url("/resources/images/mps/layout/logo.svg") no-repeat center center/contain;
+  background: url("../images/layout/logo.svg") no-repeat center center/contain;
 }
 .header-branding .actions {
   top: 50%;
@@ -793,6 +800,9 @@ Flex 정렬
   justify-content: center;
   gap: 1.6rem;
   height: 100%;
+}
+.header-gnb .gnb-menu .submenu {
+  display: none;
 }
 .header-gnb .gnb-main-trigger {
   height: 100%;
@@ -854,7 +864,7 @@ Flex 정렬
   gap: 1.2rem;
 }
 .footer-logo {
-  background: url("/resources/images/mps/layout/logo_white.svg") no-repeat center center/contain;
+  background: url("../images/layout/logo_white.svg") no-repeat center center/contain;
   width: 11.4rem;
   height: 3.2rem;
 }/*# sourceMappingURL=layout.css.map */

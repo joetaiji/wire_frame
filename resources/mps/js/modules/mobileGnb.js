@@ -1,8 +1,7 @@
 /**
  * 모바일 GNB 메뉴
  */
-import { AC, ScrollNo, $html } from './config.js';
-import { mobile } from './utils.js';
+import { AC, ScrollNo, $html, mobile } from './config.js';
 
 /**
  * 모바일 GNB 메뉴 기능

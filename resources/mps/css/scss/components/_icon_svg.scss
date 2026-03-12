@@ -28,6 +28,16 @@ $iconSvgs:
     }
 }
 
+.ico-angle {
+    &.left {
+        transform: rotate(90deg);
+    }
+
+    &.right {
+        transform: rotate(-90deg);
+    }
+}
+
 //반응형
 //1200px 이상
 @media (max-width: m.$web) {}

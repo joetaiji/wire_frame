@@ -1,4 +1,4 @@
-import { tabs } from '../modules/index.js';
+import { tabs } from './modules/index.js';
 
 $(function () {
     tabs(".tab-nav", ".tab-conts");

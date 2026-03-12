@@ -1,4 +1,4 @@
-import { snb, tabs, inPageNav, accordion, listOpen, mobile } from '../modules/index.js';
+import { snb, tabs, inPageNav, accordion, listOpen, mobile } from './modules/index.js';
 
 $(function () {
     snb();

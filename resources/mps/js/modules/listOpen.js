@@ -1,8 +1,7 @@
 /**
  * 리스트 열고 닫기
  */
-import { AC, srOnly, OpenTxt, CloseTxt, $html } from './config.js';
-import { accessInit } from './utils.js';
+import { AC, srOnly, OpenTxt, CloseTxt, $html, accessInit } from './config.js';
 
 /**
  * 리스트 열고 닫기 기능

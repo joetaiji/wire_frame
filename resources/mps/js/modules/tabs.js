@@ -1,8 +1,7 @@
 /**
  * 탭 메뉴
  */
-import { AC, $html } from './config.js';
-import { mobile } from './utils.js';
+import { AC, $html, mobile } from './config.js';
 
 /**
  * 탭 메뉴 기능

@@ -5,9 +5,6 @@
 // 설정
 export * from './config.js';
 
-// 유틸리티
-export { mobile, accessInit } from './utils.js';
-
 // 기능 모듈
 export { zoom } from './zoom.js';
 export { gnb } from './gnb.js';

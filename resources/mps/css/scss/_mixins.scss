@@ -9,7 +9,7 @@ $mobile:   768px !default;
 $smobile:  320px !default;
 
 // 이미지 경로
-$imgPath:   "/resources/images/mps/" !default;
+$imgPath:   "../images/" !default;
 $layoutImg: $imgPath + "layout" !default;
 $mainImg:   $imgPath + "main"   !default;
 $subImg:    $imgPath + "sub"    !default;

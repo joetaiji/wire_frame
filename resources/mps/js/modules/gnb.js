@@ -1,36 +1,36 @@
 /**
  * GNB 메뉴
  */
-import { AC, $html } from './config.js';
-import { accessInit } from './utils.js';
+import { AC, $html, accessInit } from './config.js';
 
 /**
  * GNB 메뉴 기능
  * @param {string} el - GNB 선택자
  */
-export function gnb(el) {
-    const $gnb = $('#head_menu');
-    const $depth1 = $gnb.find('>li>a:not(.linkWindow)');
+export function gnb(el, submenu) {
+    const $gnb = $(el);
+    const $submenu = $(submenu);
+    const $depth1 = $gnb.find('>li>a:not([target="_blank"])');
 
     // 초기셋팅 - 1차뎁스 접근성, 2차뎁스 첫번째 메뉴 활성
     $gnb.find('>li>a.active').attr('aria-current', 'page');
-    $('.submenu').removeAttr('style');
+    $submenu.removeAttr('style');
 
     $depth1.each(function () {
         const $na = $(this);
-        const $next = $na.next('.submenu');
+        const $next = $na.next(submenu);
 
         // 2차뎁스메뉴가 있는 경우 구분해서 처리
         if ($next.length) {
             accessInit($na);
             $na.addClass('is-submenu');
-            $next.prepend("<div class='depth1-go'></div>")
-                .find('.depth1-go').prepend($na.clone()).find('a').removeAttr('aria-expanded');
+            /* $next.prepend("<div class='depth1-go'></div>")
+                .find('.depth1-go').prepend($na.clone()).find('a').removeAttr('aria-expanded'); */
         }
     });
 
     // 1차뎁스(2차뎁스를 갖고 있는 경우) 클릭
-    $('.topmenu > li > .is-submenu').on('click', function (e) {
+    $depth1.on('click', function (e) {
         const $na = $(this);
 
         e.preventDefault();
